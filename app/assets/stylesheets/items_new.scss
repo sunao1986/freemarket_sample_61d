@@ -1,0 +1,195 @@
+.exhibit-page{
+  width:100vw;
+  height:100vh;
+  .exhibit-wrape{
+    width:700px;
+    min-width: 500px;
+    height:auto;
+    margin: 0 auto;
+    .exhibit-logo-field{
+      width:700px;
+      min-width: 500px;
+      height: 128px;
+      background-color: aquamarine;
+      .exhibit-logo-box{
+        width:224px;
+        height:70px;
+        margin: 0 auto;
+        padding-top: 30px;
+        background-color: violet;
+      }
+    }
+    .exhibit-head-field{
+      width:700px;
+      min-width: 500px;
+      height: 97px;
+      background-color: beige;
+      &__title{
+        text-align: center;
+        line-height: 97px;
+        font-family: "Yu Gothic";
+        font-size: 22px;
+        font-weight: bold;
+      }
+
+    }
+    .exhibit-image-field{
+      width:700px;
+      min-width: 500px;
+      min-height:303px;
+      background-color: blanchedalmond;
+      &__title{
+        float: left;
+        font-family: "Yu Gothic";
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 30px;
+        margin-left: 50px;
+      }
+      &--required{
+        float: left;
+        font-family: "Yu Gothic";
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+        width:35px;
+        min-width: 20px;
+        color: white;
+        margin-top: 30px;
+        margin-left: 10px;
+        background-color: red;
+      }
+      &__notice{
+        clear: both;
+        font-family: "Meiryo";
+        font-size: 13px;
+        padding-top: 10px;
+        margin-left: 50px;
+      }
+      &__drop{
+        width:600px;
+        min-width: 450px;
+        height: 162px;
+        margin: 0 auto;
+        background-color: rgb(238, 238, 238);
+        border-style: dashed;
+        border-color: lightgrey;
+        border-width: thin;
+        margin-top: 20px;
+        &--drug{
+          font-family: "Yu Gothic";
+          font-size: 14px;
+          text-align: center;
+          padding-top:55px;
+        }
+        &--upload{
+          font-family: "Yu Gothic";
+          font-size: 14px;
+          text-align: center;
+        }
+      }
+    }
+    .exhibit-info-field{
+      width:700px;
+      min-width: 500px;
+      min-height: 355px;
+      background-color: cornsilk;
+      padding-bottom:40px;
+      &__label{
+        float: left;
+        font-family: "Yu Gothic";
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: 30px;
+        margin-left: 50px;
+      }
+      &--required{
+        float: left;
+        font-family: "Yu Gothic";
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+        width:35px;
+        min-width: 20px;
+        color: white;
+        margin-top: 30px;
+        margin-left: 10px;
+        background-color: red;
+      }
+      &__name{
+        clear: both;
+        .input_item_name{
+          display: block;
+          margin:0 auto;
+          width:600px;
+          min-width: 500px;
+          height: 40px;
+          border-radius: 4px;
+          border-style: none;
+          border: solid 1px rgb(211, 211, 211);
+        }
+        .input_item_name::placeholder{
+          color:gray;
+          font-size: 16px;
+          font-family: "Yu Gothic";
+          padding-left:10px;
+        }
+      }
+      &__discription{
+        clear: both;
+        .input_item_discription{
+          display: block;
+          width:600px;
+          max-width: 600px;
+          min-width: 500px;
+          height: 150px;
+          margin: 0 auto;
+          border-style: none;
+          border: solid 1px rgb(211, 211, 211);
+        }
+        .input_item_discription::placeholder{
+          color:gray;
+          font-size: 16px;
+          font-family: "Yu Gothic";
+          padding:10px 0 0 10px;
+        }
+      }
+    }
+    .exhibit-detail-field{
+      width:700px;
+      min-width: 500px;
+      min-height: 261px;
+      background-color: ghostwhite;
+      &__name{
+
+      }
+      &__discription{
+
+      }
+    }
+    .exhibit-delivery-field{
+      width:700px;
+      min-width: 500px;
+      min-height: 371px;
+      background-color: honeydew;
+    }
+    .exhibit-price-field{
+      width:700px;
+      min-width: 500px;
+      min-height: 299px;
+      background-color: peru;
+    }
+    .exhibit-button-field{
+      width:700px;
+      min-width: 500px;
+      min-height: 329px;
+      background-color: steelblue;
+    }
+    .exhibit-foot-field{
+      width:700px;
+      min-width: 500px;
+      min-height: 220px;
+      background-color: tan;
+    }
+  }
+}
