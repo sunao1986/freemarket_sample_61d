@@ -1,6 +1,7 @@
 .exhibit-page{
   width:100vw;
-  height:100vh;
+  height:100%;
+  background-color: rgb(233, 233, 233);
   .exhibit-wrape{
     width:700px;
     min-width: 500px;
@@ -10,20 +11,20 @@
       width:700px;
       min-width: 500px;
       height: 128px;
-      background-color: aquamarine;
       .exhibit-logo-box{
         width:224px;
         height:70px;
         margin: 0 auto;
         padding-top: 30px;
-        background-color: violet;
       }
     }
+
     .exhibit-head-field{
       width:700px;
       min-width: 500px;
       height: 97px;
-      background-color: beige;
+      background-color: #fff;
+      border-bottom:solid 1px rgb(211, 211, 211);
       &__title{
         text-align: center;
         line-height: 97px;
@@ -33,11 +34,13 @@
       }
 
     }
+
     .exhibit-image-field{
       width:700px;
       min-width: 500px;
       min-height:303px;
-      background-color: blanchedalmond;
+      background-color: #fff;
+      border-bottom:solid 1px rgb(211, 211, 211);
       &__title{
         float: left;
         font-family: "Yu Gothic";
@@ -89,12 +92,14 @@
         }
       }
     }
+
     .exhibit-info-field{
       width:700px;
       min-width: 500px;
       min-height: 355px;
-      background-color: cornsilk;
+      background-color: #fff;
       padding-bottom:40px;
+      border-bottom:solid 1px rgb(211, 211, 211);
       &__label{
         float: left;
         font-family: "Yu Gothic";
@@ -155,41 +160,537 @@
         }
       }
     }
+
     .exhibit-detail-field{
       width:700px;
       min-width: 500px;
       min-height: 261px;
-      background-color: ghostwhite;
-      &__name{
-
+      padding-bottom:40px;
+      background-color: #fff;
+      border-bottom:solid 1px rgb(211, 211, 211);
+      &__gray-label{
+        float: left;
+        font-family: "Yu Gothic";
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: 40px;
+        margin-left: 50px;
+        width: 200px;
+        color: gray;
       }
-      &__discription{
-
+      &__label{
+        float: left;
+        font-family: "Yu Gothic";
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: 40px;
+        margin-bottom: 5px;
+      }
+      &--required{
+        float: left;
+        font-family: "Yu Gothic";
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+        width:35px;
+        min-width: 20px;
+        color: white;
+        margin-top: 40px;
+        margin-left: 10px;
+        background-color: red;
+      }
+      .hidden-category-second-field{
+        display:none;
+        &__box{
+          .input_item_hidden{
+            display: block;
+            width:400px;
+            height: 40px;
+            margin-top: 5px;
+            margin-left:250px;
+            border-radius: 4px;
+            border-style: none;
+            border: solid 1px rgb(211, 211, 211);
+          }
+        }
+      }
+      .hidden-category-third-field{
+         display:none;
+        &__box{
+          .input_item_hidden{
+            display: block;
+            width:400px;
+            height: 40px;
+            margin-top: 5px;
+            margin-left:250px;
+            border-radius: 4px;
+            border-style: none;
+            border: solid 1px rgb(211, 211, 211);
+          }
+        }
+      }
+      &__category{
+        clear: both;
+        .input_item_category{
+          display: block;
+          width:400px;
+          height: 40px;
+          margin-left:250px;
+          border-radius: 4px;
+          border-style: none;
+          border: solid 1px rgb(211, 211, 211);
+        }
+        .input_item_category::placeholder{
+          color:gray;
+          font-size: 16px;
+          font-family: "Yu Gothic";
+          padding-left:10px;
+        }
+      }
+      .hidden-size-field{
+        display:none;
+        &__gray-label{
+          float: left;
+          font-family: "Yu Gothic";
+          font-size: 14px;
+          font-weight: bold;
+          margin-top: 40px;
+          margin-left: 50px;
+          width: 200px;
+          background-color: blueviolet;
+          color: gray;
+        }
+        &__label{
+          float: left;
+          font-family: "Yu Gothic";
+          font-size: 14px;
+          font-weight: bold;
+          margin-top: 40px;
+          margin-bottom: 5px;
+        }
+        &--required{
+          float: left;
+          font-family: "Yu Gothic";
+          font-size: 12px;
+          font-weight: bold;
+          text-align: center;
+          width:35px;
+          min-width: 20px;
+          color: white;
+          margin-top: 40px;
+          margin-left: 10px;
+          background-color: red;
+        }
+        &__box{
+          clear: both;
+          .input_item_size{
+            display: block;
+            width:400px;
+            height: 40px;
+            margin-left:250px;
+            border-radius: 4px;
+            border-style: none;
+            border: solid 1px rgb(211, 211, 211);
+          }
+          .input_item_size::placeholder{
+            color:gray;
+            font-size: 16px;
+            font-family: "Yu Gothic";
+            padding-left:10px;
+          }
+        }  
+      }
+      .hidden-brand-field{
+        display:none;
+        &__gray-label{
+          float: left;
+          font-family: "Yu Gothic";
+          font-size: 14px;
+          font-weight: bold;
+          margin-top: 40px;
+          margin-left: 50px;
+          width: 200px;
+          color: gray;
+        }
+        &__label{
+          float: left;
+          font-family: "Yu Gothic";
+          font-size: 14px;
+          font-weight: bold;
+          margin-top: 40px;
+          margin-bottom: 5px;
+        }
+        &--required{
+          float: left;
+          font-family: "Yu Gothic";
+          font-size: 12px;
+          font-weight: bold;
+          text-align: center;
+          width:35px;
+          min-width: 20px;
+          color: white;
+          margin-top: 40px;
+          margin-left: 10px;
+          background-color: gray;
+        }
+        &__box{
+          clear: both;
+          .input_item_brand{
+            display: block;
+            width:400px;
+            height: 40px;
+            margin-left:250px;
+            border-radius: 4px;
+            border-style: none;
+            border: solid 1px rgb(211, 211, 211);
+          }
+          .input_item_brand::placeholder{
+            color:gray;
+            font-size: 16px;
+            font-family: "Yu Gothic";
+            padding-left:10px;
+          }
+        }  
+      }
+      &__status{
+        clear: both;
+        .input_item_status{
+          display: block;
+          width:400px;
+          height: 40px;
+          margin-left:250px;
+          border-radius: 4px;
+          border-style: none;
+          border: solid 1px rgb(211, 211, 211);
+        }
+        .input_item_status::placeholder{
+          color:gray;
+          font-size: 16px;
+          font-family: "Yu Gothic";
+          padding-left:10px;
+        }
       }
     }
+
     .exhibit-delivery-field{
       width:700px;
       min-width: 500px;
       min-height: 371px;
-      background-color: honeydew;
+      padding-bottom:40px;
+      background-color: #fff;
+      border-bottom:solid 1px rgb(211, 211, 211);
+      &__gray-label{
+        float: left;
+        font-family: "Yu Gothic";
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: 40px;
+        margin-left: 50px;
+        width: 200px;
+        color: gray;
+      }
+      &__label{
+        float: left;
+        font-family: "Yu Gothic";
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: 40px;
+        margin-bottom: 5px;
+      }
+      &--required{
+        float: left;
+        font-family: "Yu Gothic";
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+        width:35px;
+        min-width: 20px;
+        color: white;
+        margin-top: 40px;
+        margin-left: 10px;
+        background-color: red;
+      }
+      &__delivery{
+        clear: both;
+        .input_item_delivery{
+          display: block;
+          width:400px;
+          height: 40px;
+          margin-left:250px;
+          border-radius: 4px;
+          border-style: none;
+          border: solid 1px rgb(211, 211, 211);
+        }
+        .input_item_delivery::placeholder{
+          color:gray;
+          font-size: 16px;
+          font-family: "Yu Gothic";
+          padding-left:10px;
+        }
+      }
+      .hidden-delivery-field{
+        display:none;
+        &__gray-label{
+          float: left;
+          font-family: "Yu Gothic";
+          font-size: 14px;
+          font-weight: bold;
+          margin-top: 40px;
+          margin-left: 50px;
+          width: 200px;
+          color: gray;
+        }
+        &__label{
+          float: left;
+          font-family: "Yu Gothic";
+          font-size: 14px;
+          font-weight: bold;
+          margin-top: 40px;
+          margin-bottom: 5px;
+        }
+        &--required{
+          float: left;
+          font-family: "Yu Gothic";
+          font-size: 12px;
+          font-weight: bold;
+          text-align: center;
+          width:35px;
+          min-width: 20px;
+          color: white;
+          margin-top: 40px;
+          margin-left: 10px;
+          background-color: red;
+        }
+        &__box{
+          clear: both;
+          .input_item_delivery_method{
+            display: block;
+            width:400px;
+            height: 40px;
+            margin-left:250px;
+            border-radius: 4px;
+            border-style: none;
+            border: solid 1px rgb(211, 211, 211);
+          }
+          .input_item_delivery_method::placeholder{
+            color:gray;
+            font-size: 16px;
+            font-family: "Yu Gothic";
+            padding-left:10px;
+          }
+        }  
+      }
     }
+
     .exhibit-price-field{
       width:700px;
       min-width: 500px;
       min-height: 299px;
-      background-color: peru;
-    }
+      background-color: #fff;
+      border-bottom:solid 1px rgb(211, 211, 211);
+      &__gray-label{
+        float: left;
+        font-family: "Yu Gothic";
+        font-size: 14px;
+        font-weight: bold;
+        width: 200px;
+        height:100px;
+        padding-top: 40px;
+        margin-left: 50px;
+        color: gray;
+        .exhibit-price-range{
+          font-size: 12px;
+          color: gray;
+        }
+      }
+      &__label{
+        float: left;
+        font-family: "Yu Gothic";
+        font-size: 14px;
+        font-weight: bold;
+        width:35px;      
+        margin-top: 60px;
+        
+      }
+      &--required{
+        float: left;
+        font-family: "Yu Gothic";
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+        width:35px;
+        min-width: 20px;
+        color: white;
+        margin-top: 60px;
+        background-color: red;
+      }
+      &__mark{
+        float: left;
+        width:20px;
+        padding-left:160px;
+        margin-top: 60px;
+      }
+      &__box{
+        float: right;
+        .input_item_price{
+          width:150px;
+          height: 40px;
+          margin-top: 50px;
+          margin-right: 45px;
+          border-radius: 4px;
+          border-style: none;
+          border: solid 1px rgb(211, 211, 211);
+        }
+        .input_item_price::placeholder{
+          color:gray;
+          font-size: 16px;
+          font-family: "Yu Gothic";
+          padding-left:10px;
+        }
+      }
+      &__fee{
+        clear: both;
+        width:400px;
+        height:60px;
+        margin-left: 250px;
+        border-top:solid 1px rgb(211, 211, 211);
+        border-bottom:solid 1px rgb(211, 211, 211);
+        .exhibit-fee-label{
+          float: left;
+          font-size: 14px;
+          font-family: "Yu Gothic";
+          line-height:60px;
+          
+        }
+        .exhibit-fee-result{
+          float: right;
+          font-size: 14px;
+          font-family: "Yu Gothic";
+          line-height:60px;
+        }
+      }
+      &__profit{
+        width:400px;
+        height:60px;
+        margin-left: 250px;
+        .exhibit-profit-label{
+          float: left;
+          font-size: 16px;
+          font-family: "Yu Gothic";
+          font-weight: bold;
+          line-height:60px;
+        }
+        .exhibit-profit-result{
+          float: right;
+          font-size: 18px;
+          font-family: "Yu Gothic";
+          font-weight: bold;
+          line-height:60px;
+        }
+      }
+    }  
+
     .exhibit-button-field{
       width:700px;
       min-width: 500px;
       min-height: 329px;
-      background-color: steelblue;
+      background-color: #fff;
+      .button-text-area{
+        width: 620px;
+        margin:0 auto;
+        padding-top: 50px;
+        font-size: 14px;
+        &--one{
+          .link-ban{
+            text-decoration: none;
+            color: blue;
+          }
+        }
+        &--two{
+          .link-ban{
+            text-decoration: none;
+            color: blue;
+          }
+        }
+        &--three{
+          .link-ban{
+            text-decoration: none;
+            color: blue;
+          }
+        }
+      }
+      .button-submit-area{
+        &__do{
+          width: 620px;
+          margin: 30px auto 20px auto;
+          .exhibit-submit-btn{
+            font-size: 14px;
+            border: none;
+            width: 620px;
+            height: 50px;           
+            color: #fff;
+            background-color: red;
+          }
+        }
+        &__back{
+          width: 280px;
+          height: 50px;
+          background-color: gray;
+          text-align: center;
+          margin: 0 auto;
+          .exhibit-back-btn{
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            line-height: 50px;
+          }
+        }
+      }
     }
     .exhibit-foot-field{
       width:700px;
       min-width: 500px;
       min-height: 220px;
-      background-color: tan;
+      .footer-menu{
+        height: 50px;
+        padding-top:50px;
+        &__policy{
+          float: left;
+          font-size: 12px;
+          margin-left: 160px;
+          .link-foot{
+            text-decoration: none;
+            color: black;
+          }
+        }
+        &__terms{
+          float: left;
+          font-size: 12px;
+          margin-left: 20px;
+          .link-foot{
+            text-decoration: none;
+            color: black;
+          }
+        }
+        &__notation{
+          float: left;
+          font-size: 12px;
+          margin-left: 20px;
+          .link-foot{
+            text-decoration: none;
+            color: black;
+          }
+        }
+      }
+      .footer-logo{
+        margin: 0 auto;
+        width: 90px;
+        height: 90px;
+      }
+      .footer-copy{
+        text-align: center;
+        font-size: 10px;
+      }
     }
   }
 }
