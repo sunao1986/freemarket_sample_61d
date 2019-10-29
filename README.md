@@ -45,11 +45,8 @@
 - has_one :shipping
 - has_many :items, dependent: :destroy
 - has_many :likes
-- has_many :items, through: :likes
 - has_many :comments
-- has_many :items, through: :comments
 - has_many :reviews
-- has_many :items, through: :reviews
 
 ### memo
 出品したタイミングでitemsテーブルのカラムにseller_idにcurrent_userのidを保存すれば出品者idとして使えると考える。
@@ -104,11 +101,8 @@
 ### Association
 - has_many :images,dependent:destroy
 - has_many :likes
-- has_many :users, through: :likes
 - has_many :comments
-- has_many :users, through: :comments
 - has_many :reviews
-- has_many :users, through: :reviews
 - belongs_to :user
 - belongs_to :category
 - belongs_to :size
