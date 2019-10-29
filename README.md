@@ -73,9 +73,10 @@
 |adress|string|null: false|
 |building|string|
 |phone_number|string|
+|user_id|integer|null: false, foreign_key: true|
 
 ### Association
-- has_one :user
+- belongs_to: user
 
 
 ## itemsテーブル
