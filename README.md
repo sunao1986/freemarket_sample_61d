@@ -18,7 +18,7 @@
 - 評価機能実装
 
 ## ER図
-[![Image from Gyazo](https://i.gyazo.com/d0b99426945fe82aa1455ba207987198.png)](https://gyazo.com/d0b99426945fe82aa1455ba207987198)
+[![Image from Gyazo](https://i.gyazo.com/281bee552d0e49afd17326fc61f91f23.png)](https://gyazo.com/281bee552d0e49afd17326fc61f91f23)
 
 ## usersテーブル
 
@@ -37,7 +37,7 @@
 |postal_code|string|
 |prefectures|string|
 |city|string|
-|adress|string|
+|address|string|
 |building|string|
 
 ### Association
@@ -46,8 +46,8 @@
 - has_many :items, dependent: :destroy
 - has_many :likes
 - has_many :items, through: :likes
-- has_many :coments
-- has_many :items, through: :coments
+- has_many :comments
+- has_many :items, through: :comments
 - has_many :reviews
 - has_many :items, through: :reviews
 
@@ -105,8 +105,8 @@
 - has_many :images,dependent:destroy
 - has_many :likes
 - has_many :users, through: :likes
-- has_many :coments
-- has_many :users, through: :coments
+- has_many :comments
+- has_many :users, through: :comments
 - has_many :reviews
 - has_many :users, through: :reviews
 - belongs_to :user
@@ -135,11 +135,11 @@ if params[:condition].present?とかでタイミングを操作してみる。
 - belongs_to :item
 
 
-## comentsテーブル
+## commentsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|coment|text|null: false|
+|comment|text|null: false|
 |item_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 
