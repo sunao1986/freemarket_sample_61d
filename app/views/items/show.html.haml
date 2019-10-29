@@ -1,0 +1,208 @@
+.container
+  .item-container
+    .item-container__item-name
+      %h1 白Tシャツ
+    .item-container__item-main
+      .item-container__item-main__photo
+        .item-container__item-main__photo__act
+          %img{src:"/assets/alp.jpg", width:"300px", height:"300px"}
+        .item-container__item-main__photo__inact 
+          %p owl carousel rails gem使う
+      .item-container__item-main__detail
+        %table
+          %tr
+            %th 出品者
+            %td
+              %a.seller{href:"https://www.mercari.com/jp/"}メルカリ
+              .rate-icon
+                %i.fa.fa-cog 1
+                %i.fa.fa-cog 1
+                %i.fa.fa-cog 1
+          %tr
+            %th カテゴリー
+            %td
+              %a.first{href:"https://www.mercari.com/jp/"}レディース
+              %br
+              %a.second{href:"https://www.mercari.com/jp/"}トップス
+              %br
+              %a.third{href:"https://www.mercari.com/jp/"}>Tシャツ/カットソー(半袖/袖なし)
+          %tr
+            %th ブランド
+            %td
+              %a.brand{href:"https://www.mercari.com/jp/"}ジーユー
+          %tr
+            %th 商品のサイズ
+            %td L
+          %tr
+            %th 商品の状態
+            %td 新品未使用
+          %tr
+            %th 配送料の負担
+            %td 送料込み(出品者負担)
+          %tr
+            %th 配送の方法
+            %td ゆうゆうメルカリ便
+          %tr
+            %th 配送元地域
+            %td
+              %a.area{href:"https://www.mercari.com/jp/"}北海道
+          %tr
+            %th 配送日の目安
+            %td 4~7日で発送
+    .item-container__item-price
+      .item-container__item-price__money ¥500
+      .item-container__item-price__tax (税込)
+      .item-container__item-price__shipping-fee 送料込み
+    .item-container__item-buybtn
+      %a.buybtn{href:"https://www.mercari.com/jp/"}購入画面に進む
+    .item-container__item-description
+      .item-container__item-description__inner 新品未使用です！値下げ交渉対応します！
+    .item-container__item-btn
+      .item-container__item-btn__like
+        %button いいね!
+  .messages
+    .messages__content
+      %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+    .messages__text
+      %textarea{cols:"34", name:"text", rows:"4"}
+    .messages__commentbtn
+      %a.commentbtn{href:"https://www.mercari.com/jp/"}コメントする
+  .media-box
+    .icons
+      %a.icon-facebook{href:"https://www.mercari.com/jp/"}
+        %i.fa.fa-cog
+      %a.icon-twitter{href:"https://www.mercari.com/jp/"}
+        %i.fa.fa-cog
+      %a.icon-line{href:"https://www.mercari.com/jp/"}
+        %i.fa.fa-cog
+      %a.icon-pinterest{href:"https://www.mercari.com/jp/"}
+        %i.fa.fa-cog
+  .recommended
+    .recommended__seller-item
+      .recommended__seller-item__head
+        %a.seller-item{href:"https://www.mercari.com/jp/"}出品者のその他の出品
+      .recommended__seller-item__body
+        .seller-item-box1
+          .seller-item-box1__photo
+            %a{href:"https://www.mercari.com/jp/"}
+              %img{src:"/assets/alp.jpg", width:"220px", height:"220px"}
+            .seller-item-box1__info
+              .seller-item-box1__info__name バッグ
+              .seller-item-box1__info__num
+                .seller-item-box1__info__name__price ¥500円
+                .seller-item-box1__info__name__like
+                  %i.fa.fa-cog 1
+        .seller-item-box2
+          .seller-item-box2__photo
+            %a{href:"https://www.mercari.com/jp/"}
+              %img{src:"/assets/alp.jpg", width:"220px", height:"220px"}
+            .seller-item-box2__info
+              .seller-item-box2__info__name バッグ
+              .seller-item-box2__info__num
+                .seller-item-box2__info__name__price ¥500円
+                .seller-item-box2__info__name__like
+                  %i.fa.fa-cog 1
+        .seller-item-box3
+          .seller-item-box3__photo
+            %a{href:"https://www.mercari.com/jp/"}
+              %img{src:"/assets/alp.jpg", width:"220px", height:"220px"}
+            .seller-item-box3__info
+              .seller-item-box3__info__name バッグ
+              .seller-item-box3__info__num
+                .seller-item-box3__info__name__price ¥500円
+                .seller-item-box3__info__name__like
+                  %i.fa.fa-cog 1
+        .seller-item-box4
+          .seller-item-box4__photo
+            %a{href:"https://www.mercari.com/jp/"}
+              %img{src:"/assets/alp.jpg", width:"220px", height:"220px"}
+            .seller-item-box4__info
+              .seller-item-box4__info__name バッグ
+              .seller-item-box4__info__num
+                .seller-item-box4__info__name__price ¥500円
+                .seller-item-box4__info__name__like
+                  %i.fa.fa-cog 1
+        .seller-item-box5
+          .seller-item-box5__photo
+            %a{href:"https://www.mercari.com/jp/"}
+              %img{src:"/assets/alp.jpg", width:"220px", height:"220px"}
+            .seller-item-box5__info
+              .seller-item-box5__info__name バッグ
+              .seller-item-box5__info__num
+                .seller-item-box5__info__name__price ¥500円
+                .seller-item-box5__info__name__like
+                  %i.fa.fa-cog 1
+        .seller-item-box6
+          .seller-item-box6__photo
+            %a{href:"https://www.mercari.com/jp/"}
+              %img{src:"/assets/alp.jpg", width:"220px", height:"220px"}
+            .seller-item-box6__info
+              .seller-item-box6__info__name バッグ
+              .seller-item-box6__info__num
+                .seller-item-box6__info__name__price ¥500円
+                .seller-item-box6__info__name__like
+                  %i.fa.fa-cog 1
+    .recommended__other-item
+      .recommended__other-item__head
+        %a.other-item{href:"https://www.mercari.com/jp/"}カテゴリーのその他の出品
+      .recommended__other-item__body
+        .other-item-box1
+          .other-item-box1__photo
+            %a{href:"https://www.mercari.com/jp/"}
+              %img{src:"/assets/alp.jpg", width:"220px", height:"220px"}
+            .other-item-box1__info
+              .other-item-box1__info__name バッグ
+              .other-item-box1__info__num
+                .other-item-box1__info__name__price ¥500円
+                .other-item-box1__info__name__like
+                  %i.fa.fa-cog 1
+        .other-item-box2
+          .other-item-box2__photo
+            %a{href:"https://www.mercari.com/jp/"}
+              %img{src:"/assets/alp.jpg", width:"220px", height:"220px"}
+            .other-item-box2__info
+              .other-item-box2__info__name バッグ
+              .other-item-box2__info__num
+                .other-item-box2__info__name__price ¥500円
+                .other-item-box2__info__name__like
+                  %i.fa.fa-cog 1
+        .other-item-box3
+          .other-item-box3__photo
+            %a{href:"https://www.mercari.com/jp/"}
+              %img{src:"/assets/alp.jpg", width:"220px", height:"220px"}
+            .other-item-box3__info
+              .other-item-box3__info__name バッグ
+              .other-item-box3__info__num
+                .other-item-box3__info__name__price ¥500円
+                .other-item-box3__info__name__like
+                  %i.fa.fa-cog 1
+        .other-item-box4
+          .other-item-box4__photo
+            %a{href:"https://www.mercari.com/jp/"}
+              %img{src:"/assets/alp.jpg", width:"220px", height:"220px"}
+            .other-item-box4__info
+              .other-item-box4__info__name バッグ
+              .other-item-box4__info__num
+                .other-item-box4__info__name__price ¥500円
+                .other-item-box4__info__name__like
+                  %i.fa.fa-cog 1
+        .other-item-box5
+          .other-item-box5__photo
+            %a{href:"https://www.mercari.com/jp/"}
+              %img{src:"/assets/alp.jpg", width:"220px", height:"220px"}
+            .other-item-box5__info
+              .other-item-box5__info__name バッグ
+              .other-item-box5__info__num
+                .other-item-box5__info__name__price ¥500円
+                .other-item-box5__info__name__like
+                  %i.fa.fa-cog 1
+        .other-item-box6
+          .other-item-box6__photo
+            %a{href:"https://www.mercari.com/jp/"}
+              %img{src:"/assets/alp.jpg", width:"220px", height:"220px"}
+            .other-item-box6__info
+              .other-item-box6__info__name バッグ
+              .other-item-box6__info__num
+                .other-item-box6__info__name__price ¥500円
+                .other-item-box6__info__name__like
+                  %i.fa.fa-cog 1
