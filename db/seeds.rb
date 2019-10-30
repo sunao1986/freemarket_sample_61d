@@ -5,3 +5,28 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# coding: utf-8
+
+User.create!(
+  id: 1,
+  name: "テスト",
+  email: "a@a",
+  password: "aaaaaa",
+  nickname: "テスト",
+)
+
+Item.create!(
+  id: 1,
+  name: "シャツ",
+  discription: "新品未使用です。",
+  status: "新品",
+  delivery_cost: 500,
+  delivery_method: "ゆうゆうパック",
+  delivery_area: "北海道",
+  delivery_days: "1~2日で発送",
+  price: 500,
+  likes_count: 1,
+  buyer_id: 1,
+  condition: "1",
+)
