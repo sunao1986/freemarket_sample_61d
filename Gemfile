@@ -68,4 +68,5 @@ gem "font-awesome-rails"
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'active_hash'
+gem 'owlcarousel-rails'
 gem 'fog-aws'
