@@ -3,36 +3,36 @@
   .header
     .header__index
       .header__index__top
-        .logo__box
+        .logo-box
           -# = link_to root_path do
           -# %img{scr: "merucari.jp", width: "134px", height: "36px", alt: "merucari"}
           -#   %a{href:"#"}
           = link_to "#" do
             = image_tag 'mercari-logo.jpg', alt: 'mercari', height: '38px', width: '135px'
-        .word__search
+        .word-search
           %form
-            %input.word__search__message{type: "search", value:"", placeholder:"何かお探しですか？"}
+            %input.word-search__message{type: "search", value:"", placeholder:"何かお探しですか？"}
             -# = link_to items_path do
-            %button.word__search__btn{title: "検索", type: "submit"}
+            %button.word-search__btn{title: "検索", type: "submit"}
             = link_to "#" do
-              = fa_icon 'fa-search', class: 'search__icon'
+              = fa_icon 'fa-search', class: 'search-icon'
 
       .header__index__bottom
-        %nav.genre__search
-          %ul.genre__search__nav
-            %li.category__brand
-              %h2.category__brand__btn
+        %nav.genre-search
+          %ul.genre-search__nav
+            %li.category-brand
+              %h2.category-brand__btn
                 -# = link_to items path do
-                = link_to "#", class: "category__brand__btn__link" do
-                  = fa_icon 'fa-list-alt', class: 'category__brand__btn__link__icon'
+                = link_to "#", class: "category-brand__btn__link" do
+                  = fa_icon 'fa-list-alt', class: 'category-brand__btn__link__icon'
                   %span カテゴリーから探す
-            %li.category__brand
-              %h2.category__brand__btn
+            %li.category-brand
+              %h2.category-brand__btn
                 -# = link_to items path do
-                = link_to "#", class: "category__brand__btn__link" do
-                  = fa_icon 'fa-tag', class: 'category__brand__btn__link__icon'
+                = link_to "#", class: "category-brand__btn__link" do
+                  = fa_icon 'fa-tag', class: 'category-brand__btn__link__icon'
                   %span ブランドから探す
-        .sign__box
+        .sign-box
           -# %ul.sign__box__acount
           -#   - if user_signed_in? && current_user
           -#     %li.like-list
@@ -53,63 +53,79 @@
           -# .sign__in
           -#   = link_to "ログイン", registration_users_path
           -#   %end
-          %li.sign__up
+          %li.sign-up
             -# = link_to "新規会員登録", new_user_session_path
-            = link_to "#", class: "sign__up__link" do
+            = link_to "#", class: "sign-up__link" do
               新規会員登録
-          %li.sign__in
+          %li.sign-in
             -# = link_to "ログイン", registration_users_path
-            = link_to "#", class: "sign__in__link" do
+            = link_to "#", class: "sign-in__link" do
               ログイン
 
 
 
   .body
     .body__contents
-      .slide__contents
+      .slide-contents
         = image_tag 'camp.png', alt: 'camp', height: '', width: '', class: 'camp'
-      .popular__category
-        %h2.title
+      .popular-category-brand
+        %h2.popular-title
           人気のカテゴリー
-        .popular__category__index
-          %ul
-            %li
-            %li
-            %li
-            %li
-      .item__category
-      .popular__brand
-      .item__brand
+        .popular-category-brand__index
+          %ul.popular-category-brand__index__box
+            %li.category-brand-list
+              = link_to "レディース", root_path, class: "category-brand-list__link"
+            %li.category-brand-list
+              = link_to "メンズ", root_path, class: "category-brand-list__link"
+            %li.category-brand-list
+              = link_to "家電・スマホ・カメラ", root_path, class: "category-brand-list__link"
+            %li.category-brand-list
+              = link_to "おもちゃ・ホビー・グッズ", root_path, class: "category-brand-list__link"
+      .item-category-brand
+      .popular-category-brand
+        %h2.popular-title
+          人気のブランド
+        .popular-category-brand__index
+          %ul.popular-category-brand__index__box
+            %li.category-brand-list
+              = link_to "シャネル", root_path, class: "category-brand-list__link"
+            %li.category-brand-list
+              = link_to "ルイヴィトン", root_path, class: "category-brand-list__link"
+            %li.category-brand-list
+              = link_to "シュプリーム", root_path, class: "category-brand-list__link"
+            %li.category-brand-list
+              = link_to "ナイキ", root_path, class: "category-brand-list__link"
+      .popular-category-brand
 
 
 
   .sell
     -# = link_to new_products_path ,class: "sell__link" do
     = link_to "#" ,class: "sell__link" do
-      .sell__text
+      .sell-text
         出品
       = fa_icon "fa-camera"
 
 
 
   .aside
-    .aside__wrap
-      .aside__wrap__body
-        .aside__wrap__body__left
-          %h2 スマホでかんたんフリマアプリ
-          %p 今すぐ無料ダウンロード！
-          .appli__icon
-            %figure
-              = image_tag 'mercari.png', alt: 'mercari', height: '68px', width: '68px', class: 'mercari-box'
-            %ul
-              %li
-                = link_to "#" do
-                  = image_tag 'app-store.jpeg', alt: 'app-store', height: '40px', width: '144px', class: 'app-store'
-              %li
-                = link_to "#" do
-                  = image_tag 'google-play.jpeg', alt: 'google-play', height: '40', width: '144px', class: 'google-play'
-        %figure.aside__wrap__body__right
-          = image_tag 'smart-phone.png', alt: 'smart-phone', height: '260px', width: '300px', class: 'smart-phone'
+    .aside__body
+      .aside__body__left
+        %h2
+          スマホでかんたんフリマアプリ
+        %p 今すぐ無料ダウンロード！
+        .appli__icon
+          %figure
+            = image_tag 'mercari.png', alt: 'mercari', height: '68px', width: '68px', class: 'mercari-box'
+          %ul
+            %li
+              = link_to "#" do
+                = image_tag 'app-store.jpeg', alt: 'app-store', height: '40px', width: '144px', class: 'app-store'
+            %li
+              = link_to "#" do
+                = image_tag 'google-play.jpeg', alt: 'google-play', height: '40', width: '144px', class: 'google-play'
+      %figure.aside__wrap__body__right
+        = image_tag 'smart-phone.png', alt: 'smart-phone', height: '260px', width: '300px', class: 'smart-phone'
 
 
 

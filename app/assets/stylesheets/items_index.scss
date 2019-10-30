@@ -14,14 +14,14 @@
       justify-content: space-between;
       // -webkit-box-pack: justify;
 
-      .logo__box {
+      .logo-box {
         -webkit-box-align: center;
         margin-right: 45px;
         display: flex;
         align-items: center;
       }
 
-      .word__search {
+      .word-search {
         position: relative;
         width: 100%;
         &__message {
@@ -50,7 +50,7 @@
           width: 40px;
           border-style: none;
           border-radius: 0px 4px 4px 0px;
-          .search__icon {
+          .search-icon {
             // after
           }
         }
@@ -63,9 +63,9 @@
       margin-top: 8px;
       font-size: 14px;
 
-      .genre__search {
+      .genre-search {
         position: relative;
-        .genre__search__nav {
+        &__nav {
           position: absolute;
           list-style: none;
           display: flex;
@@ -74,7 +74,7 @@
           right: 0px;
           top: -10px;
           margin: auto;
-          .category__brand {
+          .category-brand {
             &__btn {
               padding: 0px 10px;
               cursor: pointer;
@@ -101,11 +101,11 @@
         }
       }
 
-      .sign__box {
+      .sign-box {
         display: flex;
         justify-content: space-between;
         list-style: none;
-        .sign__up {
+        .sign-up {
           text-align: center;
           &__link {
             background-color: rgb(234, 53, 45);
@@ -123,7 +123,7 @@
             line-height: 14px;
           }
         }
-        .sign__in {
+        .sign-in {
           text-align: center;
           margin-left: 11px;
           &__link {
@@ -157,7 +157,7 @@
   max-width: 1020ox;
   &__contents {
     position: relative;
-    .slide__contents {
+    .slide-contents {
       height: 290px;
       text-align: center;
       .camp {
@@ -169,9 +169,9 @@
 
     }
   }
-  .popular__category {
+  .popular-category-brand {
     padding: 56px 0px 30px;
-    h2.title {
+    h2.popular-title {
       margin-bottom: 16px;
       text-align: center;
     }
@@ -179,7 +179,24 @@
       text-align: center;
       white-space: nowrap;
       overflow-x: auto;
-
+      &__box {
+        display: block;
+        text-align: center;
+        width: 100%;
+        margin: -10px 0px 0px -10px;
+        .category-brand-list {
+          margin: 10px 0px 0px 10px;
+          &__link {
+            background-color: rgb(239, 239, 239);
+            cursor: pointer;
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 15px;
+            padding: 8px 16px;
+          }
+        }
+      }
     }
   }
 }
@@ -190,8 +207,21 @@
 }
 
 .aside {
-
-
+  // background: ;
+  background-position: center;
+  color: white;
+  &__body {
+    width: 750px;
+    height: 260px;
+    margin: 0px auto;
+    justify-content: space-between;
+    position: relative;
+    &__left {
+      position: absolute;
+      top: 50%;
+      left: 16px;
+    }
+  }
 }
 
 
