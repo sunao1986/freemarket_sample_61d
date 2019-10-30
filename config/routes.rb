@@ -28,5 +28,4 @@ Rails.application.routes.draw do
   #itemsとネストするかもしれない
   resources :brands, only: :index
   resources :categories, only: :index
-  root 'items#buy'
 end
