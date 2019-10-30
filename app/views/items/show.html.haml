@@ -1,7 +1,7 @@
 .container
   .item-container
     .item-container__item-name
-      %h1 白Tシャツ
+      = @item.name
     .item-container__item-main
       .item-container__item-main__photo
         .item-container__item-main__photo__act
@@ -13,11 +13,12 @@
           %tr
             %th 出品者
             %td
-              %a.seller{href:"https://www.mercari.com/jp/"}メルカリ
+              %a.seller{href:"https://www.mercari.com/jp/"}
+                = @user.nickname
               .rate-icon
-                %i.fa.fa-cog 1
-                %i.fa.fa-cog 1
-                %i.fa.fa-cog 1
+                %i.fa.fa-heart 1
+                %i.fa.fa-heart 1
+                %i.fa.fa-heart 1
           %tr
             %th カテゴリー
             %td
@@ -35,28 +36,30 @@
             %td L
           %tr
             %th 商品の状態
-            %td 新品未使用
+            %td= @item.status
           %tr
             %th 配送料の負担
-            %td 送料込み(出品者負担)
+            %td= "#{@item.delivery_cost}円"
           %tr
             %th 配送の方法
-            %td ゆうゆうメルカリ便
+            %td= @item.delivery_method
           %tr
             %th 配送元地域
             %td
-              %a.area{href:"https://www.mercari.com/jp/"}北海道
+              %a.area{href:"https://www.mercari.com/jp/"}
+                = @item.delivery_area
           %tr
             %th 配送日の目安
-            %td 4~7日で発送
+            %td= @item.delivery_days
     .item-container__item-price
-      .item-container__item-price__money ¥500
+      .item-container__item-price__money
+        = "¥#{@item.price}"
       .item-container__item-price__tax (税込)
       .item-container__item-price__shipping-fee 送料込み
-    .item-container__item-buybtn
-      %a.buybtn{href:"https://www.mercari.com/jp/"}購入画面に進む
+    %a.buybtn{href:"https://www.mercari.com/jp/"}購入画面に進む
     .item-container__item-description
-      .item-container__item-description__inner 新品未使用です！値下げ交渉対応します！
+      .item-container__item-description__inner
+        = @item.discription
     .item-container__item-btn
       .item-container__item-btn__like
         %button いいね!
