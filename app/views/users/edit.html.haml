@@ -1,111 +1,114 @@
-.ide-container
-  .identification-head
-    %h1 本人情報の登録
-  .identification-container
-    .identification-container__note
-      %p お客様の本人情報をご登録ください。
-    .identification-container__name
-      .identification-container__name__label
-        %p お名前
-      .identification-container__name__box
-        %p 橋本 遥香
-    .identification-container__namekana
-      .identification-container__namekana__label
-        %p お名前カナ
-      .identification-container__namekana__box
-        %p ハシモト ハルカ
-    .identification-container__birthday
-      .identification-container__birthday__label
-        %p 生年月日
-      .identification-container__birthday__box
-        %p 1994/03/06
-    .identification-container__postnum
-      .identification-container__postnum__label
-        .identification-container__postnum__label__info
-          %p 郵便番号
-        .identification-container__postnum__label__optional
-          %p 任意
-      .identification-container__postnum__box
-        %input{type:"text", placeholder:"例）1234567" ,class:"input-default"}
-    .identification-container__prefecture
-      .identification-container__prefecture__label
-        .identification-container__prefecture__label__info
-          %p 都道府県
-        .identification-container__prefecture__label__optional
-          %p 任意
-      .identification-container__prefecture__box
-        %select{type:"text", class:"input-default"}
-          %option{selected: "selected", value: ""} --
-          %option{value: "北海道"} 北海道
-          %option{value: "青森県"} 青森県
-          %option{value: "岩手県"} 岩手県
-          %option{value: "宮城県"} 宮城県
-          %option{value: "秋田県"} 秋田県
-          %option{value: "山形県"} 山形県
-          %option{value: "福島県"} 福島県
-          %option{value: "茨城県"} 茨城県
-          %option{value: "栃木県"} 栃木県
-          %option{value: "群馬県"} 群馬県
-          %option{value: "埼玉県"} 埼玉県
-          %option{value: "千葉県"} 千葉県
-          %option{value: "東京都"} 東京都
-          %option{value: "神奈川県"} 神奈川県
-          %option{value: "新潟県"} 新潟県
-          %option{value: "富山県"} 富山県
-          %option{value: "石川県"} 石川県
-          %option{value: "福井県"} 福井県
-          %option{value: "山梨県"} 山梨県
-          %option{value: "長野県"} 長野県
-          %option{value: "岐阜県"} 岐阜県
-          %option{value: "静岡県"} 静岡県
-          %option{value: "愛知県"} 愛知県
-          %option{value: "三重県"} 三重県
-          %option{value: "滋賀県"} 滋賀県
-          %option{value: "京都府"} 京都府
-          %option{value: "大阪府"} 大阪府
-          %option{value: "兵庫県"} 兵庫県
-          %option{value: "奈良県"} 奈良県
-          %option{value: "和歌山県"} 和歌山県
-          %option{value: "鳥取県"} 鳥取県
-          %option{value: "島根県"} 島根県
-          %option{value: "岡山県"} 岡山県
-          %option{value: "広島県"} 広島県
-          %option{value: "山口県"} 山口県
-          %option{value: "徳島県"} 徳島県
-          %option{value: "香川県"} 香川県
-          %option{value: "愛媛県"} 愛媛県
-          %option{value: "高知県"} 高知県
-          %option{value: "福岡県"} 福岡県
-          %option{value: "佐賀県"} 佐賀県
-          %option{value: "長崎県"} 長崎県
-          %option{value: "熊本県"} 熊本県
-          %option{value: "大分県"} 大分県
-          %option{value: "宮崎県"} 宮崎県
-          %option{value: "鹿児島県"} 鹿児島県
-          %option{value: "沖縄県"} 沖縄県
-    .identification-container__city
-      .identification-container__city__label
-        .identification-container__city__label__info
-          %p 市区町村
-        .identification-container__city__label__optional
-          %p 任意
-      .identification-container__city__box
-        %input{type:"text", placeholder:"例）横浜市緑区" ,class:"input-default"}
-    .identification-container__address
-      .identification-container__address__label
-        .identification-container__address__label__info
-          %p 番地
-        .identification-container__address__label__optional
-          %p 任意
-      .identification-container__address__box
-        %input{type:"text", placeholder:"例）青山1-1-1" ,class:"input-default"}
-    .identification-container__building
-      .identification-container__building__label
-        .identification-container__building__label__info
-          %p 建物名
-        .identification-container__building__label__optional
-          %p 任意
-      .identification-container__building__box
-        %input{type:"text", placeholder:"例）柳ビル103" ,class:"input-default"}
-    .identification-container__submitbtn
-      %a.submitbtn{href:"https://www.mercari.com/jp/"}登録する
+.mypage-container
+  .ide-container
+    .identification-head
+      %h1 本人情報の登録
+    .identification-container
+      .identification-container__note
+        %p お客様の本人情報をご登録ください。
+      .identification-container__name
+        .identification-container__name__label
+          %p お名前
+        .identification-container__name__box
+          %p 橋本 遥香
+      .identification-container__namekana
+        .identification-container__namekana__label
+          %p お名前カナ
+        .identification-container__namekana__box
+          %p ハシモト ハルカ
+      .identification-container__birthday
+        .identification-container__birthday__label
+          %p 生年月日
+        .identification-container__birthday__box
+          %p 1994/03/06
+      .identification-container__postnum
+        .identification-container__postnum__label
+          .identification-container__postnum__label__info
+            %p 郵便番号
+          .identification-container__postnum__label__optional
+            %p 任意
+        .identification-container__postnum__box
+          %input{type:"text", placeholder:"例）1234567" ,class:"input-default"}
+      .identification-container__prefecture
+        .identification-container__prefecture__label
+          .identification-container__prefecture__label__info
+            %p 都道府県
+          .identification-container__prefecture__label__optional
+            %p 任意
+        .identification-container__prefecture__box
+          %select{type:"text", class:"input-default"}
+            %option{selected: "selected", value: ""} --
+            %option{value: "北海道"} 北海道
+            %option{value: "青森県"} 青森県
+            %option{value: "岩手県"} 岩手県
+            %option{value: "宮城県"} 宮城県
+            %option{value: "秋田県"} 秋田県
+            %option{value: "山形県"} 山形県
+            %option{value: "福島県"} 福島県
+            %option{value: "茨城県"} 茨城県
+            %option{value: "栃木県"} 栃木県
+            %option{value: "群馬県"} 群馬県
+            %option{value: "埼玉県"} 埼玉県
+            %option{value: "千葉県"} 千葉県
+            %option{value: "東京都"} 東京都
+            %option{value: "神奈川県"} 神奈川県
+            %option{value: "新潟県"} 新潟県
+            %option{value: "富山県"} 富山県
+            %option{value: "石川県"} 石川県
+            %option{value: "福井県"} 福井県
+            %option{value: "山梨県"} 山梨県
+            %option{value: "長野県"} 長野県
+            %option{value: "岐阜県"} 岐阜県
+            %option{value: "静岡県"} 静岡県
+            %option{value: "愛知県"} 愛知県
+            %option{value: "三重県"} 三重県
+            %option{value: "滋賀県"} 滋賀県
+            %option{value: "京都府"} 京都府
+            %option{value: "大阪府"} 大阪府
+            %option{value: "兵庫県"} 兵庫県
+            %option{value: "奈良県"} 奈良県
+            %option{value: "和歌山県"} 和歌山県
+            %option{value: "鳥取県"} 鳥取県
+            %option{value: "島根県"} 島根県
+            %option{value: "岡山県"} 岡山県
+            %option{value: "広島県"} 広島県
+            %option{value: "山口県"} 山口県
+            %option{value: "徳島県"} 徳島県
+            %option{value: "香川県"} 香川県
+            %option{value: "愛媛県"} 愛媛県
+            %option{value: "高知県"} 高知県
+            %option{value: "福岡県"} 福岡県
+            %option{value: "佐賀県"} 佐賀県
+            %option{value: "長崎県"} 長崎県
+            %option{value: "熊本県"} 熊本県
+            %option{value: "大分県"} 大分県
+            %option{value: "宮崎県"} 宮崎県
+            %option{value: "鹿児島県"} 鹿児島県
+            %option{value: "沖縄県"} 沖縄県
+      .identification-container__city
+        .identification-container__city__label
+          .identification-container__city__label__info
+            %p 市区町村
+          .identification-container__city__label__optional
+            %p 任意
+        .identification-container__city__box
+          %input{type:"text", placeholder:"例）横浜市緑区" ,class:"input-default"}
+      .identification-container__address
+        .identification-container__address__label
+          .identification-container__address__label__info
+            %p 番地
+          .identification-container__address__label__optional
+            %p 任意
+        .identification-container__address__box
+          %input{type:"text", placeholder:"例）青山1-1-1" ,class:"input-default"}
+      .identification-container__building
+        .identification-container__building__label
+          .identification-container__building__label__info
+            %p 建物名
+          .identification-container__building__label__optional
+            %p 任意
+        .identification-container__building__box
+          %input{type:"text", placeholder:"例）柳ビル103" ,class:"input-default"}
+      .identification-container__submitbtn
+        %a.submitbtn{href:"https://www.mercari.com/jp/"}登録する
+
+  = render "shared/sidebar"

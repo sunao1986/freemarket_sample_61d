@@ -9,19 +9,19 @@ body {
 }
 
 @media screen and (min-width: 1068px) {
-  .logout-container {
+  .mypage-container {
     width: 1020px;
     margin: 124px auto;
-    &__mypage__main {
+    .logout-container {
       width: 700px;
       text-align: center;
       font-size: 12px;
       color: #333;
       background-color: #FFFFFF;
       float: right;
-      &__box {
+      .logout {
         padding: 64px;
-        .logout {
+        .logout-box {
           height: 50px;
           width: 320px;
           margin:  0 auto;
@@ -35,33 +35,6 @@ body {
             color: white;
             text-decoration: none;
           }
-        }
-      }
-    }
-    &__mypage__sidebar {
-      width: 280px;
-      float: left;
-      &__box {
-        .side-list {
-          display: block;
-          padding: 16px;
-          margin-bottom: 2px;
-          background: #fff;
-          font-size: 14px;
-          color: #333;
-          text-decoration: none;
-        }
-        .side-list:hover {
-          background: #f0efef;
-        }
-        .setting {
-          display: block;
-          padding: 40px 0px 0px 0px;
-          margin-bottom: 2px;
-          font-weight: 600;
-          font-size: 16px;
-          color: #333;
-          text-decoration: none;
         }
       }
     }
@@ -69,21 +42,21 @@ body {
 }
 
 @media screen and (max-width: 1068px) {
-  .logout-container {
+  .mypage-container {
     height: 100%;
     width: 700px;
     margin: 40px auto 0;
     display: block;
-    &__mypage__main {
+    .logout-container {
       width: 700px;
       text-align: center;
       font-size: 12px;
       color: #333;
       background-color: #FFFFFF;
-      &__box {
+      .logout {
         padding: 64px;
         margin: 124px 0px 0px 0px;
-        .logout {
+        .logout-box {
           height: 50px;
           width: 320px;
           margin:  0 auto;
@@ -97,35 +70,6 @@ body {
             color: white;
             text-decoration: none;
           }
-        }
-      }
-    }
-    &__mypage__sidebar {
-      height: 100%;
-      width: 100%;
-      margin: 40px auto 0;
-      display: block;
-      &__box {
-        .side-list {
-          display: block;
-          padding: 16px;
-          margin-bottom: 2px;
-          background: #fff;
-          font-size: 14px;
-          color: #333;
-          text-decoration: none;
-        }
-        .side-list:hover {
-          background: #f0efef;
-        }
-        .setting {
-          display: block;
-          padding: 40px 0px 0px 0px;
-          margin-bottom: 2px;
-          font-weight: 600;
-          font-size: 16px;
-          color: #333;
-          text-decoration: none;
         }
       }
     }
@@ -133,22 +77,22 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-  .logout-container {
+  .mypage-container {
     height: 100%;
     width: 100%;
     margin: 40px auto 0;
     display: block;
-    &__mypage__main {
+    .logout-container {
       width: 100%;
       margin: 40px auto 0;
       text-align: center;
       font-size: 12px;
       color: #333;
       background-color: #FFFFFF;
-      &__box {
+      .logout {
         padding: 64px;
         margin: 124px 0px 0px 0px;
-        .logout {
+        .logout-box {
           height: 50px;
           width: 320px;
           margin:  0 auto;
@@ -162,35 +106,6 @@ body {
             color: white;
             text-decoration: none;
           }
-        }
-      }
-    }
-    &__mypage__sidebar {
-      height: 100%;
-      width: 100%;
-      margin: 40px auto 0;
-      display: block;
-      &__box {
-        .side-list {
-          display: block;
-          padding: 16px;
-          margin-bottom: 2px;
-          background: #fff;
-          font-size: 14px;
-          color: #333;
-          text-decoration: none;
-        }
-        .side-list:hover {
-          background: #f0efef;
-        }
-        .setting {
-          display: block;
-          padding: 40px 0px 0px 0px;
-          margin-bottom: 2px;
-          font-weight: 600;
-          font-size: 16px;
-          color: #333;
-          text-decoration: none;
         }
       }
     }
