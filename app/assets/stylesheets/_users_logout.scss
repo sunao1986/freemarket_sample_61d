@@ -1,0 +1,198 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f5f5f5;
+}
+
+@media screen and (min-width: 1068px) {
+  .logout-container {
+    width: 1020px;
+    margin: 124px auto;
+    &__mypage__main {
+      width: 700px;
+      text-align: center;
+      font-size: 12px;
+      color: #333;
+      background-color: #FFFFFF;
+      float: right;
+      &__box {
+        padding: 64px;
+        .logout {
+          height: 50px;
+          width: 320px;
+          margin:  0 auto;
+          text-align: center;
+          font-size: 14px;
+          line-height: 50px;
+          display: block;
+          background: #ea352d;
+          cursor: pointer;
+          .logoutbtn {
+            color: white;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    &__mypage__sidebar {
+      width: 280px;
+      float: left;
+      &__box {
+        .side-list {
+          display: block;
+          padding: 16px;
+          margin-bottom: 2px;
+          background: #fff;
+          font-size: 14px;
+          color: #333;
+          text-decoration: none;
+        }
+        .side-list:hover {
+          background: #f0efef;
+        }
+        .setting {
+          display: block;
+          padding: 40px 0px 0px 0px;
+          margin-bottom: 2px;
+          font-weight: 600;
+          font-size: 16px;
+          color: #333;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1068px) {
+  .logout-container {
+    height: 100%;
+    width: 700px;
+    margin: 40px auto 0;
+    display: block;
+    &__mypage__main {
+      width: 700px;
+      text-align: center;
+      font-size: 12px;
+      color: #333;
+      background-color: #FFFFFF;
+      &__box {
+        padding: 64px;
+        margin: 124px 0px 0px 0px;
+        .logout {
+          height: 50px;
+          width: 320px;
+          margin:  0 auto;
+          text-align: center;
+          font-size: 14px;
+          line-height: 50px;
+          display: block;
+          background: #ea352d;
+          cursor: pointer;
+          .logoutbtn {
+            color: white;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    &__mypage__sidebar {
+      height: 100%;
+      width: 100%;
+      margin: 40px auto 0;
+      display: block;
+      &__box {
+        .side-list {
+          display: block;
+          padding: 16px;
+          margin-bottom: 2px;
+          background: #fff;
+          font-size: 14px;
+          color: #333;
+          text-decoration: none;
+        }
+        .side-list:hover {
+          background: #f0efef;
+        }
+        .setting {
+          display: block;
+          padding: 40px 0px 0px 0px;
+          margin-bottom: 2px;
+          font-weight: 600;
+          font-size: 16px;
+          color: #333;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .logout-container {
+    height: 100%;
+    width: 100%;
+    margin: 40px auto 0;
+    display: block;
+    &__mypage__main {
+      width: 100%;
+      margin: 40px auto 0;
+      text-align: center;
+      font-size: 12px;
+      color: #333;
+      background-color: #FFFFFF;
+      &__box {
+        padding: 64px;
+        margin: 124px 0px 0px 0px;
+        .logout {
+          height: 50px;
+          width: 320px;
+          margin:  0 auto;
+          text-align: center;
+          font-size: 14px;
+          line-height: 50px;
+          display: block;
+          background: #ea352d;
+          cursor: pointer;
+          .logoutbtn {
+            color: white;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    &__mypage__sidebar {
+      height: 100%;
+      width: 100%;
+      margin: 40px auto 0;
+      display: block;
+      &__box {
+        .side-list {
+          display: block;
+          padding: 16px;
+          margin-bottom: 2px;
+          background: #fff;
+          font-size: 14px;
+          color: #333;
+          text-decoration: none;
+        }
+        .side-list:hover {
+          background: #f0efef;
+        }
+        .setting {
+          display: block;
+          padding: 40px 0px 0px 0px;
+          margin-bottom: 2px;
+          font-weight: 600;
+          font-size: 16px;
+          color: #333;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
