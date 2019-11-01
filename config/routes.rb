@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root 'groups#index'
-  #後で消してね
+  devise_for :user
   #あとでcorectionをmemberに変える必要あるかも。そうすればurlにidが追加される。
   resources :users do
     collection do
