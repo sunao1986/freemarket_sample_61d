@@ -1,5 +1,5 @@
 .exhibit-page
-  = form_tag("/", method: :post) do
+  = form_for @item do |f|
     .exhibit-wrape
       .exhibit-logo-field
         .exhibit-logo-box
@@ -14,13 +14,16 @@
         .exhibit-image-field--required
           必須
         .exhibit-image-field__notice
-          最大10枚までアップロードできます
-        .exhibit-image-field__drop
-          = file_field_tag :image_url
-          .exhibit-image-field__drop--drug
-            ドラッグアンドドロップ
-          .exhibit-image-field__drop--upload
-            またはクリックしてファイルをアップロード
+          最大5枚までアップロードできます
+        = f.fields_for :image do |image|
+          .exhibit-image-container
+            .increase-images-box
+            .exhibit-image-box
+              = image.label :image_url ,class:"box-click-label", for: "upload_file" do
+                #add-file-field-point
+                  = image.file_field :image_url, id:"upload_file", class: "image_upload_file", name:"image_file[]", multiple: true, style: "display: none;"
+                  %p.exhibit-drug ドラッグアンドドロップ 
+                  %p.exhibit-click  またはクリックしてファイルをアップロード
 
       .exhibit-info-field
         .exhibit-info-field__label
@@ -28,13 +31,13 @@
         .exhibit-info-field--required
           必須
         .exhibit-info-field__name
-          = text_field_tag :name, "", class: "input_item_name", placeholder: "商品名(必須40文字まで)"
+          = f.text_field :name, class: "input_item_name", placeholder: "商品名(必須40文字まで)"
         .exhibit-info-field__label
           商品の説明
         .exhibit-info-field--required
           必須
         .exhibit-info-field__discription
-          = text_area_tag :discription, "", class: "input_item_discription", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+          = f.text_area :discription, class: "input_item_discription", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
       
       .exhibit-detail-field
         .exhibit-detail-field__gray-label
@@ -44,13 +47,16 @@
         .exhibit-detail-field--required
           必須
         .exhibit-detail-field__category
-          = text_field_tag :category_first, "", class: "input_item_category", placeholder: ""
+          = f.select :condition, [["---", ""], ["レディース"], ["メンズ"], ["ベビー・キッズ"],["インテリア・住まい・小物"],["本・音楽・ゲーム"],["おもちゃ・ホビー・グッズ"],["コスメ・香水・美容"],["家電・スマホ・カメラ"],["スポーツ・レジャー"],["ハンドメイド"],["レジャー"],["自転車・オートバイ"],["その他"]], class: "input_item_category"
+          -# = fa_icon "angle-down"
+          -# テーブル作ったらconditionをcategoryに変える
+          
         .hidden-category-second-field
           .hidden-category-second-field__box
-            = text_field_tag :category_second, "", class: "input_item_hidden", placeholder: ""
+            = f.select :condition, [["---", ""], ["M", "M"], ["L", "L"], ["FREE SIZE", "FREE SIZE"]], class: "input_item_hidden"
         .hidden-category-third-field
           .hidden-category-third-field__box
-            = text_field_tag :category_third, "", class: "input_item_hidden", placeholder: ""
+            = f.select :condition, [["---", ""], ["M", "M"], ["L", "L"], ["FREE SIZE", "FREE SIZE"]], class: "input_item_hidden"
 
         .hidden-size-field
           .hidden-size-field__gray-label
@@ -59,7 +65,8 @@
           .hidden-size-field--required
             必須
           .hidden-size-field__box
-            = text_field_tag :size, "", class: "input_item_size", placeholder: ""
+            = f.select :condition, [["---", ""], ["XXS以下", "XXS以下"],["XS(SS)", "XS(SS)"], ["S", "S"], ["M", "M"], ["L", "L"], ["XL(LL)", "XL(LL)"], ["2XL(3L)", "2XL(3L)"], ["3XL(4L)", "3XL(4L)"], ["4XL(5L)以上", "4XL(5L)以上"], ["FREE SIZE", "FREE SIZE"]], class: "input_item_size"
+            -# テーブル作ったらconditionをsizeに変える
         .hidden-brand-field
           .hidden-brand-field__gray-label
           .hidden-brand-field__label
@@ -67,16 +74,16 @@
           .hidden-brand-field--required
             任意
           .hidden-brand-field__box
-            = text_field_tag :brand, "", class: "input_item_brand", placeholder: "例)シャネル"
-        
+            = f.select :condition, [["---", ""], ["M", "M"], ["L", "L"], ["FREE SIZE", "FREE SIZE"]], class: "input_item_brand", placeholder: "例)シャネル"
+            -# テーブル作ったらconditionをsizeに変える
         .exhibit-detail-field__gray-label
         .exhibit-detail-field__label
           商品の状態
         .exhibit-detail-field--required
           必須
         .exhibit-detail-field__status
-          = text_field_tag :status, "", class: "input_item_status", placeholder: ""
-
+          = f.select :status, [["---", ""], ["新品", "未使用"], ["未使用に近い"], ["目立った傷や汚れなし"], ["やや傷や汚れあり"], ["傷や汚れあり"], ["全体的に状態が悪い"]]
+          = fa_icon "fa_angle_down"
       .exhibit-delivery-field
         .exhibit-delivery-field__gray-label
           配送について
@@ -85,7 +92,7 @@
         .exhibit-delivery-field--required
           必須
         .exhibit-delivery-field__delivery
-          = text_field_tag :delivery_cost, "", class: "input_item_delivery", placeholder: ""
+          = f.select :delivery_cost, [["---", ""], ["送料込み(出品者負担)"], ["着払い(購入者負担)"]], class: "input_item_delivery"
         .hidden-delivery-field
           .hidden-delivery-field__gray-label
           .hidden-delivery-field__label
@@ -93,21 +100,21 @@
           .hidden-delivery-field--required
             必須
           .hidden-delivery-field__box
-            = text_field_tag :delivery_method, "", class: "input_item_delivery_method", placeholder: ""       
+            = f.select :delivery_method, [["---", ""], ["M", "M"], ["L", "L"], ["FREE SIZE", "FREE SIZE"]], class: "input_item_delivery_method"
         .exhibit-delivery-field__gray-label
         .exhibit-delivery-field__label
           配送元の地域
         .exhibit-delivery-field--required
           必須
         .exhibit-delivery-field__delivery
-          = text_field_tag :delivery_area, "", class: "input_item_delivery", placeholder: ""
+          = f.select :delivery_area, [["---", ""], ["M", "M"], ["L", "L"], ["FREE SIZE", "FREE SIZE"]], class: "input_item_delivery"
         .exhibit-delivery-field__gray-label
         .exhibit-delivery-field__label
           発送までの日数
         .exhibit-delivery-field--required
           必須
         .exhibit-delivery-field__delivery
-          = text_field_tag :delivery_days, "", class: "input_item_delivery", placeholder: ""
+          = f.select :delivery_days, [["---", ""], ["1〜2日で発送"], ["2〜3日で発送"], ["4〜7日で発送"]], class: "input_item_delivery"
 
       .exhibit-price-field
         .exhibit-price-field__gray-label
@@ -120,17 +127,17 @@
         .exhibit-price-field__mark
           ¥
         .exhibit-price-field__box
-          = text_field_tag :prace, "", class: "input_item_price", placeholder: "例)300" 
+          = f.text_field :price, class: "input_item_price", placeholder: "例)300" 
         .exhibit-price-field__fee
           .exhibit-fee-label
             販売手数料(10%)
           .exhibit-fee-result
-            test1000
+
         .exhibit-price-field__profit
           .exhibit-profit-label
             販売利益
           .exhibit-profit-result
-            test1000
+
       .exhibit-button-field
         .button-text-area
           .button-text-area--one
@@ -146,7 +153,7 @@
             に同意したことになります。
         .button-submit-area
           .button-submit-area__do
-            = submit_tag "出品する", class:"exhibit-submit-btn"
+            = f.submit "出品する", class:"exhibit-submit-btn"
           .button-submit-area__back
             =link_to "もどる", "", class: "exhibit-back-btn"
       .exhibit-foot-field
