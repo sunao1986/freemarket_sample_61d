@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191029120101) do
+ActiveRecord::Schema.define(version: 20191030080136) do
 
   create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "card_number",   null: false
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20191029120101) do
     t.string   "postal_code",  null: false
     t.string   "prefectures",  null: false
     t.string   "city",         null: false
-    t.string   "adress",       null: false
+    t.string   "address",      null: false
     t.string   "building"
     t.string   "phone_number"
     t.datetime "created_at",   null: false
@@ -76,8 +76,10 @@ ActiveRecord::Schema.define(version: 20191029120101) do
     t.text     "introduction",           limit: 65535
     t.string   "postal_code"
     t.string   "prefectures"
-    t.string   "adress"
+    t.string   "address"
     t.string   "building"
+    t.string   "nickname"
+    t.string   "name"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
