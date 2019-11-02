@@ -1,0 +1,51 @@
+.single-container
+  %header.single-container__header
+    %h1
+      = link_to "https://www.mercari.com/jp/" do
+        = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?465897195", alt: "mercari", size: "193x49"
+    %nav.progress-bar.signup-bar
+      %ol
+        %li.active
+          %p 会員情報
+          .progress-status.through
+        %li
+          %p 電話番号認証
+          .progress-status.active
+        %li
+          %p お届け先住所入力
+          .progress-status
+        %li
+          %p 支払い方法
+          .progress-status
+        %li
+          %p 完了
+          .progress-status  
+  %main.single-container__main
+    %section.l-single-container
+      %h2.l-single-container__head.registration 電話番号の確認
+      .l-single-inner.registration-form
+        .l-single-container__content
+          .form-group
+            %label{for: "phone_number"} 携帯電話の番号
+            %input{name: "phone_number", type: "tel", class: "input-default", placeholder: "携帯電話の番号を入力"}
+          %p 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+          %input{type: "submit", class: "btn-default btn-red", value: "SMSを送信する"}
+          %p ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+          .form-group.text-right
+            %p
+              = link_to "/jp/help center/article/244/", class: "registration-link" do
+                電話番号の確認が必要な理由
+                %i.icon-arrow-right  
+  %footer.single-footer
+    %nav
+      %ul
+        %li
+          = link_to "プライバシーポリシー", "https://www.mercari.com/jp/privacy/", class: "footer-list"
+        %li
+          = link_to "メルカリ利用規約", "https://www.mercari.com/jp/tos/", class: "footer-list"
+        %li
+          = link_to "特定商取引に関する表記", "https://www.mercari.com/jp/tokutei/" , class: "footer-list list-bottom"
+    = link_to "https://www.mercari.com/jp/", class: "single-footer-logo" do
+      = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?465897195", size: "80x65", alt: "mercari",class: "footer-image"  
+    %p
+      %small ©︎2019 Mercari            
