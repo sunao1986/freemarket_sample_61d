@@ -1,0 +1,16 @@
+.mypage-container
+  .pro-container
+    .profile-head
+      %h1 プロフィール
+    .profile-user
+      .profile-user__box
+        .profile-user__box__icon
+          %img{src:"/assets/profile-user-icon.jpg", width:"60px", height:"60px", class: "profile-icon"}
+        .profile-user__box__user
+          %input{type:"text", placeholder:"例）AYA☆セール中" ,class:"input-nickname"}
+    .profile-container
+      %textarea{cols:"34", name:"text", rows:"4", placeholder:"例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪", class:"input-profile"}
+      .profile-container__editbtn
+        %a.editbtn{href:"/", class:"editbtn"}変更する
+
+  = render "shared/sidebar"
