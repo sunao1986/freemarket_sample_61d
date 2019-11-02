@@ -8,199 +8,614 @@ body {
   background: #f5f5f5;
 }
 
-.container {
-  width: 700px;
-  height: 100%;
-  margin: 124px auto;
 
-  .identification-head {
-    width: 100%;
-    height: 100%;
-    margin-bottom: 2px;
-    padding: 12px 28px;
-    text-align: center;
-    font-size: 12px;
-    color: #333;
-    background-color: #FFFFFF;
+@media screen and (min-width: 1068px) {
+  .mypage-container {
+    width: 1020px;
+    margin: 124px auto;
+    .ide-container {
+      width: 700px;
+      height: 100%;
+      float: right;
+      .identification-head {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 2px;
+        padding: 12px 28px;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 600;
+        color: #333;
+        background-color: #FFFFFF;
+      }
+  
+      .identification-container {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 8px;
+        padding: 64px;
+        color: #333;
+        background-color: #FFFFFF;
+        line-height: 1.5;
+        .input-default {
+          width: 100%;
+          height: 48px;
+          padding: 10px 16px 8px;
+          margin: 8px 0px 0px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: #fff;
+          line-height: 1.5;
+          font-size: 16px;
+        }
+  
+        &__note {
+          margin: 8px 0px 0px;
+          font-size: 14px;
+        }
+  
+        &__name {
+          margin: 40px 0px 0px;
+          font-size: 14px;
+          &__label {
+            font-weight: 600;
+          }
+        }
+  
+        &__namekana {
+          margin: 40px 0px 0px;
+          font-size: 14px;
+          &__label {
+            font-weight: 600;
+          }
+          &__info {
+            margin: 8px 0px 0px;
+          }
+        }
+  
+        &__birthday {
+          margin: 40px 0px 0px;
+          font-size: 14px;
+          &__label {
+            font-weight: 600;
+          }
+        }
+  
+        &__postnum {
+          margin: 40px 0px 0px;
+          font-size: 14px;
+          &__label {
+            display: flex;
+            &__info {
+              font-weight: 600;
+            }
+            &__optional{
+              width: 32px;
+              height: 19px;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              background: #cccccc;
+              font-size: 12px;
+              float: left;
+            }
+          }
+        }
+  
+        &__prefecture {
+          margin: 40px 0px 0px;
+          font-size: 14px;
+          &__label {
+            display: flex;
+            &__info {
+              font-weight: 600;
+            }
+            &__optional{
+              width: 32px;
+              height: 19px;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              background: #cccccc;
+              font-size: 12px;
+              float: left;
+            }
+          }
+        }
+  
+        &__city {
+          margin: 40px 0px 0px;
+          font-size: 14px;
+          &__label {
+            display: flex;
+            &__info {
+              font-weight: 600;
+            }
+            &__optional{
+              width: 32px;
+              height: 19px;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              background: #cccccc;
+              font-size: 12px;
+              float: left;
+            }
+          }
+        }
+  
+        &__address {
+          margin: 40px 0px 0px;
+          font-size: 14px;
+          &__label {
+            display: flex;
+            &__info {
+              font-weight: 600;
+            }
+            &__optional{
+              width: 32px;
+              height: 19px;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              background: #cccccc;
+              font-size: 12px;
+              float: left;
+            }
+          }
+        }
+  
+        &__building {
+          margin: 40px 0px 0px;
+          font-size: 14px;
+          &__label {
+            display: flex;
+            &__info {
+              font-weight: 600;
+            }
+            &__optional{
+              width: 32px;
+              height: 19px;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              background: #cccccc;
+              font-size: 12px;
+              float: left;
+            }
+          }
+        }
+  
+  
+        &__submitbtn {
+          height: 50px;
+          width: 572px;
+          margin: 40px 0px 0px;
+          text-align: center;
+          font-size: 16px;
+          line-height: 50px;
+          display: block;
+          background: #ea352d;
+          font-weight: 600;
+          .submitbtn {
+            color: white;
+            text-decoration: none;
+          }
+        }
+      }
+    } 
   }
+}
 
-  .identification-container {
-    width: 100%;
+@media screen and (max-width: 1068px) {
+  .mypage-container {
     height: 100%;
-    margin-bottom: 8px;
-    padding: 64px;
-    color: #333;
-    background-color: #FFFFFF;
-    line-height: 1.5;
-    .input-default {
+    width: 700px;
+    margin: 40px auto 0;
+    display: block;
+    .ide-container {
+      width: 700px;
+      height: 100%;
+      .identification-head {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 2px;
+        padding: 12px 28px;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 600;
+        color: #333;
+        background-color: #FFFFFF;
+      }
+  
+      .identification-container {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 8px;
+        padding: 64px;
+        color: #333;
+        background-color: #FFFFFF;
+        line-height: 1.5;
+        .input-default {
+          width: 100%;
+          height: 48px;
+          padding: 10px 16px 8px;
+          margin: 8px 0px 0px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: #fff;
+          line-height: 1.5;
+          font-size: 16px;
+        }
+  
+        &__note {
+          margin: 8px 0px 0px;
+          font-size: 14px;
+        }
+  
+        &__name {
+          margin: 40px 0px 0px;
+          font-size: 14px;
+          &__label {
+            font-weight: 600;
+          }
+        }
+  
+        &__namekana {
+          margin: 40px 0px 0px;
+          font-size: 14px;
+          &__label {
+            font-weight: 600;
+          }
+          &__info {
+            margin: 8px 0px 0px;
+          }
+        }
+  
+        &__birthday {
+          margin: 40px 0px 0px;
+          font-size: 14px;
+          &__label {
+            font-weight: 600;
+          }
+        }
+  
+        &__postnum {
+          margin: 40px 0px 0px;
+          font-size: 14px;
+          &__label {
+            display: flex;
+            &__info {
+              font-weight: 600;
+            }
+            &__optional{
+              width: 32px;
+              height: 19px;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              background: #cccccc;
+              font-size: 12px;
+              float: left;
+            }
+          }
+        }
+  
+        &__prefecture {
+          margin: 40px 0px 0px;
+          font-size: 14px;
+          &__label {
+            display: flex;
+            &__info {
+              font-weight: 600;
+            }
+            &__optional{
+              width: 32px;
+              height: 19px;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              background: #cccccc;
+              font-size: 12px;
+              float: left;
+            }
+          }
+        }
+  
+        &__city {
+          margin: 40px 0px 0px;
+          font-size: 14px;
+          &__label {
+            display: flex;
+            &__info {
+              font-weight: 600;
+            }
+            &__optional{
+              width: 32px;
+              height: 19px;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              background: #cccccc;
+              font-size: 12px;
+              float: left;
+            }
+          }
+        }
+  
+        &__address {
+          margin: 40px 0px 0px;
+          font-size: 14px;
+          &__label {
+            display: flex;
+            &__info {
+              font-weight: 600;
+            }
+            &__optional{
+              width: 32px;
+              height: 19px;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              background: #cccccc;
+              font-size: 12px;
+              float: left;
+            }
+          }
+        }
+  
+        &__building {
+          margin: 40px 0px 0px;
+          font-size: 14px;
+          &__label {
+            display: flex;
+            &__info {
+              font-weight: 600;
+            }
+            &__optional{
+              width: 32px;
+              height: 19px;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              background: #cccccc;
+              font-size: 12px;
+              float: left;
+            }
+          }
+        }
+  
+  
+        &__submitbtn {
+          height: 50px;
+          width: 572px;
+          margin: 40px 0px 0px;
+          text-align: center;
+          font-size: 16px;
+          line-height: 50px;
+          display: block;
+          background: #ea352d;
+          font-weight: 600;
+          .submitbtn {
+            color: white;
+            text-decoration: none;
+          }
+        }
+      }
+    } 
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .mypage-container {
+    height: 100%;
+    width: 100%;
+    margin: 40px auto 0;
+    display: block;
+    .ide-container {
       width: 100%;
-      height: 48px;
-      padding: 10px 16px 8px;
-      margin: 8px 0px 0px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-      background: #fff;
-      line-height: 1.5;
-      font-size: 16px;
-    }
-
-    &__note {
-      margin: 8px 0px 0px;
-      font-size: 14px;
-    }
-
-    &__name {
-      margin: 40px 0px 0px;
-      font-size: 14px;
-      &__label {
+      height: 100%;
+      .identification-head {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 2px;
+        padding: 12px 28px;
+        text-align: center;
+        font-size: 24px;
         font-weight: 600;
+        color: #333;
+        background-color: #FFFFFF;
       }
-    }
-
-    &__namekana {
-      margin: 40px 0px 0px;
-      font-size: 14px;
-      &__label {
-        font-weight: 600;
-      }
-      &__info {
-        margin: 8px 0px 0px;
-      }
-    }
-
-    &__birthday {
-      margin: 40px 0px 0px;
-      font-size: 14px;
-      &__label {
-        font-weight: 600;
-      }
-    }
-
-    &__postnum {
-      margin: 40px 0px 0px;
-      font-size: 14px;
-      &__label {
-        display: flex;
-        &__info {
+  
+      .identification-container {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 8px;
+        padding: 64px;
+        color: #333;
+        background-color: #FFFFFF;
+        line-height: 1.5;
+        .input-default {
+          width: 100%;
+          height: 48px;
+          padding: 10px 16px 8px;
+          margin: 8px 0px 0px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: #fff;
+          line-height: 1.5;
+          font-size: 16px;
+        }
+  
+        &__note {
+          margin: 8px 0px 0px;
+          font-size: 14px;
+        }
+  
+        &__name {
+          margin: 40px 0px 0px;
+          font-size: 14px;
+          &__label {
+            font-weight: 600;
+          }
+        }
+  
+        &__namekana {
+          margin: 40px 0px 0px;
+          font-size: 14px;
+          &__label {
+            font-weight: 600;
+          }
+          &__info {
+            margin: 8px 0px 0px;
+          }
+        }
+  
+        &__birthday {
+          margin: 40px 0px 0px;
+          font-size: 14px;
+          &__label {
+            font-weight: 600;
+          }
+        }
+  
+        &__postnum {
+          margin: 40px 0px 0px;
+          font-size: 14px;
+          &__label {
+            display: flex;
+            &__info {
+              font-weight: 600;
+            }
+            &__optional{
+              width: 32px;
+              height: 19px;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              background: #cccccc;
+              font-size: 12px;
+              float: left;
+            }
+          }
+        }
+  
+        &__prefecture {
+          margin: 40px 0px 0px;
+          font-size: 14px;
+          &__label {
+            display: flex;
+            &__info {
+              font-weight: 600;
+            }
+            &__optional{
+              width: 32px;
+              height: 19px;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              background: #cccccc;
+              font-size: 12px;
+              float: left;
+            }
+          }
+        }
+  
+        &__city {
+          margin: 40px 0px 0px;
+          font-size: 14px;
+          &__label {
+            display: flex;
+            &__info {
+              font-weight: 600;
+            }
+            &__optional{
+              width: 32px;
+              height: 19px;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              background: #cccccc;
+              font-size: 12px;
+              float: left;
+            }
+          }
+        }
+  
+        &__address {
+          margin: 40px 0px 0px;
+          font-size: 14px;
+          &__label {
+            display: flex;
+            &__info {
+              font-weight: 600;
+            }
+            &__optional{
+              width: 32px;
+              height: 19px;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              background: #cccccc;
+              font-size: 12px;
+              float: left;
+            }
+          }
+        }
+  
+        &__building {
+          margin: 40px 0px 0px;
+          font-size: 14px;
+          &__label {
+            display: flex;
+            &__info {
+              font-weight: 600;
+            }
+            &__optional{
+              width: 32px;
+              height: 19px;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              background: #cccccc;
+              font-size: 12px;
+              float: left;
+            }
+          }
+        }
+  
+  
+        &__submitbtn {
+          height: 50px;
+          width: 572px;
+          margin: 40px 0px 0px;
+          text-align: center;
+          font-size: 16px;
+          line-height: 50px;
+          display: block;
+          background: #ea352d;
           font-weight: 600;
-        }
-        &__optional{
-          width: 32px;
-          height: 19px;
-          margin: 0 0 0 8px;
-          padding: 2px 4px;
-          border-radius: 2px;
-          color: #fff;
-          background: #cccccc;
-          font-size: 12px;
-          float: left;
+          .submitbtn {
+            color: white;
+            text-decoration: none;
+          }
         }
       }
-    }
-
-    &__prefecture {
-      margin: 40px 0px 0px;
-      font-size: 14px;
-      &__label {
-        display: flex;
-        &__info {
-          font-weight: 600;
-        }
-        &__optional{
-          width: 32px;
-          height: 19px;
-          margin: 0 0 0 8px;
-          padding: 2px 4px;
-          border-radius: 2px;
-          color: #fff;
-          background: #cccccc;
-          font-size: 12px;
-          float: left;
-        }
-      }
-    }
-
-    &__city {
-      margin: 40px 0px 0px;
-      font-size: 14px;
-      &__label {
-        display: flex;
-        &__info {
-          font-weight: 600;
-        }
-        &__optional{
-          width: 32px;
-          height: 19px;
-          margin: 0 0 0 8px;
-          padding: 2px 4px;
-          border-radius: 2px;
-          color: #fff;
-          background: #cccccc;
-          font-size: 12px;
-          float: left;
-        }
-      }
-    }
-
-    &__address {
-      margin: 40px 0px 0px;
-      font-size: 14px;
-      &__label {
-        display: flex;
-        &__info {
-          font-weight: 600;
-        }
-        &__optional{
-          width: 32px;
-          height: 19px;
-          margin: 0 0 0 8px;
-          padding: 2px 4px;
-          border-radius: 2px;
-          color: #fff;
-          background: #cccccc;
-          font-size: 12px;
-          float: left;
-        }
-      }
-    }
-
-    &__building {
-      margin: 40px 0px 0px;
-      font-size: 14px;
-      &__label {
-        display: flex;
-        &__info {
-          font-weight: 600;
-        }
-        &__optional{
-          width: 32px;
-          height: 19px;
-          margin: 0 0 0 8px;
-          padding: 2px 4px;
-          border-radius: 2px;
-          color: #fff;
-          background: #cccccc;
-          font-size: 12px;
-          float: left;
-        }
-      }
-    }
-
-
-    &__submitbtn {
-      height: 50px;
-      width: 572px;
-      margin: 40px 0px 0px;
-      text-align: center;
-      font-size: 16px;
-      line-height: 50px;
-      display: block;
-      background: #ea352d;
-      font-weight: 600;
-      .submitbtn {
-        color: white;
-        text-decoration: none;
-      }
-    }
+    } 
   }
-} 
+}

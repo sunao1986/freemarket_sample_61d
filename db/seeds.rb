@@ -10,7 +10,6 @@
 
 User.create!(
   id: 1,
-  name: "テスト",
   email: "a@a",
   password: "aaaaaa",
   nickname: "テスト",
