@@ -28,7 +28,7 @@
           .form-group
             = f.label "ニックネーム" 
             %span.form-require 必須
-            = f.text_field :name, class: "input-default", placeholder: "例) メルカリ太郎"
+            = f.text_field :nickname, class: "input-default", placeholder: "例) メルカリ太郎"
           .form-group
             = f.label "メールアドレス" 
             %span.form-require 必須
@@ -40,25 +40,25 @@
           .form-group
             = f.label "パスワード（確認）" 
             %span.form-require 必須
-            = f.password_field :encrypted_password, class: "input-default", placeholder: "7文字以上"  
+            = f.password_field :reset_password_token, class: "input-default", placeholder: "7文字以上"  
           .form-group
             %h3.text-left.l-chapter-sub-head  本人確認
             %p.l-single-text
               安心・安全にご利用いただくために、お客様の本人情報の登録にご協力ください。他のお客様に公開されることはありません。
           .form-group
             %div
-              = f.label "お名前(全角)"    
+              = f.label "お名前(全角)"
               %span.form-require 必須
               .name-form  
-                = f.text_field :name, class: "input-default half left-half", placeholder: "例) 山田"
-                = f.text_field :name, class: "input-default half right-half", placeholder: "例) 彩"
+                = f.text_field :first_name, class: "input-default half left-half", placeholder: "例) 山田"
+                = f.text_field :last_name, class: "input-default half right-half", placeholder: "例) 彩"
           .form-group    
             %div
               = f.label "お名前カナ(全角)"    
               %span.form-require 必須
               .name-form
-                = f.text_field :name, class: "input-default half left-half", placeholder: "例) ヤマダ"
-                = f.text_field :name, class: "input-default half right-half", placeholder: "例) アヤ"
+                = f.text_field :first_kana, class: "input-default half left-half", placeholder: "例) ヤマダ"
+                = f.text_field :last_kana, class: "input-default half right-half", placeholder: "例) アヤ"
           .form-group
             %div
               = f.label "生年月日" 
@@ -68,7 +68,7 @@
                 .select-wrap
                   %i.icon-arrow-bottom
                   .select-default
-                    = f.date_select :name, start_year: 1920, end_year: Time.now.year, :use_month_numbers => true, date_separator: '/'
+                    = f.date_select :birthday, start_year: 1920, end_year: Time.now.year, :use_month_numbers => true, date_separator: '/'
           %p.form-info-text
             本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。        
         .l-single-container__content
