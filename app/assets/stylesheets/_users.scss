@@ -51,14 +51,27 @@ body {
   position: relative;
   background-color: #ea352d;
 }
-// .fa-envelope {
-//   position: absolute;
-//   top: 50%;
-//   left: 16px;
-//   font-size: 16px;
-//   color: #fff;
+.fa-facebook-square {
+  position: absolute;
+  top: 17%;
+  left: 16px;
+  font-size: 31px;
+  color: #fff;
 
-// }
+ }
+ .fa-envelope {
+  position: absolute;
+  top: 30%;
+  left: 16px;
+  font-size: 20px;
+  color: #fff;
+ }
+ .fa-google {
+  position: absolute;
+  top: 34%;
+  left: 20px;
+  font-size: 20px;
+ }
 .btn-sns-facebook {
   margin: 16px 0 0;
   background-color: #385185;
@@ -141,4 +154,193 @@ body {
   width: 80px;
   height: 65px;
 }
+.progress-bar {
+  padding: 40px 0 0 44px;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  font-size: 0;
+  ol {
+    margin: 0;
+    list-style: none;
+  }
+  li {
+    margin: 0 40px 0 0;
+    min-width: 60px;
+    font-size: 12px;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    color: #888;
+  }
+  li.active {
+    font-weight: 600;
+    color: #ea352d;
+  }
+}
 
+.progress-status {
+  background-color: #ccc;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 8px auto 0;
+}
+.progress-status:after {
+  left: 50%;
+  position: absolute;
+  bottom: 5px;
+  z-index: -1;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #ccc;
+  border-style: solid;
+  border-width: 0;
+  text-decoration: inherit;
+  box-sizing: inherit;
+}
+.progress-status:before {
+  right: 50%;
+  position: absolute;
+  bottom: 5px;
+  z-index: -1;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #ccc;
+  border-style: solid;
+  border-width: 0;
+  text-decoration: inherit;
+  box-sizing: inherit;
+}
+.progress-status.active {
+  background-color: #ea352d;
+}
+.l-single-inner.registration-form {
+  padding: 24px 16px 40px;
+}
+.l-single-inner {
+  border-top: 1px solid #f5f5f5;
+}
+.l-single-container {
+  &__content {
+    max-width: 343px;
+    margin: 0 auto;
+    p {
+      margin: 8px 0 0;
+      line-height: 1.5
+    }
+    p:first-child {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+.form-group {
+  label {
+    font-weight: 600;
+    display: inline-block;
+  }
+  .form-require {
+    background-color: #ea352d;
+    margin: 0 0 0 8px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 12px;
+    vertical-align: top;
+  }
+  .input-default {
+    width: 100%;
+    margin: 8px 0 0;
+    height: 48px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    line-height: 1.5;
+    font-size: 16px;
+    
+  }
+  .l-chapter-sub-head {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .l-single-text {
+    margin: 8px 0 0;
+    padding: 0;
+    line-height: 1.5;
+  }
+}
+.form-group:first-child {
+  margin: 0;
+}
+.form-group:not(:first-of-type) {
+  margin: 24px 0 0;
+}
+.input-default.half:first-of-type {
+  margin-right: 8px;
+}
+.name-form {
+  display: flex;
+}
+.input-default.half {
+  width: 50%;
+}
+.select-wrap:first-of-type {
+  width: 76px;
+}
+.select-wrap {
+  display: inline-block;
+  margin: 8px 0 0;
+  position: relative;
+  background-color: #fff;
+}
+.second-footer {
+  position: absolute;
+  right: 0;
+  top: 1320px;
+  left: 0;
+  z-index: 1;
+  width: 456px;
+  height: 220px;
+  padding: 40px 0;
+  margin: 0 auto;
+  text-align: center;
+  ul {
+    font-size: 0;
+    list-style: none;
+  }
+  li {
+    text-decoration: none;
+    font-size: 12px;
+    margin: 0 0 0 16px;
+    display: inline-block;
+  }
+  p {
+    margin: 8px 0 0;
+    small {
+      font-size: 11px;
+      padding-left: 15px;
+    }
+  }
+}
+.form-info-text {
+  color: #888;
+}
+.btn-red {
+  background-color: #ea352d;
+  color: #fff;
+  border:  1px solid #ea352d;
+  margin: 24px 0 0;
+}
+.text-right {
+  text-align: right;
+}
+.registration-link {
+  color: #0099e8;
+  text-decoration: none;
+}

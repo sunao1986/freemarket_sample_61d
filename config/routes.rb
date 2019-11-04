@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  root "items#index"
   #あとでcorectionをmemberに変える必要あるかも。そうすればurlにidが追加される。
   resources :users do
     collection do
@@ -28,5 +29,4 @@ Rails.application.routes.draw do
   #itemsとネストするかもしれない
   resources :brands, only: :index
   resources :categories, only: :index
-  root "items#new"
 end
