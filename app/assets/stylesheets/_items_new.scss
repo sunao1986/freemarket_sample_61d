@@ -56,9 +56,10 @@
         font-weight: bold;
         text-align: center;
         width:35px;
-        min-width: 20px;
+        height: 20px;
+        padding:3px 0;
         color: white;
-        margin-top: 30px;
+        margin-top: 27px;
         margin-left: 10px;
         background-color: red;
       }
@@ -70,7 +71,7 @@
         margin-left: 50px;
       }
       .exhibit-image-container{
-        width:600px;
+        width:620px;
         margin: 0 auto;
         height: 162px;
         .increase-images-box{
@@ -81,7 +82,7 @@
         }
         .exhibit-image-box{
           float: left;
-          width:600px;
+          width: 620px;
           height: 162px;
           background-color: rgb(238, 238, 238);
           border-style: dashed;
@@ -128,48 +129,51 @@
         font-weight: bold;
         text-align: center;
         width:35px;
-        min-width: 20px;
+        padding:3px 0;
         color: white;
-        margin-top: 30px;
+        margin-top: 27px;
         margin-left: 10px;
         background-color: red;
       }
       &__name{
         clear: both;
+        padding-top:5px;
         .input_item_name{
           display: block;
           margin:0 auto;
-          width:600px;
+          width:620px;
           min-width: 500px;
-          height: 40px;
+          height: 50px;
+          font-size: 15px;
           border-radius: 4px;
           border-style: none;
+          padding-left:10px;
           border: solid 1px rgb(211, 211, 211);
         }
         .input_item_name::placeholder{
           color:gray;
-          font-size: 16px;
+          font-size: 15px;
           font-family: "Yu Gothic";
-          padding-left:10px;
         }
       }
       &__discription{
         clear: both;
+        padding-top:5px;
         .input_item_discription{
           display: block;
-          width:600px;
-          max-width: 600px;
+          width:620px;
           min-width: 500px;
           height: 150px;
           margin: 0 auto;
+          padding:10px 0 0 10px;
+          font-size: 15px;
           border-style: none;
           border: solid 1px rgb(211, 211, 211);
         }
         .input_item_discription::placeholder{
           color:gray;
-          font-size: 16px;
+          font-size: 15px;
           font-family: "Yu Gothic";
-          padding:10px 0 0 10px;
         }
       }
     }
@@ -206,22 +210,24 @@
         font-weight: bold;
         text-align: center;
         width:35px;
-        min-width: 20px;
+        padding:3px 0;
         color: white;
-        margin-top: 40px;
+        margin-top: 37px;
         margin-left: 10px;
         background-color: red;
       }
       &__category{
         // これcategoryに修正する
+        padding-top:5px;
         #item_condition{
           display: block;
           width:400px;
-          height: 40px;
+          height: 50px;
           margin-top: 5px;
           margin-left:250px;
           border-radius: 4px;
           border-style: none;
+          font-size: 15px;
           border: solid 1px rgb(211, 211, 211);
           background-color: #fff;
           cursor: pointer;
@@ -234,9 +240,10 @@
           #item_condition{
             display: block;
             width:400px;
-            height: 40px;
+            height: 50px;
             margin-top: 5px;
             margin-left:250px;
+            font-size: 15px;
             border-radius: 4px;
             border-style: none;
             border: solid 1px rgb(211, 211, 211);
@@ -250,9 +257,10 @@
           #item_condition{
             display: block;
             width:400px;
-            height: 40px;
+            height: 50px;
             margin-top: 5px;
             margin-left:250px;
+            font-size: 15px;
             border-radius: 4px;
             border-style: none;
             border: solid 1px rgb(211, 211, 211);
@@ -261,12 +269,14 @@
       }
       &__category{
         clear: both;
+        padding-top:5px;
         // 名前修正対象
         #item_condition{
           display: block;
           width:400px;
-          height: 40px;
+          height: 50px;
           margin-left:250px;
+          font-size: 15px;
           border-radius: 4px;
           border-style: none;
           border: solid 1px rgb(211, 211, 211);
@@ -274,7 +284,7 @@
         // 名前修正対象
         .input_item_category::placeholder{
           color:gray;
-          font-size: 16px;
+          font-size: 15px;
           font-family: "Yu Gothic";
           padding-left:10px;
         }
@@ -289,7 +299,6 @@
           margin-top: 40px;
           margin-left: 50px;
           width: 200px;
-          background-color: blueviolet;
           color: gray;
         }
         &__label{
@@ -307,31 +316,34 @@
           font-weight: bold;
           text-align: center;
           width:35px;
-          min-width: 20px;
+          padding:3px 0;
           color: white;
-          margin-top: 40px;
+          margin-top: 37px;
           margin-left: 10px;
           background-color: red;
         }
         &__box{
           clear: both;
+          padding-top:5px;
           // sizeに名前修正
           #item_condition{
             display: block;
             width:400px;
-            height: 40px;
+            height: 50px;
             margin-left:250px;
             border-radius: 4px;
             border-style: none;
+            padding-left:10px;
+            font-size: 15px;
             border: solid 1px rgb(211, 211, 211);
             background-color: #fff;
           }
           // sizeに名前修正
           #item_condition::placeholder{
             color:gray;
-            font-size: 16px;
+            font-size: 15px;
             font-family: "Yu Gothic";
-            padding-left:10px;
+            
           }
         }  
       }
@@ -370,44 +382,50 @@
         }
         &__box{
           clear: both;
+          padding-top:5px;
           // brandに名前修正
           #item_condition{
             display: block;
             width:400px;
-            height: 40px;
+            height: 50px;
             margin-left:250px;
             border-radius: 4px;
             border-style: none;
+            font-size: 15px;
+            padding-left:10px;
             border: solid 1px rgb(211, 211, 211);
             background-color: #fff;
           }
           // brandに名前修正
           #item_condition::placeholder{
             color:gray;
-            font-size: 16px;
+            font-size: 15px;
             font-family: "Yu Gothic";
-            padding-left:10px;
+            
           }
         }  
       }
       &__status{
         clear: both;
+        padding-top:5px;
         #item_status{
           display: block;
           width:400px;
-          height: 40px;
+          height: 50px;
           margin-left:250px;
           border-radius: 4px;
           border-style: none;
+          padding-left:10px;
+          font-size: 15px;
           border: solid 1px rgb(211, 211, 211);
           background-color: #fff;
           cursor: pointer;
         }
         #item_status::placeholder{
           color:gray;
-          font-size: 16px;
+          font-size: 15px;
           font-family: "Yu Gothic";
-          padding-left:10px;
+          
         }
       }
     }
@@ -444,30 +462,33 @@
         font-weight: bold;
         text-align: center;
         width:35px;
-        min-width: 20px;
+        padding:3px 0;
         color: white;
-        margin-top: 40px;
+        margin-top: 37px;
         margin-left: 10px;
         background-color: red;
       }
       &__delivery{
         clear: both;
+        padding-top:5px;
         #item_delivery_cost, #item_delivery_area, #item_delivery_days{
           display: block;
           width:400px;
-          height: 40px;
+          height: 50px;
           margin-left:250px;
           border-radius: 4px;
           border-style: none;
+          font-size: 15px;
+          padding-left:10px;
           border: solid 1px rgb(211, 211, 211);
           background-color: #fff;
           cursor: pointer;
         }
         #item_delivery_cost::placeholder{
           color:gray;
-          font-size: 16px;
+          font-size: 15px;
           font-family: "Yu Gothic";
-          padding-left:10px;
+          
         }
       }
       .hidden-delivery-field{
@@ -497,29 +518,32 @@
           font-weight: bold;
           text-align: center;
           width:35px;
-          min-width: 20px;
+          padding:3px 0;
           color: white;
-          margin-top: 40px;
+          margin-top: 37px;
           margin-left: 10px;
           background-color: red;
         }
         &__box{
           clear: both;
+          padding-top:5px;
           #item_delivery_method{
             display: block;
             width:400px;
-            height: 40px;
+            height: 50px;
             margin-left:250px;
             border-radius: 4px;
+            font-size: 15px;
+            padding-left:10px;
             border-style: none;
             border: solid 1px rgb(211, 211, 211);
             cursor: pointer;
           }
           #item_delivery_method::placeholder{
             color:gray;
-            font-size: 16px;
+            font-size: 15px;
             font-family: "Yu Gothic";
-            padding-left:10px;
+            
           }
         }  
       }
@@ -562,33 +586,36 @@
         font-weight: bold;
         text-align: center;
         width:35px;
-        min-width: 20px;
+        padding:3px 0;
         color: white;
-        margin-top: 60px;
+        margin-top: 57px;
         background-color: red;
       }
       &__mark{
         float: left;
         width:20px;
-        padding-left:160px;
+        padding-left:110px;
         margin-top: 60px;
       }
       &__box{
         float: right;
         .input_item_price{
-          width:150px;
-          height: 40px;
-          margin-top: 50px;
+          width:200px;
+          height: 50px;
+          margin-top: 40px;
           margin-right: 45px;
           border-radius: 4px;
           border-style: none;
+          font-size: 15px;
+          padding-left:10px;
           border: solid 1px rgb(211, 211, 211);
         }
         .input_item_price::placeholder{
           color:gray;
-          font-size: 16px;
+          font-size: 15px;
+          padding-left:120px;
           font-family: "Yu Gothic";
-          padding-left:10px;
+    
         }
       }
       &__fee{

@@ -3,8 +3,7 @@
     .exhibit-wrape
       .exhibit-logo-field
         .exhibit-logo-box
-          = image_tag "https://i.gyazo.com/d5df0ad9f678339d9894ab8ea4f9979e.png", alt: "Image from Gyazo"
-
+          = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?465897195", alt: "Image from Gyazo"
       .exhibit-head-field
         .exhibit-head-field__title
           商品の情報を入力
@@ -19,11 +18,12 @@
           .exhibit-image-container
             .increase-images-box
             .exhibit-image-box
-              = image.label :image_url ,class:"box-click-label", for: "upload_file" do
-                #add-file-field-point
-                  = image.file_field :image_url, id:"upload_file", class: "image_upload_file", name:"image_file[]", multiple: true, style: "display: none;"
-                  %p.exhibit-drug ドラッグアンドドロップ 
-                  %p.exhibit-click  またはクリックしてファイルをアップロード
+              #add-file-field-point
+                #custom-data-for{'data-image-name': "hoge"}
+                  = image.label :image_url ,class:"box-click-label", for: "upload_file" do
+                    = image.file_field :image_url, id:"upload_file", class: "image_upload_file", name:"item[image_ids][]", style: "display: none;"
+                    %p.exhibit-drug ドラッグアンドドロップ 
+                    %p.exhibit-click  またはクリックしてファイルをアップロード
 
       .exhibit-info-field
         .exhibit-info-field__label

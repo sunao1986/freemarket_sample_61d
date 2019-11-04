@@ -64,7 +64,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.permit(:id, :name, :discription, :status, :delivery_cost, :delivery_method, :delivery_area, :delivery_days, :price, :likes_count, :buyer_id, :condition)
+    params.require(:item).permit(:id, :name, :discription, :status, :delivery_cost, :delivery_method, :delivery_area, :delivery_days, :price, :likes_count, :buyer_id, :condition, images_attributes: [:image_url, :image_ids => [] ])
     # form_forはrequireをつける、追加はseller_id、category、size、brand
   end
 
