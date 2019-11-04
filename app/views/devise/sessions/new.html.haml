@@ -1,6 +1,6 @@
 %body
   .single-container
-    %header.single-container__header
+    %header.single-container__header.login
       %h1
         = link_to new_user_registration_path, class: "logo" do
           =image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?465897195", size: "193x49", alt: "mercari"
@@ -9,7 +9,7 @@
         .login-panel__no-account
           %p アカウントをお持ちでない方はこちら
           = link_to "新規会員登録", new_user_registration_path, class: "btn-registration"
-        .login-panel__form-inner
+        .login-panel__form-inner.sns
           %button#facebook-login.btn-default.btn-sns.btn-sns-facebook
             %i.fa.fa-facebook-square
             %p Facebookでログイン  
