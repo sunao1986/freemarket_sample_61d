@@ -23,15 +23,8 @@ window.addEventListener('DOMContentLoaded',function(){
     // <%= image.label :image_url ,class:"box-click-label", for: "upload_file" do
     // <%= image.file_field :image_url, id:"upload_file", class: "image_upload_file", style: "display: none;" %>
 
-
-    $('#upload_file').change(function () {
-      // 画像の情報を取得
-      var file = this.files[0];
-      console.log(file);
-    }); 
-
     //ここからはクリックでアップロードした画像のプレビュー
-    $(document).on('change','upload_file',function(e){
+    $(document).on('change','#upload_file',function(e){
       var file = e.target.files[0];
       var reader = new FileReader();
       reader.onload = (function(){

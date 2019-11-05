@@ -14,7 +14,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.create(item_params)
+    @item = Item.new(item_params)
     
     if @item.save
       render :index
@@ -24,14 +24,17 @@ class ItemsController < ApplicationController
   end
 
   def updata
-    item = Item.find(params[:id])
-    if item.user_id == current_user.id
+    if current_user ==! user_id && params[:id].present?
+       item = Item.find(params[:id])
        item.update(item_params)
        render :index
+    else
+      redirect_to action: :edit
+
     end
-    # if  current_user ==! seller_id && params[:id].present?
+    # if current_user ==! user_id && params[:id].present?
       # Item.update(buyer_id: params[:current_user])
-    # conditionを入力する分岐を記述
+      # conditionを入力する分岐を記述
   end
 
   def destroy
