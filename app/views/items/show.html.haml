@@ -20,9 +20,15 @@
               %a.seller{href:"https://www.mercari.com/jp/"}
                 = @user.nickname
               .rate-icon
-                %i.fa.fa-heart 1
-                %i.fa.fa-heart 1
-                %i.fa.fa-heart 1
+                .rate-icon__good
+                  = image_tag "/assets/rateicon1.jpg", class:"rate-icon"
+                %p.rate-count 1
+                .rate-icon__fair
+                  = image_tag "/assets/rateicon2.jpg", class:"rate-icon"
+                %p.rate-count 1
+                .rate-icon__bad
+                  = image_tag "/assets/rateicon3.jpg", class:"rate-icon"
+                %p.rate-count 1
           %tr
             %th カテゴリー
             %td
@@ -64,9 +70,11 @@
     .item-container__item-description
       .item-container__item-description__inner
         = @item.discription
-    .item-container__item-btn
+    %a.item-container__item-btn{href:"https://www.mercari.com/jp/"}
       .item-container__item-btn__like
-        %button いいね!
+        %i.fa.fa-heart いいね!
+      .item-container__item-btn__count 1
+    .item-container__fixbox
   .messages
     .messages__content
       %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
