@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:edit, :update]
+  before_action :set_item, only: [:edit, :update, :buy]
 
   def index
     #トップページ
@@ -51,7 +51,6 @@ class ItemsController < ApplicationController
 
   def buy
     #購入確認画面
-    @item = Item.find(params[:id])
   end
 
   private
