@@ -5,6 +5,12 @@ class ShippingsController < ApplicationController
   end
 
   def create
+    @shipping = Shipping.new(shipping_params)
+    if @shipping.save
+      redirect_to root_path
+    else
+      render :new  
+    end
   end
 
   def edit
@@ -16,4 +22,8 @@ class ShippingsController < ApplicationController
   def destory
   end
   
+  private
+  def shipping_params
+    params.require(:shipping).permit(:first_name, :last_name, :first_kana, :last_kana, :postal_code, :prefectures, :city, :address, :building, :phone_number) 
+  end    
 end
