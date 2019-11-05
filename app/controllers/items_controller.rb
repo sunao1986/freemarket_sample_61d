@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:edit, :update, :buy]
 
   def index
     #トップページ
@@ -6,12 +7,34 @@ class ItemsController < ApplicationController
 
   def new
     #商品登録画面
+    @item = Item.new
+    @item.images.build
+    @parents = Category.all.order("id ASC").limit(13)
+    @size = Size.all
+    @barand = Brand.all   
   end
 
   def create
+    @item = Item.new(item_params)
+    
+    if @item.save
+      render :index
+    else
+      redirect_to action: :buy
+    end
   end
 
   def updata
+    if current_user ==! user_id && params[:id].present?
+       @item.update(item_params)
+       render :index
+    else
+      redirect_to action: :edit
+
+    end
+    # if current_user ==! user_id && params[:id].present?
+      # Item.update(buyer_id: params[:current_user])
+      # conditionを入力する分岐を記述
   end
 
   def destroy
@@ -33,11 +56,16 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.permit(:id, :name, :discription, :status, :delivery_cost, :delivery_method, :delivery_area, :delivery_days, :price, :likes_count, :buyer_id, :condition)
+    params.require(:item).permit(:id, :name, :discription, :status, :delivery_cost, :delivery_method, :delivery_area, :delivery_days, :price, :likes_count, :category_id, :brand_id, :size_id, images_attributes: [:id, :image_url]).merge(user_id: current_user.id)
+    #  :buyer_id,  :condition, はタイミングが別
   end
 
   def user_params
     params.permit(:id, :nickname)
+  end
+
+  def set_item
+    @item = Item.find(params[:id]
   end
 
 end

@@ -54,11 +54,11 @@
           -#   %end
           %li.sign-up
             -# = link_to "新規会員登録", new_user_session_path
-            = link_to "#", class: "sign-up__link" do
+            = link_to new_user_registration_path, class: "sign-up__link" do
               新規会員登録
           %li.sign-in
             -# = link_to "ログイン", registration_users_path
-            = link_to "#", class: "sign-in__link" do
+            = link_to new_user_session_path, class: "sign-in__link" do
               ログイン
 
 
@@ -297,7 +297,7 @@
 
 
   .sell
-    = link_to "#" ,class: "sell__link" do
+    = link_to new_item_path ,class: "sell__link" do
       .sell__link-text
         出品
       = fa_icon "camera", alt: '出品', class: 'camera'
