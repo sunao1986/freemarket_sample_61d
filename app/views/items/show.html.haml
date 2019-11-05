@@ -2,12 +2,16 @@
   .item-container
     .item-container__item-name
       = @item.name
+      
     .item-container__item-main
       .item-container__item-main__photo
         .item-container__item-main__photo__act
-          %img{src:"/assets/alp.jpg", width:"300px", height:"300px"}
-        .item-container__item-main__photo__inact 
-          %p owl carousel rails gem使う
+          - @item.images.each do |image_url|
+            = image_tag image_url.image_url
+        .item-container__item-main__photo__inact
+          - @item.images.each do |image_url|
+            = image_tag image_url.image_url
+
       .item-container__item-main__detail
         %table
           %tr
