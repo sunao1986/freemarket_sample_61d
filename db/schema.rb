@@ -110,10 +110,15 @@ ActiveRecord::Schema.define(version: 20191101061838) do
     t.string   "address"
     t.string   "building"
     t.string   "nickname"
+    t.string   "name"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
   add_foreign_key "images", "items"
+  add_foreign_key "items", "brands"
+  add_foreign_key "items", "categories"
+  add_foreign_key "items", "sizes"
+  add_foreign_key "items", "users"
   add_foreign_key "shippings", "users"
 end
