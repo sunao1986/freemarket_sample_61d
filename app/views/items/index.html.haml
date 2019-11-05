@@ -1,5 +1,4 @@
 .wrapper
-
   .header
     .header__index
       .header__index__top
@@ -9,13 +8,13 @@
           -#   %a{href:"#"}
           = link_to "#" do
             = image_tag 'mercari-logo.jpg', alt: 'mercari', height: '38px', width: '135px'
+
         .word-search
           %form
             %input.word-search__message{type: "search", value:"", placeholder:"何かお探しですか？"}
             -# = link_to items_path do
             %button.word-search__btn{title: "検索", type: "submit"}
-            = link_to "#" do
-              = fa_icon 'fa-search', class: 'search-icon'
+              = fa_icon 'search', alt: 'search', width: '16px', height: '16px', class: 'search-icon'
 
       .header__index__bottom
         %nav.genre-search
@@ -24,13 +23,13 @@
               %h2.category-brand__btn
                 -# = link_to items path do
                 = link_to "#", class: "category-brand__btn__link" do
-                  = fa_icon 'fa-list-alt', class: 'category-brand__btn__link__icon'
+                  = fa_icon 'list', class: 'category-brand__btn__link__icon'
                   %span カテゴリーから探す
             %li.category-brand
               %h2.category-brand__btn
                 -# = link_to items path do
                 = link_to "#", class: "category-brand__btn__link" do
-                  = fa_icon 'fa-tag', class: 'category-brand__btn__link__icon'
+                  = fa_icon 'tag', class: 'category-brand__btn__link__icon'
                   %span ブランドから探す
         .sign-box
           -# %ul.sign__box__acount
@@ -55,11 +54,11 @@
           -#   %end
           %li.sign-up
             -# = link_to "新規会員登録", new_user_session_path
-            = link_to "#", class: "sign-up__link" do
+            = link_to new_user_registration_path, class: "sign-up__link" do
               新規会員登録
           %li.sign-in
             -# = link_to "ログイン", registration_users_path
-            = link_to "#", class: "sign-in__link" do
+            = link_to new_user_session_path, class: "sign-in__link" do
               ログイン
 
 
@@ -81,7 +80,107 @@
               = link_to "家電・スマホ・カメラ", root_path, class: "category-brand-list__link"
             %li.category-brand-list
               = link_to "おもちゃ・ホビー・グッズ", root_path, class: "category-brand-list__link"
-      .item-category-brand
+      .new-products
+        .new-products-type
+          .new-products-type__top
+            %h3.theme
+              レディース新着アイテム
+            = link_to "もっと見る ＞＞", root_path, class: "look-more"
+          .items-block
+            .items-list
+              = link_to "#", class: "items-list-link" do
+                = image_tag 'ladies1.jpeg', alt: 'items-image', height: '188px', width: '188px', class: 'items-image'
+                .items-detail
+                  .items-price
+                    %span.price-yen
+                      ¥ 18,040
+                  %h3.items-name
+                    SUNNY CLOUDS 縮絨ニットコート〈レディース〉紺
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+        .new-products-type
+          .new-products-type__top
+            %h3.theme
+              メンズ新着アイテム
+            = link_to "もっと見る ＞＞",root_path,  class: "look-more"
+          .items-block
+            .items-list
+              = link_to "#", class: "items-list-link" do
+                = image_tag 'mans1.jpg', alt: 'items-image', height: '188px', width: '188px', class: 'items-image'
+                .items-detail
+                  .items-price
+                    %span.price-yen
+                      ¥ 33,000
+                  %h3.items-name
+                    オフホワイト ロングスリーブTシャツ
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+        .new-products-type
+          .new-products-type__top
+            %h3.theme
+              家電・スマホ・カメラ新着アイテム
+            = link_to "もっと見る ＞＞",root_path, class: "look-more"
+          .items-block
+            .items-list
+              = link_to "#", class: "items-list-link" do
+                = image_tag 'elect1.jpeg', alt: 'items-image', height: '188px', width: '188px', class: 'items-image'
+                .items-detail
+                  .items-price
+                    %span.price-yen
+                      ¥ 6,600
+                  %h3.items-name
+                    KEECOON 加湿機, 7.5L 大容量 超音波式加湿器 上から給水式加湿器 上部給水 乾燥対策 床置加湿器 調整可能 切タイマー リモコン対応 定湿設定 ナイトライト付き 夜間ライト 静音、省エネ　空焚き防止機能付き スタンド式加湿器 オフィス 会所 デパート 大面積 12-38畳
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+        .new-products-type
+          .new-products-type__top
+            %h3.theme
+              おもちゃ・ホビー・グッズ新着アイテム
+            = link_to "もっと見る ＞＞",root_path, class: "look-more"
+          .items-block
+            .items-list
+              = link_to "#", class: "items-list-link" do
+                = image_tag 'toy1.jpg', alt: 'items-image', height: '188px', width: '188px', class: 'items-image'
+                .items-detail
+                  .items-price
+                    %span.price-yen
+                      ¥ 1,800
+                  %h3.items-name
+                    チコちゃんになれる変声器ぼーっと生きてんじゃねえ！
+
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+
+
+
       .popular-category-brand
         %h2.popular-title
           人気のブランド
@@ -95,114 +194,214 @@
               = link_to "シュプリーム", root_path, class: "category-brand-list__link"
             %li.category-brand-list
               = link_to "ナイキ", root_path, class: "category-brand-list__link"
-      .popular-category-brand
+      .new-products
+        .new-products-type
+          .new-products-type__top
+            %h3.theme
+              シャネル新着アイテム
+            = link_to "もっと見る ＞＞",root_path, class: "look-more"
+          .items-block
+            .items-list
+              = link_to "#", class: "items-list-link" do
+                = image_tag 'chanel1.jpg', alt: 'items-image', height: '184px', width: '184px', class: 'items-image'
+                .items-detail
+                  .items-price
+                    %span.price-yen
+                      ¥ 438,000
+                  %h3.items-name
+                    シャネル トートバッグ レディース CHANEL A57067 Y83441 94305 ブラック
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+            .items-lis
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+        .new-products-type
+          .new-products-type__top
+            %h3.theme
+              ルイヴィトン新着アイテム
+            = link_to "もっと見る ＞＞",root_path, class: "look-more"
+          .items-block
+            .items-list
+              = link_to "#", class: "items-list-link" do
+                = image_tag 'vuitton1.jpg', alt: 'items-image', height: '184px', width: '184px', class: 'items-image'
+                .items-detail
+                  .items-price
+                    %span.price-yen
+                      ¥ 165,000
+                  %h3.items-name
+                    ルイヴィトン バッグ LOUIS VUITTON N41589 ダミエコバルト PDJ NM メンズ ビジネスバッグ グレー
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+        .new-products-type
+          .new-products-type__top
+            %h3.theme
+              シュプリーム新着アイテム
+            = link_to "もっと見る ＞＞",root_path, class: "look-more"
+          .items-block
+            .items-list
+              = link_to "#", class: "items-list-link" do
+                = image_tag 'supu1.jpg', alt: 'items-image', height: '184px', width: '184px', class: 'items-image'
+                .items-detail
+                  .items-price
+                    %span.price-yen
+                      ¥ 20,000
+                  %h3.items-name
+                    シュプリーム パーカー メンズ レディース スウェット ボックスロゴパーカー ブランド supreme ペアルック パーカー プルオーバー ロゴ アウトドア 長袖
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+        .new-products-type
+          .new-products-type__top
+            %h3.theme
+              ナイキ新着アイテム
+            = link_to "もっと見る ＞＞",root_path, class: "look-more"
+          .items-block
+            .items-list
+              = link_to "#", class: "items-list-link" do
+                = image_tag 'nike1.jpg', alt: 'items-image', height: '184px', width: '184px', class: 'items-image'
+                .items-detail
+                  .items-price
+                    %span.price-yen
+                      ¥ 7,000
+                  %h3.items-name
+                    ナイキ シューズ エアズーム ペガサス 36 AQ2203
+
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+            .items-list
+            .items-list
 
 
 
   .sell
-    -# = link_to new_products_path ,class: "sell__link" do
-    = link_to "#" ,class: "sell__link" do
-      .sell-text
+    = link_to new_item_path ,class: "sell__link" do
+      .sell__link-text
         出品
-      = fa_icon "fa-camera"
+      = fa_icon "camera", alt: '出品', class: 'camera'
 
 
 
   .aside
     .aside__body
       .aside__body__left
-        %h2
+        %h2.catch-phraze
           スマホでかんたんフリマアプリ
-        %p 今すぐ無料ダウンロード！
-        .appli__icon
+        %p.catch-phraze-2
+          今すぐ無料ダウンロード！
+        .appli-icon
           %figure
             = image_tag 'mercari.png', alt: 'mercari', height: '68px', width: '68px', class: 'mercari-box'
-          %ul
-            %li
-              = link_to "#" do
-                = image_tag 'app-store.jpeg', alt: 'app-store', height: '40px', width: '144px', class: 'app-store'
-            %li
-              = link_to "#" do
-                = image_tag 'google-play.jpeg', alt: 'google-play', height: '40', width: '144px', class: 'google-play'
+          %ul.store
+            %li.store-icon
+              = link_to "#", class: "store-icon__link" do
+                = image_tag 'app-store.jpeg', alt: 'app-store', height: '40px', width: '140px', class: "store-icon__link__image"
+            %li.store-icon
+              = link_to "#", class: "store-icon__link" do
+                = image_tag 'google-play.jpeg', alt: 'google-play', height: '40', width: '140px', class: "store-icon__link__image"
       %figure.aside__wrap__body__right
-        = image_tag 'smart-phone.png', alt: 'smart-phone', height: '260px', width: '300px', class: 'smart-phone'
+        = image_tag 'smart-phone.png', alt: 'smart-phone', height: '260px', width: '300px'
 
 
 
   .footer
     .footer__wrap
       .footer__wrap__top
-        .about__mercari
-          %h2 メルカリについて
-          %ul
-            %li
-              = link_to "会社概要（運営会社）", root_path
-            %li
-              = link_to "採用情報", root_path
-            %li
-              = link_to "プレスリリース", root_path
-            %li
-              = link_to "公式ブログ", root_path
-            %li
-              = link_to "メルカリロゴ利用ガイドライン", root_path
-            %ul.sns__icon
-              %li
-                = link_to "#" do
+        .about-box
+          %h2.about-box__font
+            メルカリについて
+          %ul.about-box__index
+            %li.about-box__index__list
+              = link_to "会社概要（運営会社）", root_path, class: "about-link"
+            %li.about-box__index__list
+              = link_to "採用情報", root_path, class: "about-link"
+            %li.about-box__index__list
+              = link_to "プレスリリース", root_path, class: "about-link"
+            %li.about-box__index__list
+              = link_to "公式ブログ", root_path, class: "about-link"
+            %li.about-box__index__list
+              = link_to "メルカリロゴ利用ガイドライン", root_path, class: "about-link"
+            %li.sns-icon
+              %li.sns-icon__list
+                = link_to "#", class: "sns-icon__list-link" do
                   = image_tag 'twitter.png', alt: 'twitter', height: '28', width: '31', class: 'twitter'
-              %li
-                = link_to "#" do
-                  = image_tag 'face-book.png', alt: 'face-book', height: '30', width: '30', class: 'face-book'
-        .about__help
-          %h2 ヘルプ＆ガイド
-          %ul
-            %li
-              = link_to "メルカリガイド", root_path
-            %li
-              = link_to "らくらくメルカリ便", root_path
-            %li
-              = link_to "ゆうゆうメルカリ便", root_path
-            %li
-              = link_to "大型メルカリ便", root_path
-            %li
-              = link_to "車体取引ガイド", root_path
-            %li
-              = link_to "メルカリあんしん・あんぜん宣言！", root_path
-            %li
-              = link_to "偽ブランド品撲滅への取り組み", root_path
-            %li
-              = link_to "メルカリボックス", root_path
-        .about__private
-          %h2 プライバシーと利用規約
-          .about__private__box
-            .about__private__box__in
-              %ul
-                %li
-                  = link_to "プライバシーポリシー", root_path
-                %li
-                  = link_to "メルカリ利用規約", root_path
-                %li
-                  = link_to "あんしんスマホサポート制度に関する利用規約", root_path
-                %li
-                  = link_to "コンプライアンスポリシー", root_path
-            .about__private__box__in
-              %ul
-                %li
-                  = link_to "個人データあんぜん管理に係る基本方針", root_path
-                %li
-                  = link_to "特定商取引に関する表記", root_path
-                %li
-                  = link_to "資金決済法に基づく表示", root_path
-                %li
-                  = link_to "法令順守と犯罪抑止のために", root_path
-        .about__country
-          %h2 国
-          %ul
-            %li
-              = link_to "日本", root_path
-            %li
-              = link_to "United States", root_path
-      .footer__bottom
+              %li.sns-icon__list
+                = link_to "#", class: "sns-icon__list-link" do
+                  = image_tag 'face-book.png', alt: 'face-book', height: '31', width: '31.5', class: 'face-book'
+        .about__box
+          %h2.about-box__font
+            ヘルプ＆ガイド
+          %ul.about-box__index
+            %li.about-box__index__list
+              = link_to "メルカリガイド", root_path, class: "about-link"
+            %li.about-box__index__list
+              = link_to "らくらくメルカリ便", root_path, class: "about-link"
+            %li.about-box__index__list
+              = link_to "ゆうゆうメルカリ便", root_path, class: "about-link"
+            %li.about-box__index__list
+              = link_to "大型メルカリ便", root_path, class: "about-link"
+            %li.about-box__index__list
+              = link_to "車体取引ガイド", root_path, class: "about-link"
+            %li.about-box__index__list
+              = link_to "メルカリあんしん・あんぜん宣言！", root_path, class: "about-link"
+            %li.about-box__index__list
+              = link_to "偽ブランド品撲滅への取り組み", root_path, class: "about-link"
+            %li.about-box__index__list
+              = link_to "メルカリボックス", root_path, class: "about-link"
+        .about__box
+          %h2.about-box__font
+            プライバシーと利用規約
+          %ul.about-box__index
+            %li.about-box__index__list
+              = link_to "プライバシーポリシー", root_path, class: "about-link"
+            %li.about-box__index__list
+              = link_to "メルカリ利用規約", root_path, class: "about-link"
+            %li.about-box__index__list
+              = link_to "あんしんスマホサポート制度に関する利用規約", root_path, class: "about-link"
+            %li.about-box__index__list
+              = link_to "コンプライアンスポリシー", root_path, class: "about-link"
+        .about__box
+          %ul.about-box__index
+            %li.about-box__index__list
+              = link_to "個人データ安全管理に係る基本方針", root_path, class: "about-link"
+            %li.about-box__index__list
+              = link_to "特定商取引に関する表記", root_path, class: "about-link"
+            %li.about-box__index__list
+              = link_to "資金決済法に基づく表示", root_path, class: "about-link"
+            %li.about-box__index__list
+              = link_to "法令順守と犯罪抑止のために", root_path, class: "about-link"
+        .about__box
+          %h2.about-box__font
+            国
+          %ul.about-box__index
+            %li.about-box__index__list
+              = link_to "日本", root_path, class: "about-link"
+            %li.about-box__index__list
+              = link_to "United States", root_path, class: "about-link"
+      .footer__wrap__bottom
         = link_to "#", class: "mercari" do
           = image_tag 'mercari-logo2.jpeg', alt: 'mercari-logo2', height: '33px', width: '124px', class: 'mercari-logo2'
-        %p
-          %small © 2019 Merucari
+        %small
+          © 2019 Mercari

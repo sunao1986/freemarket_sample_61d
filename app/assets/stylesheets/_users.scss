@@ -12,10 +12,14 @@ body {
   &__header {
     text-align: center;
     height: 128px;
+    padding-left: 35px;
     h1 {
       display: inline-block;
       margin: 40px 0 0;
     }
+  }
+  &__header.login {
+    padding-right: 40px;
   }
   &__main {
     display: block;
@@ -71,6 +75,10 @@ body {
   top: 34%;
   left: 20px;
   font-size: 20px;
+  color: #FF8C00;
+  background: -webkit-linear-gradient(0deg, #40E0D0, #FF8C00, #FF0080);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
  }
 .btn-sns-facebook {
   margin: 16px 0 0;
@@ -108,7 +116,7 @@ body {
   touch-action: manipulation;
   padding-right: 15px;
 }
-.single-footer {
+.new-phone-footer {
   position: absolute;
   right: 0;
   top: 565px;
@@ -119,6 +127,23 @@ body {
   padding: 40px 0;
   margin: 0 auto;
   text-align: center;
+  .footer-list {
+    text-decoration: none;
+    display: block;
+    color: #333;
+  }
+  
+  .single-footer-logo {
+    width: 80px;
+    height: 65px;
+    padding-left: 15px;
+  }
+  .footer-image {
+    vertical-align: middle;
+    margin: 40px auto 0;
+    width: 80px;
+    height: 65px;
+  }
   ul {
     font-size: 0;
     list-style: none;
@@ -137,23 +162,7 @@ body {
     }
   }
 }
-.footer-list {
-  text-decoration: none;
-  display: block;
-  color: #333;
-}
 
-.single-footer-logo {
-  width: 80px;
-  height: 65px;
-  padding-left: 15px;
-}
-.footer-image {
-  vertical-align: middle;
-  margin: 40px auto 0;
-  width: 80px;
-  height: 65px;
-}
 .progress-bar {
   padding: 40px 0 0 44px;
   display: inline-block;
@@ -177,47 +186,128 @@ body {
     font-weight: 600;
     color: #ea352d;
   }
-}
 
-.progress-status {
-  background-color: #ccc;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  margin: 8px auto 0;
-}
-.progress-status:after {
-  left: 50%;
-  position: absolute;
-  bottom: 5px;
-  z-index: -1;
-  display: block;
-  content: "";
-  width: 100%;
-  height: 2px;
-  background-color: #ccc;
-  border-style: solid;
-  border-width: 0;
-  text-decoration: inherit;
-  box-sizing: inherit;
-}
-.progress-status:before {
-  right: 50%;
-  position: absolute;
-  bottom: 5px;
-  z-index: -1;
-  display: block;
-  content: "";
-  width: 100%;
-  height: 2px;
-  background-color: #ccc;
-  border-style: solid;
-  border-width: 0;
-  text-decoration: inherit;
-  box-sizing: inherit;
-}
-.progress-status.active {
-  background-color: #ea352d;
+  .progress-status {
+    background-color: #ccc;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 8px auto 0;
+  }
+  .progress-status:after {
+    left: 50%;
+    position: absolute;
+    bottom: 5px;
+    z-index: -1;
+    display: block;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #ccc;
+    border-style: solid;
+    border-width: 0;
+    text-decoration: inherit;
+    box-sizing: inherit;
+  }
+  .progress-status.now:before {
+    background-color: #ea352d
+  }
+  .progress-status.now {
+    background-color: #ea352d
+  }
+  .progress-status.past:before {
+    background-color: #ea352d
+  }
+  .progress-status.past {
+    background-color: #ea352d
+  }
+  .last-status.now:before {
+    background-color: #ea352d;
+  }
+  .progress-status.past:after {
+    background-color: #ea352d
+  }
+  .first-status.past:after {
+    background-color: #ea352d
+  }
+  .first-status.past {
+    background-color: #ea352d
+  }
+  .first-status.now {
+    background-color: #ea352d
+  }
+  .last-status.now:before {
+    background-color: #ea352d
+  }
+  
+  .progress-status:before{
+    right: 50%;
+    position: absolute;
+    bottom: 5px;
+    z-index: -1;
+    display: block;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #ccc;
+    border-style: solid;
+    border-width: 0;
+    text-decoration: inherit;
+    box-sizing: inherit;
+  }
+
+  .first-status {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 8px auto 0;
+    background-color: #ccc;
+  }
+  // .now,.past {
+  //   width: 12px;
+  //   height: 12px;
+  //   border-radius: 50%;
+  //   margin: 8px auto 0;
+  //   background-color: #ea352d;
+  // }
+  .first-status:after {
+    left: 50%;
+    position: absolute;
+    bottom: 5px;
+    z-index: -1;
+    display: block;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #ccc;
+    border-style: solid;
+    border-width: 0;
+    text-decoration: inherit;
+    box-sizing: inherit;
+  }
+  
+  .last-status {
+    background-color: #ccc;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 8px auto 0;
+  }
+  .last-status:before {
+    right: 50%;
+    position: absolute;
+    bottom: 5px;
+    z-index: -1;
+    display: block;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #ccc;
+    border-style: solid;
+    border-width: 0;
+    text-decoration: inherit;
+    box-sizing: inherit;
+  }
 }
 .l-single-inner.registration-form {
   padding: 24px 16px 40px;
@@ -229,9 +319,14 @@ body {
   &__content {
     max-width: 343px;
     margin: 0 auto;
+    .form-group {
+      .text-center {
+        margin-top: 40px;
+      }
+    }
     p {
       margin: 8px 0 0;
-      line-height: 1.5
+      line-height: 1.5;
     }
     p:first-child {
       margin: 0;
@@ -253,6 +348,9 @@ body {
     font-size: 12px;
     vertical-align: top;
   }
+  .form-require.option {
+    background-color: rgb(209, 209, 209);
+  }
   .input-default {
     width: 100%;
     margin: 8px 0 0;
@@ -265,6 +363,17 @@ body {
     font-size: 16px;
     
   }
+  select {
+    width: 100%;
+    margin: 8px 0 0;
+    height: 48px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    line-height: 1.5;
+    font-size: 16px;
+  }
   .l-chapter-sub-head {
     font-size: 16px;
     font-weight: 600;
@@ -273,6 +382,48 @@ body {
     margin: 8px 0 0;
     padding: 0;
     line-height: 1.5;
+
+  }
+  .text-center {
+    text-align: center;
+    margin-top: 40px;
+  }
+  .birthday-select-wrap {
+    .select-wrap {
+      .fa {
+        position: absolute;
+        right: 10px;
+        top: 20px;
+        z-index: 2;
+        color: #888;
+        font-size: 25px;
+        transform: translate(0 -50%);
+        font-weight: bold;
+      }
+      select {
+        width: 76px;
+        height: 48px;
+        // -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        margin: 8px 0 0;
+        background-color: #fff;
+        display: inline-block;
+        position: relative;
+        // pointer-events: none;
+      }
+    }
+  }
+}
+.form-group.prefecture {
+  position: relative;
+  .fa-angle-down {
+    position: absolute;
+    top: 37px;
+    font-weight: bold;
+    right: 10px;
+    font-size: 20px;
+    color: gray;
   }
 }
 .form-group:first-child {
@@ -299,7 +450,7 @@ body {
   position: relative;
   background-color: #fff;
 }
-.second-footer {
+.registrations-footer {
   position: absolute;
   right: 0;
   top: 1320px;
@@ -310,6 +461,23 @@ body {
   padding: 40px 0;
   margin: 0 auto;
   text-align: center;
+  .footer-list {
+    text-decoration: none;
+    display: block;
+    color: #333;
+  }
+  
+  .single-footer-logo {
+    width: 80px;
+    height: 65px;
+    padding-left: 15px;
+  }
+  .footer-image {
+    vertical-align: middle;
+    margin: 40px auto 0;
+    width: 80px;
+    height: 65px;
+  }
   ul {
     font-size: 0;
     list-style: none;
@@ -339,8 +507,188 @@ body {
 }
 .text-right {
   text-align: right;
+  position: relative;
+  .fa {
+    font-weight: bold;
+    font-size: 22px;
+    position: absolute;
+    bottom: 0px;
+    left: 345px;
+  }
 }
 .registration-link {
   color: #0099e8;
   text-decoration: none;
+}
+
+.shippings-footer {
+  position: absolute;
+  right: 0;
+  top: 1200px;
+  left: 0;
+  z-index: 1;
+  width: 456px;
+  height: 220px;
+  padding: 40px 0;
+  margin: 0 auto;
+  text-align: center;
+  .footer-list {
+    text-decoration: none;
+    display: block;
+    color: #333;
+  }
+  
+  .single-footer-logo {
+    width: 80px;
+    height: 65px;
+    padding-left: 15px;
+  }
+  .footer-image {
+    vertical-align: middle;
+    margin: 40px auto 0;
+    width: 80px;
+    height: 65px;
+  }
+  ul {
+    font-size: 0;
+    list-style: none;
+  }
+  li {
+    text-decoration: none;
+    font-size: 12px;
+    margin: 0 0 0 16px;
+    display: inline-block;
+  }
+  p {
+    margin: 8px 0 0;
+    small {
+      font-size: 11px;
+      padding-left: 15px;
+    }
+  }
+}
+.login-panel {
+  margin: 0 auto;
+  background-color: #fff;
+  max-width: none;
+  width: 456px;
+  &__no-account {
+    padding: 40px 64px;
+    text-align: center;
+    p {
+      font-size: 14px;
+    }
+    .btn-registration {
+      text-decoration: none;
+      display: block;
+      margin: 8px 0 0;
+      border: 1px solid #0099e8;
+      background-color: #0099e8;
+      color: #fff;
+      line-height: 40px;
+    }
+  }
+  &__form-inner:first-child {
+    padding: 24px 64px 32px;
+    border: 0;
+  }
+  &__form-inner {
+    padding: 32px 64px;
+    .btn-sns-facebook:first-child {
+      margin: 0;
+    }
+    .btn-sns-facebook {
+      background-color: #385185;
+      color: #fff;
+    }
+    .btn-sns-google {
+      margin: 16px 0 0;
+      background-color: #fff;
+      border: 1px solid #979797;
+      color: #333;
+    }
+    .btn-sns {
+      position: relative;
+    }
+    .btn-default {
+      display: block;
+      width: 100%;
+      line-height: 48px;
+      font-size: 14px;
+     
+      cursor: pointer;
+      text-align: center;
+    }
+    .form-group {
+      .input-default {
+        margin: 0;
+        width: 100%;
+        height: 48px;
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        line-height: 1.5;
+        font-size: 16px;
+
+      }
+    }
+  }
+  &__form-inner.sns {
+    border-top: 1px solid #eee;
+  }
+  .forget-password {
+    display: block;
+    margin: 40px 0 0;
+    color: #0099e8;
+    text-decoration: none;
+  }
+}
+
+
+.login-footer {
+  position: absolute;
+  right: 0;
+  top: 800px;
+  left: 0;
+  z-index: 1;
+  width: 456px;
+  height: 220px;
+  padding: 40px 0;
+  margin: 0 auto;
+  text-align: center;
+  .footer-list {
+    text-decoration: none;
+    display: block;
+    color: #333;
+  }
+  
+  .single-footer-logo {
+    width: 80px;
+    height: 65px;
+    padding-left: 15px;
+  }
+  .footer-image {
+    vertical-align: middle;
+    margin: 40px auto 0;
+    width: 80px;
+    height: 65px;
+  }
+  ul {
+    font-size: 0;
+    list-style: none;
+  }
+  li {
+    text-decoration: none;
+    font-size: 12px;
+    margin: 0 0 0 16px;
+    display: inline-block;
+  }
+  p {
+    margin: 8px 0 0;
+    small {
+      font-size: 11px;
+      padding-left: 15px;
+    }
+  }
 }

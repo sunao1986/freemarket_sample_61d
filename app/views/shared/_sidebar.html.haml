@@ -1,35 +1,35 @@
 .mypage-sidebar
   %ul.mypage-sidebar__box
     %li.mypage
-      %a.mypage{href:users_path, class:"side-list"}マイページ
+      = link_to  "マイページ", users_path, class:"side-list"
     %li.todo
-      %a.todo{href:"/", class:"side-list"}やることリスト
+      = link_to  "やることリスト", "/", class:"side-list"
     %li.likelist
-      %a.likelist{href:likes_path, class:"side-list"}いいね！一覧
+      = link_to  "いいね！一覧", likes_path, class:"side-list"
     %li.exhibit
-      %a.exhibit{href:new_item_path, class:"side-list"}出品する
+      = link_to  "出品する", new_item_path, class:"side-list"
     %li.listing
-      %a.listing{href:listing_users_path, class:"side-list"}出品した商品 - 出品中
+      = link_to  "出品した商品 - 出品中", listing_users_path, class:"side-list"
     %li.progress
-      %a.progress{href:progress_users_path, class:"side-list"}出品した商品 - 取引中
+      = link_to  "出品した商品 - 取引中", progress_users_path, class:"side-list"
     %li.completed
-      %a.completed{href:completed_users_path, class:"side-list"}出品した商品 - 売却済み
+      = link_to  "出品した商品 - 売却済み", completed_users_path, class:"side-list"
     %li.purchase
-      %a.purchase{href:purchase_users_path, class:"side-list"}出品した商品 - 取引中
+      = link_to  "出品した商品 - 取引中", purchase_users_path, class:"side-list"
     %li.purchased
-      %a.purchased{href:purchased_users_path, class:"side-list"}出品した商品 - 過去の取引
+      = link_to  "出品した商品 - 過去の取引", purchased_users_path, class:"side-list"
     %li.evaluation
-      %a.evaluation{href:"/", class:"side-list"}評価一覧
+      = link_to  "評価一覧", "/", class:"side-list"
     %li.setting 設定
     %li.profile
-      %a.profile{href:profile_users_path, class:"side-list"}プロフィール
+      = link_to  "プロフィール", profile_users_path, class:"side-list"
     %li.shipping
-      %a.shipping{href:"/", class:"side-list"}発送元・お届け先住所変更
+      = link_to  "発送元・お届け先住所変更", "/", class:"side-list"
     %li.card
-      %a.card{href:cards_path, class:"side-list"}支払い方法
+      = link_to  "支払い方法", cards_path, class:"side-list"
     %li.mail
-      %a.mail{href:"/", class:"side-list"}メール/パスワード
+      = link_to  "メール/パスワード", "/", class:"side-list"
     %li.identification
-      %a.identification{href:"/", class:"side-list"}本人情報
+      = link_to  "本人情報", "/", class:"side-list"
     %li.logout
-      %a.logout{href:logout_users_path, class:"side-list"}ログアウト
+      = link_to  "ログアウト", logout_users_path, class:"side-list"
