@@ -36,11 +36,11 @@
           .form-group
             = f.label "パスワード" 
             %span.form-require 必須
-            = f.password_field :encrypted_password, class: "input-default", placeholder: "7文字以上"
+            = f.password_field :password, class: "input-default", placeholder: "7文字以上"
           .form-group
             = f.label "パスワード(確認)" 
             %span.form-require 必須
-            = f.password_field :reset_password_token, class: "input-default", placeholder: "7文字以上"  
+            = f.password_field :password_confirmation, class: "input-default", placeholder: "7文字以上"  
           .form-group
             %h3.text-left.l-chapter-sub-head  本人確認
             %p.l-single-text
@@ -86,6 +86,7 @@
               「次へ進む」のボタンを押すことにより、
               = link_to "利用規約","/jp/tos_list", class: "registration-link"
               に同意したものとみなします
+          = f.hidden_field :name, value: "太郎"   
           = f.submit "次へ進む", class: "btn-default btn-red"
           .form-group.text-right
             %p
