@@ -4,7 +4,10 @@ class Item < ApplicationRecord
   # has_many :comments
   # has_many :reviews
   belongs_to :user, optional: true
-  # belongs_to :category
-  # belongs_to :size
-  # belongs_to :brand
+  belongs_to :category
+  belongs_to :size
+  belongs_to :brand
+
+  #recent使うなら,物が無いときの（）のなかみどうしよう。。。。
+  # scope :recent, -> {order('id DESC').limit(10).where.not()}
 end

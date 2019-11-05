@@ -1,7 +1,19 @@
 class ItemsController < ApplicationController
 
   def index
-    #トップページ
+    #ジャンルごとにインスタンス変数分けて、表示制限数指定と画像入りで取得
+
+      #カテゴリー
+      #レディース
+      @ladies_items = Item.get_ladies.limit(10)).includes(:images)
+      #メンズ
+      @mens_items = Item.get_mens.limit(10).includes(:images)
+      #家電
+      @appliance_items = Item.get_appliance.limit(10).includes(:images)
+      #おもちゃ
+      @toy_items = Item.get_toy.limit(10).includes(:images)
+
+
   end
 
   def new
