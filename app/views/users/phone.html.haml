@@ -29,7 +29,7 @@
             %label{for: "phone_number"} 携帯電話の番号
             %input{name: "phone_number", type: "tel", class: "input-default", placeholder: "携帯電話の番号を入力"}
           %p 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
-          %input{type: "submit", class: "btn-default btn-red", value: "SMSを送信する"}
+          %input{type: "button", onclick: "location.href='/shippings/new'", class: "btn-default btn-red", value: "SMSを送信する"}
           %p ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
           .form-group.text-right
             %p
