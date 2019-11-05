@@ -14,14 +14,14 @@
           必須
         .exhibit-image-field__notice
           最大5枚までアップロードできます
-        = f.fields_for :image do |image|
+        = f.fields_for :images  do |image|
           .exhibit-image-container
             .increase-images-box
             .exhibit-image-box
               #add-file-field-point
                 #custom-data-for{'data-image-name': "hoge"}
                   = image.label :image_url ,class:"box-click-label", for: "upload_file" do
-                    = image.file_field :image_url, id:"upload_file", class: "image_upload_file", name:"item[image_ids][]", style: "display: none;"
+                    = image.file_field :image_url, id:"upload_file", class: "image_upload_file", name: "item[images_attributes][0][image_url]", style: "display: none;"
                     %p.exhibit-drug ドラッグアンドドロップ 
                     %p.exhibit-click  またはクリックしてファイルをアップロード
 
@@ -47,16 +47,13 @@
         .exhibit-detail-field--required
           必須
         .exhibit-detail-field__category
-          = f.select :condition, [["---", ""], ["レディース"], ["メンズ"], ["ベビー・キッズ"],["インテリア・住まい・小物"],["本・音楽・ゲーム"],["おもちゃ・ホビー・グッズ"],["コスメ・香水・美容"],["家電・スマホ・カメラ"],["スポーツ・レジャー"],["ハンドメイド"],["レジャー"],["自転車・オートバイ"],["その他"]], class: "input_item_category"
-          -# = fa_icon "angle-down"
-          -# テーブル作ったらconditionをcategoryに変える
-          
+          = f.collection_select :category_id, @parents.all, :id, :name, prompt: "---", class: "input_item_category"         
         .hidden-category-second-field
           .hidden-category-second-field__box
-            = f.select :condition, [["---", ""], ["M", "M"], ["L", "L"], ["FREE SIZE", "FREE SIZE"]], class: "input_item_hidden"
+            = f.collection_select :category_id, @parents.all, :id, :name, selected:["---", ""], class: "input_item_hidden"
         .hidden-category-third-field
           .hidden-category-third-field__box
-            = f.select :condition, [["---", ""], ["M", "M"], ["L", "L"], ["FREE SIZE", "FREE SIZE"]], class: "input_item_hidden"
+            = f.collection_select :category_id, @parents.all, :id, :name, selected:["---", ""], class: "input_item_hidden"
 
         .hidden-size-field
           .hidden-size-field__gray-label
@@ -65,8 +62,8 @@
           .hidden-size-field--required
             必須
           .hidden-size-field__box
-            = f.select :condition, [["---", ""], ["XXS以下", "XXS以下"],["XS(SS)", "XS(SS)"], ["S", "S"], ["M", "M"], ["L", "L"], ["XL(LL)", "XL(LL)"], ["2XL(3L)", "2XL(3L)"], ["3XL(4L)", "3XL(4L)"], ["4XL(5L)以上", "4XL(5L)以上"], ["FREE SIZE", "FREE SIZE"]], class: "input_item_size"
-            -# テーブル作ったらconditionをsizeに変える
+            = f.collection_select :size_id, @size, :id, :name, class: "input_item_size"
+            -# [["---", ""], ["XXS以下", "XXS以下"],["XS(SS)", "XS(SS)"], ["S", "S"], ["M", "M"], ["L", "L"], ["XL(LL)", "XL(LL)"], ["2XL(3L)", "2XL(3L)"], ["3XL(4L)", "3XL(4L)"], ["4XL(5L)以上", "4XL(5L)以上"], ["FREE SIZE", "FREE SIZE"]], 
         .hidden-brand-field
           .hidden-brand-field__gray-label
           .hidden-brand-field__label
@@ -74,8 +71,7 @@
           .hidden-brand-field--required
             任意
           .hidden-brand-field__box
-            = f.select :condition, [["---", ""], ["M", "M"], ["L", "L"], ["FREE SIZE", "FREE SIZE"]], class: "input_item_brand", placeholder: "例)シャネル"
-            -# テーブル作ったらconditionをsizeに変える
+            = f.collection_select :brand_id, @barand, :id, :name, class: "input_item_brand", placeholder: "例)シャネル"
         .exhibit-detail-field__gray-label
         .exhibit-detail-field__label
           商品の状態
@@ -100,14 +96,14 @@
           .hidden-delivery-field--required
             必須
           .hidden-delivery-field__box
-            = f.select :delivery_method, [["---", ""], ["M", "M"], ["L", "L"], ["FREE SIZE", "FREE SIZE"]], class: "input_item_delivery_method"
+            = f.select :delivery_method, [["---", ""], ["未定"], ["らくらくメルカリ便"], ["ゆうメール"]], class: "input_item_delivery_method"
         .exhibit-delivery-field__gray-label
         .exhibit-delivery-field__label
           配送元の地域
         .exhibit-delivery-field--required
           必須
         .exhibit-delivery-field__delivery
-          = f.select :delivery_area, [["---", ""], ["M", "M"], ["L", "L"], ["FREE SIZE", "FREE SIZE"]], class: "input_item_delivery"
+          = f.select :delivery_area, [["---", ""], ["関東"], ["関西"], ["その他"]], class: "input_item_delivery"
         .exhibit-delivery-field__gray-label
         .exhibit-delivery-field__label
           発送までの日数
@@ -141,29 +137,29 @@
       .exhibit-button-field
         .button-text-area
           .button-text-area--one
-            =link_to "禁止されている出品、行為", "", class: "link-ban"
+            =link_to "禁止されている出品、行為", "/", class: "link-ban"
             を必ずご確認ください。
           .button-text-area--two
             またブランド品でシリアルナンバー等がある場合はご記載ください。
-            =link_to "偽ブランドの販売", "", class: "link-ban"
+            =link_to "偽ブランドの販売", "/", class: "link-ban"
             は犯罪であり処罰される可能性があります。
           .button-text-area--three
             また、出品をもちまして
-            =link_to "加盟店規約", "", class: "link-ban"
+            =link_to "加盟店規約", "/", class: "link-ban"
             に同意したことになります。
         .button-submit-area
           .button-submit-area__do
             = f.submit "出品する", class:"exhibit-submit-btn"
           .button-submit-area__back
-            =link_to "もどる", "", class: "exhibit-back-btn"
+            =link_to "もどる", root_path, class: "exhibit-back-btn"
       .exhibit-foot-field
         .footer-menu
           .footer-menu__policy
-            =link_to "プライバシーポリシー", "", class: "link-foot"
+            =link_to "プライバシーポリシー", "/", class: "link-foot"
           .footer-menu__terms
-            =link_to "メルカリ利用規約", "", class: "link-foot"
+            =link_to "メルカリ利用規約", "/", class: "link-foot"
           .footer-menu__notation
-            =link_to "特定商取引に関する表記", "", class: "link-foot"
+            =link_to "特定商取引に関する表記", "/", class: "link-foot"
         .footer-logo
           = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?1248199994"
         .footer-copy

@@ -7,24 +7,15 @@ class ItemsController < ApplicationController
   def new
     #商品登録画面
     @item = Item.new
+    @item.images.build
+    @parents = Category.all.order("id ASC").limit(13)
+    @size = Size.all
+    @barand = Brand.all   
   end
 
   def create
     binding.pry
-    @item = Item.create(
-      name: item_params[:name], 
-      discription: item_params[:discription], 
-      status: item_params[:status], 
-      delivery_cost: item_params[:delivery_cost], 
-      delivery_method: item_params[:delivery_method], 
-      delivery_area: item_params[:delivery_area], 
-      delivery_days: item_params[:delivery_days], 
-      price: item_params[:price], 
-    )
-    # seller_id: params[:current_user]
-    # category: params[:category]
-    # size: params[:size]
-    # brand: params[:brand]
+    @item = Item.create(item_params)
     
     if @item.save
       render :index
@@ -64,8 +55,8 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:id, :name, :discription, :status, :delivery_cost, :delivery_method, :delivery_area, :delivery_days, :price, :likes_count, :buyer_id, :condition, images_attributes: [:image_url, :image_ids => [] ])
-    # form_forはrequireをつける、追加はseller_id、category、size、brand
+    params.require(:item).permit(:id, :name, :discription, :status, :delivery_cost, :delivery_method, :delivery_area, :delivery_days, :price, :likes_count, :category_id, :brand_id, :size_id, images_attributes: [:id, :image_url]).merge(user_id: current_user.id)
+    #  :buyer_id,  :condition, はタイミングが別
   end
 
   def user_params

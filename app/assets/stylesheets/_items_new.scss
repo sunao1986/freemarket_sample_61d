@@ -219,7 +219,7 @@
       &__category{
         // これcategoryに修正する
         padding-top:5px;
-        #item_condition{
+        #item_category_id{
           display: block;
           width:400px;
           height: 50px;
@@ -237,7 +237,7 @@
         display:none;
         &__box{
           // 名前修正対象
-          #item_condition{
+          #item_category_id{
             display: block;
             width:400px;
             height: 50px;
@@ -246,6 +246,7 @@
             font-size: 15px;
             border-radius: 4px;
             border-style: none;
+            background-color: #fff;
             border: solid 1px rgb(211, 211, 211);
           }
         }
@@ -254,7 +255,7 @@
          display:none;
         &__box{
           // 名前修正対象
-          #item_condition{
+          #item_category_id{
             display: block;
             width:400px;
             height: 50px;
@@ -263,6 +264,7 @@
             font-size: 15px;
             border-radius: 4px;
             border-style: none;
+            background-color: #fff;
             border: solid 1px rgb(211, 211, 211);
           }
         }
@@ -279,6 +281,7 @@
           font-size: 15px;
           border-radius: 4px;
           border-style: none;
+          background-color: #fff;
           border: solid 1px rgb(211, 211, 211);
         }
         // 名前修正対象
@@ -326,7 +329,7 @@
           clear: both;
           padding-top:5px;
           // sizeに名前修正
-          #item_condition{
+          #item_size_id{
             display: block;
             width:400px;
             height: 50px;
@@ -376,6 +379,7 @@
           width:35px;
           min-width: 20px;
           color: white;
+          padding:3px 0;
           margin-top: 40px;
           margin-left: 10px;
           background-color: gray;
@@ -384,7 +388,7 @@
           clear: both;
           padding-top:5px;
           // brandに名前修正
-          #item_condition{
+          #item_brand_id{
             display: block;
             width:400px;
             height: 50px;
@@ -536,6 +540,7 @@
             font-size: 15px;
             padding-left:10px;
             border-style: none;
+            background-color: #fff;
             border: solid 1px rgb(211, 211, 211);
             cursor: pointer;
           }
@@ -753,7 +758,7 @@
         }
       }
       .footer-logo{
-        margin: 0 auto;
+        margin: 30px auto 0 auto;
         width: 90px;
         height: 90px;
       }

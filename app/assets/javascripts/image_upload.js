@@ -15,21 +15,25 @@ window.addEventListener('DOMContentLoaded',function(){
     function inputHTML(){
       var input = `<div id=custom-data-for data-image-name="hoge">
                      <label for="upload_file" class="box-click-label" >
-                       <input type="file" id="upload_file" class="image_upload_file" name="item[image_ids][]" style="display: none;">
+                       <input type="file" id="upload_file" class="image_upload_file" name="item[images_attributes][0][image_url]" style="display: none;">
                      </label>
                    </div>`
       return input;
     }
+    // <%= image.label :image_url ,class:"box-click-label", for: "upload_file" do
+    // <%= image.file_field :image_url, id:"upload_file", class: "image_upload_file", style: "display: none;" %>
 
-    //ドロップダウン試験中です
+
+    $('#upload_file').change(function () {
+      // 画像の情報を取得
+      var file = this.files[0];
+      console.log(file);
+    }); 
 
     //ここからはクリックでアップロードした画像のプレビュー
-    $(document).on('change','#upload_file',function(e){
-      //ファイル情報を取得
+    $(document).on('change','upload_file',function(e){
       var file = e.target.files[0];
       var reader = new FileReader();
-
-      //ファイルの処理
       reader.onload = (function(){
         return function(e){
         var width = $(".exhibit-image-box").width();
