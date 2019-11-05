@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:edit, :update]
 
   def index
     #トップページ
@@ -25,8 +26,7 @@ class ItemsController < ApplicationController
 
   def updata
     if current_user ==! user_id && params[:id].present?
-       item = Item.find(params[:id])
-       item.update(item_params)
+       @item.update(item_params)
        render :index
     else
       redirect_to action: :edit
@@ -63,6 +63,10 @@ class ItemsController < ApplicationController
 
   def user_params
     params.permit(:id, :nickname)
+  end
+
+  def set_item
+    @item = Item.find(params[:id]
   end
 
 end
