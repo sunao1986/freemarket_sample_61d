@@ -76,12 +76,8 @@ class ItemsController < ApplicationController
 
   private
 
-  # def category_params
-  #   params.require(:category).permit(:ancestry)
-  # end
-
   def item_params
-    params.require(:item).permit(:id, :name, :discription, :status, :delivery_cost, :delivery_method, :delivery_area, :delivery_days, :price, :likes_count, :category_id, :brand_id, :size_id, images_attributes: [:id, :image_url]).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :discription, :status, :delivery_cost, :delivery_method, :delivery_area, :delivery_days, :price, :likes_count, :category_id, :brand_id, :size_id, images_attributes: [:id, :image_url]).merge(user_id: current_user.id)
     #  :buyer_id,  :condition, はタイミングが別
   end
 
