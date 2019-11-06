@@ -23,7 +23,7 @@
   %main.single-container__main
     %section.l-single-container
       %h2.l-single-container__head.registration 住所入力
-      = form_for(@shipping, url:  new_shipping_path, html: {class: 'l-single-inner registration-form'}) do |f|
+      = form_for @shipping, class: 'l-single-inner registration-form' do |f|
         .l-single-container__content
           .form-group
             %div
