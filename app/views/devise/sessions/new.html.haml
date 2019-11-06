@@ -21,7 +21,7 @@
             .form-group
               = f.email_field :email, class: "login-input-text input-default", placeholder: "メールアドレス"
             .form-group
-              = f.password_field :encrypted_password, class: "login-input-text input-default", placeholder: "パスワード"
+              = f.password_field :password, class: "login-input-text input-default", placeholder: "パスワード"
             = f.submit class: "login-submit btn-default btn-red", value: "ログイン"  
             = link_to "パスワードをお忘れの方", "#", class: "forget-password"
     %footer.login-footer
