@@ -57,6 +57,7 @@ class UsersController < ApplicationController
   end
 
   def phone
+    @phone_number = User.new
   end
 
 end
