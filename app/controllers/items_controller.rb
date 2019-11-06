@@ -41,7 +41,10 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    #商品編集画面
+    # @item.images.build
+    @parents = Category.all.order("id ASC").limit(13)
+    @size = Size.all
+    @barand = Brand.all 
   end
 
   def show
@@ -65,7 +68,7 @@ class ItemsController < ApplicationController
   end
 
   def set_item
-    @item = Item.find(params[:id]
+    @item = Item.find(params[:id])
   end
 
 end
