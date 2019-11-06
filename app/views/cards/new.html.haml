@@ -1,0 +1,55 @@
+.new-card-page
+  .new-card-wrape
+    = form_for @card do |f|
+      .new-card-header-field
+        .new-card-header-field__title
+          クレジットカード情報入力
+      .new-card-contents-field
+        .new-card-contents-field__center
+          .new-card-title-area-one
+            .new-card-title-area-one--label
+              カード番号
+            .new-card-title-area-one--required
+              必須
+          .new-card-input-area
+            = f.text_field :card_number, placeholder: "半角数字のみ"
+          .new-card-icon-area
+            %ul.card-list
+              %li
+              = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?465897195", width: "49px",height: "20px", class: "card-icons"
+              %li
+              = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?465897195", width: "34px",height: "20px" , class: "card-icons"
+              %li
+              = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?465897195", width: "32px",height: "20px" , class: "card-icons"
+              %li
+              = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?465897195", width: "32px",height: "20px" , class: "card-icons"
+              %li
+              = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?465897195", width: "21px",height: "20px" , class: "card-icons"
+              %li
+              = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?465897195", width: "32px",height: "20px" , class: "card-icons"
+              %li
+              = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?465897195", width: "32px",height: "20px" , class: "card-icons"
+          .new-card-title-area-two
+            .new-card-title-area-two--label
+              有効期限
+            .new-card-title-area-two--required
+              必須
+          .new-card-input-area
+            = fa_icon 'angle-down', alt: 'angle-down', class: "fas fa-angle-dowx fa-2x", id:"card-angle-left"
+            = fa_icon 'angle-down', alt: 'angle-down', class: "fas fa-angle-dowx fa-2x", id:"card-angle-right"         
+            = f.select :limit_month, [["1"],["2"],["3"],["4"],["5"],["6"],["7"],["8"],["9"],["10"],["11"],["12"]]
+            月
+            = f.select :limit_year, [["19"],["20"],["21"],["22"],["23"],["24"],["25"],["26"],["27"],["28"],["29"]]
+            年
+          .new-card-title-area-three
+            .new-card-title-area-three--label
+              セキュリティコード
+            .new-card-title-area-three--required
+              必須
+          .new-card-input-area
+            = f.text_field :security_code, placeholder: "カード背面4桁もしくは3桁の番号"
+          .new-card-help-area
+            カード裏面の番号とは？
+          .new-card-btn-area
+            = f.submit "追加する" ,class: "new-card-btn"
+
