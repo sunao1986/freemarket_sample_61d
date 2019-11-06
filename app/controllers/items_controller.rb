@@ -2,8 +2,8 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:edit, :update, :buy]
 
   def index
-    @q = User.ransack(params[:q])
-    @items = @q.result(distinct: true)
+    # @q = User.ransack(params[:q])
+    # @items = @q.result(distinct: true)
 
     #人気のカテゴリー
 
