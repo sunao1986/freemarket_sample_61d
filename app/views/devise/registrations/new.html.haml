@@ -36,11 +36,11 @@
           .form-group
             = f.label "パスワード" 
             %span.form-require 必須
-            = f.password_field :encrypted_password, class: "input-default", placeholder: "7文字以上"
+            = f.password_field :password, class: "input-default", placeholder: "7文字以上"
           .form-group
             = f.label "パスワード(確認)" 
             %span.form-require 必須
-            = f.password_field :reset_password_token, class: "input-default", placeholder: "7文字以上"  
+            = f.password_field :password_confirmation, class: "input-default", placeholder: "7文字以上"  
           .form-group
             %h3.text-left.l-chapter-sub-head  本人確認
             %p.l-single-text
@@ -84,12 +84,13 @@
           .form-group
             %p.l-single-text.text-center
               「次へ進む」のボタンを押すことにより、
-              = link_to "利用規約","/jp/tos_list", class: "registration-link"
+              = link_to "利用規約","#", class: "registration-link"
               に同意したものとみなします
+          = f.hidden_field :name, value: "太郎"   
           = f.submit "次へ進む", class: "btn-default btn-red"
           .form-group.text-right
             %p
-              = link_to "/jp/help_center/article/423", class: "registration-link" do
+              = link_to "#", class: "registration-link" do
                 本人情報の登録について
                 %i.fa.fa-angle-right 
   %footer.registrations-footer
@@ -101,7 +102,7 @@
           = link_to "メルカリ利用規約", "https://www.mercari.com/jp/tos/", class: "footer-list"
         %li
           = link_to "特定商取引に関する表記", "https://www.mercari.com/jp/tokutei/" , class: "footer-list list-bottom"
-    = link_to "https://www.mercari.com/jp/", class: "single-footer-logo" do
+    = link_to root_path, class: "single-footer-logo" do
       = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?465897195", size: "80x65", alt: "mercari",class: "footer-image"  
     %p
       %small ©︎2019 Mercari

@@ -2,7 +2,28 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:edit, :update, :buy]
 
   def index
-    #トップページ
+    # @q = User.ransack(params[:q])
+    # @items = @q.result(distinct: true)
+
+    #人気のカテゴリー
+
+    #レディース
+    # @ladies_items = Item.recent.where(category_params[:ancestry])。。。もしかしたらancestryで持ってくる方法を使うかもなので残しました
+    #カテゴリテーブルが完成形になった時に指定idの範囲変えるかも。なので、データさえあれば、ひとまずレディースのみだが後でコピーすればすぐできる
+    @ladies_items = Item.recent.where(category_id: 3..60)
+    #メンズ
+    # @mens_items = Item.recent.where(category:)
+    #家電
+    # @appliance_items = Item.recent.where(category:)
+    #おもちゃ
+    # @toy_items = Item.recent.where(category:)
+
+    #人気のブランド
+    @chanel_items = Item.recent.where(brand:2)
+    @vuitton_items = Item.recent.where(brand:3)
+    @sup_items = Item.recent.where(brand:4)
+    @nike_items = Item.recent.where(brand:5)
+
   end
 
   def new
@@ -11,12 +32,12 @@ class ItemsController < ApplicationController
     @item.images.build
     @parents = Category.all.order("id ASC").limit(13)
     @size = Size.all
-    @barand = Brand.all   
+    @barand = Brand.all
   end
 
   def create
     @item = Item.new(item_params)
-    
+
     if @item.save
       render :index
     else
@@ -56,7 +77,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:id, :name, :discription, :status, :delivery_cost, :delivery_method, :delivery_area, :delivery_days, :price, :likes_count, :category_id, :brand_id, :size_id, images_attributes: [:id, :image_url]).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :discription, :status, :delivery_cost, :delivery_method, :delivery_area, :delivery_days, :price, :likes_count, :category_id, :brand_id, :size_id, images_attributes: [:id, :image_url]).merge(user_id: current_user.id)
     #  :buyer_id,  :condition, はタイミングが別
   end
 
