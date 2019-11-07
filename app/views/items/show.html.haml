@@ -2,38 +2,52 @@
   .item-container
     .item-container__item-name
       = @item.name
+      
     .item-container__item-main
       .item-container__item-main__photo
         .item-container__item-main__photo__act
-          %img{src:"/assets/alp.jpg", width:"300px", height:"300px"}
-        .item-container__item-main__photo__inact 
-          %p owl carousel rails gem使う
+          - @item.images.each do |item|
+            = image_tag item.image_url, width:"300px", height:"300px"
+        .item-container__item-main__photo__inact
+          - @item.images.each do |item|
+            = image_tag item.image_url, width:"60px", height:"60px"
+
       .item-container__item-main__detail
         %table
           %tr
             %th 出品者
             %td
-              %a.seller{href:"https://www.mercari.com/jp/"}
-                = @user.nickname
+              %a.seller{href:users_path}
+                = @item.user.name
               .rate-icon
-                %i.fa.fa-heart 1
-                %i.fa.fa-heart 1
-                %i.fa.fa-heart 1
+                .rate-icon__good
+                  = image_tag "/assets/rateicon1.jpg", class:"rate-icon"
+                %p.rate-count 1
+                .rate-icon__fair
+                  = image_tag "/assets/rateicon2.jpg", class:"rate-icon"
+                %p.rate-count 1
+                .rate-icon__bad
+                  = image_tag "/assets/rateicon3.jpg", class:"rate-icon"
+                %p.rate-count 1
           %tr
             %th カテゴリー
             %td
-              %a.first{href:"https://www.mercari.com/jp/"}レディース
+              %a.first{href:"https://www.mercari.com/jp/"}
+                = @item.category.name
               %br
-              %a.second{href:"https://www.mercari.com/jp/"}トップス
+              %a.second{href:"https://www.mercari.com/jp/"}
+                = "＞#{@item.category.name}"
               %br
-              %a.third{href:"https://www.mercari.com/jp/"}>Tシャツ/カットソー(半袖/袖なし)
+              %a.third{href:"https://www.mercari.com/jp/"}
+                = "＞#{@item.category.name}"
           %tr
             %th ブランド
             %td
-              %a.brand{href:"https://www.mercari.com/jp/"}ジーユー
+              %a.brand{href:"https://www.mercari.com/jp/"}
+                = @item.brand.name
           %tr
             %th 商品のサイズ
-            %td L
+            %td= @item.size.name
           %tr
             %th 商品の状態
             %td= @item.status
@@ -60,9 +74,11 @@
     .item-container__item-description
       .item-container__item-description__inner
         = @item.discription
-    .item-container__item-btn
+    %a.item-container__item-btn{href:"https://www.mercari.com/jp/"}
       .item-container__item-btn__like
-        %button いいね!
+        %i.fa.fa-heart いいね!
+      .item-container__item-btn__count 1
+    .item-container__fixbox
   .messages
     .messages__content
       %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
@@ -73,139 +89,21 @@
   .media-box
     .icons
       %a.icon-facebook{href:"https://www.mercari.com/jp/"}
-        %i.fa.fa-cog
+        = image_tag "/assets/icon1facebook.jpg", class:"media-box-icon"
       %a.icon-twitter{href:"https://www.mercari.com/jp/"}
-        %i.fa.fa-cog
+        = image_tag "/assets/icon2twitter.jpg", class:"media-box-icon"
       %a.icon-line{href:"https://www.mercari.com/jp/"}
-        %i.fa.fa-cog
+        = image_tag "/assets/icon3line.jpg", class:"media-box-icon"
       %a.icon-pinterest{href:"https://www.mercari.com/jp/"}
-        %i.fa.fa-cog
+        = image_tag "/assets/icon4pinterest.jpg", class:"media-box-icon"
   .recommended
     .recommended__seller-item
       .recommended__seller-item__head
         %a.seller-item{href:"https://www.mercari.com/jp/"}出品者のその他の出品
       .recommended__seller-item__body
-        .seller-item-box1
-          .seller-item-box1__photo
-            %a{href:"https://www.mercari.com/jp/"}
-              %img{src:"/assets/alp.jpg", width:"220px", height:"220px"}
-            .seller-item-box1__info
-              .seller-item-box1__info__name バッグ
-              .seller-item-box1__info__num
-                .seller-item-box1__info__name__price ¥500円
-                .seller-item-box1__info__name__like
-                  %i.fa.fa-cog 1
-        .seller-item-box2
-          .seller-item-box2__photo
-            %a{href:"https://www.mercari.com/jp/"}
-              %img{src:"/assets/alp.jpg", width:"220px", height:"220px"}
-            .seller-item-box2__info
-              .seller-item-box2__info__name バッグ
-              .seller-item-box2__info__num
-                .seller-item-box2__info__name__price ¥500円
-                .seller-item-box2__info__name__like
-                  %i.fa.fa-cog 1
-        .seller-item-box3
-          .seller-item-box3__photo
-            %a{href:"https://www.mercari.com/jp/"}
-              %img{src:"/assets/alp.jpg", width:"220px", height:"220px"}
-            .seller-item-box3__info
-              .seller-item-box3__info__name バッグ
-              .seller-item-box3__info__num
-                .seller-item-box3__info__name__price ¥500円
-                .seller-item-box3__info__name__like
-                  %i.fa.fa-cog 1
-        .seller-item-box4
-          .seller-item-box4__photo
-            %a{href:"https://www.mercari.com/jp/"}
-              %img{src:"/assets/alp.jpg", width:"220px", height:"220px"}
-            .seller-item-box4__info
-              .seller-item-box4__info__name バッグ
-              .seller-item-box4__info__num
-                .seller-item-box4__info__name__price ¥500円
-                .seller-item-box4__info__name__like
-                  %i.fa.fa-cog 1
-        .seller-item-box5
-          .seller-item-box5__photo
-            %a{href:"https://www.mercari.com/jp/"}
-              %img{src:"/assets/alp.jpg", width:"220px", height:"220px"}
-            .seller-item-box5__info
-              .seller-item-box5__info__name バッグ
-              .seller-item-box5__info__num
-                .seller-item-box5__info__name__price ¥500円
-                .seller-item-box5__info__name__like
-                  %i.fa.fa-cog 1
-        .seller-item-box6
-          .seller-item-box6__photo
-            %a{href:"https://www.mercari.com/jp/"}
-              %img{src:"/assets/alp.jpg", width:"220px", height:"220px"}
-            .seller-item-box6__info
-              .seller-item-box6__info__name バッグ
-              .seller-item-box6__info__num
-                .seller-item-box6__info__name__price ¥500円
-                .seller-item-box6__info__name__like
-                  %i.fa.fa-cog 1
-    .recommended__other-item
-      .recommended__other-item__head
-        %a.other-item{href:"https://www.mercari.com/jp/"}カテゴリーのその他の出品
-      .recommended__other-item__body
-        .other-item-box1
-          .other-item-box1__photo
-            %a{href:"https://www.mercari.com/jp/"}
-              %img{src:"/assets/alp.jpg", width:"220px", height:"220px"}
-            .other-item-box1__info
-              .other-item-box1__info__name バッグ
-              .other-item-box1__info__num
-                .other-item-box1__info__name__price ¥500円
-                .other-item-box1__info__name__like
-                  %i.fa.fa-cog 1
-        .other-item-box2
-          .other-item-box2__photo
-            %a{href:"https://www.mercari.com/jp/"}
-              %img{src:"/assets/alp.jpg", width:"220px", height:"220px"}
-            .other-item-box2__info
-              .other-item-box2__info__name バッグ
-              .other-item-box2__info__num
-                .other-item-box2__info__name__price ¥500円
-                .other-item-box2__info__name__like
-                  %i.fa.fa-cog 1
-        .other-item-box3
-          .other-item-box3__photo
-            %a{href:"https://www.mercari.com/jp/"}
-              %img{src:"/assets/alp.jpg", width:"220px", height:"220px"}
-            .other-item-box3__info
-              .other-item-box3__info__name バッグ
-              .other-item-box3__info__num
-                .other-item-box3__info__name__price ¥500円
-                .other-item-box3__info__name__like
-                  %i.fa.fa-cog 1
-        .other-item-box4
-          .other-item-box4__photo
-            %a{href:"https://www.mercari.com/jp/"}
-              %img{src:"/assets/alp.jpg", width:"220px", height:"220px"}
-            .other-item-box4__info
-              .other-item-box4__info__name バッグ
-              .other-item-box4__info__num
-                .other-item-box4__info__name__price ¥500円
-                .other-item-box4__info__name__like
-                  %i.fa.fa-cog 1
-        .other-item-box5
-          .other-item-box5__photo
-            %a{href:"https://www.mercari.com/jp/"}
-              %img{src:"/assets/alp.jpg", width:"220px", height:"220px"}
-            .other-item-box5__info
-              .other-item-box5__info__name バッグ
-              .other-item-box5__info__num
-                .other-item-box5__info__name__price ¥500円
-                .other-item-box5__info__name__like
-                  %i.fa.fa-cog 1
-        .other-item-box6
-          .other-item-box6__photo
-            %a{href:"https://www.mercari.com/jp/"}
-              %img{src:"/assets/alp.jpg", width:"220px", height:"220px"}
-            .other-item-box6__info
-              .other-item-box6__info__name バッグ
-              .other-item-box6__info__num
-                .other-item-box6__info__name__price ¥500円
-                .other-item-box6__info__name__like
-                  %i.fa.fa-cog 1
+        = render partial:"seller-item-box", locals: {seller_items: @seller_items}
+    -# .recommended__other-item
+    -#   .recommended__other-item__head
+    -#     %a.other-item{href:"https://www.mercari.com/jp/"}カテゴリーのその他の出品
+    -#   .recommended__other-item__body
+    -#     = render partial:"other-item-box", locals: {other_items: @other_items}
