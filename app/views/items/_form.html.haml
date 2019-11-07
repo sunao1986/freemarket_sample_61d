@@ -20,7 +20,7 @@
             #add-file-field-point
               #custom-data-for{'data-image-name': "hoge"}
                 = image.label :image_url ,class:"box-click-label", for: "upload_file" do
-                  = image.file_field :image_url, id:"upload_file", class: "image_upload_file", name: "item[images_attributes][0][image_url]", style: "display: none;"
+                  = image.file_field :image_url, id:"upload_file", class: "image_upload_file", name: "item[images_attributes][][image_url]", style: "display: none;"
                   %p.exhibit-drug ドラッグアンドドロップ 
                   %p.exhibit-click  またはクリックしてファイルをアップロード
 
@@ -62,7 +62,6 @@
           必須
         .hidden-size-field__box
           = f.collection_select :size_id, @size, :id, :name, class: "input_item_size"
-          -# [["---", ""], ["XXS以下", "XXS以下"],["XS(SS)", "XS(SS)"], ["S", "S"], ["M", "M"], ["L", "L"], ["XL(LL)", "XL(LL)"], ["2XL(3L)", "2XL(3L)"], ["3XL(4L)", "3XL(4L)"], ["4XL(5L)以上", "4XL(5L)以上"], ["FREE SIZE", "FREE SIZE"]], 
       .hidden-brand-field
         .hidden-brand-field__gray-label
         .hidden-brand-field__label
@@ -147,7 +146,7 @@
           に同意したことになります。
       .button-submit-area
         .button-submit-area__do
-          - if request.path_info = edit_item_path
+          - if local_assigns[:edit_flag].present?
             = f.submit "更新する", class:"exhibit-submit-btn"
           - else 
             = f.submit "出品する", class:"exhibit-submit-btn"

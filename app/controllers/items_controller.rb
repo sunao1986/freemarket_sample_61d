@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:edit, :update, :buy]
+  before_action :set_item, only: [:edit, :update, :buy, :show]
 
   def index
     # @q = User.ransack(params[:q])
@@ -19,7 +19,9 @@ class ItemsController < ApplicationController
     # @toy_items = Item.recent.where(category:)
 
     #人気のブランド
-    @chanel_items = Item.recent.where(brand:2)
+    # binding.pry
+    # @chanel_items = Item.recent.where(brand:2)
+    @chanel_items = Item.all
     @vuitton_items = Item.recent.where(brand:3)
     @sup_items = Item.recent.where(brand:4)
     @nike_items = Item.recent.where(brand:5)
@@ -31,6 +33,8 @@ class ItemsController < ApplicationController
     @item = Item.new
     @item.images.build
     @parents = Category.all.order("id ASC").limit(13)
+    # @child = @parents.children
+    # @grandchild = @child.children
     @size = Size.all
     @barand = Brand.all
   end
@@ -69,8 +73,8 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
-    @user = User.find(params[:id])
+    @image = Image.find(params[:id])
+    # @user = User.find(params[:id])
   end
 
   def buy
@@ -80,7 +84,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :discription, :status, :delivery_cost, :delivery_method, :delivery_area, :delivery_days, :price, :likes_count, :category_id, :brand_id, :size_id, images_attributes: [:id, :image_url]).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :discription, :status, :delivery_cost, :delivery_method, :delivery_area, :delivery_days, :price, :likes_count, :category_id, :brand_id, :size_id, images_attributes: [:image_url]).merge(user_id: current_user.id)
     #  :buyer_id,  :condition, はタイミングが別
   end
 
