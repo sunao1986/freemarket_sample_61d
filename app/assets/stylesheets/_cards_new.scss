@@ -1,0 +1,191 @@
+select{
+  outline: 0;
+  -webkit-appearance: none;
+}
+
+.new-card-page{
+  .new-card-wrape{
+    width: 700px;
+    height: auto;
+    background-color: #FFFFFF;
+    .new-card-header-field{
+      width: 700px;
+      height: 50px;
+      border-bottom: 1px solid #ccc;     
+      &__title{
+        text-align: center;
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 50px;
+      }
+    }  
+    .new-card-contents-field{
+      width: 700px;
+      height: auto;
+      padding-bottom: 30px;
+      &__center{
+        width: 345px;
+        height: auto;
+        margin: 0 auto;
+        .new-card-title-area-one{        
+          height: 50px; 
+          padding-top:25px;           
+          &--label{
+            float: left;
+            margin-top: 3px;
+            margin-right: 15px;
+            font-size: 14px;
+            font-weight: bold;
+          }
+          &--required{
+            float: left;
+            font-size: 12px;
+            text-align: center;
+            padding:3px;
+            color: white;
+            background-color: red;
+          }
+        }
+        .new-card-input-area{
+          clear: both;
+          height: 50px;
+          #card_card_number{
+            width:345px;
+            height: 50px;
+            border-radius: 4px;
+            border-style: none;
+            font-size: 15px;
+            padding-left:10px;
+            border: solid 1px rgb(211, 211, 211);  
+          }
+          #card_card_number::placeholder{
+            color:gray;
+            font-size: 15px;
+            padding-left:10px;
+          }
+        }
+        .new-card-icon-area{
+          height: 30px;
+          ul.card-list{
+            margin-top: 8px;
+            .card-icons{
+              float: left;
+              margin-right: 15px;
+            }
+          }
+        }
+        .new-card-title-area-two{
+          height: 50px;
+          padding-top:25px;  
+          &--label{
+            float: left;
+            margin-top: 3px;
+            margin-right: 15px;
+            font-size: 14px;
+            font-weight: bold;   
+          }
+          &--required{
+            float: left;
+            font-size: 12px;
+            text-align: center;
+            padding:3px;
+            color: white;
+            background-color: red;
+
+          }
+        }
+        .new-card-input-area{
+          height: 50px;
+          position: relative;
+          #card-angle-left{
+            position: absolute;
+            top:10px;
+            left:110px;
+          }
+          #card-angle-right{
+            position: absolute;
+            top:10px;
+            right:55px;
+          }
+          #card_limit_month{
+            width: 135px;
+            height: 50px;
+            border-radius: 4px;
+            border-style: none;
+            font-size: 15px;
+            padding-left:10px;
+            background-color: #FFFFFF;
+            border: solid 1px rgb(211, 211, 211);  
+            margin: 0 3px;
+          }
+          #card_limit_year{
+            width: 135px;
+            height: 50px;
+            border-radius: 4px;
+            border-style: none;
+            font-size: 15px;
+            padding-left:10px;
+            background-color: #FFFFFF;
+            border: solid 1px rgb(211, 211, 211); 
+            margin: 0 3px; 
+          }
+        }
+        .new-card-title-area-three{
+          height: 50px;
+          padding-top:25px;  
+          &--label{
+            float: left;
+            margin-top: 3px;
+            margin-right: 15px;
+            font-size: 14px;
+            font-weight: bold;
+          }
+          &--required{
+            float: left;
+            font-size: 12px;
+            text-align: center;
+            padding:3px;
+            color: white;
+            background-color: red;
+          }
+        }
+        .new-card-input-area{
+          height: 50px;
+
+          #card_security_code{
+            width:345px;
+            height: 50px;
+            border-radius: 4px;
+            border-style: none;
+            font-size: 15px;
+            padding-left:10px;
+            border: solid 1px rgb(211, 211, 211);  
+
+          }
+          #card_security_code::placeholder{
+            color:gray;
+            font-size: 15px;
+            padding-left:10px;
+          }
+        }
+        .new-card-help-area{
+          height: 50px;
+          padding-top: 10px;
+          float: right;
+          color: #0099e8;
+        }
+        .new-card-btn-area{
+          .new-card-btn{
+            font-size: 14px;
+            border: none;
+            width: 345px;
+            height: 50px;           
+            background-color: red;
+            color: #ffff;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
