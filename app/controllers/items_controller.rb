@@ -47,6 +47,8 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @user = User.find(params[:id])
+    @seller_items = @item.user.items.limit(6).where.not(id: @item.id)
+    # @other_items = カテゴリーのその他の商品
   end
 
   def buy
@@ -65,7 +67,7 @@ class ItemsController < ApplicationController
   end
 
   def set_item
-    @item = Item.find(params[:id]
+    @item = Item.find(params[:id])
   end
 
 end
