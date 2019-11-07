@@ -49,8 +49,8 @@ class ItemsController < ApplicationController
     end
   end
 
-  def updata
-    if current_user ==! user_id && params[:id].present?
+  def update
+    if current_user.id ==! @item.user_id && params[:id].present?
        @item.update(item_params)
        render :index
     else
@@ -69,7 +69,7 @@ class ItemsController < ApplicationController
     # @item.images.build
     @parents = Category.all.order("id ASC").limit(13)
     @size = Size.all
-    @barand = Brand.all 
+    @brand = Brand.all 
   end
 
   def show

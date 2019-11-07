@@ -2,7 +2,6 @@
   .item-container
     .item-container__item-name
       = @item.name
-      
     .item-container__item-main
       .item-container__item-main__photo
         .item-container__item-main__photo__act
@@ -78,6 +77,11 @@
         %i.fa.fa-heart いいね!
       .item-container__item-btn__count 1
     .item-container__fixbox
+  -if @item.user_id == current_user.id
+    .seller-box
+      = link_to "商品の編集", edit_item_path, class:"editbtn"
+      .seller-box__word or
+      %a.btn{href: "～", onclick: "return false", class:"destroybtn"}この商品を削除する
   .messages
     .messages__content
       %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
@@ -106,3 +110,15 @@
     -#     %a.other-item{href:"https://www.mercari.com/jp/"}カテゴリーのその他の出品
     -#   .recommended__other-item__body
     -#     = render partial:"other-item-box", locals: {other_items: @other_items}
+
+.destroybtn-page
+  .destroybtn-box
+    .destroybtn-box__note
+      %h1 確認
+      %p 削除すると二度と復活できません。
+      %p 本当に削除しますか？
+    .destroybtn-box__btn
+      .destroybtn-box__btn__close
+        %a.btn-close{href: "～", onclick: "return false"} キャンセル
+      .destroybtn-box__btn__done
+        %a.btn-done{href:"#"} 削除する
