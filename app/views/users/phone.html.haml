@@ -26,14 +26,18 @@
       .l-single-inner.registration-form
         .l-single-container__content
           .form-group
-            %label{for: "phone_number"} 携帯電話の番号
-            %input{name: "phone_number", type: "tel", class: "input-default", placeholder: "携帯電話の番号を入力"}
+            = form_for @phone_number do |f|
+              = f.label "携帯電話の番号"
+              = f.text_field :phone_number, class: "input-default", placeholder: "携帯電話の番号を入力"
+            -# %label{for: "phone_number"} 携帯電話の番号
+            -# %input{name: "phone_number", type: "tel", class: "input-default", placeholder: "携帯電話の番号を入力"}
           %p 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
-          %input{type: "submit", class: "btn-default btn-red", value: "SMSを送信する"}
+          = link_to "SMSを送信する", "/shippings/new", class: "btn-default btn-red"
+           
           %p ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
           .form-group.text-right
             %p
-              = link_to "/jp/help center/article/244/", class: "registration-link" do
+              = link_to "#", class: "registration-link" do
                 電話番号の確認が必要な理由
                 %i.fa.fa-angle-right 
   %footer.new-phone-footer
@@ -45,7 +49,7 @@
           = link_to "メルカリ利用規約", "https://www.mercari.com/jp/tos/", class: "footer-list"
         %li
           = link_to "特定商取引に関する表記", "https://www.mercari.com/jp/tokutei/" , class: "footer-list list-bottom"
-    = link_to "https://www.mercari.com/jp/", class: "single-footer-logo" do
+    = link_to root_path, class: "single-footer-logo" do
       = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?465897195", size: "80x65", alt: "mercari",class: "footer-image"  
     %p
       %small ©︎2019 Mercari            

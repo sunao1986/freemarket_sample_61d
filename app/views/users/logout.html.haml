@@ -2,6 +2,5 @@
   .logout-container
     .logout
       .logout-box
-        %a.logoutbtn{href:"https://www.mercari.com/jp/"}ログアウト
-
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logoutbtn"
   = render "shared/sidebar"
