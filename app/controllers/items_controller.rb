@@ -36,7 +36,7 @@ class ItemsController < ApplicationController
     # @child = @parents.children
     # @grandchild = @child.children
     @size = Size.all
-    @barand = Brand.all
+    @brand = Brand.all
   end
 
   def create
@@ -63,6 +63,8 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
   end
 
   def edit

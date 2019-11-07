@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load', function() {
   var modal = $('.destroybtn-page'),
         modalContent = $('.destroybtn-box'),
         btnOpen = $(".destroybtn"),
