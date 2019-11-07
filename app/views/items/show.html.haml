@@ -6,11 +6,11 @@
     .item-container__item-main
       .item-container__item-main__photo
         .item-container__item-main__photo__act
-          - @item.images.each do |image|
-            = image_tag image.image_url, width:"300px", height:"300px"
+          - @item.images.each do |item|
+            = image_tag item.image_url, width:"300px", height:"300px"
         .item-container__item-main__photo__inact
-          - @item.images.each do |image|
-            = image_tag image.image_url, width:"60px", height:"60px"
+          - @item.images.each do |item|
+            = image_tag item.image_url, width:"60px", height:"60px"
 
       .item-container__item-main__detail
         %table
