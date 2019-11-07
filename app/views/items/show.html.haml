@@ -11,7 +11,6 @@
         .item-container__item-main__photo__inact
           - @item.images.each do |item|
             = image_tag item.image_url, width:"60px", height:"60px"
-
       .item-container__item-main__detail
         %table
           %tr
@@ -70,7 +69,7 @@
         = "¥#{@item.price}"
       .item-container__item-price__tax (税込)
       .item-container__item-price__shipping-fee 送料込み
-    %a.buybtn{href:"https://www.mercari.com/jp/"}購入画面に進む
+    = link_to "購入画面へ進む", "/items/#{@item.id}/buy", class:"buybtn"
     .item-container__item-description
       .item-container__item-description__inner
         = @item.discription
