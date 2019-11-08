@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:edit, :update, :buy, :show]
-
+  before_action :authenticate_user!, except: :index
   def index
     # @q = User.ransack(params[:q])
     # @items = @q.result(distinct: true)
