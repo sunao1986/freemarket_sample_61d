@@ -50,15 +50,11 @@ class ItemsController < ApplicationController
   end
 
   def update
-    if current_user.id ==! @item.user_id && params[:id].present?
-       @item.update(item_params)
+    if @item.update
        render :index
     else
       redirect_to action: :edit
     end
-    # if current_user ==! user_id && params[:id].present?
-      # Item.update(buyer_id: params[:current_user])
-      # conditionを入力する分岐を記述
   end
 
   def destroy
