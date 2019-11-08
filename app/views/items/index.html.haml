@@ -87,7 +87,7 @@
               レディース新着アイテム
             = link_to "もっと見る ＞＞", root_path, class: "look-more"
           .items-block
-            - @ladies_items.each do |item|
+            -# - @ladies_items.each do |item|
               .items-list
                 = link_to "#", class: "items-list-link" do
                   = image_tag item.images[0].image_url.url, alt: 'items-image', height: '188px', width: '188px', class: 'items-image'
@@ -172,7 +172,7 @@
               シャネル新着アイテム
             = link_to "もっと見る ＞＞",root_path, class: "look-more"
           .items-block
-            - @chanel_items.each do |item|
+            -# - @chanel_items.each do |item|
               .items-list
                 = link_to "/items/#{item.id}", class: "items-list-link" do
                   -# = link_to "/items/#{item.id}/edit", class: "items-list-link" do
@@ -190,7 +190,7 @@
               ルイヴィトン新着アイテム
             = link_to "もっと見る ＞＞",root_path, class: "look-more"
           .items-block
-            - @vuitton_items.each do |item|
+            -# - @vuitton_items.each do |item|
               .items-list
                 = link_to "#", class: "items-list-link" do
                   = image_tag item.images[0].image_url, alt: 'items-image', height: '184px', width: '184px', class: 'items-image'
@@ -207,7 +207,7 @@
               シュプリーム新着アイテム
             = link_to "もっと見る ＞＞",root_path, class: "look-more"
           .items-block
-            - @sup_items.each do |item|
+            -# - @sup_items.each do |item|
               .items-list
                 = link_to "#", class: "items-list-link" do
                   = image_tag item.images[0].image_url, alt: 'items-image', height: '184px', width: '184px', class: 'items-image'
@@ -223,7 +223,7 @@
               ナイキ新着アイテム
             = link_to "もっと見る ＞＞",root_path, class: "look-more"
           .items-block
-            - @nike_items.each do |item|
+            -# - @nike_items.each do |item|
               .items-list
                 = link_to "#", class: "items-list-link" do
                   = image_tag item.images[0].image_url, alt: 'items-image', height: '184px', width: '184px', class: 'items-image'
