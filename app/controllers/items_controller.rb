@@ -37,13 +37,7 @@ class ItemsController < ApplicationController
     # binding.pry
     # @grandchild = @child.children
     @size = Size.all
-    @barand = Brand.all
-    respond_to do |format|
-      format.html
-      format.json {
-        @children
-      }
-    end
+    @brand = Brand.all
   end
 
   def create
@@ -56,32 +50,31 @@ class ItemsController < ApplicationController
     end
   end
 
-  def updata
-    if current_user ==! user_id && params[:id].present?
-       @item.update(item_params)
+  def update
+    if @item.update
        render :index
     else
       redirect_to action: :edit
-
     end
-    # if current_user ==! user_id && params[:id].present?
-      # Item.update(buyer_id: params[:current_user])
-      # conditionを入力する分岐を記述
   end
 
   def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
   end
 
   def edit
     # @item.images.build
     @parents = Category.all.order("id ASC").limit(13)
     @size = Size.all
-    @barand = Brand.all 
+    @brand = Brand.all 
   end
 
   def show
-    @image = Image.find(params[:id])
-    # @user = User.find(params[:id])
+    @item = Item.find(params[:id])
+    @seller_items = @item.user.items.limit(6).where.not(id: @item.id)
+    # @other_items = @item.category.limit(6).where(id: @item.category)
+    # カテゴリ未作成のため、コメントアウト中
   end
 
   def buy
