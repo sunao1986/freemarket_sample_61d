@@ -6,7 +6,7 @@
           -# = link_to root_path do
           -# %img{scr: "merucari.jp", width: "134px", height: "36px", alt: "merucari"}
           -#   %a{href:"#"}
-          = link_to "#" do
+          = link_to root_path do
             = image_tag 'mercari-logo.jpg', alt: 'mercari', height: '38px', width: '135px'
 
         .word-search
@@ -90,7 +90,7 @@
             - @ladies_items.each do |item|
               .items-list
                 = link_to "#", class: "items-list-link" do
-                  = image_tag item.images[0].image_url, alt: 'items-image', height: '188px', width: '188px', class: 'items-image'
+                  = image_tag item.images[0].image_url.url, alt: 'items-image', height: '188px', width: '188px', class: 'items-image'
                   .items-detail
                     .items-price
                       %span.price-yen
@@ -174,8 +174,9 @@
           .items-block
             - @chanel_items.each do |item|
               .items-list
-                = link_to "#", class: "items-list-link" do
-                  = image_tag item.images[0].image_url, alt: 'items-image', height: '184px', width: '184px', class: 'items-image'
+                = link_to "/items/#{item.id}", class: "items-list-link" do
+                  -# = link_to "/items/#{item.id}/edit", class: "items-list-link" do
+                  -# = image_tag item.images[0].image_url.url, alt: 'items-image', height: '184px', width: '184px', class: 'items-image'
                   .items-detail
                     .items-price
                       %span.price-yen

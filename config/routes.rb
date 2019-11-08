@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     end
   end
   resources :items do
-    collection do
+    member do
       get 'buy'
     end
   end
