@@ -111,6 +111,9 @@ ActiveRecord::Schema.define(version: 20191108061753) do
     t.string   "address"
     t.string   "building"
     t.string   "nickname"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "image"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["name"], name: "index_users_on_name", using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
