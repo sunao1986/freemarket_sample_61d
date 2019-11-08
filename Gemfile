@@ -72,3 +72,6 @@ gem 'owlcarousel-rails'
 gem 'fog-aws'
 gem 'ancestry'
 gem 'ransack'
+gem "omniauth"
+gem "omniauth-facebook"
+gem 'dotenv-rails'
