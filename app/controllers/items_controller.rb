@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:edit, :update, :buy, :show]
+  require 'payjp'
 
   def index
     # @q = User.ransack(params[:q])
@@ -82,7 +83,6 @@ class ItemsController < ApplicationController
   end
 
   def buy
-    #購入確認画面
   end
 
   private
