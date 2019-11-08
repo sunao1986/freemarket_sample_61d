@@ -83,7 +83,7 @@ ticket_sports = ticket.children.create(name: "スポーツ")
 bike_body = bike.children.create(name: "自転車本体")
 bike_tire = bike.children.create(name: "自転車タイヤ/ホイール")
 
-other_summary = other.children.create(name: "まとめ売り")
+other_food = other.children.create(name: "まとめ売り")
 other_pet = other.children.create(name: "ペット用品")
 
 women_tops.children.create([{name: "Tシャツ/カットソー(半袖/袖なし)"},
@@ -227,50 +227,141 @@ mens_jacket.children.create([{name: "テーラードジャケット"},
                               {name: "カバーオール"},
                               {name: "その他"}])
 mens_bottom.children.create([{name: "デニム/ジーンズ"},
-                              {name: "ショートパンツ"},
-                              {name: "カジュアルパンツ"},
-                              {name: "ハーフパンツ"}])
-mens_shoes.children.create([{name: "ハイヒール/パンプス"},
-                              {name: "ブーツ"},
+                              {name: "ワークパンツ"},
+                              {name: "スラックス"},
+                              {name: "チノパン"}])
+mens_shoes.children.create([{name: "スニーカー"},
                               {name: "サンダル"},
-                              {name: "スニーカー"}])
-mens_bag.children.create([{name: "ハンドバッグ"},
+                              {name: "ブーツ"},
+                              {name: "モカシン"}])
+mens_bag.children.create([{name: "ショルダーバッグ"},
                               {name: "トートバッグ"},
-                              {name: "エコバッグ"},
+                              {name: "ボストンバッグ"},
                               {name: "リュック/バックパック"}])
-mens_suit.children.create([{name: "スカートスーツ上下"},
-                              {name: "パンツスーツ上下"},
-                              {name: "ドレス"},
-                              {name: "パーティバッグ"}])
-mens_hat.children.create([{name: "ニットキャップ/ビーニー"},
+mens_suit.children.create([{name: "スーツジャケット"},
+                              {name: "スーツベスト"},
+                              {name: "スラックス"},
+                              {name: "セットアップ"}])
+mens_hat.children.create([{name: "キャップ"},
                               {name: "ハット"},
-                              {name: "ハンチング/ベレー帽"},
-                              {name: "キャップ"}])
+                              {name: "ニットキャップ/ビーニー"},
+                              {name: "ハンチング/ベレー帽"}])
 mens_accessories.children.create([{name: "ネックレス"},
                               {name: "ブレスレット"},
                               {name: "バングル/リストバンド"},
                               {name: "リング"}])
 women_small.children.create([{name: "長財布"},
                               {name: "折り財布"},
-                              {name: "コインケース/小銭入れ"},
-                              {name: "名刺入れ/定期入れ"}])
+                              {name: "マネークリップ"},
+                              {name: "コインケース/小銭入れ"}])
 mens_watch.children.create([{name: "腕時計(アナログ)"},
                               {name: "腕時計(デジタル)"},
                               {name: "ラバーベルト"},
                               {name: "レザーベルト"}])
-mens_water.children.create([{name: "浴衣"},
-                              {name: "着物"},
-                              {name: "振袖"},
-                              {name: "水着"}])
+mens_water.children.create([{name: "一般水着"},
+                              {name: "スポーツ用"},
+                              {name: "アクセサリー"},
+                              {name: "その他"}])
 mens_leg.children.create([{name: "ソックス"},
                               {name: "スパッツ/レギンス"},
-                              {name: "ストッキング/タイツ"},
                               {name: "レッグウオーマー"}])
-mens_under.children.create([{name: "トップス"},
-                              {name: "アウター"},
-                              {name: "インナー"},
-                              {name: "ワンピース"}])
-women_other.children.create([{name: "トップス"},
-                              {name: "コスプレ"},
-                              {name: "下着"},
+mens_under.children.create([{name: "トランクス"},
+                              {name: "ボクサーパンツ"},
                               {name: "その他"}])
+mens_other.children.create([{name: "トップス"},
+                                {name: "コスプレ"},
+                                {name: "その他"}])
+
+kids_size1.children.create([{name: "トップス"},
+                                {name: "アウター"},
+                                {name: "パンツ"}])
+kids_size2.children.create([{name: "トップス"},
+                                {name: "アウター"},
+                                {name: "パンツ"}])
+kids_size3.children.create([{name: "トップス"},
+                                {name: "アウター"},
+                                {name: "パンツ"}])
+kids_size4.children.create([{name: "コート"},
+                                {name: "ジャケット/上着"},
+                                {name: "トップス(Tシャツ/カットソー)"}])
+kids_size5.children.create([{name: "コート"},
+                                {name: "ジャケット/上着"},
+                                {name: "トップス(Tシャツ/カットソー)"}])
+kids_size6.children.create([{name: "コート"},
+                                {name: "ジャケット/上着"},
+                                {name: "トップス(Tシャツ/カットソー)"}])
+kids_shoes.children.create([{name: "スニーカー"},
+                                {name: "サンダル"},
+                                {name: "ブーツ"}])
+kids_small.children.create([{name: "靴下/スパッツ"},
+                                {name: "帽子"},
+                                {name: "エプロン"}])
+
+interior_kitchen.children.create([{name: "食器"},
+                                  {name: "調理器具"},
+                                  {name: "収納/キッチン雑貨"}])
+interior_bed.children.create([{name: "セミシングルベッド"},
+                                  {name: "シングルベッド"},
+                                  {name: "ダブルベッド"}])
+
+book_book.children.create([{name: "文学/小説"},
+                            {name: "人文/社会"},
+                            {name: "ノンフィクション/教養"}]) 
+book_manga .children.create([{name: "全巻セット"},
+                            {name: "少年漫画"},
+                            {name: "少女漫画"}])
+
+toy_toy.children.create([{name: "キャラクターグッズ"},
+                            {name: "ぬいぐるみ"},
+                            {name: "小物/アクセサリー"}]) 
+toy_talent.children.create([{name: "アイドル"},
+                            {name: "ミュージシャン"},
+                            {name: "タレント/お笑い芸人"}]) 
+
+beauty_base.children.create([{name: "ファンデーション"},
+                             {name: "化粧下地"},
+                             {name: "コントロールカラー"}]) 
+beauty_make.children.create([{name: "アイシャドウ"},
+                              {name: "口紅"},
+                              {name: "リップグロス"}]) 
+
+appliance_smart.children.create([{name: "スマートフォン本体"},
+                                  {name: "バッテリー/充電器"},
+                                  {name: "携帯電話本体"}]) 
+appliance_phoneitem.children.create([{name: "Android用ケース"},
+                                    {name: "iPhone用ケース"},
+                                    {name: "カバー"}]) 
+
+sports_golf.children.create([{name: "クラブ"},
+                              {name: "ウェア(男性用)"},
+                              {name: "ウェア(女性用)"}]) 
+sports_fish.children.create([{name: "ロッド"},
+                              {name: "リール"},
+                              {name: "ルアー用品"}]) 
+
+handmade_accessories.children.create([{name: "ピアス"},
+                                {name: "イヤリング"},
+                                {name: "ネックレス"}]) 
+handmade_small.children.create([{name: "バッグ(女性用)"},
+                                {name: "バッグ(男性用)"},
+                                {name: "その他"}]) 
+
+ticket_music.children.create([{name: "男性アイドル"},
+                              {name: "女性アイドル"},
+                              {name: "韓流"}]) 
+ticket_sports.children.create([{name: "サッカー"},
+                              {name: "野球"},
+                              {name: "テニス"}]) 
+
+bike_body.children.create([{name: "国内自転車本体"},
+                          {name: "外国自転車本体"}]) 
+bike_tire.children.create([{name: "タイヤ/ホイールセット"},
+                            {name: "タイヤ"},
+                            {name: "ホイール"}]) 
+
+other_food.children.create([{name: "菓子"},
+  {name: "米"},
+  {name: "野菜"}])
+other_pet.children.create([{name: "ペットフード"},
+  {name: "犬用品"},
+  {name: "猫用品"}]) 
