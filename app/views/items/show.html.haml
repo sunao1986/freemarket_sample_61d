@@ -119,6 +119,6 @@
       %p 本当に削除しますか？
     .destroybtn-box__btn
       .destroybtn-box__btn__close
-        = link_to "キャンセル", "～", onclick: "return false", class:"btn-close"
+        = link_to "キャンセル", item_path, onclick: "return false", class:"btn-close"
       .destroybtn-box__btn__done
-        = link_to "削除する", "/items/#{@item.id}", class:"btn-done",method: :delete
+        = link_to "削除する", item_path, class:"btn-done", method: :delete

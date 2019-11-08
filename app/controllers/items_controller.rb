@@ -55,7 +55,6 @@ class ItemsController < ApplicationController
        render :index
     else
       redirect_to action: :edit
-
     end
     # if current_user ==! user_id && params[:id].present?
       # Item.update(buyer_id: params[:current_user])
