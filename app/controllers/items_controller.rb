@@ -33,10 +33,17 @@ class ItemsController < ApplicationController
     @item = Item.new
     @item.images.build
     @parents = Category.all.order("id ASC").limit(13)
-    # @child = @parents.children
+    @children = Category.where("ancestry = '#{params[:ancestry]}'")
+    # binding.pry
     # @grandchild = @child.children
     @size = Size.all
     @barand = Brand.all
+    respond_to do |format|
+      format.html
+      format.json {
+        @children
+      }
+    end
   end
 
   def create

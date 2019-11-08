@@ -1,49 +1,61 @@
 window.addEventListener('DOMContentLoaded',function(){ 
   $(function(){
+  
+    function selectHTML(option){
+      var html = `<div class="hidden-category-second-field">
+                    <div class="hidden-category-second-field__box">
+                      <select name="item[category_id]" id="item_category_id" >
+                        ${option}
+                      </select>
+                    </div>
+                  </div>`
+      return html;
+    }
 
     // カテゴリーの値が入ったらカテゴリテーブルからデータを拾って挿入
     $(document).on('change','#item_category_id',function(e){
       e.preventDefault();
-      
-      var url = $(this).attr('action');
+      // inputには選択した親カテゴリのidが入る
+      // var input = {request: $('#item_category_id').val()};
+      var input = $(this).val();
+      console.log(input);
       $.ajax({
         type: 'GET',
-        url: '/users',
-        data: { keyword: input}, 
-        dataType: 'json'
+        url: '/items/new',
+        data: { ancestry: input}, 
+        dataType: 'json',
       })
+
       .done(function(data) {  
-        
-        var html = buildHTML(data);      
-        $('.messages').append(html);     
-        $('#new_message')[0].reset();
-        $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});     
+        console.log(data);       
+        // 配列jsonで取得した子カテゴリデータを変数に入れる
+        var option = []
+        $.each(data,
+          function(index,child) {
+          option += `<option value="${index}">${child.id}</option>`
+          console.log(option); 
+          return option;
+        })
+        console.log(option); 
+        var select = selectHTML(option)
+        $(".exhibit-detail-field__category").append(select);
+        console.log(select); 
+        $(".hidden-category-second-field").css('display',"block");
       })
       .fail(function() {
         alert('送信に失敗しました');
-      })
-      .always(function(){
-        $('.form__submit').prop('disabled',false);
-      })
-  
-
-
-
-
-
-
-      $(".hidden-category-second-field").css('display',"block");
+      })     
     });
 
 
 
 
 
-    $(document).on('change','#item_category_id',function(){
+    $(document).on('change','#child-category',function(){
       $(".hidden-category-third-field").css('display',"block");
     });
 
-    $(document).on('change','#item_category_id',function(){
+    $(document).on('change','#child-category',function(){
       $(".hidden-size-field").css('display',"block");
       $(".hidden-brand-field").css('display',"block");
     })

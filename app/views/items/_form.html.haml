@@ -45,14 +45,14 @@
         カテゴリー
       .exhibit-detail-field--required
         必須
-      .exhibit-detail-field__category
-        = f.collection_select :category_id, @parents.all, :id, :name, prompt: "---", class: "input_item_category"         
+      .exhibit-detail-field__category     
+        = f.collection_select :category_id, @parents.all, :id, :name, prompt: "---"
       .hidden-category-second-field
         .hidden-category-second-field__box
-          = f.collection_select :category_id, @parents.all, :id, :name, selected:["---", ""], class: "input_item_hidden"
+          = f.collection_select :category_id, @children.all, :id, :name, prompt: "---", class: "input_item_hidden",id: "child-category"
       .hidden-category-third-field
         .hidden-category-third-field__box
-          = f.collection_select :category_id, @parents.all, :id, :name, selected:["---", ""], class: "input_item_hidden"
+          = f.collection_select :category_id, @parents.all, :id, :name, prompt: "---", class: "input_item_hidden",id: "gchild-category"
 
       .hidden-size-field
         .hidden-size-field__gray-label
@@ -61,7 +61,7 @@
         .hidden-size-field--required
           必須
         .hidden-size-field__box
-          = f.collection_select :size_id, @size, :id, :name, class: "input_item_size"
+          = f.collection_select :size_id, @size, :id, :name, class: "input_item_size",prompt: "---"
       .hidden-brand-field
         .hidden-brand-field__gray-label
         .hidden-brand-field__label
@@ -69,7 +69,7 @@
         .hidden-brand-field--required
           任意
         .hidden-brand-field__box
-          = f.collection_select :brand_id, @barand, :id, :name, class: "input_item_brand", placeholder: "例)シャネル"
+          = f.collection_select :brand_id, @barand, :id, :name, class: "input_item_brand", placeholder: "例)シャネル",prompt: "---"
       .exhibit-detail-field__gray-label
       .exhibit-detail-field__label
         商品の状態
