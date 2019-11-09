@@ -29,15 +29,30 @@ class ItemsController < ApplicationController
   end
 
   def new
-    #商品登録画面
     @item = Item.new
     @item.images.build
+    @category_parents = ["---"]
+    Category.where(ancestry: nil).each do |parent|
+      @category_parents << parent.name
+    end
     @parents = Category.all.order("id ASC").limit(13)
-    @children = Category.where("ancestry = '#{params[:ancestry]}'")
+    # @children = Category.where("ancestry = '#{params[:ancestry]}'")
+    # @gchildren = Category.where("ancestry = '#{params[:ancestry]}'/'#{params[:ancestry]}'")
     # binding.pry
     # @grandchild = @child.children
     @size = Size.all
     @brand = Brand.all
+
+  end
+
+  def category_child
+    #選択された親カテゴリーのnameとancestory情報で絞り、.childreメソッドで紐づく子供を配列で取得
+    @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil ).children
+  end
+
+  def category_gchild
+  #選択された子カテゴリーにはidが振られているのでそのままidと.childreメソッドで孫を取得
+    @category_gchildren = Category.find_by(id: params[:child_id]).children
   end
 
   def create
