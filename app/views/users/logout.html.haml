@@ -1,3 +1,6 @@
+= render partial: 'shared/header'
+- breadcrumb :logout
+= render partial: 'shared/gretel'
 .mypage-container
   .logout-container
     .logout
@@ -5,3 +8,4 @@
         %a.logoutbtn{href:"https://www.mercari.com/jp/"}ログアウト
 
   = render "shared/sidebar"
+  = render 'shared/sell'

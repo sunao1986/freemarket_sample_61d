@@ -3,7 +3,8 @@
     .exhibit-wrape
       .exhibit-logo-field
         .exhibit-logo-box
-          = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?465897195", alt: "Image from Gyazo"
+          =link_to root_path, class: "mercari-k" do
+            = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?465897195", alt: "Image from Gyazo"
       .exhibit-head-field
         .exhibit-head-field__title
           商品の情報を入力
@@ -22,7 +23,7 @@
                 #custom-data-for{'data-image-name': "hoge"}
                   = image.label :image_url ,class:"box-click-label", for: "upload_file" do
                     = image.file_field :image_url, id:"upload_file", class: "image_upload_file", name: "item[images_attributes][0][image_url]", style: "display: none;"
-                    %p.exhibit-drug ドラッグアンドドロップ 
+                    %p.exhibit-drug ドラッグアンドドロップ
                     %p.exhibit-click  またはクリックしてファイルをアップロード
 
       .exhibit-info-field
@@ -38,7 +39,7 @@
           必須
         .exhibit-info-field__discription
           = f.text_area :discription, class: "input_item_discription", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
-      
+
       .exhibit-detail-field
         .exhibit-detail-field__gray-label
           商品の詳細
@@ -47,7 +48,7 @@
         .exhibit-detail-field--required
           必須
         .exhibit-detail-field__category
-          = f.collection_select :category_id, @parents.all, :id, :name, prompt: "---", class: "input_item_category"         
+          = f.collection_select :category_id, @parents.all, :id, :name, prompt: "---", class: "input_item_category"
         .hidden-category-second-field
           .hidden-category-second-field__box
             = f.collection_select :category_id, @parents.all, :id, :name, selected:["---", ""], class: "input_item_hidden"
@@ -63,7 +64,7 @@
             必須
           .hidden-size-field__box
             = f.collection_select :size_id, @size, :id, :name, class: "input_item_size"
-            -# [["---", ""], ["XXS以下", "XXS以下"],["XS(SS)", "XS(SS)"], ["S", "S"], ["M", "M"], ["L", "L"], ["XL(LL)", "XL(LL)"], ["2XL(3L)", "2XL(3L)"], ["3XL(4L)", "3XL(4L)"], ["4XL(5L)以上", "4XL(5L)以上"], ["FREE SIZE", "FREE SIZE"]], 
+            -# [["---", ""], ["XXS以下", "XXS以下"],["XS(SS)", "XS(SS)"], ["S", "S"], ["M", "M"], ["L", "L"], ["XL(LL)", "XL(LL)"], ["2XL(3L)", "2XL(3L)"], ["3XL(4L)", "3XL(4L)"], ["4XL(5L)以上", "4XL(5L)以上"], ["FREE SIZE", "FREE SIZE"]],
         .hidden-brand-field
           .hidden-brand-field__gray-label
           .hidden-brand-field__label
@@ -123,7 +124,7 @@
         .exhibit-price-field__mark
           ¥
         .exhibit-price-field__box
-          = f.text_field :price, class: "input_item_price", placeholder: "例)300" 
+          = f.text_field :price, class: "input_item_price", placeholder: "例)300"
         .exhibit-price-field__fee
           .exhibit-fee-label
             販売手数料(10%)

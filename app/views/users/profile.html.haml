@@ -1,3 +1,6 @@
+= render partial: 'shared/header'
+- breadcrumb :profile
+= render partial: 'shared/gretel'
 .mypage-container
   .pro-container
     .profile-head
@@ -14,3 +17,4 @@
         %a.editbtn{href:"/", class:"editbtn"}変更する
 
   = render "shared/sidebar"
+  = render 'shared/sell'

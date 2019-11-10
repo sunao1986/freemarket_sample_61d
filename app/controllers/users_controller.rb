@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
   # before_action :authenticate_user!, except: :new
 
-  def new
+  def index
     #今のところ使わない
   end
-  
+
   def new
   end
 

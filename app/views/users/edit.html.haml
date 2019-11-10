@@ -1,3 +1,6 @@
+= render partial: 'shared/header'
+- breadcrumb :personinfo
+= render partial: 'shared/gretel'
 .mypage-container
   .ide-container
     .identification-head
@@ -64,3 +67,4 @@
         %a.submitbtn{href:"https://www.mercari.com/jp/"}登録する
 
   = render "shared/sidebar"
+  = render 'shared/sell'
