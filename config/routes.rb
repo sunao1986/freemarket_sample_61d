@@ -22,10 +22,18 @@ Rails.application.routes.draw do
   resources :items do
     member do
       get 'buy'
+      post 'pay'
+      get 'done'
+    end
+  end
+  resources :cards, only: [:new, :show] do
+    collection do
+      post 'show', to: 'cards#show'
+      post 'pay', to: 'cards#pay'
+      post 'delete', to: 'cards#delete'
     end
   end
   #usersとネストするかもしれない
-  resources :cards, only: [:new, :create, :edit, :update, :destroy]
   resources :shippings, only: [:new, :create, :edit, :update, :destroy]
   resources :comments, only: [:index, :create, :destroy]
   resources :reviews, only: [:index, :create, :destroy]

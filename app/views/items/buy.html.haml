@@ -33,7 +33,8 @@
       .confirmation-button-field
         .confirmation-button-area
           .confirmation-button-area__buy
-            %script.payjp-button{"data-key":"公開鍵", src: "https://checkout.pay.jp", type: "text/javascript"}
+            = form_tag(action: :pay, method: :post) do
+              %script.payjp-button{"data-text":"購入する", "data-key":"pk_test_32d563347afcb420094a176f", src: "https://checkout.pay.jp", type: "text/javascript"}
 
 
     .confirmation-shipping-addres

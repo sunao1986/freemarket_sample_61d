@@ -76,8 +76,18 @@ class ItemsController < ApplicationController
     # カテゴリ未作成のため、コメントアウト中
   end
 
-  def buy
-    # require 'payjp'
+  def pay
+    @item = Item.find(params[:id])
+    Payjp.api_key = 'sk_test_0e21a1a16d0a0e377209db69'
+    charge = Payjp::Charge.create(
+      amount: @item.price,
+      card: params['payjp-token'],
+      currency: 'jpy'
+    )
+    redirect_to action: :done
+  end
+
+  def done
   end
 
   private
