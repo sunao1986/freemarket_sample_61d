@@ -30,6 +30,6 @@
     %li.mail
       = link_to  "メール/パスワード", "/", class:"side-list"
     %li.identification
-      = link_to  "本人情報", edit_user_path, class:"side-list"
+      = link_to  "本人情報", edit_user_path(current_user.id), class:"side-list"
     %li.logout
       = link_to  "ログアウト", logout_users_path, class:"side-list"

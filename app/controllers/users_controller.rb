@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  # before_action :authenticate_user!, except: :new
+  before_action :authenticate_user!, except: :new
 
   def index
     #今のところ使わない
@@ -57,6 +57,7 @@ class UsersController < ApplicationController
   end
 
   def phone
+    @phone_number = User.new
   end
 
 end

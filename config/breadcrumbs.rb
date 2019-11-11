@@ -23,8 +23,8 @@ end
 #   parent :mypage
 # end
 
-# crumb : do
-#   link "メール/パスワード", edit_user_password_path
+# crumb :meilpass do
+#   link "メール/パスワード", edit_user_path
 #   parent :mypage
 # end
 

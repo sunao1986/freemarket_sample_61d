@@ -8,7 +8,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '2def54d7edcf89d0da1554e48ef992be947e83662035011b4b32e30016db850828c8070330ac02f10c6a0c9cfc0ca27a4c45f86b5ad9d893e67bb0d51e539d40'
+  config.secret_key = '9b7a7be8655234cb14ab2ce401960598b8ee8dea452c0e727392a2cd3a595a69c3bda6e9465d92e515f30b6630111704df7244cfe1f8de094a29dd8245d3b9f2'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -296,4 +296,11 @@ Devise.setup do |config|
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
+
+#   config.omniauth :facebook, ENV["FACEBOOK_API_KEY"], ENV["FACEBOOK_SECRET_KEY"], scope: 'email', info_fields: 'email, name'
+  config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET']
+  config.omniauth :facebook, ENV['FACEBOOK_CLIENT_ID'], ENV['FACEBOOK_CLIENT_SECRET'] 
+  # config.omniauth :facebook, Rails.application.secrets.facebook_client_id, Rails.application.secrets.facebook_client_secret
+  # config.omniauth :google_oauth2, Rails.application.secrets.google_client_id, Rails.application.secrets.google_client_secret
 end
+

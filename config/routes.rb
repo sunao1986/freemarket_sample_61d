@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers:{
+  devise_for :users, controllers: {
       sessions: 'users/sessions',
-      registrations: 'users/registrations'
+      registrations: 'users/registrations',
+      omniauth_callbacks: 'users/omniauth_callbacks'
     }
   root "items#index"
   #あとでcorectionをmemberに変える必要あるかも。そうすればurlにidが追加される。
@@ -19,7 +20,7 @@ Rails.application.routes.draw do
     end
   end
   resources :items do
-    collection do
+    member do
       get 'buy'
     end
   end
