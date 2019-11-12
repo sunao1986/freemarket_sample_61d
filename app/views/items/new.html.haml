@@ -14,17 +14,17 @@
         .exhibit-image-field--required
           必須
         .exhibit-image-field__notice
-          最大5枚までアップロードできます
-        = f.fields_for :images  do |image|
-          .exhibit-image-container
-            .increase-images-box
-            .exhibit-image-box
-              #add-file-field-point
-                #custom-data-for{'data-image-name': "hoge"}
-                  = image.label :image_url ,class:"box-click-label", for: "upload_file" do
-                    = image.file_field :image_url, id:"upload_file", class: "image_upload_file", name: "item[images_attributes][0][image_url]", style: "display: none;"
-                    %p.exhibit-drug ドラッグアンドドロップ
-                    %p.exhibit-click  またはクリックしてファイルをアップロード
+          最大5枚までアップロードできます      
+        .exhibit-image-container
+          .increase-images-box
+          .exhibit-image-box
+            #add-file-field-point
+              #custom-data-for{'data-image-name': "hoge"}             
+                = f.label :image_url ,class:"box-click-label", for: "upload_file" do
+                  = f.fields_for :images  do |image|
+                    = image.file_field :image_url, id:"upload_file", class: "image_upload_file", name: "item[images_attributes][][image_url]", style: "display: none;"
+                  %p.exhibit-drug ドラッグアンドドロップ 
+                  %p.exhibit-click  またはクリックしてファイルをアップロード
 
       .exhibit-info-field
         .exhibit-info-field__label
@@ -47,15 +47,11 @@
           カテゴリー
         .exhibit-detail-field--required
           必須
-        .exhibit-detail-field__category
-          = f.collection_select :category_id, @parents.all, :id, :name, prompt: "---", class: "input_item_category"
-        .hidden-category-second-field
-          .hidden-category-second-field__box
-            = f.collection_select :category_id, @parents.all, :id, :name, selected:["---", ""], class: "input_item_hidden"
-        .hidden-category-third-field
-          .hidden-category-third-field__box
-            = f.collection_select :category_id, @parents.all, :id, :name, selected:["---", ""], class: "input_item_hidden"
-
+        .exhibit-detail-category-wrape
+          .exhibit-detail-category-wrape__box
+            = fa_icon 'angle-down', alt: 'angle-down', class: "fas fa-angle-dowx fa-2x", id:"category-angle" 
+            = f.select :category_id, @category_parents, {prompt: "---", name: 'item[category_id]'}, {class: 'exhibit-detail-category-wrape__box--input', id: 'parent_category'}
+            
         .hidden-size-field
           .hidden-size-field__gray-label
           .hidden-size-field__label
@@ -63,8 +59,8 @@
           .hidden-size-field--required
             必須
           .hidden-size-field__box
+            = fa_icon 'angle-down', alt: 'angle-down', class: "fas fa-angle-dowx fa-2x", id:"size-angle"
             = f.collection_select :size_id, @size, :id, :name, class: "input_item_size"
-            -# [["---", ""], ["XXS以下", "XXS以下"],["XS(SS)", "XS(SS)"], ["S", "S"], ["M", "M"], ["L", "L"], ["XL(LL)", "XL(LL)"], ["2XL(3L)", "2XL(3L)"], ["3XL(4L)", "3XL(4L)"], ["4XL(5L)以上", "4XL(5L)以上"], ["FREE SIZE", "FREE SIZE"]],
         .hidden-brand-field
           .hidden-brand-field__gray-label
           .hidden-brand-field__label
@@ -79,8 +75,9 @@
         .exhibit-detail-field--required
           必須
         .exhibit-detail-field__status
+          = fa_icon 'angle-down', alt: 'angle-down', class: "fas fa-angle-dowx fa-2x", id:"status-angle"        
           = f.select :status, [["---", ""], ["新品", "未使用"], ["未使用に近い"], ["目立った傷や汚れなし"], ["やや傷や汚れあり"], ["傷や汚れあり"], ["全体的に状態が悪い"]]
-          = fa_icon "fa_angle_down"
+
       .exhibit-delivery-field
         .exhibit-delivery-field__gray-label
           配送について
@@ -89,6 +86,7 @@
         .exhibit-delivery-field--required
           必須
         .exhibit-delivery-field__delivery
+          = fa_icon 'angle-down', alt: 'angle-down', class: "fas fa-angle-dowx fa-2x", id:"delivery-angle"
           = f.select :delivery_cost, [["---", ""], ["送料込み(出品者負担)"], ["着払い(購入者負担)"]], class: "input_item_delivery"
         .hidden-delivery-field
           .hidden-delivery-field__gray-label
@@ -97,6 +95,7 @@
           .hidden-delivery-field--required
             必須
           .hidden-delivery-field__box
+            = fa_icon 'angle-down', alt: 'angle-down', class: "fas fa-angle-dowx fa-2x", id:"hidden-delivery-angle"
             = f.select :delivery_method, [["---", ""], ["未定"], ["らくらくメルカリ便"], ["ゆうメール"]], class: "input_item_delivery_method"
         .exhibit-delivery-field__gray-label
         .exhibit-delivery-field__label
@@ -104,6 +103,7 @@
         .exhibit-delivery-field--required
           必須
         .exhibit-delivery-field__delivery
+          = fa_icon 'angle-down', alt: 'angle-down', class: "fas fa-angle-dowx fa-2x", id:"delivery-angle"
           = f.select :delivery_area, [["---", ""], ["関東"], ["関西"], ["その他"]], class: "input_item_delivery"
         .exhibit-delivery-field__gray-label
         .exhibit-delivery-field__label
@@ -111,6 +111,7 @@
         .exhibit-delivery-field--required
           必須
         .exhibit-delivery-field__delivery
+          = fa_icon 'angle-down', alt: 'angle-down', class: "fas fa-angle-dowx fa-2x", id:"delivery-angle"
           = f.select :delivery_days, [["---", ""], ["1〜2日で発送"], ["2〜3日で発送"], ["4〜7日で発送"]], class: "input_item_delivery"
 
       .exhibit-price-field
@@ -124,12 +125,12 @@
         .exhibit-price-field__mark
           ¥
         .exhibit-price-field__box
-          = f.text_field :price, class: "input_item_price", placeholder: "例)300"
+          = f.text_field :price, class: "input_item_price", placeholder: "例)300" 
         .exhibit-price-field__fee
           .exhibit-fee-label
             販売手数料(10%)
           .exhibit-fee-result
-
+          
         .exhibit-price-field__profit
           .exhibit-profit-label
             販売利益
@@ -153,16 +154,16 @@
             = f.submit "出品する", class:"exhibit-submit-btn"
           .button-submit-area__back
             =link_to "もどる", root_path, class: "exhibit-back-btn"
-      .exhibit-foot-field
-        .footer-menu
-          .footer-menu__policy
-            =link_to "プライバシーポリシー", "/", class: "link-foot"
-          .footer-menu__terms
-            =link_to "メルカリ利用規約", "/", class: "link-foot"
-          .footer-menu__notation
-            =link_to "特定商取引に関する表記", "/", class: "link-foot"
-        .footer-logo
-          = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?1248199994"
-        .footer-copy
-          @2019 Mercari
-  = render partial: 'form', locals: { item: @item }
+
+        .exhibit-foot-field
+          .footer-menu
+            .footer-menu__policy
+              =link_to "プライバシーポリシー", "/", class: "link-foot"
+            .footer-menu__terms
+              =link_to "メルカリ利用規約", "/", class: "link-foot"
+            .footer-menu__notation
+              =link_to "特定商取引に関する表記", "/", class: "link-foot"
+          .footer-logo
+            = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?1248199994"
+          .footer-copy
+            @2019 Mercari

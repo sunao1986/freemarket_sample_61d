@@ -23,6 +23,10 @@ Rails.application.routes.draw do
     member do
       get 'buy'
     end
+    collection do
+      get 'category_child', defaults: { format: 'json' }
+      get 'category_gchild', defaults: { format: 'json' }
+    end
   end
   #usersとネストするかもしれない
   resources :cards, only: [:new, :create, :edit, :update, :destroy]
