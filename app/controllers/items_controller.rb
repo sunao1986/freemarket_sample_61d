@@ -27,7 +27,7 @@ class ItemsController < ApplicationController
     @nike_items = Item.recent.where(brand:5)
 
   end
-
+  
   def new
     @item = Item.new
     @item.images.build
@@ -35,23 +35,16 @@ class ItemsController < ApplicationController
     Category.where(ancestry: nil).each do |parent|
       @category_parents << parent.name
     end
-    @parents = Category.all.order("id ASC").limit(13)
-    # @children = Category.where("ancestry = '#{params[:ancestry]}'")
-    # @gchildren = Category.where("ancestry = '#{params[:ancestry]}'/'#{params[:ancestry]}'")
-    # binding.pry
-    # @grandchild = @child.children
     @size = Size.all
     @brand = Brand.all
 
   end
 
   def category_child
-    #選択された親カテゴリーのnameとancestory情報で絞り、.childreメソッドで紐づく子供を配列で取得
     @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil ).children
   end
 
   def category_gchild
-  #選択された子カテゴリーにはidが振られているのでそのままidと.childreメソッドで孫を取得
     @category_gchildren = Category.find_by(id: params[:child_id]).children
   end
 
@@ -66,7 +59,7 @@ class ItemsController < ApplicationController
   end
 
   def update
-    if @item.update
+    if @item.update(update_item_params)
        render :index
     else
       redirect_to action: :edit
@@ -79,10 +72,21 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    # @item.images.build
-    @parents = Category.all.order("id ASC").limit(13)
+    @item.images.build
+    @category_parents = ["---"]
+    Category.where(ancestry: nil).each do |parent|
+      @category_parents << parent.name
+    end
+
+    @category_child = @item.category.parent.parent.children
+    @category_gchild = @item.category.parent.children
     @size = Size.all
-    @brand = Brand.all 
+    @brand = Brand.all
+    @images = Image.where(item_id: params[:item_id])
+    respond_to do |format|
+      format.html
+      format.json { @images }
+    end
   end
 
   def show
@@ -93,14 +97,16 @@ class ItemsController < ApplicationController
   end
 
   def buy
-    #購入確認画面
   end
 
   private
 
   def item_params
     params.require(:item).permit(:name, :discription, :status, :delivery_cost, :delivery_method, :delivery_area, :delivery_days, :price, :likes_count, :category_id, :brand_id, :size_id, images_attributes: [:image_url]).merge(user_id: current_user.id)
-    #  :buyer_id,  :condition, はタイミングが別
+  end
+
+  def update_item_params
+    params.require(:item).permit(:name, :discription, :status, :delivery_cost, :delivery_method, :delivery_area, :delivery_days, :price, :likes_count, :category_id, :brand_id, :size_id, images_attributes: [:image_url,:id]).merge(user_id: current_user.id)
   end
 
   def user_params

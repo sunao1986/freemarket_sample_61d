@@ -32,7 +32,6 @@
         font-size: 22px;
         font-weight: bold;
       }
-
     }
 
     .exhibit-image-field{
@@ -88,17 +87,21 @@
           border-width: thin;
           text-align: center;
           margin-top: 20px;
-          .box-click-label{
-            cursor: pointer;
-            p.exhibit-drug{
-              font-family: "Yu Gothic";
-              font-size: 14px;
-              padding-top:60px;
-            }
-            p.exhibit-click{
-              font-family: "Yu Gothic";
-              font-size: 14px;
-
+          #add-file-field-point{      
+            #custom-data-for{
+              .box-click-label{
+                cursor: pointer;
+                p.exhibit-drug{
+                  font-family: "Yu Gothic";
+                  font-size: 14px;
+                  padding-top:60px;
+                  
+                }
+                p.exhibit-click{
+                  font-family: "Yu Gothic";
+                  font-size: 14px;
+                }
+              }
             }
           }
         }  
@@ -153,6 +156,10 @@
           font-size: 15px;
           font-family: "Yu Gothic";
         }
+        .input_item_name:focus{
+          border: 1px solid #0099e8;
+          outline: 0;
+        }
       }
       &__discription{
         clear: both;
@@ -160,7 +167,8 @@
         .input_item_discription{
           display: block;
           width:620px;
-          min-width: 500px;
+          min-width: 620px;
+          max-width: 620px;
           height: 150px;
           margin: 0 auto;
           padding:10px 0 0 10px;
@@ -172,6 +180,10 @@
           color:gray;
           font-size: 15px;
           font-family: "Yu Gothic";
+        }
+        .input_item_discription:focus{
+          border: 1px solid #0099e8;
+          outline: 0;
         }
       }
     }
@@ -217,6 +229,17 @@
       .exhibit-detail-category-wrape{
         &__box{
           padding-top:5px;
+          position: relative;
+          #category-angle{
+            position: absolute;
+            top: 70px;
+            right: 60px;
+          }
+          #second-category-angle{
+            position: absolute;
+            top: 20px;
+            right: 60px;
+          }
           &--input{
             display: block;
             width:400px;
@@ -224,73 +247,20 @@
             margin-top: 5px;
             margin-left:250px;
             border-radius: 4px;
+            padding-left: 10px;
             border-style: none;
             font-size: 15px;
             border: solid 1px rgb(211, 211, 211);
             background-color: #fff;
             cursor: pointer;
           }
-        }
-      }
-      .hidden-category-second-field{
-        display:none;
-        &__box{
-          // 名前修正対象
-          #item_category_id{
-            display: block;
-            width:400px;
-            height: 50px;
-            margin-top: 5px;
-            margin-left:250px;
-            font-size: 15px;
-            border-radius: 4px;
-            border-style: none;
-            background-color: #fff;
-            border: solid 1px rgb(211, 211, 211);
+          .input_item_discription:focus{
+            border: 1px solid #0099e8;
+            outline: 0;
           }
         }
       }
-      .hidden-category-third-field{
-         display:none;
-        &__box{
-          // 名前修正対象
-          #item_category_id{
-            display: block;
-            width:400px;
-            height: 50px;
-            margin-top: 5px;
-            margin-left:250px;
-            font-size: 15px;
-            border-radius: 4px;
-            border-style: none;
-            background-color: #fff;
-            border: solid 1px rgb(211, 211, 211);
-          }
-        }
-      }
-      &__category{
-        clear: both;
-        padding-top:5px;
-        // 名前修正対象
-        #item_condition{
-          display: block;
-          width:400px;
-          height: 50px;
-          margin-left:250px;
-          font-size: 15px;
-          border-radius: 4px;
-          border-style: none;
-          background-color: #fff;
-          border: solid 1px rgb(211, 211, 211);
-        }
-        // 名前修正対象
-        .input_item_category::placeholder{
-          color:gray;
-          font-size: 15px;
-          font-family: "Yu Gothic";
-          padding-left:10px;
-        }
-      }
+
       .hidden-size-field{
         display:none;
         &__gray-label{
@@ -327,7 +297,12 @@
         &__box{
           clear: both;
           padding-top:5px;
-          // sizeに名前修正
+          position: relative;
+          #size-angle{
+            position: absolute;
+            top: 15px;
+            right: 60px;
+          }
           #item_size_id{
             display: block;
             width:400px;
@@ -340,12 +315,14 @@
             border: solid 1px rgb(211, 211, 211);
             background-color: #fff;
           }
-          // sizeに名前修正
-          #item_condition::placeholder{
+          #item_size_id::placeholder{
             color:gray;
             font-size: 15px;
-            font-family: "Yu Gothic";
-            
+            font-family: "Yu Gothic";          
+          }
+          #item_size_id:focus{
+            border: 1px solid #0099e8;
+            outline: 0;
           }
         }  
       }
@@ -386,7 +363,6 @@
         &__box{
           clear: both;
           padding-top:5px;
-          // brandに名前修正
           #item_brand_id{
             display: block;
             width:400px;
@@ -399,18 +375,26 @@
             border: solid 1px rgb(211, 211, 211);
             background-color: #fff;
           }
-          // brandに名前修正
-          #item_condition::placeholder{
+          #item_brand_id::placeholder{
             color:gray;
             font-size: 15px;
-            font-family: "Yu Gothic";
-            
+            font-family: "Yu Gothic";            
           }
+          #item_brand_id:focus{
+            border: 1px solid #0099e8;
+            outline: 0;
+          }         
         }  
       }
       &__status{
         clear: both;
         padding-top:5px;
+        position: relative;
+        #status-angle{
+          position: absolute;
+          top: 15px;
+          right: 60px;
+        }
         #item_status{
           display: block;
           width:400px;
@@ -427,8 +411,11 @@
         #item_status::placeholder{
           color:gray;
           font-size: 15px;
-          font-family: "Yu Gothic";
-          
+          font-family: "Yu Gothic";          
+        }
+        #item_status:focus{
+          border: 1px solid #0099e8;
+          outline: 0;
         }
       }
     }
@@ -474,6 +461,12 @@
       &__delivery{
         clear: both;
         padding-top:5px;
+        position: relative;
+        #delivery-angle{
+          position: absolute;
+          top: 15px;
+          right: 60px;
+        }
         #item_delivery_cost, #item_delivery_area, #item_delivery_days{
           display: block;
           width:400px;
@@ -491,9 +484,21 @@
           color:gray;
           font-size: 15px;
           font-family: "Yu Gothic";
-          
+        }
+        #item_delivery_cost:focus{
+          border: 1px solid #0099e8;
+          outline: 0;
         }
       }
+      #item_delivery_area:focus{
+        border: 1px solid #0099e8;
+        outline: 0;
+      }
+      #item_delivery_days:focus{
+        border: 1px solid #0099e8;
+        outline: 0;
+      }
+      
       .hidden-delivery-field{
         display:none;
         &__gray-label{
@@ -530,6 +535,12 @@
         &__box{
           clear: both;
           padding-top:5px;
+          position: relative;
+          #hidden-delivery-angle{
+            position: absolute;
+            top: 15px;
+            right: 60px;
+          }
           #item_delivery_method{
             display: block;
             width:400px;
@@ -546,8 +557,11 @@
           #item_delivery_method::placeholder{
             color:gray;
             font-size: 15px;
-            font-family: "Yu Gothic";
-            
+            font-family: "Yu Gothic";          
+          }
+          #item_delivery_method:focus{
+            border: 1px solid #0099e8;
+            outline: 0;
           }
         }  
       }
@@ -619,7 +633,10 @@
           font-size: 15px;
           padding-left:120px;
           font-family: "Yu Gothic";
-    
+        }
+        .input_item_price:focus{
+          border: 1px solid #0099e8;
+          outline: 0;
         }
       }
       &__fee{
@@ -677,19 +694,19 @@
         &--one{
           .link-ban{
             text-decoration: none;
-            color: blue;
+            color: #0099e8;
           }
         }
         &--two{
           .link-ban{
             text-decoration: none;
-            color: blue;
+            color: #0099e8;
           }
         }
         &--three{
           .link-ban{
             text-decoration: none;
-            color: blue;
+            color: #0099e8;
           }
         }
       }

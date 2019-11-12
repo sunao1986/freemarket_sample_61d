@@ -20,10 +20,6 @@ window.addEventListener('DOMContentLoaded',function(){
                    </div>`
       return input;
     }
-    // <%= image.label :image_url ,class:"box-click-label", for: "upload_file" do
-    // <%= image.file_field :image_url, id:"upload_file", class: "image_upload_file", style: "display: none;" %>
-
-    //ここからはクリックでアップロードした画像のプレビュー
     $(document).on('change','#upload_file',function(e){
       var file = e.target.files[0];
       var reader = new FileReader();
