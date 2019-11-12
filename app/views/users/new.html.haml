@@ -13,10 +13,10 @@
             = link_to new_user_registration_path, class: "btn-default btn-mail" do
               %i.fa.fa-envelope
               %p メールアドレスで登録する 
-            = link_to user_facebook_omniauth_authorize_path, id: "facebook-login", class: "btn-default btn-sns btn-sns-facebook" do
+            = link_to user_facebook_omniauth_authorize_path, class: "btn-default btn-sns btn-sns-facebook" do
               %i.fa.fa-facebook-square
               %p Facebookで登録する
-            %button#google-login.btn-default.btn-sns.btn-sns-google
+            = link_to user_google_oauth2_omniauth_authorize_path, class: "btn-default btn-sns btn-sns-google" do
               %i.fa.fa-google
               %p Googleで登録する
     %footer.new-phone-footer
