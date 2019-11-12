@@ -33,7 +33,6 @@ window.addEventListener('DOMContentLoaded',function(){
     $(document).on('change','#parent_category',function(e){
       e.preventDefault();
       var input = $(this).val();
-      console.log(input);
       if (input != "---"){ 
 
         $.ajax({

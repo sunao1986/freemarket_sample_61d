@@ -31,10 +31,7 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.build
-    @category_parents = ["---"]
-    Category.where(ancestry: nil).each do |parent|
-      @category_parents << parent.name
-    end
+    @category_parents = Category.where(ancestry: nil).pluck(:name)
     @size = Size.all
     @brand = Brand.all
 
@@ -73,11 +70,7 @@ class ItemsController < ApplicationController
 
   def edit
     @item.images.build
-    @category_parents = ["---"]
-    Category.where(ancestry: nil).each do |parent|
-      @category_parents << parent.name
-    end
-
+    @category_parents = Category.where(ancestry: nil).pluck(:name)
     @category_child = @item.category.parent.parent.children
     @category_gchild = @item.category.parent.children
     @size = Size.all

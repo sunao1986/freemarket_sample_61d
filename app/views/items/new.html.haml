@@ -49,7 +49,7 @@
         .exhibit-detail-category-wrape
           .exhibit-detail-category-wrape__box
             = fa_icon 'angle-down', alt: 'angle-down', class: "fas fa-angle-dowx fa-2x", id:"category-angle" 
-            = f.select :category_id, @category_parents, {name: 'item[category_id]'}, {class: 'exhibit-detail-category-wrape__box--input', id: 'parent_category'}
+            = f.select :category_id, @category_parents, {prompt: "---", name: 'item[category_id]'}, {class: 'exhibit-detail-category-wrape__box--input', id: 'parent_category'}
             
         .hidden-size-field
           .hidden-size-field__gray-label
@@ -59,7 +59,7 @@
             必須
           .hidden-size-field__box
             = fa_icon 'angle-down', alt: 'angle-down', class: "fas fa-angle-dowx fa-2x", id:"size-angle"
-            = f.collection_select :size_id, @size, :id, :name, class: "input_item_size",prompt: "---"
+            = f.collection_select :size_id, @size, :id, :name, class: "input_item_size"
         .hidden-brand-field
           .hidden-brand-field__gray-label
           .hidden-brand-field__label
