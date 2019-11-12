@@ -3,7 +3,8 @@
     .exhibit-wrape
       .exhibit-logo-field
         .exhibit-logo-box
-          = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?465897195", alt: "Image from Gyazo"
+          =link_to root_path, class: "mercari-k" do
+            = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?465897195", alt: "Image from Gyazo"
       .exhibit-head-field
         .exhibit-head-field__title
           商品の情報を入力
@@ -38,7 +39,7 @@
           必須
         .exhibit-info-field__discription
           = f.text_area :discription, class: "input_item_discription", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
-      
+
       .exhibit-detail-field
         .exhibit-detail-field__gray-label
           商品の詳細
@@ -76,6 +77,7 @@
         .exhibit-detail-field__status
           = fa_icon 'angle-down', alt: 'angle-down', class: "fas fa-angle-dowx fa-2x", id:"status-angle"        
           = f.select :status, [["---", ""], ["新品", "未使用"], ["未使用に近い"], ["目立った傷や汚れなし"], ["やや傷や汚れあり"], ["傷や汚れあり"], ["全体的に状態が悪い"]]
+
       .exhibit-delivery-field
         .exhibit-delivery-field__gray-label
           配送について
@@ -128,11 +130,12 @@
           .exhibit-fee-label
             販売手数料(10%)
           .exhibit-fee-result
+          
         .exhibit-price-field__profit
           .exhibit-profit-label
             販売利益
           .exhibit-profit-result
-                  
+
       .exhibit-button-field
         .button-text-area
           .button-text-area--one
@@ -151,6 +154,7 @@
             = f.submit "出品する", class:"exhibit-submit-btn"
           .button-submit-area__back
             =link_to "もどる", root_path, class: "exhibit-back-btn"
+
         .exhibit-foot-field
           .footer-menu
             .footer-menu__policy
