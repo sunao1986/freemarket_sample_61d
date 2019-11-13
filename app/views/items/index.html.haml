@@ -29,16 +29,16 @@
               レディース新着アイテム
             = link_to "もっと見る ＞＞", root_path, class: "look-more"
           .items-block
-            -# - @ladies_items.each do |item|
-            -#   .items-list
-            -#     = link_to "#", class: "items-list-link" do
-            -#       = image_tag item.images[0].image_url.url, alt: 'items-image', height: '188px', width: '188px', class: 'items-image'
-            -#       .items-detail
-            -#         .items-price
-            -#           %span.price-yen
-            -#             #{converting_to_jpy(item.price)}
-            -#         %h3.items-name
-            -#           #{item.name}
+            - @ladies_items.each do |item|
+              .items-list
+                = link_to "/items/#{item.id}", class: "items-list-link" do
+                  = image_tag item.images[0].image_url.url, alt: 'items-image', height: '188px', width: '188px', class: 'items-image'
+                  .items-detail
+                    .items-price
+                      %span.price-yen
+                        #{converting_to_jpy(item.price)}
+                    %h3.items-name
+                      #{item.name}
 
         .new-products-type
           .new-products-type__top
@@ -48,7 +48,7 @@
           .items-block
             - @mens_items.each do |item|
               .items-list
-                = link_to "#", class: "items-list-link" do
+                = link_to "/items/#{item.id}", class: "items-list-link" do
                   = image_tag item.images[0].image_url, alt: 'items-image', height: '188px', width: '188px', class: 'items-image'
                   .items-detail
                     .items-price
@@ -64,7 +64,7 @@
           .items-block
             - @appliance_items.each do |item|
               .items-list
-                = link_to "#", class: "items-list-link" do
+                = link_to "/items/#{item.id}", class: "items-list-link" do
                   = image_tag item.images[0].image_url, alt: 'items-image', height: '188px', width: '188px', class: 'items-image'
                   .items-detail
                     .items-price
@@ -80,7 +80,7 @@
           .items-block
             - @toy_items.each do |item|
               .items-list
-                = link_to "#", class: "items-list-link" do
+                = link_to "/items/#{item.id}", class: "items-list-link" do
                   = image_tag item.images[0].image_url, alt: 'items-image', height: '188px', width: '188px', class: 'items-image'
                   .items-detail
                     .items-price
@@ -111,7 +111,7 @@
               シャネル新着アイテム
             = link_to "もっと見る ＞＞",root_path, class: "look-more"
           .items-block
-            -# - @chanel_items.each do |item|
+            - @chanel_items.each do |item|
               .items-list
                 = link_to "/items/#{item.id}", class: "items-list-link" do
                   = image_tag item.images[0].image_url.url, alt: 'items-image', height: '184px', width: '184px', class: 'items-image'
@@ -128,9 +128,9 @@
               ルイヴィトン新着アイテム
             = link_to "もっと見る ＞＞",root_path, class: "look-more"
           .items-block
-            -# - @vuitton_items.each do |item|
+            - @vuitton_items.each do |item|
               .items-list
-                = link_to "#", class: "items-list-link" do
+                = link_to "/items/#{item.id}", class: "items-list-link" do
                   = image_tag item.images[0].image_url, alt: 'items-image', height: '184px', width: '184px', class: 'items-image'
                   .items-detail
                     .items-price
@@ -145,9 +145,9 @@
               シュプリーム新着アイテム
             = link_to "もっと見る ＞＞",root_path, class: "look-more"
           .items-block
-            -# - @sup_items.each do |item|
+            - @sup_items.each do |item|
               .items-list
-                = link_to "#", class: "items-list-link" do
+                = link_to "/items/#{item.id}", class: "items-list-link" do
                   = image_tag item.images[0].image_url, alt: 'items-image', height: '184px', width: '184px', class: 'items-image'
                   .items-detail
                     .items-price
@@ -161,9 +161,9 @@
               ナイキ新着アイテム
             = link_to "もっと見る ＞＞",root_path, class: "look-more"
           .items-block
-            -# - @nike_items.each do |item|
+            - @nike_items.each do |item|
               .items-list
-                = link_to "#", class: "items-list-link" do
+                = link_to "/items/#{item.id}", class: "items-list-link" do
                   = image_tag item.images[0].image_url, alt: 'items-image', height: '184px', width: '184px', class: 'items-image'
                   .items-detail
                     .items-price
