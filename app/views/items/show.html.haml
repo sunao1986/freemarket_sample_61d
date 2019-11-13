@@ -1,7 +1,7 @@
 .itm-container
   .item-container
     .item-container__item-name
-      = @item.name
+      = @item.user.nickname
     .item-container__item-main
       .item-container__item-main__photo
         .item-container__item-main__photo__act
@@ -16,7 +16,7 @@
             %th 出品者
             %td
               %a.seller{href:users_path}
-                = @item.user.name
+                = @item.user.nickname
               .rate-icon
                 .rate-icon__good
                   = image_tag "/assets/rateicon1.jpg", class:"rate-icon"
@@ -31,10 +31,10 @@
             %th カテゴリー
             %td
               %a.first{href:"https://www.mercari.com/jp/"}
-                = @item.category.name
+                = @item.category.parent.parent.name
               %br
               %a.second{href:"https://www.mercari.com/jp/"}
-                = "＞#{@item.category.name}"
+                = "＞#{@item.category.parent.name}"
               %br
               %a.third{href:"https://www.mercari.com/jp/"}
                 = "＞#{@item.category.name}"

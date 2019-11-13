@@ -40,57 +40,54 @@
             -#         %h3.items-name
             -#           #{item.name}
 
-
-        -# メンズ以下の人気カテゴリデータ作り次第召喚
-
-        -# .new-products-type
-        -#   .new-products-type__top
-        -#     %h3.theme
-        -#       メンズ新着アイテム
-        -#     = link_to "もっと見る ＞＞",root_path,  class: "look-more"
-        -#   .items-block
-        -#     - @mens_items.each do |item|
-        -#       .items-list
-        -#         = link_to "#", class: "items-list-link" do
-        -#           = image_tag item.images[0].image_url, alt: 'items-image', height: '188px', width: '188px', class: 'items-image'
-        -#           .items-detail
-        -#             .items-price
-        -#               %span.price-yen
-        -#                 #{converting_to_jpy(item.price)}
-        -#             %h3.items-name
-        -#               #{item.name}
-        -# .new-products-type
-        -#   .new-products-type__top
-        -#     %h3.theme
-        -#       家電・スマホ・カメラ新着アイテム
-        -#     = link_to "もっと見る ＞＞",root_path, class: "look-more"
-        -#   .items-block
-        -#     - @appliance_items.each do |item|
-        -#       .items-list
-        -#         = link_to "#", class: "items-list-link" do
-        -#           = image_tag item.images[0].image_url, alt: 'items-image', height: '188px', width: '188px', class: 'items-image'
-        -#           .items-detail
-        -#             .items-price
-        -#               %span.price-yen
-        -#                 #{converting_to_jpy(item.price)}
-        -#             %h3.items-name
-        -#               #{item.name}
-        -# .new-products-type
-        -#   .new-products-type__top
-        -#     %h3.theme
-        -#       おもちゃ・ホビー・グッズ新着アイテム
-        -#     = link_to "もっと見る ＞＞",root_path, class: "look-more"
-        -#   .items-block
-        -#     - @toy_items.each do |item|
-        -#       .items-list
-        -#         = link_to "#", class: "items-list-link" do
-        -#           = image_tag item.images[0].image_url, alt: 'items-image', height: '188px', width: '188px', class: 'items-image'
-        -#           .items-detail
-        -#             .items-price
-        -#               %span.price-yen
-        -#                 #{converting_to_jpy(item.price)}
-        -#             %h3.items-name
-        -#               #{item.name}
+        .new-products-type
+          .new-products-type__top
+            %h3.theme
+              メンズ新着アイテム
+            = link_to "もっと見る ＞＞",root_path,  class: "look-more"
+          .items-block
+            - @mens_items.each do |item|
+              .items-list
+                = link_to "#", class: "items-list-link" do
+                  = image_tag item.images[0].image_url, alt: 'items-image', height: '188px', width: '188px', class: 'items-image'
+                  .items-detail
+                    .items-price
+                      %span.price-yen
+                        #{converting_to_jpy(item.price)}
+                    %h3.items-name
+                      #{item.name}
+        .new-products-type
+          .new-products-type__top
+            %h3.theme
+              家電・スマホ・カメラ新着アイテム
+            = link_to "もっと見る ＞＞",root_path, class: "look-more"
+          .items-block
+            - @appliance_items.each do |item|
+              .items-list
+                = link_to "#", class: "items-list-link" do
+                  = image_tag item.images[0].image_url, alt: 'items-image', height: '188px', width: '188px', class: 'items-image'
+                  .items-detail
+                    .items-price
+                      %span.price-yen
+                        #{converting_to_jpy(item.price)}
+                    %h3.items-name
+                      #{item.name}
+        .new-products-type
+          .new-products-type__top
+            %h3.theme
+              おもちゃ・ホビー・グッズ新着アイテム
+            = link_to "もっと見る ＞＞",root_path, class: "look-more"
+          .items-block
+            - @toy_items.each do |item|
+              .items-list
+                = link_to "#", class: "items-list-link" do
+                  = image_tag item.images[0].image_url, alt: 'items-image', height: '188px', width: '188px', class: 'items-image'
+                  .items-detail
+                    .items-price
+                      %span.price-yen
+                        #{converting_to_jpy(item.price)}
+                    %h3.items-name
+                      #{item.name}
 
 
 
@@ -117,8 +114,7 @@
             - @chanel_items.each do |item|
               .items-list
                 = link_to "/items/#{item.id}", class: "items-list-link" do
-                  -# = link_to "/items/#{item.id}/edit", class: "items-list-link" do
-                  -# = image_tag item.images[0].image_url.url, alt: 'items-image', height: '184px', width: '184px', class: 'items-image'
+                  = image_tag item.images[0].image_url.url, alt: 'items-image', height: '184px', width: '184px', class: 'items-image'
                   .items-detail
                     .items-price
                       %span.price-yen

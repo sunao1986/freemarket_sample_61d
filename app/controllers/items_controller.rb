@@ -6,12 +6,19 @@ class ItemsController < ApplicationController
     # @items = @q.result(distinct: true)
 
     #人気のカテゴリー
-    # @ladies_items = Item.recent.where(category_id: )
-    # @mens_items = Item.recent.where(category_id: )
-    # @appliance_items = Item.recent.where(category_id: )
-    # @toy_items = Item.recent.where(category:)
 
-    # #人気のブランド
+    #レディース
+    # @ladies_items = Item.recent.where(category_params[:ancestry])。。。もしかしたらancestryで持ってくる方法を使うかもなので残しました
+    #カテゴリテーブルが完成形になった時に指定idの範囲変えるかも。なので、データさえあれば、ひとまずレディースのみだが後でコピーすればすぐできる
+    @ladies_items = Item.recent.where(category_id: 1..199)
+    #メンズ
+    @mens_items = Item.recent.where(category: 201..345)
+    #家電
+    @appliance_items = Item.recent.where(category: 899..983)
+    #おもちゃ
+    @toy_items = Item.recent.where(category: 686..797)
+
+    #人気のブランド
     @chanel_items = Item.recent.where(brand:2)
     @vuitton_items = Item.recent.where(brand:3)
     @sup_items = Item.recent.where(brand:4)
@@ -81,6 +88,7 @@ class ItemsController < ApplicationController
   end
 
   def buy
+
   end
 
   private

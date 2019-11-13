@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function(){
+window.addEventListener('DOMContentLoaded',function(){ 
   $('.item-container__item-main__photo__act').slick({
     asNavFor:'.item-container__item-main__photo__inact',
     draggable: false,

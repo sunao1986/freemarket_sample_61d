@@ -9,5 +9,5 @@ class Item < ApplicationRecord
   belongs_to :size, optional: true
   belongs_to :brand, optional: true
 
-  scope :recent, -> { order('created_at DESC').limit(10).where.not(condition:"取り扱い停止")}
+  scope :recent, -> { order('created_at DESC').limit(10)}
 end

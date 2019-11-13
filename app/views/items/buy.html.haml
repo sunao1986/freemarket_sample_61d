@@ -12,14 +12,15 @@
       .confirmation-item-field
         .confirmation-item-area
           .confirmation-item-area__image
-            = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?1248199994"
+            = image_tag @item.images[0].image_url, width:"80px", height:"80px"
           .confirmation-item-area__name
-            出品商品のタイトル
+            = @item.name
 
       .confirmation-price-field 
         .confirmation-price-area
           .confirmation-price-area__value
-            ¥9999
+            ¥ 
+            = @item.price
             %span.postage-included 送料込み
 
       .confirmation-point-field
@@ -32,7 +33,8 @@
           .confirmation-payment-area__label
             支払い金額
           .confirmation-payment-area__value
-            ¥9999
+            ¥ 
+            = @item.price
       .confirmation-message-field
         配送先と支払いの方法を入力を完了してください
       .confirmation-button-field
@@ -45,11 +47,16 @@
         .confirmation-addres__label
           配送先
         .confirmation-addres__post
-          郵便番号
+          〒
+          = @item.user.shipping.postal_code
         .confirmation-addres__city
-          住所
+          = @item.user.shipping.prefectures
+          = @item.user.shipping.city
+          = @item.user.shipping.address
+          = @item.user.shipping.building
         .confirmation-addres__name
-          名前
+          = @item.user.shipping.first_name
+          = @item.user.shipping.last_name
         .confirmation-addres__edit
           = link_to "変更する >","/", class: "confirmation-addres-btn"
     .confirmation-payment-method
