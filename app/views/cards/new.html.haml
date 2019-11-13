@@ -1,6 +1,6 @@
 .new-card-page
   .new-card-wrape
-    = form_for @card do |f|
+    = form_tag(cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
       .new-card-header-field
         .new-card-header-field__title
           クレジットカード情報入力
@@ -12,7 +12,7 @@
             .new-card-title-area-one--required
               必須
           .new-card-input-area
-            = f.text_field :card_number, placeholder: "半角数字のみ"
+            = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number", class: "card_number"
           .new-card-icon-area
             %ul.card-list
               %li
@@ -35,20 +35,42 @@
             .new-card-title-area-two--required
               必須
           .new-card-input-area
-            = fa_icon 'angle-down', alt: 'angle-down', class: "fas fa-angle-dowx fa-2x", id:"card-angle-left"
-            = fa_icon 'angle-down', alt: 'angle-down', class: "fas fa-angle-dowx fa-2x", id:"card-angle-right"         
-            = f.select :limit_month, [["1"],["2"],["3"],["4"],["5"],["6"],["7"],["8"],["9"],["10"],["11"],["12"]]
-            月
-            = f.select :limit_year, [["19"],["20"],["21"],["22"],["23"],["24"],["25"],["26"],["27"],["28"],["29"]]
-            年
+            %select#exp_month{name: "exp_month", type: "text", class: "exp_month"}
+              %option{value: ""} --
+              %option{value: "1"}01
+              %option{value: "2"}02
+              %option{value: "3"}03
+              %option{value: "4"}04
+              %option{value: "5"}05
+              %option{value: "6"}06
+              %option{value: "7"}07
+              %option{value: "8"}08
+              %option{value: "9"}09
+              %option{value: "10"}10
+              %option{value: "11"}11
+              %option{value: "12"}12
+            %span 月
+            %select#exp_year{name: "exp_year", type: "text", class: "exp_year"}
+              %option{value: ""} --
+              %option{value: "2019"}19
+              %option{value: "2020"}20
+              %option{value: "2021"}21
+              %option{value: "2022"}22
+              %option{value: "2023"}23
+              %option{value: "2024"}24
+              %option{value: "2025"}25
+              %option{value: "2026"}26
+              %option{value: "2027"}27
+              %option{value: "2028"}28
+              %option{value: "2029"}29
+            %span 年
           .new-card-title-area-three
             .new-card-title-area-three--label
               セキュリティコード
             .new-card-title-area-three--required
               必須
           .new-card-input-area
-            = f.text_field :security_code, placeholder: "カード背面4桁もしくは3桁の番号"
-          .new-card-help-area
-            カード裏面の番号とは？
+            = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
           .new-card-btn-area
-            = f.submit "追加する" ,class: "new-card-btn"
+            #card_token
+              = submit_tag "追加する", id: "token_submit", class: "new-card-btn"

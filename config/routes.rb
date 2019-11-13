@@ -26,12 +26,7 @@ Rails.application.routes.draw do
       get 'done'
     end
   end
-  resources :cards, only: [:new, :show] do
-    collection do
-      post 'show', to: 'cards#show'
-      post 'pay', to: 'cards#pay'
-      post 'delete', to: 'cards#delete'
-    end
+  resources :cards, only: [:index, :new, :create, :delete] do
   end
   #usersとネストするかもしれない
   resources :shippings, only: [:new, :create, :edit, :update, :destroy]
