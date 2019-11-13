@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:edit, :update, :buy, :show]
+  before_action :set_item, only: [:edit, :update, :buy, :show, :pay]
   before_action :authenticate_user!, except: :index
   def index
     # @q = User.ransack(params[:q])
@@ -90,11 +90,12 @@ class ItemsController < ApplicationController
   def pay
     @item = Item.find(params[:id])
     Payjp.api_key = 'sk_test_0e21a1a16d0a0e377209db69'
-    charge = Payjp::Charge.create(
+    Payjp::Charge.create(
       amount: @item.price,
       card: params['payjp-token'],
       currency: 'jpy'
     )
+    @item.update(condition: 1,buyer_id: current_user.id)
     redirect_to action: :done
   end
 
@@ -118,5 +119,4 @@ class ItemsController < ApplicationController
   def set_item
     @item = Item.find(params[:id])
   end
-
 end
