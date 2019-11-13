@@ -1,35 +1,67 @@
 .mypage-sidebar
   %ul.mypage-sidebar__box
     %li.mypage
-      = link_to  "マイページ", users_path, class:"side-list"
+      = link_to users_path, class:"side-list" do
+        %p マイページ
+        %i.fa.fa-chevron-right
     %li.todo
-      = link_to  "やることリスト", "/", class:"side-list"
+      = link_to "/", class:"side-list" do
+        %p やることリスト
+        %i.fa.fa-chevron-right
     %li.likelist
-      = link_to  "いいね！一覧", likes_path, class:"side-list"
+      = link_to likes_path, class:"side-list" do
+        %p いいね！一覧
+        %i.fa.fa-chevron-right
     %li.exhibit
-      = link_to  "出品する", new_item_path, class:"side-list"
+      = link_to new_item_path, class:"side-list" do
+        %p 出品する
+        %i.fa.fa-chevron-right
     %li.listing
-      = link_to  "出品した商品 - 出品中", listing_users_path, class:"side-list"
+      = link_to listing_users_path, class:"side-list" do
+        %p 出品した商品 - 出品中
+        %i.fa.fa-chevron-right
     %li.progress
-      = link_to  "出品した商品 - 取引中", progress_users_path, class:"side-list"
+      = link_to progress_users_path, class:"side-list" do
+        %p 出品した商品 - 取引中
+        %i.fa.fa-chevron-right
     %li.completed
-      = link_to  "出品した商品 - 売却済み", completed_users_path, class:"side-list"
+      = link_to completed_users_path, class:"side-list" do
+        %p 出品した商品 - 売却済み
+        %i.fa.fa-chevron-right
     %li.purchase
-      = link_to  "出品した商品 - 取引中", purchase_users_path, class:"side-list"
+      = link_to purchase_users_path, class:"side-list" do
+        %p 出品した商品 - 取引中
+        %i.fa.fa-chevron-right
     %li.purchased
-      = link_to  "出品した商品 - 過去の取引", purchased_users_path, class:"side-list"
+      = link_to purchased_users_path, class:"side-list" do
+        %p 出品した商品 - 過去の取引
+        %i.fa.fa-chevron-right
     %li.evaluation
-      = link_to  "評価一覧", "/", class:"side-list"
+      = link_to "/", class:"side-list" do
+        %p 評価一覧
+        %i.fa.fa-chevron-right
     %li.setting 設定
     %li.profile
-      = link_to  "プロフィール", profile_users_path, class:"side-list"
+      = link_to profile_users_path, class:"side-list" do
+        %p プロフィール
+        %i.fa.fa-chevron-right
     %li.shipping
-      = link_to  "発送元・お届け先住所変更", "/", class:"side-list"
+      = link_to "/", class:"side-list" do
+        %p 発送元・お届け先住所変更
+        %i.fa.fa-chevron-right
     %li.card
-      = link_to  "支払い方法", cards_path, class:"side-list"
+      = link_to cards_path, class:"side-list" do
+        %p 支払い方法
+        %i.fa.fa-chevron-right
     %li.mail
-      = link_to  "メール/パスワード", "/", class:"side-list"
+      = link_to "/", class:"side-list" do
+        %p メール/パスワード
+        %i.fa.fa-chevron-right
     %li.identification
-      = link_to  "本人情報", edit_user_path(current_user.id), class:"side-list"
+      = link_to edit_user_path(current_user.id), class:"side-list" do
+        %p 本人情報
+        %i.fa.fa-chevron-right
     %li.logout
-      = link_to  "ログアウト", logout_users_path, class:"side-list"
+      = link_to logout_users_path(current_user.id), class:"side-list" do
+        %p ログアウト
+        %i.fa.fa-chevron-right

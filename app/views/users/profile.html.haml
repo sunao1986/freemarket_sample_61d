@@ -2,6 +2,7 @@
 - breadcrumb :profile
 = render partial: 'shared/gretel'
 .mypage-container
+  = render "shared/sidebar"
   .pro-container
     .profile-head
       %h1 プロフィール
@@ -15,7 +16,5 @@
       %textarea{cols:"34", name:"text", rows:"4", placeholder:"例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪", class:"input-profile"}
       .profile-container__editbtn
         %a.editbtn{href:"/", class:"editbtn"}変更する
-
-  = render "shared/sidebar"
-  = render 'shared/sell'
-  -# = render 'shared/aside_and_footer'
+= render 'shared/sell'
+= render 'shared/aside_and_footer'

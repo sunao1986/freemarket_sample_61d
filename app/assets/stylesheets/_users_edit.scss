@@ -1,11 +1,13 @@
 @media screen and (min-width: 1068px) {
   .mypage-container {
     width: 1020px;
-    margin: 124px auto;
+    margin: 40px auto 40px;
+    display: flex;
     .ide-container {
       width: 700px;
       height: 100%;
       float: right;
+      margin-left: 40px;
       .identification-head {
         width: 100%;
         height: 100%;
@@ -205,7 +207,7 @@
   .mypage-container {
     height: 100%;
     width: 700px;
-    margin: 40px auto 0;
+    margin: 40px auto 40px;
     display: block;
     .ide-container {
       width: 700px;
@@ -409,7 +411,7 @@
   .mypage-container {
     height: 100%;
     width: 100%;
-    margin: 40px auto 0;
+    margin: 40px auto 40px;
     display: block;
     .ide-container {
       width: 100%;
