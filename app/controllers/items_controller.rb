@@ -25,7 +25,7 @@ class ItemsController < ApplicationController
     @nike_items = Item.recent.where(brand:5)
 
   end
-  
+
   def new
     @item = Item.new
     @item.images.build

@@ -1,12 +1,13 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# # This file should contain all the record creation needed to seed the database with its default values.
+# # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+# #
+# # Examples:
+# #
+# #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+# #   Character.create(name: 'Luke', movie: movies.first)
 
-# coding: utf-8
+# # coding: utf-8
+
 
 # レディース
 lady = Category.create(name: "レディース")
@@ -337,96 +338,96 @@ others_8.children.create([{name: "オフィス用品一般"},{name: "オフィ�
 others_9 = others.children.create(name: "その他")
 others_9.children.create([{name: "すべて"}])
 
-Size.create(
-  [
-    {
-      id: 1,
-      name: "---",
-    },
-    {
-      id: 2,
-      name: "XXS以下",
-    },
-    {
-      id: 3,
-      name: "XS(SS)",
-    },
-    {
-      id: 4,
-      name: "S",
-    },
-    {
-      id: 5,
-      name: "M",
-    },
-    {
-      id: 6,
-      name: "L",
-    },
-    {
-      id: 7,
-      name: "XL(LL)",
-    },
-    {
-      id: 8,
-      name: "2XL(3L)",
-    },
-    {
-      id: 9,
-      name: "3XL(4L)",
-    },
-    {
-      id: 10,
-      name: "4XL(5L)以上",
-    },
-    {
-      id: 11,
-      name: "FREE SIZE",
-    },
-  ]
-)
+# Size.create(
+#   [
+#     {
+#       id: 1,
+#       name: "---",
+#     },
+#     {
+#       id: 2,
+#       name: "XXS以下",
+#     },
+#     {
+#       id: 3,
+#       name: "XS(SS)",
+#     },
+#     {
+#       id: 4,
+#       name: "S",
+#     },
+#     {
+#       id: 5,
+#       name: "M",
+#     },
+#     {
+#       id: 6,
+#       name: "L",
+#     },
+#     {
+#       id: 7,
+#       name: "XL(LL)",
+#     },
+#     {
+#       id: 8,
+#       name: "2XL(3L)",
+#     },
+#     {
+#       id: 9,
+#       name: "3XL(4L)",
+#     },
+#     {
+#       id: 10,
+#       name: "4XL(5L)以上",
+#     },
+#     {
+#       id: 11,
+#       name: "FREE SIZE",
+#     },
+#   ]
+# )
 
-Brand.create(
-  [
-    {
-      id: 1,
-      name: "---",
-    },
-    {
-      id: 2,
-      name: "シャネル",
-    },
-    {
-      id: 3,
-      name: "ルイヴィトン",
-    },
-    {
-      id: 4,
-      name: "シュプリーム",
-    },
-    {
-      id: 5,
-      name: "ナイキ",
-    },
-    {
-      id: 6,
-      name: "カルバン・クライン",
-    },
-    {
-      id: 7,
-      name: "コーチ",
-    },
-    {
-      id: 8,
-      name: "グッチ",
-    },
-    {
-      id: 9,
-      name: "エルメス",
-    },
-    {
-      id: 10,
-      name: "バーバリー",
-    },
-  ]
-)
+# Brand.create(
+#   [
+#     {
+#       id: 1,
+#       name: "---",
+#     },
+#     {
+#       id: 2,
+#       name: "シャネル",
+#     },
+#     {
+#       id: 3,
+#       name: "ルイヴィトン",
+#     },
+#     {
+#       id: 4,
+#       name: "シュプリーム",
+#     },
+#     {
+#       id: 5,
+#       name: "ナイキ",
+#     },
+#     {
+#       id: 6,
+#       name: "カルバン・クライン",
+#     },
+#     {
+#       id: 7,
+#       name: "コーチ",
+#     },
+#     {
+#       id: 8,
+#       name: "グッチ",
+#     },
+#     {
+#       id: 9,
+#       name: "エルメス",
+#     },
+#     {
+#       id: 10,
+#       name: "バーバリー",
+#     },
+#   ]
+# )

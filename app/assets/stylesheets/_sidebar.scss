@@ -11,6 +11,14 @@
         font-size: 14px;
         color: #333;
         text-decoration: none;
+        position: relative;
+        i {
+          position: absolute;
+          top: 36%;
+          right: 16px;
+          color: #ccc;
+        }
+
       }
       .side-list:hover {
         background: #f0efef;
@@ -43,6 +51,13 @@
         font-size: 14px;
         color: #333;
         text-decoration: none;
+        position: relative;
+        i {
+          position: absolute;
+          top: 36%;
+          right: 16px;
+          color: #ccc;
+        }
       }
       .side-list:hover {
         background: #f0efef;
@@ -75,6 +90,13 @@
         font-size: 14px;
         color: #333;
         text-decoration: none;
+        position: relative;
+        i {
+          position: absolute;
+          top: 36%;
+          right: 16px;
+          color: #ccc;
+        }
       }
       .side-list:hover {
         background: #f0efef;

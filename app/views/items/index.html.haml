@@ -1,5 +1,5 @@
 .wrapper
-  = render 'shared/header'  
+  = render 'shared/header'
   .body
     .body__contents
       %ul.slide-contents
@@ -29,16 +29,16 @@
               レディース新着アイテム
             = link_to "もっと見る ＞＞", root_path, class: "look-more"
           .items-block
-            - @ladies_items.each do |item|
-              .items-list
-                = link_to "#", class: "items-list-link" do
-                  = image_tag item.images[0].image_url.url, alt: 'items-image', height: '188px', width: '188px', class: 'items-image'
-                  .items-detail
-                    .items-price
-                      %span.price-yen
-                        #{converting_to_jpy(item.price)}
-                    %h3.items-name
-                      #{item.name}
+            -# - @ladies_items.each do |item|
+            -#   .items-list
+            -#     = link_to "#", class: "items-list-link" do
+            -#       = image_tag item.images[0].image_url.url, alt: 'items-image', height: '188px', width: '188px', class: 'items-image'
+            -#       .items-detail
+            -#         .items-price
+            -#           %span.price-yen
+            -#             #{converting_to_jpy(item.price)}
+            -#         %h3.items-name
+            -#           #{item.name}
 
         .new-products-type
           .new-products-type__top
