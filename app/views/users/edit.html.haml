@@ -1,4 +1,8 @@
+= render partial: 'shared/header'
+- breadcrumb :personinfo
+= render partial: 'shared/gretel'
 .mypage-container
+  = render "shared/sidebar"
   .ide-container
     .identification-head
       %h1 本人情報の登録
@@ -62,5 +66,5 @@
           %input{type:"text", placeholder:"例）柳ビル103" ,class:"input-default"}
       .identification-container__submitbtn
         %a.submitbtn{href:"https://www.mercari.com/jp/"}登録する
-
-  = render "shared/sidebar"
+= render 'shared/sell'
+= render 'shared/aside_and_footer'

@@ -1,0 +1,57 @@
+.header
+  .header__index
+    .header__index__top
+      .logo-box
+        = link_to root_path, class: "mercari-s" do
+          = image_tag 'mercari-logo.jpg', alt: 'mercari', height: '38px', width: '135px'
+
+      .word-search
+        %form
+          %input.word-search__message{type: "search", value:"", placeholder:"何かお探しですか？"}
+          %button.word-search__btn{title: "検索", type: "submit"}
+            = fa_icon 'search', alt: 'search', width: '16px', height: '16px', class: 'search-icon'
+
+    .header__index__bottom
+      %nav.genre-search
+        %ul.genre-search__nav
+          %li.category-brand
+            %h2.category-brand__btn
+              = link_to "#", class: "category-brand__btn__link" do
+                = fa_icon 'list', class: 'category-brand__btn__link__icon'
+                %span カテゴリーから探す
+          %li.category-brand
+            %h2.category-brand__btn
+              = link_to "#", class: "category-brand__btn__link" do
+                = fa_icon 'tag', class: 'category-brand__btn__link__icon'
+                %span ブランドから探す
+      - if user_signed_in?
+        %ul.user-box
+          %li.users-details
+            = link_to "#", class: "users-details__link" do
+              = fa_icon "heart", class: "detail-icon"
+              %span.detail-text
+                いいね一覧
+          %li.users-details
+            = link_to "#", class: "users-details__link" do
+              = fa_icon "bell", class: "detail-icon"
+              %span.detail-text
+                お知らせ
+              -# .notification 2
+          %li.users-details
+            = link_to "#", class: "users-details__link" do
+              = fa_icon "check", class: "detail-icon"
+              %span.detail-text
+                やることリスト
+          %li.users-mypage
+            = link_to users_path, class: "users-mypage__link" do
+              = image_tag 'user-image.png', alt: 'user-image', width: '32', class: 'user-image'
+              %span.mypage-text
+                マイページ
+      - else
+        %ul.user-box
+          %li.sign-up
+            = link_to new_user_path, class: "sign-up__link" do
+              新規会員登録
+          %li.sign-in
+            = link_to new_user_session_path, class: "sign-in__link" do
+              ログイン

@@ -3,22 +3,46 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :omniauthable
-    has_many :cards
+         :omniauthable,omniauth_providers: [:facebook, :google_oauth2]
+    has_one :card
     has_one :shipping
     has_many :items, dependent: :destroy
+    has_many :sns_credentials, dependent: :destroy
     # has_many :likes
     # has_many :comments
     # has_many :reviews
 
-    # def self.from_omniauth(auth)
-    #   where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-    #     user.email = auth.info.email
-    #     user.password = Devise.friendly_token[0,20]
-    #     user.name = auth.info.name   # assuming the user model has a name
-    #     user.image = auth.info.image
-    #   end  
-    # end    
+    # def self.find_oauth(auth)
+    #   uid = auth.uid
+    #   provider = auth.provider
+    #   snscredential = SnsCredential.where(uid: uid, provider: provider).first
+    #   if snscredential.present?
+    #     user = User.where(id: snscredential.user_id).first
+    #   else
+    #     user = User.where(email: auth.info.email).first
+    #     if user.present?
+    #       SnsCredential.create(
+    #         uid: uid,
+    #         provider: provider,
+    #         user_id: user.id
+    #         )
+    #     else
+    #       user = User.create(
+    #         nickname: auth.info.name,
+    #         email:    auth.info.email,
+    #         password: Devise.friendly_token[0, 20],
+    #         telephone: "08000000000"
+    #         )
+    #       SnsCredential.create(
+    #         uid: uid,
+    #         provider: provider,
+    #         user_id: user.id
+    #         )
+    #     end
+    #   end
+    #   return user
+    # end
+
     def self.from_omniauth(auth)
       user = User.where(email: auth.info.email).first
       if user
@@ -39,7 +63,7 @@ class User < ApplicationRecord
   
           # If you are using confirmable and the provider(s) you use validate emails,
           # uncomment the line below to skip the confirmation emails.
-          user.skip_confirmation!
+          # user.skip_confirmation!
         end
       end
     end

@@ -1,7 +1,7 @@
 .single-container
   %header.single-container__header
     %h1
-      = link_to "https://www.mercari.com/jp/" do
+      = link_to root_path, class: "mercari-b" do
         = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?465897195", alt: "mercari", size: "193x49"
     %nav.progress-bar.signup-bar
       %ol
@@ -19,28 +19,28 @@
           .progress-status
         %li
           %p 完了
-          .last-status  
+          .last-status
   %main.single-container__main
     %section.l-single-container
       %h2.l-single-container__head.registration 会員情報入力
       = form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'l-single-inner registration-form'}) do |f|
         .l-single-container__content
           .form-group
-            = f.label "ニックネーム" 
+            = f.label "ニックネーム"
             %span.form-require 必須
             = f.text_field :nickname, class: "input-default", placeholder: "例) メルカリ太郎"
           .form-group
-            = f.label "メールアドレス" 
+            = f.label "メールアドレス"
             %span.form-require 必須
             = f.email_field :email, class: "input-default", placeholder: "PC・携帯どちらでも可"
           .form-group
-            = f.label "パスワード" 
+            = f.label "パスワード"
             %span.form-require 必須
             = f.password_field :password, class: "input-default", placeholder: "7文字以上"
           .form-group
-            = f.label "パスワード(確認)" 
+            = f.label "パスワード(確認)"
             %span.form-require 必須
-            = f.password_field :password_confirmation, class: "input-default", placeholder: "7文字以上"  
+            = f.password_field :password_confirmation, class: "input-default", placeholder: "7文字以上"
           .form-group
             %h3.text-left.l-chapter-sub-head  本人確認
             %p.l-single-text
@@ -49,50 +49,50 @@
             %div
               = f.label "お名前(全角)"
               %span.form-require 必須
-              .name-form  
+              .name-form
                 = f.text_field :first_name, class: "input-default half left-half", placeholder: "例) 山田"
                 = f.text_field :last_name, class: "input-default half right-half", placeholder: "例) 彩"
-          .form-group    
+          .form-group
             %div
-              = f.label "お名前カナ(全角)"    
+              = f.label "お名前カナ(全角)"
               %span.form-require 必須
               .name-form
                 = f.text_field :first_kana, class: "input-default half left-half", placeholder: "例) ヤマダ"
                 = f.text_field :last_kana, class: "input-default half right-half", placeholder: "例) アヤ"
           .form-group
             %div
-              = f.label "生年月日" 
+              = f.label "生年月日"
               %span.form-require 必須
               %br
               .birthday-select-wrap
                 .select-wrap
                   %i.fa.fa-angle-down
                   = f.select :birthday, [ ["--", ""], ["1900", "1900"],["1901", "1901"], ["1902", "1902"],["1903", "1903"], ["1904", "1904"],["1905", "1905"], ["1906", "1906"],["1907", "1907"], ["1908", "1908"],["1909", "1909"], ["1910", "1910"]], class: "select-default"
-                  
+
                 %span 年
                 .select-wrap.select-wrap__month
                   %i.fa.fa-angle-down
                   = f.select :birthday, [ ["--", ""], ["1", "1"],["2", "2"], ["3", "3"],["4", "4"], ["5", "5"],["6", "6"], ["7", "7"],["8", "8"], ["9", "9"],["10", "10"], ["11", "11"], ["12", "12"]], class: "select-default"
-                %span 月    
+                %span 月
                 .select-wrap.select-wrap__day
                   %i.fa.fa-angle-down
                   = f.select :birthday, [ ["--", ""], ["1", "1"],["2", "2"], ["3", "3"],["4", "4"], ["5", "5"],["6", "6"], ["7", "7"],["8", "8"], ["9", "9"],["10", "10"], ["11", "11"], ["12", "12"], ["13", "13"],["14", "14"], ["15", "15"],["16", "16"], ["17", "17"],["18", "18"], ["19", "19"],["20", "20"], ["21", "21"],["22", "22"], ["23", "23"], ["24", "24"], ["25", "25"],["26", "26"], ["27", "27"],["28", "28"], ["29", "29"],["30", "30"], ["31", "31"]], class: "select-default"
                 %span 日
           %p.form-info-text
-            本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。        
+            本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
         .l-single-container__content
           .form-group
             %p.l-single-text.text-center
               「次へ進む」のボタンを押すことにより、
               = link_to "利用規約","#", class: "registration-link"
               に同意したものとみなします
-          = f.hidden_field :name, value: "太郎"   
+          = f.hidden_field :name, value: "太郎"
           = f.submit "次へ進む", class: "btn-default btn-red"
           .form-group.text-right
             %p
               = link_to "#", class: "registration-link" do
                 本人情報の登録について
-                %i.fa.fa-angle-right 
+                %i.fa.fa-angle-right
   %footer.registrations-footer
     %nav
       %ul
@@ -103,6 +103,6 @@
         %li
           = link_to "特定商取引に関する表記", "https://www.mercari.com/jp/tokutei/" , class: "footer-list list-bottom"
     = link_to root_path, class: "single-footer-logo" do
-      = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?465897195", size: "80x65", alt: "mercari",class: "footer-image"  
+      = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?465897195", size: "80x65", alt: "mercari",class: "footer-image"
     %p
       %small ©︎2019 Mercari

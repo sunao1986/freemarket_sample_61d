@@ -25,6 +25,10 @@ Rails.application.routes.draw do
       post 'pay'
       get 'done'
     end
+    collection do
+      get 'category_child', defaults: { format: 'json' }
+      get 'category_gchild', defaults: { format: 'json' }
+    end
   end
   resources :cards, only: [:index, :new, :create, :destroy] do
   end
