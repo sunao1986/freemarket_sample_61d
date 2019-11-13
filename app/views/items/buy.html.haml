@@ -19,28 +19,23 @@
       .confirmation-price-field 
         .confirmation-price-area
           .confirmation-price-area__value
-            ¥ 
-            = @item.price
+            = "¥#{@item.price}"
             %span.postage-included 送料込み
-
-      .confirmation-point-field
-        .confirmation-point-area
-          .confirmation-point-area__text
-            ポイントはありません
 
       .confirmation-payment-field
         .confirmation-payment-area
           .confirmation-payment-area__label
             支払い金額
           .confirmation-payment-area__value
-            ¥ 
-            = @item.price
+            = "¥#{@item.price}"
       .confirmation-message-field
         配送先と支払いの方法を入力を完了してください
       .confirmation-button-field
         .confirmation-button-area
           .confirmation-button-area__buy
-            =link_to "購入する", "", class: "confirmation-back-btn"
+            = form_tag(action: :pay, method: :post) do
+              %script.payjp-button{"data-text":"購入する", "data-key":"pk_test_32d563347afcb420094a176f", src: "https://checkout.pay.jp", type: "text/javascript"}
+
 
     .confirmation-shipping-addres
       .confirmation-addres
@@ -66,7 +61,7 @@
         .confirmation-method__card
           %p /
         .confirmation-method__edit
-          = link_to "変更する >","/", class: "confirmation-edit-btn"
+          = link_to "変更する >", new_card_path, class: "confirmation-edit-btn"
 
     .confirmation-foot-field
       .footer-menu

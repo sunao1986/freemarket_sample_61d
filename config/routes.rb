@@ -22,14 +22,17 @@ Rails.application.routes.draw do
   resources :items do
     member do
       get 'buy'
+      post 'pay'
+      get 'done'
     end
     collection do
       get 'category_child', defaults: { format: 'json' }
       get 'category_gchild', defaults: { format: 'json' }
     end
   end
+  resources :cards, only: [:index, :new, :create, :destroy] do
+  end
   #usersとネストするかもしれない
-  resources :cards, only: [:new, :create, :edit, :update, :destroy]
   resources :shippings, only: [:new, :create, :edit, :update, :destroy]
   resources :comments, only: [:index, :create, :destroy]
   resources :reviews, only: [:index, :create, :destroy]
