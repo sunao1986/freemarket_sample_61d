@@ -12,7 +12,7 @@ class CardsController < ApplicationController
 
   def new
     card = Card.where(user_id: current_user.id)
-    # redirect_to action: "index" if card.exists?
+    redirect_to action: "index" if card.exists?
   end
 
   def create

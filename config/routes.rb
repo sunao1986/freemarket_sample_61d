@@ -26,7 +26,7 @@ Rails.application.routes.draw do
       get 'done'
     end
   end
-  resources :cards, only: [:index, :new, :create, :delete] do
+  resources :cards, only: [:index, :new, :create, :destroy] do
   end
   #usersとネストするかもしれない
   resources :shippings, only: [:new, :create, :edit, :update, :destroy]
