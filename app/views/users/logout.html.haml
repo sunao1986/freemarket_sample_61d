@@ -1,11 +1,11 @@
 = render partial: 'shared/header'
 - breadcrumb :logout
 = render partial: 'shared/gretel'
-.mypage-container
-  = render "shared/sidebar"
+.mypage-container-logout
   .logout-container
     .logout
       .logout-box
         = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logoutbtn"
+  = render "shared/sidebar"
 = render 'shared/sell'
 = render 'shared/aside_and_footer'
