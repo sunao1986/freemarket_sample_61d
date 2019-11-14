@@ -6,9 +6,9 @@
           = image_tag 'mercari-logo.jpg', alt: 'mercari', height: '38px', width: '135px'
 
       .word-search
-        %form
-          %input.word-search__message{type: "search", value:"", placeholder:"何かお探しですか？"}
-          %button.word-search__btn{title: "検索", type: "submit"}
+        = form_tag( "/items/item_search", method: :get ) do 
+          = text_field_tag :name, "", class: "word-search__message", name: "name", placeholder: '何かお探しですか？'
+          = button_tag "", class: "word-search__btn" do
             = fa_icon 'search', alt: 'search', width: '16px', height: '16px', class: 'search-icon'
 
     .header__index__bottom

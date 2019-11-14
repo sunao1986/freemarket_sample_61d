@@ -26,6 +26,7 @@ Rails.application.routes.draw do
       get 'done'
     end
     collection do
+      get 'item_search'
       get 'category_child', defaults: { format: 'json' }
       get 'category_gchild', defaults: { format: 'json' }
     end

@@ -1,0 +1,178 @@
+.search-wrapper {
+  width: 100%;
+  .search-products {
+    padding: 42px 0px 100px;
+    margin: 0px auto 0;
+    width: 1040px;
+    &-type {
+      margin-top: 60px;
+      &__top {
+        display: block;
+        box-sizing: border-box;
+        justify-content: space-between;
+        position: relative;
+        .search-theme {
+          flex: 1 1 0%;
+          font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+          font-size: 24px;
+          font-weight: 600;
+          line-height: 1.4em;
+          margin: 10px;
+          width: 929px;
+        }
+      }
+      .search-items-block {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 1044px;
+        .search-items-list {
+          position: relative;
+          background-color: #fff;
+          margin: 10px;
+          width: 188px;
+          height: 252px;
+          &:hover {
+            opacity: 0.5;
+          }
+          .search-items-list-link {
+            width: 100%;
+            .search-items-image {
+              width: 100%;
+            }
+            .search-items-detail {
+              box-sizing: border-box;
+              color: #222;
+              font-size: 14px;
+              height: 64px;
+              line-height: 1.4em;
+              padding: 0 12px;
+              white-space: normal;
+              word-break: break-word;
+            }
+            .search-items-price {
+                z-index: 2;
+                position: absolute;
+                height: 0;
+                overflow: hidden;
+                padding: 0 0 90px;
+                left: 0px;
+                bottom: 10px;
+                .search-price-yen {
+                  margin: 0;
+                  padding: 0 12px;
+                  height: 28px;
+                  letter-spacing: .02em;
+                  display: inline-flex;
+                  font-size: 17px;
+                  align-items: center;
+                  background: rgba(0,0,0,.4);
+                  border-radius: 0 14px 14px 0;
+                  bottom: 8px;
+                  color: #fff;
+                }
+              }
+              .search-items-name {
+                display: inline-block;
+                height: 2.8em;
+                overflow: hidden;
+                position: relative;
+              }
+          }
+        }
+      }
+    }
+    .search-paginate{
+      text-align: center;
+      nav.pagination{
+        height: 50px;
+        span.page.current{
+          width: 44px;
+          height: 44px;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          line-height: 42px;
+          font-size: 14px;
+          color: #fff;
+          background-color: #ea352d;
+      
+        }
+        span.page{
+          width: 44px;
+          height: 44px;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          line-height: 42px;
+          font-size: 14px;
+          background-color: #fff;
+          a{
+            text-decoration: none;
+            color :#333;
+          }
+        }
+        span.next{
+          width: 44px;
+          height: 44px;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          line-height: 42px;
+          font-size: 18px;
+          text-decoration: none;
+          background-color: #fff;
+          a{
+            text-decoration: none;
+            color :rgb(80, 77, 77);
+          }
+        }
+        span.last{
+          width: 44px;
+          height: 44px;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          line-height: 42px;
+          font-size: 18px;
+          text-decoration: none;
+          background-color: #fff;
+          a{
+            text-decoration: none;
+            color :rgb(80, 77, 77);
+          }
+        }
+        span.first{
+          width: 44px;
+          height: 44px;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          line-height: 42px;
+          font-size: 18px;
+          text-decoration: none;
+          background-color: #fff;
+          a{
+            text-decoration: none;
+            color :rgb(80, 77, 77);
+          }
+        }
+        span.prev{
+          width: 44px;
+          height: 44px;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          line-height: 42px;
+          font-size: 18px;
+          text-decoration: none;
+          background-color: #fff;
+          a{
+            text-decoration: none;
+            color :rgb(80, 77, 77);
+          }
+        }       
+      }
+    }
+  }
+}
