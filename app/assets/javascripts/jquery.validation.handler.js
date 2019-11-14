@@ -183,8 +183,6 @@ $(function(){
         error.insertAfter("#kana-fullwidth");
       } else if(element.attr("name")=="user[last_kana]") {
         error.insertAfter("#form-group-kana")
-      } else if(element.attr("name")=="user[password]") {
-        error.insertAfter("#form-group-password")
       } else{
         error.insertAfter(element);	
       }
