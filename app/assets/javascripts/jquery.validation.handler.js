@@ -113,10 +113,6 @@ $(function(){
         minlength : 7,
         password : /([0-9].*[a-zA-Z]|[a-zA-Z].*[0-9])/s
       },
-      "user[password_confirmation]": {
-        required: true,
-        equalTo: "#user_password"
-      },
       "user[first_name]": {
         required: true,
         firstName: /\D/
@@ -149,10 +145,6 @@ $(function(){
       "user[password]": {
         required: 'パスワード を入力してください',
         minlength : "パスワードは7文字以上128文字以下で入力してください"
-      },
-      "user[password_confirmation]": {
-        required: 'パスワード(確認) を入力してください',
-        equalTo: "入力した値が一致しません"
       },
       "user[first_name]": {
         required: '姓 を入力してください'
