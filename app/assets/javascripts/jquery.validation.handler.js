@@ -21,11 +21,11 @@ $(function(){
     rules : {
       "shipping[first_name]": {
         required: true,
-        firstName: /\D\d/
+        firstName: /\D/
       },
       "shipping[last_name]": {
         required: true,
-        lastName: /\D\d/
+        lastName: /\D/
       },
       "shipping[first_kana]": {
         required: true,
@@ -44,7 +44,7 @@ $(function(){
       },
       "shipping[city]": {
         required: true,
-        city: /\D\d/
+        city: /\D/
       },
       "shipping[address]": {
         required: true
@@ -115,11 +115,11 @@ $(function(){
       },
       "user[first_name]": {
         required: true,
-        firstName: /\D\d/
+        firstName: /\D/
       },
       "user[last_name]": {
         required: true,
-        lastName: /\D\d/
+        lastName: /\D/
       },
       "user[first_kana]": {
         required: true,
