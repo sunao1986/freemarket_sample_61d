@@ -1,17 +1,18 @@
 @media screen and (min-width: 1068px) {
-  .mypage-container {
+  .mypage-container-logout {
     width: 1020px;
-    margin: 40px auto 40px;
-    display: flex;
+    height: 865px;
+    margin: 40px auto 0;
+    padding: 0 0 40px;
+    display: block;
     .logout-container {
       width: 700px;
       text-align: center;
       font-size: 12px;
       color: #333;
       background-color: #FFFFFF;
-      float: right;
       margin-left: 40px;
-      height: 179px;
+      float: right;
       .logout {
         padding: 64px;
         .logout-box {
@@ -35,10 +36,11 @@
 }
 
 @media screen and (max-width: 1068px) {
-  .mypage-container {
+  .mypage-container-logout {
     height: 100%;
     width: 700px;
-    margin: 40px auto 40px;
+    margin: 24px auto 0;
+    padding: 0 0 40px;
     display: block;
     .logout-container {
       width: 700px;
@@ -48,7 +50,7 @@
       background-color: #FFFFFF;
       .logout {
         padding: 64px;
-        margin: 124px 0px 0px 0px;
+        margin: 0;
         .logout-box {
           height: 50px;
           width: 320px;
@@ -70,10 +72,11 @@
 }
 
 @media screen and (max-width: 768px) {
-  .mypage-container {
+  .mypage-container-logout {
     height: 100%;
     width: 100%;
-    margin: 40px auto 40px;
+    margin: 24px auto 0;
+    padding: 0 0 40px;
     display: block;
     .logout-container {
       width: 100%;
@@ -84,7 +87,7 @@
       background-color: #FFFFFF;
       .logout {
         padding: 64px;
-        margin: 124px 0px 0px 0px;
+        margin: 0;
         .logout-box {
           height: 50px;
           width: 320px;

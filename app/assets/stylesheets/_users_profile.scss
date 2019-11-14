@@ -1,11 +1,12 @@
 @media screen and (min-width: 1068px) {
-  .mypage-container {
+  .mypage-container-profile {
     width: 1020px;
-    margin: 40px auto 40px;
-    display: flex;
+    height: 865px;
+    margin: 40px auto 0;
+    padding: 0 0 40px;
+    display: block;
     .pro-container {
       width: 700px;
-      height: 100%;
       float: right;
       margin-left: 40px;
       .profile-head {
@@ -88,10 +89,11 @@
 }
 
 @media screen and (max-width: 1068px) {
-  .mypage-container {
+  .mypage-container-profile {
     height: 100%;
     width: 700px;
-    margin: 40px auto 40px;
+    margin: 24px auto 0;
+    padding: 0 0 40px;
     display: block;
     .pro-container {
       width: 700px;
@@ -176,10 +178,11 @@
 }
 
 @media screen and (max-width: 768px) {
-  .mypage-container {
+  .mypage-container-profile {
     height: 100%;
     width: 100%;
-    margin: 40px auto 40px;
+    margin: 24px auto 0;
+    padding: 0 0 40px;
     display: block;
     .pro-container {
       width: 100%;
