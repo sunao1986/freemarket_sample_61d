@@ -102,6 +102,11 @@ class ItemsController < ApplicationController
   def done
   end
 
+  def item_search
+    @items = Item.where('name LIKE(?)', "%#{params[:name]}%").page(params[:page]).per(20).order("created_at DESC")
+    @search_name = params[:name]
+  end
+
   private
 
   def item_params
