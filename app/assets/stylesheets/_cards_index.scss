@@ -1,11 +1,12 @@
 @media screen and (min-width: 1068px) {
-  .mypage-container {
+  .mypage-container-cards {
     width: 1020px;
-    margin: 40px auto 40px;
-    display: flex;
+    height: 1165px;
+    margin: 40px auto 0;
+    padding: 0 0 40px;
+    display: block;
     .cre-container {
       width: 700px;
-      height: 100%;
       float: right;
       margin-left: 40px;
       .cards-head {
@@ -27,40 +28,194 @@
         color: #333;
         background-color: #FFFFFF;
         line-height: 1.5;
+        h2 {
+          width: 320px;
+          margin:  0 auto;
+          padding-bottom: 24px;
+          font-size: 16px;
+          font-weight: 600;
+        }
+        &__info {
+          display: block;
+          font-size: 16px;
+          margin-left: 124px;
+          &__num {
+            margin-top: 8px;
+          }
+          &__exp {
+            margin-top: 8px;
+          }
+        }
+        .destroycardbtn{
+          font-size: 14px;
+          border: none;
+          width: 345px;
+          height: 50px;
+          margin-top: 16px;
+          background-color: #ea352d;
+          color: #ffff;
+          cursor: pointer;
+        }
+        &__regi {
+          height: 50px;
+          width: 320px;
+          margin:  0 auto;
+          text-align: center;
+          font-size: 14px;
+          line-height: 50px;
+          display: block;
+          background: #ea352d;
+          cursor: pointer;
+          .regibtn {
+            color: white;
+            text-decoration: none;
+          }
+        }
       }
     }
   }
 }
 
 @media screen and (max-width: 1068px) {
-  .mypage-container {
+  .mypage-container-cards {
     height: 100%;
     width: 700px;
-    margin: 40px auto 40px;
+    margin: 24px auto 0;
+    padding: 0 0 40px;
     display: block;
     .cre-container {
       width: 700px;
       text-align: center;
       font-size: 12px;
       color: #333;
-      background-color: #FFFFFF;
+      .cards-head {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 2px;
+        padding: 12px 28px;
+        text-align: center;
+        font-size: 20px;
+        font-weight: 600;
+        color: #333;
+        background-color: #FFFFFF;
+      }
+      .cards-container {
+        padding: 64px;
+        margin: 0;
+        background-color: #FFFFFF;
+        h2 {
+          width: 320px;
+          margin:  0 auto;
+          padding-bottom: 24px;
+          font-size: 16px;
+          font-weight: 600;
+        }
+        &__info {
+          display: block;
+          font-size: 16px;
+          &__num {
+            margin-top: 8px;
+          }
+          &__exp {
+            margin-top: 8px;
+          }
+        }
+        .destroycardbtn{
+          font-size: 14px;
+          border: none;
+          width: 345px;
+          height: 50px;
+          margin-top: 16px;
+          background-color: #ea352d;
+          color: #ffff;
+          cursor: pointer;
+        }
+        &__regi {
+          height: 50px;
+          width: 320px;
+          margin:  0 auto;
+          text-align: center;
+          font-size: 14px;
+          line-height: 50px;
+          display: block;
+          background: #ea352d;
+          cursor: pointer;
+          .regibtn {
+            color: white;
+            text-decoration: none;
+          }
+        }
+      }
     }
   }
 }
 
 @media screen and (max-width: 768px) {
-  .mypage-container {
+  .mypage-container-cards {
     height: 100%;
     width: 100%;
-    margin: 40px auto 40px;
+    margin: 24px auto 0;
+    padding: 0 0 40px;
     display: block;
     .cre-container {
       width: 100%;
-      margin: 40px auto 0;
-      text-align: center;
-      font-size: 12px;
       color: #333;
-      background-color: #FFFFFF;
+      .cards-head {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 2px;
+        padding: 12px 28px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #333;
+        background-color: #FFFFFF;
+      }
+      .cards-container {
+        padding: 64px;
+        margin: 0;
+        background-color: #FFFFFF;
+        h2 {
+          width: 320px;
+          margin:  0 auto;
+          padding-bottom: 24px;
+          font-size: 16px;
+          font-weight: 600;
+        }
+        &__info {
+          display: block;
+          font-size: 16px;
+          &__num {
+            margin-top: 8px;
+          }
+          &__exp {
+            margin-top: 8px;
+          }
+        }
+        .destroycardbtn{
+          font-size: 14px;
+          border: none;
+          width: 345px;
+          height: 50px;
+          margin-top: 16px;
+          background-color: #ea352d;
+          color: #ffff;
+          cursor: pointer;
+        }
+        &__regi {
+          height: 50px;
+          width: 320px;
+          margin:  0 auto;
+          font-size: 14px;
+          line-height: 50px;
+          display: block;
+          background: #ea352d;
+          cursor: pointer;
+          .regibtn {
+            color: white;
+            text-decoration: none;
+          }
+        }
+      }
     }
   }
 }
