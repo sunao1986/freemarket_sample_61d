@@ -12,44 +12,46 @@
       .confirmation-item-field
         .confirmation-item-area
           .confirmation-item-area__image
-            = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?1248199994"
+            = image_tag @item.images[0].image_url, width:"80px", height:"80px"
           .confirmation-item-area__name
-            出品商品のタイトル
+            = @item.name
 
       .confirmation-price-field 
         .confirmation-price-area
           .confirmation-price-area__value
-            ¥9999
+            = "¥#{@item.price}"
             %span.postage-included 送料込み
-
-      .confirmation-point-field
-        .confirmation-point-area
-          .confirmation-point-area__text
-            ポイントはありません
 
       .confirmation-payment-field
         .confirmation-payment-area
           .confirmation-payment-area__label
             支払い金額
           .confirmation-payment-area__value
-            ¥9999
+            = "¥#{@item.price}"
       .confirmation-message-field
         配送先と支払いの方法を入力を完了してください
       .confirmation-button-field
         .confirmation-button-area
           .confirmation-button-area__buy
-            =link_to "購入する", "", class: "confirmation-back-btn"
+            = form_tag(action: :pay, method: :post) do
+              %script.payjp-button{"data-text":"購入する", "data-key":"pk_test_32d563347afcb420094a176f", src: "https://checkout.pay.jp", type: "text/javascript"}
+
 
     .confirmation-shipping-addres
       .confirmation-addres
         .confirmation-addres__label
           配送先
         .confirmation-addres__post
-          郵便番号
+          〒
+          = @item.user.shipping.postal_code
         .confirmation-addres__city
-          住所
+          = @item.user.shipping.prefectures
+          = @item.user.shipping.city
+          = @item.user.shipping.address
+          = @item.user.shipping.building
         .confirmation-addres__name
-          名前
+          = @item.user.shipping.first_name
+          = @item.user.shipping.last_name
         .confirmation-addres__edit
           = link_to "変更する >","/", class: "confirmation-addres-btn"
     .confirmation-payment-method
@@ -59,7 +61,7 @@
         .confirmation-method__card
           %p /
         .confirmation-method__edit
-          = link_to "変更する >","/", class: "confirmation-edit-btn"
+          = link_to "変更する >", new_card_path, class: "confirmation-edit-btn"
 
     .confirmation-foot-field
       .footer-menu

@@ -78,22 +78,6 @@
         }
       }
 
-      .confirmation-point-field{
-        width:700px;                
-        .confirmation-point-area{
-          width: 320px;  
-          height: 45px; 
-          margin: 0 auto ;    
-          background-color: gainsboro;
-          &__text{
-            width: 320px;
-            line-height:45px;   
-            font-size: 14px;
-            text-align: center;      
-          }
-        }
-        
-      }
       .confirmation-payment-field{
         width:700px;
         height: 50px;
@@ -130,18 +114,11 @@
         width:700px;
         height:90px;
         .confirmation-button-area{
-          width: 320px;
-          height: 45px;
           margin: 0 auto;
-          background-color: gray;
           &__buy{
             font-size: 14px;
             line-height: 45px;
             text-align: center;
-          }
-          .confirmation-back-btn{
-            color: #fff;
-            text-decoration: none;
           }
         }
       }

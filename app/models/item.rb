@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
   has_many :images, dependent: :destroy
-  accepts_nested_attributes_for :images
+  accepts_nested_attributes_for :images, allow_destroy: true
   # has_many :likes
   # has_many :comments
   # has_many :reviews
@@ -9,5 +9,5 @@ class Item < ApplicationRecord
   belongs_to :size, optional: true
   belongs_to :brand, optional: true
 
-  scope :recent, -> { order('created_at DESC').limit(10).where.not(condition:"取り扱い停止")}
+  scope :recent, -> { order('created_at DESC').limit(10)}
 end

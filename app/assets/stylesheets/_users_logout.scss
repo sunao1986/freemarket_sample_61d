@@ -1,13 +1,8 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 @media screen and (min-width: 1068px) {
   .mypage-container {
     width: 1020px;
-    margin: 124px auto;
+    margin: 40px auto 40px;
+    display: flex;
     .logout-container {
       width: 700px;
       text-align: center;
@@ -15,6 +10,8 @@
       color: #333;
       background-color: #FFFFFF;
       float: right;
+      margin-left: 40px;
+      height: 179px;
       .logout {
         padding: 64px;
         .logout-box {
@@ -41,7 +38,7 @@
   .mypage-container {
     height: 100%;
     width: 700px;
-    margin: 40px auto 0;
+    margin: 40px auto 40px;
     display: block;
     .logout-container {
       width: 700px;
@@ -76,7 +73,7 @@
   .mypage-container {
     height: 100%;
     width: 100%;
-    margin: 40px auto 0;
+    margin: 40px auto 40px;
     display: block;
     .logout-container {
       width: 100%;

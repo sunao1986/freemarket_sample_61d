@@ -1,0 +1,11 @@
+.mypage-body {
+  margin: 40px auto 40px;
+  width: 1020px;
+  display: flex;
+  background-color:#f5f5f5;
+  .right-contents-block {
+    width: 700px;
+    background-color: red;
+    margin-left: 40px;
+  }
+}
