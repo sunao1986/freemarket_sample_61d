@@ -3,18 +3,19 @@
 = render partial: 'shared/gretel'
 .mypage-container-profile
   .pro-container
-    .profile-head
-      %h1 プロフィール
-    .profile-user
-      .profile-user__box
-        .profile-user__box__icon
-          = image_tag("/assets/profile-user-icon.jpg", width:"60px", height:"60px", class: "profile-icon")
-        .profile-user__box__user
-          %input{type:"text", placeholder:"例）AYA☆セール中" ,class:"input-nickname"}
-    .profile-container
-      %textarea{cols:"34", name:"text", rows:"4", placeholder:"例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪", class:"input-profile"}
-      .profile-container__editbtn
-        %a.editbtn{href:"/", class:"editbtn"}変更する
+    = form_for @user do |f|
+      .profile-head
+        %h1 プロフィール
+      .profile-user
+        .profile-user__box
+          .profile-user__box__icon
+            = image_tag("/assets/profile-user-icon.jpg", width:"60px", height:"60px", class: "profile-icon")
+          .profile-user__box__user
+            = f.text_area :nickname, type:"text", placeholder:"例）AYA☆セール中" ,class:"input-nickname"
+      .profile-container
+        = f.text_area :introduction, cols:"34", rows:"4", placeholder:"例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪", class:"input-profile"
+        .profile-container__editbtn
+          = f.submit "変更する", class:"editbtn"
   = render "shared/sidebar"
 = render 'shared/sell'
 = render 'shared/aside_and_footer'

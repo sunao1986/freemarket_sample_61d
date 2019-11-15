@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:edit, :update]
+  before_action :set_user, only: [:edit, :update, :profile]
   before_action :authenticate_user!, except: :new
 
   def index
@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 
   def update
     @user.update(update_user_params)
-    redirect_to action: :edit
+    redirect_to action: :index
   end
 
   def destroy
