@@ -75,13 +75,14 @@ class ItemsController < ApplicationController
     @brand = Brand.all
     @images = Image.where(item_id: params[:item_id])
     respond_to do |format|
-      format.html
+      format.html { @images }
       format.json { @images }
     end
   end
 
   def show
     @item = Item.find(params[:id])
+    @brand  = @item.brand_id
     @seller_items = @item.user.items.limit(6).where.not(id: @item.id)
     # @other_items = @item.category.limit(6).where(id: @item.category)
     # カテゴリ未作成のため、コメントアウト中
