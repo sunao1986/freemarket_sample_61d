@@ -1,9 +1,17 @@
 class ApplicationController < ActionController::Base
   before_action :basic_auth, if: :production?
+  before_action :set_parents
   protect_from_forgery with: :exception
   before_action :authenticate_user!
   before_action :configure_sign_up_parameters, if: :devise_controller?
 
+  def set_parents
+    @parents = Category.where(ancestry: nil)
+  end
+
+  
+  
+  
   protected
 
   def production?
