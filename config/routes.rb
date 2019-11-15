@@ -7,8 +7,10 @@ Rails.application.routes.draw do
   root "items#index"
   #あとでcorectionをmemberに変える必要あるかも。そうすればurlにidが追加される。
   resources :users do
-    collection do
+    member do
       get 'profile'
+    end
+    collection do
       get 'intro'
       get 'listing'
       get 'progress'
