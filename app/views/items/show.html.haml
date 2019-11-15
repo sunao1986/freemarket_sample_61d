@@ -8,10 +8,10 @@
       .item-container__item-main__photo
         .item-container__item-main__photo__act
           - @item.images.each do |item|
-            = image_tag item.image_url, width:"300px", height:"300px"
+            = image_tag item.image_url
         .item-container__item-main__photo__inact
           - @item.images.each do |item|
-            = image_tag item.image_url, width:"60px", height:"60px"
+            = image_tag item.image_url
       .item-container__item-main__detail
         %table
           %tr
@@ -59,16 +59,30 @@
     .item-container__fixbox
   -if @item.user_id == current_user.id
     .seller-box
-      = link_to "商品の編集", edit_item_path, class:"editbtn"
+      = link_to "商品の編集", edit_item_path, class:"edititembtn"
       .seller-box__word or
-      %a.btn{href: "～", onclick: "return false", class:"destroybtn"}この商品を削除する
+      %a.btn{href: "～", onclick: "return false", class:"destroyitembtn"}この商品を削除する
+      .destroybtn-page
+        .destroybtn-box
+          .destroybtn-box__note
+            %h1 確認
+            %p 削除すると二度と復活できません。
+            %p 本当に削除しますか？
+          .destroybtn-box__btn
+            .destroybtn-box__btn__close
+              = link_to item_path, class:"btn-close", onclick: "return false" do
+                %p キャンセル
+            .destroybtn-box__btn__done
+              = link_to item_path, class:"btn-done", method: :delete do
+                %p 削除する
   .messages
     .messages__content
       %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
     .messages__text
       %textarea{cols:"34", name:"text", rows:"4"}
     .messages__commentbtn
-      %a.commentbtn{href:"https://www.mercari.com/jp/"}コメントする
+      = link_to item_path, class:"commentbtn"do
+        %p コメントする
   .recommended
     - if @seller_items.present?
       .recommended__seller-item
@@ -84,15 +98,3 @@
             = "#{@item.category.parent.parent.name}のその他の出品"
         .recommended__other-item__body
           = render partial:"other-item-box", locals: {other_items: @other_items}
-
-.destroybtn-page
-  .destroybtn-box
-    .destroybtn-box__note
-      %h1 確認
-      %p 削除すると二度と復活できません。
-      %p 本当に削除しますか？
-    .destroybtn-box__btn
-      .destroybtn-box__btn__close
-        = link_to "キャンセル", item_path, onclick: "return false", class:"btn-close"
-      .destroybtn-box__btn__done
-        = link_to "削除する", item_path, class:"btn-done", method: :delete
