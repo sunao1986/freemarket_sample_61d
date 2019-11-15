@@ -2,3 +2,28 @@
 - breadcrumb :progress
 = render partial: 'shared/gretel'
 .mypage-container-status
+  .sell-status-box
+    .sell-status-list
+      %h2.sell-status-list__head
+        出品した商品
+      %ul.sell-status-select
+        %li.listing2
+          = link_to listing_users_path, class: "listing2-link" do
+            出品中
+        %li.progress2
+          = link_to progress_users_path, class: "progress2-link" do
+            取引中
+        %li.completed2
+          = link_to completed_users_path, class: "completed2-link" do
+            売却済み
+      .status-detail2
+    %ul.sell-status-pager2
+      %li.sell-status-pager2-left
+        = link_to listing_users_path, class: "to-listing2" do
+          = fa_icon 'chevron-left', class: "chevron-left2"
+      %li.sell-status-pager2-right
+        = link_to completed_users_path, class: "to-progress2" do
+          = fa_icon 'chevron-right', class: "chevron-right2"
+  = render "shared/sidebar"
+= render 'shared/sell'
+= render 'shared/aside_and_footer'

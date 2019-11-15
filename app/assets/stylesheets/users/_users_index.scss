@@ -1,14 +1,171 @@
 .mypage-body {
   width: 1020px;
-  height: 1240.420px;
+  height: 866px;
   margin: 40px auto 0;
   padding: 0 0 40px;
   display: block;
   .right-contents-block {
     width: 700px;
-    height: 1200.420px;
-    background-color: red;
+    height: 661px;
+    background-color:#fff;
     margin-left: 40px;
     float: right;
+    &__top {
+      padding-top: 50px;
+      height: 323px;
+      background-image: url(user_bg.jpg);
+      background-size: cover;
+      .mypage-user-icon {
+        background-image: url(user-image.png);
+        margin: 0 auto;
+        width: 180px;
+        height: 180px;
+        background-size: cover;
+        border-radius: 50%;
+      }
+      .mypage-user-name{
+        margin: 8px 0 16px;
+        font-size: 18px;
+        font-weight: 400;
+        color: #333;
+        line-height: 1.4;
+        text-align: center;
+      }
+      .eva-and-sell-score {
+        font-size: 14px;
+        font-weight: 600;
+        color: #333;
+        height: 14px;
+        text-align: center;
+        .eva {
+          margin-right: 12px;
+        }
+        .sell-score {
+          margin-left: 12px;
+        }
+      }
+    }
+    &__intro {
+      height: 166px;
+      .eva-detail {
+        margin: 0 auto;
+        height: 50px;
+        padding-top: 14px;
+        width: 360px;
+        .good-eva {
+          padding-right: 30px;
+          float: left;
+          width: 130px;
+          height: 28px;
+          &-cover {
+            width: 100px;
+            line-height: 26px;
+            .good-count {
+              width: 60px;
+              margin: 0 0 0 14px;
+              float: right;
+              text-align: center;
+            }
+          }
+        }
+        .normal-eva {
+          padding-right: 30px;
+          float: left;
+          width: 130px;
+          height: 28px;
+          &-cover {
+            width: 100px;
+            line-height: 26px;
+            .normal-count {
+              width: 60px;
+              margin: 0 0 0 14px;
+              float: right;
+              text-align: center;
+            }
+          }
+        }
+        .bad-eva {
+          float: left;
+          width: 100px;
+          height: 28px;
+          &-cover {
+            width: 100px;
+            line-height: 26px;
+            .bad-count {
+              width: 60px;
+              margin: 0 0 0 14px;
+              float: right;
+              text-align: center;
+            }
+          }
+        }
+      }
+      .intro-detail {
+        padding: 30px 50px 60px 50px;
+        border-top: 2px solid #f5f5f5;
+        .intro-text {
+          font-size: 16px;
+          font-weight: 400;
+          color: #333;
+        }
+      }
+    }
+    &__bottom {
+      margin: 24px auto;
+      padding: 32px 0 24px;
+      width: 700px;
+      .sns-box {
+        margin: 16px 0 0;
+        text-align: center;
+        .face-book-block {
+          display: inline-block;
+          margin: 0 8px 8px 0;
+          vertical-align: middle;
+          text-align: center;
+          .face-book-link {
+            display: block;
+            .face-book-icon {
+              border-radius: 4px;
+              line-height: 44px;
+              &:hover {
+                opacity: 0.6;
+              }
+            }
+          }
+        }
+        .twitter-block {
+          display: inline-block;
+          margin: 0 8px 8px 0;
+          vertical-align: middle;
+          text-align: center;
+          .twitter-link {
+            display: block;
+            .twitter-icon {
+              border-radius: 4px;
+              line-height: 44px;
+              &:hover {
+                opacity: 0.6;
+              }
+            }
+          }
+        }
+        .line-block {
+          display: inline-block;
+          margin: 0 0 8px ;
+          vertical-align: middle;
+          text-align: center;
+          .line-link {
+            display: block;
+            .line-icon {
+              border-radius: 4px;
+              line-height: 44px;
+              &:hover {
+                opacity: 0.6;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
