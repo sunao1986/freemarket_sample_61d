@@ -37,17 +37,11 @@ $(function(){
         $(".children-list").append(html);
       })
     });
-    // $(this).css("background-color","red")
-  })
-  // $(".patents-link").on("mouseleave",function(){
-    // $(this).css("background-color","white")
-  // });
-
+  });
 
 
   $(document).on("mouseover",".child_category",function () {
     var id = $(this).attr("id")
-    console.log(id)
     $(".gchild_category").remove();
 
     $.ajax({
@@ -57,10 +51,8 @@ $(function(){
       dataType: 'json'
 
     }).done(function(children) {
-      console.log(children)
       children.forEach(function (child) {
         var html = buildGChirdrenList(child);
-        console.log(html)
         $(".gchildren-list").append(html);
       })
     }); 
