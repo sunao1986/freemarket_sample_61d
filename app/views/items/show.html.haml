@@ -58,7 +58,7 @@
             %td= @item.delivery_days
     .item-container__item-price
       .item-container__item-price__money
-        = "¥#{@item.price}"
+        = "¥#{@item.price.to_s(:delimited)}"
       .item-container__item-price__tax (税込)
       .item-container__item-price__shipping-fee 送料込み
     = link_to "購入画面へ進む", "/items/#{@item.id}/buy", class:"buybtn"

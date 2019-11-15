@@ -8,4 +8,4 @@
             = item.name
           .seller-item-box__info__num
             .seller-item-box__info__name__price
-              = "¥#{item.price}"
+              = "¥#{item.price.to_s(:delimited)}"
