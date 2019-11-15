@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, except: :new
 
   def index
-    #今のところ使わない
+    #マイページトップ
   end
 
   def new
@@ -30,9 +30,9 @@ class UsersController < ApplicationController
   def profile
   end
 
-  def intro
-    #プロフィール表示画面
-  end
+  # def intro
+  #   #プロフィール表示画面
+  # end
 
   def listing
     #出品中

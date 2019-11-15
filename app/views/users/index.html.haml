@@ -3,6 +3,48 @@
 = render partial: 'shared/gretel'
 .mypage-body
   .right-contents-block
+    .right-contents-block__top
+      .mypage-user-icon
+      %h2.mypage-user-name
+        あああ
+        -# カレントユーザ名にする
+      .eva-and-sell-score
+        %span.eva
+          評価 0
+        %span.sell-score
+          出品数 0
+        -# 実際の値に反映させる
+    .right-contents-block__intro
+      .eva-detail
+        .good-eva
+          .good-eva-cover
+            = image_tag "good.png", height: '24px', width: '24px', class: "good"
+            .good-count
+              0
+        .normal-eva
+          .normal-eva-cover
+            = image_tag "normal.png", height: '24px', width: '24px', class: "normal"
+            .normal-count
+              0
+        .bad-eva
+          .bad-eva-cover
+            = image_tag "bad.png", height: '24px', width: '24px', class: "bad"
+            .bad-count
+              0
+      .intro-detail
+        %p.intro-text
+          こんにちは
+    .right-contents-block__bottom
+      %ul.sns-box
+        %li.face-book-block
+          = link_to "#", class: "face-book-link" do
+            = image_tag "face.png" , height: '44px', width: '44px', class: "face-book-icon"
+        %li.twitter-block
+          = link_to "#", class: "twitter-link" do
+            = image_tag "tweet.png" , height: '44px', width: '44px', class: "twitter-icon"
+        %li.line-block
+          = link_to "#", class: "line-link" do
+            = image_tag "line.png" , height: '44px', width: '44px', class: "line-icon"
   = render "shared/sidebar"
 = render 'shared/sell'
 = render 'shared/aside_and_footer'
