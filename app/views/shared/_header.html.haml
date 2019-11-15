@@ -55,3 +55,9 @@
           %li.sign-in
             = link_to new_user_session_path, class: "sign-in__link" do
               ログイン
+.category-list
+  .parents-list
+    - @parents.each do |parent|
+      = link_to "#{parent.name}", "/categories/#{parent.id}", class: "patents-link",id: "#{parent.id}"
+  .children-list
+  .gchildren-list
