@@ -1,0 +1,25 @@
+.search-wrapper
+  = render 'shared/header'
+  .search-body
+    .search-body__contents
+      .search-products
+        .search-products-type
+          .search-products-type__top
+            %h3.search-theme
+              = "「#{@search_name.name}」の検索結果"
+          .search-items-block
+            - @items.each do |item|
+              .search-items-list
+                = link_to "/items/#{item.id}", class: "search-items-list-link" do
+                  = image_tag item.images[0].image_url.url, alt: 'search-items-image', height: '188px', width: '188px', class: 'items-image'
+                  .search-items-detail
+                    .search-items-price
+                      %span.search-price-yen
+                        = converting_to_jpy(item.price)
+                    %h3.search-items-name
+                      = item.name
+        .search-paginate
+          = paginate @items
+
+  = render 'shared/sell'
+  = render 'shared/aside_and_footer'

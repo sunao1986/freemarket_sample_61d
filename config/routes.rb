@@ -40,5 +40,5 @@ Rails.application.routes.draw do
   resources :likes, only: [:create, :destroy]
   #itemsとネストするかもしれない
   resources :brands, only: :index
-  resources :categories, only: :index
+  resources :categories, only: [:show, :new]
 end
