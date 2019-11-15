@@ -83,8 +83,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @brand  = @item.brand_id
     @seller_items = @item.user.items.limit(6).where.not(id: @item.id)
-    # @other_items = @item.category.limit(6).where(id: @item.category)
-    # カテゴリ未作成のため、コメントアウト中
+    @other_items = @item.category.items.limit(6).where.not(id: @item.id)
   end
 
   def buy
