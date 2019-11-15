@@ -1,0 +1,33 @@
+= render partial: 'shared/header'
+-# - breadcrumb :personinfo
+= render partial: 'shared/gretel'
+.mypage-container-edit.shipping-edit
+  .ide-container
+    .identification-head
+      %h1 発送元・お届け先住所変更
+    .identification-container
+      = form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'l-single-inner registration-form'}) do |f|  
+        .l-single-container__content
+          .form-group
+            = f.label "メールアドレス"
+            %span.form-require 必須
+            = f.email_field :email, class: "input-default", placeholder: "PC・携帯どちらでも可"
+          .form-group#form-group-password
+            = f.label "現在のパスワード" 
+            %span.form-require 必須
+            = f.password_field :password, class: "input-default"  
+          .form-group#form-group-password
+            = f.label "新しいパスワード" 
+            %span.form-require 必須
+            = f.password_field :password, class: "input-default", placeholder: "7文字以上"
+          .form-group#form-group-password
+            = f.label "新しいパスワード確認" 
+            %span.form-require 必須
+            = f.password_field :password_confirmation, class: "input-default", placeholder: "7文字以上"  
+            %p.form-info-text
+              パスワードを設定したい場合は上記をすべて入力してください。（設定しない場合は空欄）
+          .form-group
+            = f.submit "変更する", class: "btn-default btn-red btn-shipping"
+  = render "shared/sidebar"
+= render 'shared/sell'
+= render 'shared/aside_and_footer'
