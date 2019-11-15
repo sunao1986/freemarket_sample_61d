@@ -79,16 +79,20 @@
     .messages__commentbtn
       %a.commentbtn{href:"https://www.mercari.com/jp/"}コメントする
   .recommended
-    .recommended__seller-item
-      .recommended__seller-item__head
-        %a.seller-item{href:"https://www.mercari.com/jp/"}出品者のその他の出品
-      .recommended__seller-item__body
-        = render partial:"seller-item-box", locals: {seller_items: @seller_items}
-    -# .recommended__other-item
-    -#   .recommended__other-item__head
-    -#     %a.other-item{href:"https://www.mercari.com/jp/"}カテゴリーのその他の出品
-    -#   .recommended__other-item__body
-    -#     = render partial:"other-item-box", locals: {other_items: @other_items}
+    - if @seller_items.present?
+      .recommended__seller-item
+        .recommended__seller-item__head
+          .seller-item
+            出品者のその他の出品
+        .recommended__seller-item__body
+          = render partial:"seller-item-box", locals: {seller_items: @seller_items}
+    - if @other_items.present?
+      .recommended__other-item
+        .recommended__other-item__head
+          .other-item
+            = "#{@item.category.parent.parent.name}のその他の出品"
+        .recommended__other-item__body
+          = render partial:"other-item-box", locals: {other_items: @other_items}
 
 .destroybtn-page
   .destroybtn-box
