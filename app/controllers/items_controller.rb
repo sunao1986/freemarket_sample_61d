@@ -32,7 +32,6 @@ class ItemsController < ApplicationController
     @category_parents = Category.where(ancestry: nil).pluck(:name)
     @size = Size.all
     @brand = Brand.all
-
   end
 
   def category_child
@@ -87,6 +86,15 @@ class ItemsController < ApplicationController
     # カテゴリ未作成のため、コメントアウト中
   end
 
+  def buy
+    @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
+    if @card.present?
+      Payjp.api_key = "sk_test_0e21a1a16d0a0e377209db69"
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      @card_information = customer.cards.retrieve(@card.card_id)
+    end
+  end
+
   def pay
     @item = Item.find(params[:id])
     Payjp.api_key = 'sk_test_0e21a1a16d0a0e377209db69'
@@ -96,10 +104,7 @@ class ItemsController < ApplicationController
       currency: 'jpy'
     )
     @item.update(condition: 1,buyer_id: current_user.id)
-    redirect_to action: :done
-  end
-
-  def done
+    redirect_to action: :index
   end
 
   def item_search
@@ -110,11 +115,11 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :discription, :status, :delivery_cost, :delivery_method, :delivery_area, :delivery_days, :price, :likes_count, :category_id, :brand_id, :size_id, images_attributes: [:image_url]).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :discription, :status, :delivery_cost, :delivery_method, :delivery_area, :delivery_days, :price, :likes_count, :buyer_id, :condition, :category_id, :brand_id, :size_id, images_attributes: [:image_url]).merge(user_id: current_user.id)
   end
 
   def update_item_params
-    params.require(:item).permit(:name, :discription, :status, :delivery_cost, :delivery_method, :delivery_area, :delivery_days, :price, :likes_count, :category_id, :brand_id, :size_id, images_attributes: [:image_url,:id]).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :discription, :status, :delivery_cost, :delivery_method, :delivery_area, :delivery_days, :price, :likes_count, :buyer_id, :condition, :category_id, :brand_id, :size_id, images_attributes: [:image_url,:id]).merge(user_id: current_user.id)
   end
 
   def user_params
