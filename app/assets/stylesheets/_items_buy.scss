@@ -48,6 +48,9 @@
             float: left;
             width: 90px;
             height: 100px;
+            img {
+              object-fit: cover;
+            }
           }
           &__name{
             float: left;
@@ -114,11 +117,21 @@
         width:700px;
         height:90px;
         .confirmation-button-area{
-          margin: 0 auto;
-          &__buy{
-            font-size: 14px;
-            line-height: 45px;
+          &__buy {
+            margin:  0 auto;
             text-align: center;
+          }
+          &__nobuy {
+            height: 50px;
+            width: 320px;
+            margin:  0 auto;
+            text-align: center;
+            font-size: 14px;
+            line-height: 50px;
+            display: block;
+            background: gray;
+            color: white;
+            cursor: no-drop;
           }
         }
       }
@@ -129,6 +142,7 @@
       height: 150px;
       border-top:solid 1px rgb(211, 211, 211);
       background-color: #fff;
+      position:relative;
       .confirmation-addres{
         width:320px;
         height: 150px;
@@ -136,34 +150,26 @@
         padding: 20px 0;
         &__label{
           height: 25px;
-          font-family: "Yu Gothic";
-          font-size: 14px;
           font-weight: bold;
         }
         &__post{
           height: 20px;
-          font-family: "Yu Gothic";
-          font-size: 14px;
         }
         &__city{
           height: 20px;
-          font-family: "Yu Gothic";
-          font-size: 14px;
         }
         &__name{
           height: 20px;
-          font-family: "Yu Gothic";
-          font-size: 14px;
         }
         &__edit{
           float: right;
-          font-family: "Yu Gothic";
-          font-size: 14px;
-          
-        }
-        .confirmation-addres-btn{
-          text-decoration: none;
-          color:dodgerblue;
+          .confirmation-addres-btn{
+            margin-bottom: 20px;
+            text-decoration: none;
+            color:dodgerblue;
+            position:absolute;
+            bottom:0;
+          }
         }
       }
     }
@@ -172,31 +178,34 @@
       height: 150px;
       border-top:solid 1px rgb(211, 211, 211);
       background-color: #fff;
+      position:relative;
       .confirmation-method{
         width:320px;
-        height: 150px; 
-        margin: 0 auto;    
-        padding: 20px 0; 
+        height: 150px;
+        margin: 0 auto;
+        padding: 20px 0;
         &__label{
-          height: 50px;
-          font-family: "Yu Gothic";
-          font-size: 14px;
+          height: 25px;
           font-weight: bold;
         }  
         &__card{
           height: 25px;
-          font-family: "Yu Gothic";
-          font-size: 14px;
-          font-weight: bold;
+          &__num {
+            height: 20px;
+          }
+          &__exp {
+            height: 20px;
+          }
         }
         &__edit{
           float: right;
-          font-family: "Yu Gothic";
-          font-size: 14px;
-        }
-        .confirmation-edit-btn{
-          text-decoration: none;
-          color:dodgerblue;
+          .confirmation-edit-btn{
+            margin-bottom: 20px;
+            text-decoration: none;
+            color:dodgerblue;
+            position:absolute;
+            bottom:0;
+          }
         }
       }
     }

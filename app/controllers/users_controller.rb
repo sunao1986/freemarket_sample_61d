@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:edit, :update]
   before_action :authenticate_user!, except: :new
 
   def index
-    #今のところ使わない
+    #マイページトップ
   end
 
   def new
@@ -12,10 +13,11 @@ class UsersController < ApplicationController
   end
 
   def edit
-    #本人情報編集
   end
 
-  def updata
+  def update
+    @user.update(update_user_params)
+    redirect_to action: :edit
   end
 
   def destroy
@@ -26,12 +28,11 @@ class UsersController < ApplicationController
   end
 
   def profile
-    #プロフィール編集画面
   end
 
-  def intro
-    #プロフィール表示画面
-  end
+  # def intro
+  #   #プロフィール表示画面
+  # end
 
   def listing
     #出品中
@@ -60,4 +61,13 @@ class UsersController < ApplicationController
     @phone_number = User.new
   end
 
+  private
+
+  def update_user_params
+    params.require(:user).permit(:email, :introduction, :postal_code, :prefectures, :city, :address, :building, :nickname)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
+  end
 end

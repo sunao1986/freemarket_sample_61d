@@ -6,65 +6,69 @@
     .identification-head
       %h1 本人情報の登録
     .identification-container
-      .identification-container__note
-        %p お客様の本人情報をご登録ください。
-      .identification-container__name
-        .identification-container__name__label
-          %p お名前
-        .identification-container__name__box
-          %p 橋本 遥香
-      .identification-container__namekana
-        .identification-container__namekana__label
-          %p お名前カナ
-        .identification-container__namekana__box
-          %p ハシモト ハルカ
-      .identification-container__birthday
-        .identification-container__birthday__label
-          %p 生年月日
-        .identification-container__birthday__box
-          %p 1994/03/06
-      .identification-container__postnum
-        .identification-container__postnum__label
-          .identification-container__postnum__label__info
-            %p 郵便番号
-          .identification-container__postnum__label__optional
-            %p 任意
-        .identification-container__postnum__box
-          %input{type:"text", placeholder:"例）1234567" ,class:"input-default"}
-      .identification-container__prefecture
-        .identification-container__prefecture__label
-          .identification-container__prefecture__label__info
-            %p 都道府県
-          .identification-container__prefecture__label__optional
-            %p 任意
-        .identification-container__prefecture__box
-          %input{type:"text", placeholder:"神奈川県" ,class:"input-default"}
-      .identification-container__city
-        .identification-container__city__label
-          .identification-container__city__label__info
-            %p 市区町村
-          .identification-container__city__label__optional
-            %p 任意
-        .identification-container__city__box
-          %input{type:"text", placeholder:"例）横浜市緑区" ,class:"input-default"}
-      .identification-container__address
-        .identification-container__address__label
-          .identification-container__address__label__info
-            %p 番地
-          .identification-container__address__label__optional
-            %p 任意
-        .identification-container__address__box
-          %input{type:"text", placeholder:"例）青山1-1-1" ,class:"input-default"}
-      .identification-container__building
-        .identification-container__building__label
-          .identification-container__building__label__info
-            %p 建物名
-          .identification-container__building__label__optional
-            %p 任意
-        .identification-container__building__box
-          %input{type:"text", placeholder:"例）柳ビル103" ,class:"input-default"}
-      .identification-container__submitbtn
-        %a.submitbtn{href:"https://www.mercari.com/jp/"}登録する
+      = form_for @user do |f|
+        .identification-container__note
+          %p お客様の本人情報をご登録ください。
+        .identification-container__name
+          .identification-container__name__label
+            %p お名前
+          .identification-container__name__box
+            = @user.first_name
+            = @user.last_name
+        .identification-container__namekana
+          .identification-container__namekana__label
+            %p お名前カナ
+          .identification-container__namekana__box
+            = @user.first_kana
+            = @user.last_kana
+        .identification-container__birthday
+          .identification-container__birthday__label
+            %p 生年月日
+          .identification-container__birthday__box
+            ★★★修正必須★★★
+            = @user.birthday
+        .identification-container__postnum
+          .identification-container__postnum__label
+            .identification-container__postnum__label__info
+              %p 郵便番号
+            .identification-container__postnum__label__optional
+              %p 任意
+          .identification-container__postnum__box
+            = f.text_area :postal_code, placeholder:"例）1234567" , class:"input-default"
+        .identification-container__prefecture
+          .identification-container__prefecture__label
+            .identification-container__prefecture__label__info
+              %p 都道府県
+            .identification-container__prefecture__label__optional
+              %p 任意
+          .identification-container__prefecture__box
+            = f.text_area :prefectures, placeholder:"神奈川県" , class:"input-default"
+        .identification-container__city
+          .identification-container__city__label
+            .identification-container__city__label__info
+              %p 市区町村
+            .identification-container__city__label__optional
+              %p 任意
+          .identification-container__city__box
+            = f.text_area :city, placeholder:"例）横浜市緑区" , class:"input-default"
+        .identification-container__address
+          .identification-container__address__label
+            .identification-container__address__label__info
+              %p 番地
+            .identification-container__address__label__optional
+              %p 任意
+          .identification-container__address__box
+            = f.text_area :address, placeholder:"例）青山1-1-1" ,class:"input-default"
+        .identification-container__building
+          .identification-container__building__label
+            .identification-container__building__label__info
+              %p 建物名
+            .identification-container__building__label__optional
+              %p 任意
+          .identification-container__building__box
+            = f.text_area :building, placeholder:"例）柳ビル103" , class:"input-default"
+        .identification-container__submitbtn
+          = f.submit "登録する", class:"submitbtn"
   = render "shared/sidebar"
 = render 'shared/sell'
 = render 'shared/aside_and_footer'
