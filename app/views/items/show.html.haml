@@ -22,20 +22,13 @@
           %tr
             %th カテゴリー
             %td
-              %a.first{href:"https://www.mercari.com/jp/"}
-                = @item.category.parent.parent.name
-              %br
-              %a.second{href:"https://www.mercari.com/jp/"}
-                = "＞#{@item.category.parent.name}"
-              %br
-              %a.third{href:"https://www.mercari.com/jp/"}
-                = "＞#{@item.category.name}"
+              %br= @item.category.parent.parent.name
+              %br= "＞#{@item.category.parent.name}"
+              %br= "＞#{@item.category.name}"
           - if @brand.present?
             %tr
               %th ブランド
-              %td
-                %a.brand{href:"https://www.mercari.com/jp/"}
-                  = @item.brand.name
+              %td= @item.brand.name
           %tr
             %th 商品のサイズ
             %td= @item.size.name
@@ -50,9 +43,7 @@
             %td= @item.delivery_method
           %tr
             %th 配送元地域
-            %td
-              %a.area{href:"https://www.mercari.com/jp/"}
-                = @item.delivery_area
+            %td= @item.delivery_area
           %tr
             %th 配送日の目安
             %td= @item.delivery_days
