@@ -3,7 +3,8 @@
     .exhibit-wrape
       .exhibit-logo-field
         .exhibit-logo-box
-          = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?465897195", alt: "Image from Gyazo"
+          =link_to root_path, class: "mercari-k" do
+            = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?465897195", alt: "Image from Gyazo"
       .exhibit-head-field
         .exhibit-head-field__title
           商品の情報を入力
@@ -83,7 +84,7 @@
         .exhibit-delivery-field__gray-label
           配送について
         .exhibit-delivery-field__label
-          配送量の負担
+          配送料の負担
         .exhibit-delivery-field--required
           必須
         .exhibit-delivery-field__delivery

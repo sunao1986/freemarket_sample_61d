@@ -19,8 +19,8 @@ class ApplicationController < ActionController::Base
   end
 
   def configure_sign_up_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :encrypted_password, :nickname, :first_name, :last_name, :first_kana, :last_kana, :birthday])
-  end
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :encrypted_password, :nickname, :first_name, :last_name, :first_kana, :last_kana, {birthday:[]}])
+  end 
 
   def basic_auth
     authenticate_or_request_with_http_basic do |username, password|

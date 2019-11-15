@@ -30,11 +30,12 @@
               %br
               %a.third{href:"https://www.mercari.com/jp/"}
                 = "＞#{@item.category.name}"
-          %tr
-            %th ブランド
-            %td
-              %a.brand{href:"https://www.mercari.com/jp/"}
-                = @item.brand.name
+          - if @brand.present?
+            %tr
+              %th ブランド
+              %td
+                %a.brand{href:"https://www.mercari.com/jp/"}
+                  = @item.brand.name
           %tr
             %th 商品のサイズ
             %td= @item.size.name

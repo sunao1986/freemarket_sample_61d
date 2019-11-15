@@ -136,6 +136,21 @@
         margin-left: 10px;
         background-color: red;
       }
+      #item_name-error{
+        float: left;
+        margin-left: 10px;
+        margin-top: 23px;
+      }
+      #item_discription-error{
+        float: left;
+        margin-left: 10px;
+        margin-top: 23px;
+      }
+      #size-error{
+        float: left;
+        margin-top: 34px;
+        margin-left: 10px;
+      }
       &__name{
         clear: both;
         padding-top:5px;
@@ -225,6 +240,16 @@
         margin-top: 37px;
         margin-left: 10px;
         background-color: red;
+      }
+      #parent_category-error{
+        float: left;
+        margin-top: 32px;
+        margin-left: 10px;
+      }
+      #item_status-error{
+        float: left;
+        margin-top: 32px;
+        margin-left: 10px;
       }
       .exhibit-detail-category-wrape{
         &__box{
@@ -458,6 +483,11 @@
         margin-left: 10px;
         background-color: red;
       }
+      #item_delivery_cost-error,#item_delivery_method-error,#item_delivery_area-error,#item_delivery_days-error{
+        float: left;
+        margin-top: 32px;
+        margin-left: 10px;
+      }
       &__delivery{
         clear: both;
         padding-top:5px;
@@ -658,6 +688,7 @@
           font-family: "Yu Gothic";
           line-height:60px;
         }
+
       }
       &__profit{
         width:400px;
@@ -677,6 +708,10 @@
           font-family: "Yu Gothic";
           font-weight: bold;
           line-height:60px;
+        }
+        #item_price-error{
+          float: right;
+          margin-top: 60px;
         }
       }
     }  
