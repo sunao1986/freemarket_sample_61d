@@ -3,6 +3,11 @@
 @import "shared/gretel";
 @import "registrations";
 @import "users/users_index";
+@import "users/users_listing";
+@import "users/users_progress";
+@import "users/users_completed";
+@import "users/users_purchase";
+@import "users/users_purchased";
 @import "users";
 @import "users_edit";
 @import "users_logout";
