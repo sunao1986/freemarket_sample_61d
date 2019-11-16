@@ -15,7 +15,7 @@ window.addEventListener('DOMContentLoaded',function(){
     function inputHTML(){
       var input = `<div id=custom-data-for data-image-name="hoge">
                      <label for="upload_file" class="box-click-label" >
-                       <input type="file" id="upload_file" class="image_upload_file" name="item[images_attributes][][image_url]" style="display: none;">
+                       <input type="file" id="upload_file" class="image_upload_file" name="item[images_attributes][1][image_url]" style="display: none;">
                      </label>
                    </div>`
       return input;
@@ -32,6 +32,7 @@ window.addEventListener('DOMContentLoaded',function(){
         $('#custom-data-for').attr('data-image-name',fname);
         var input = inputHTML
         var preview = previewHTML(src,fname)
+        var i = 0
         $(".exhibit-image-box").css('width',new_width);
         $("#add-file-field-point").prepend(input);
         $(".increase-images-box").prepend(preview);

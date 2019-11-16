@@ -22,7 +22,7 @@
               #custom-data-for{'data-image-name': "hoge"}             
                 = f.label :image_url ,class:"box-click-label", for: "upload_file" do
                   = f.fields_for :images  do |image|
-                    = image.file_field :image_url, id:"upload_file", class: "image_upload_file", name: "item[images_attributes][][image_url]", style: "display: none;"
+                    = image.file_field :image_url, id:"upload_file", class: "image_upload_file", name: "item[images_attributes][1][image_url]", style: "display: none;"
                   %p.exhibit-drug ドラッグアンドドロップ 
                   %p.exhibit-click  またはクリックしてファイルをアップロード
 
