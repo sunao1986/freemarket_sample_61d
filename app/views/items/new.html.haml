@@ -14,15 +14,15 @@
         .exhibit-image-field--required
           必須
         .exhibit-image-field__notice
-          最大5枚までアップロードできます      
+          最大5枚までアップロードできます
         .exhibit-image-container
           .increase-images-box
           .exhibit-image-box
             #add-file-field-point
-              #custom-data-for{'data-image-name': "hoge"}             
+              #custom-data-for{'data-image-id': "0"}
                 = f.label :image_url ,class:"box-click-label", for: "upload_file" do
                   = f.fields_for :images  do |image|
-                    = image.file_field :image_url, id:"upload_file", class: "image_upload_file", name: "item[images_attributes][][image_url]", style: "display: none;"
+                    = image.file_field :image_url, id:"upload_file", class: "image_upload_file", name: "item[images_attributes][0][image_url]" 
                   %p.exhibit-drug ドラッグアンドドロップ 
                   %p.exhibit-click  またはクリックしてファイルをアップロード
 
@@ -33,14 +33,14 @@
           必須
         #item-error-name
         .exhibit-info-field__name
-          = f.text_field :name, class: "input_item_name", placeholder: "商品名(必須40文字まで)"
+          = f.text_field :name, class: "input_item_name", placeholder: "商品名(必須40文字まで)", maxlength: "40"
         .exhibit-info-field__label
           商品の説明
         .exhibit-info-field--required
           必須
         #item-error-discription
         .exhibit-info-field__discription
-          = f.text_area :discription, class: "input_item_discription", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+          = f.text_area :discription, class: "input_item_discription", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", maxlength: "1000"
 
       .exhibit-detail-field
         .exhibit-detail-field__gray-label
@@ -64,7 +64,7 @@
           #item-error-size
           .hidden-size-field__box
             = fa_icon 'angle-down', alt: 'angle-down', class: "fas fa-angle-dowx fa-2x", id:"size-angle"
-            = f.collection_select :size_id, @size, :id, :name, class: "input_item_size"
+            = f.collection_select :size_id, @size, :id, :name, prompt: "---", class: "input_item_size"
         .hidden-brand-field
           .hidden-brand-field__gray-label
           .hidden-brand-field__label

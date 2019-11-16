@@ -2,23 +2,10 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:edit, :update, :buy, :show, :pay]
   before_action :authenticate_user!, except: :index
   def index
-    # @q = User.ransack(params[:q])
-    # @items = @q.result(distinct: true)
-
-    #人気のカテゴリー
-
-    #レディース
-    # @ladies_items = Item.recent.where(category_params[:ancestry])。。。もしかしたらancestryで持ってくる方法を使うかもなので残しました
-    #カテゴリテーブルが完成形になった時に指定idの範囲変えるかも。なので、データさえあれば、ひとまずレディースのみだが後でコピーすればすぐできる
     @ladies_items = Item.recent.where(category_id: 1..199).order('created_at DESC').limit(10)
-    #メンズ
     @mens_items = Item.recent.where(category: 201..345).order('created_at DESC').limit(10)
-    #家電
     @appliance_items = Item.recent.where(category: 899..983).order('created_at DESC').limit(10)
-    #おもちゃ
     @toy_items = Item.recent.where(category: 686..797).order('created_at DESC').limit(10)
-
-    #人気のブランド
     @chanel_items = Item.recent.where(brand:2).order('created_at DESC').limit(10)
     @vuitton_items = Item.recent.where(brand:3).order('created_at DESC').limit(10)
     @sup_items = Item.recent.where(brand:4).order('created_at DESC').limit(10)
@@ -75,7 +62,7 @@ class ItemsController < ApplicationController
     @brand = Brand.all
     @images = Image.where(item_id: params[:item_id])
     respond_to do |format|
-      format.html { @images }
+      format.html
       format.json { @images }
     end
   end
@@ -83,6 +70,7 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @brand  = @item.brand_id
+    @comments = @item.comments.includes(:user)
     @seller_items = @item.user.items.limit(6).where.not(id: @item.id)
     @other_items = @item.category.items.limit(6).where.not(id: @item.id)
   end
