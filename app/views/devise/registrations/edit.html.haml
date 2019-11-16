@@ -4,7 +4,7 @@
 .mypage-container-edit.shipping-edit
   .ide-container
     .identification-head
-      %h1 発送元・お届け先住所変更
+      %h1 メール/パスワード
     .identification-container
       = form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'l-single-inner registration-form'}) do |f|  
         .l-single-container__content
@@ -15,7 +15,7 @@
           .form-group#form-group-password
             = f.label "現在のパスワード" 
             %span.form-require 必須
-            = f.password_field :password, class: "input-default"  
+            = f.password_field :current_password, class: "input-default"  
           .form-group#form-group-password
             = f.label "新しいパスワード" 
             %span.form-require 必須
