@@ -17,7 +17,7 @@
           %tr
             %th 出品者
             %td
-              %a.seller{href:users_path}
+              = link_to users_path, class: "seller" do
                 = @item.user.nickname
           %tr
             %th カテゴリー
@@ -82,13 +82,14 @@
               = link_to item_path, class:"btn-done", method: :delete do
                 %p 削除する
   .messages
-    .messages__content
-      %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-    .messages__text
-      %textarea{cols:"34", name:"text", rows:"4"}
-    .messages__commentbtn
-      = link_to item_path, class:"commentbtn" do
-        %p コメントする
+    = form_tag("/items/#{@item.id}/comments", method: :post) do
+      = render partial:"comments", locals: {comments: @comments}
+      .messages__content
+        %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      .messages__text
+        %textarea{cols: "34", name: "text", rows:"4", id:"comarea"}
+      .messages__commentbtn
+        %input{type: "submit", value: "コメントする", class:"commentbtn"}
   .recommended
     - if @seller_items.present?
       .recommended__seller-item
