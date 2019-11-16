@@ -1,9 +1,8 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:edit, :update]
+  before_action :set_user, only: [:edit, :update, :profile]
   before_action :authenticate_user!, except: :new
 
   def index
-    #マイページトップ
   end
 
   def new
@@ -17,7 +16,7 @@ class UsersController < ApplicationController
 
   def update
     @user.update(update_user_params)
-    redirect_to action: :edit
+    redirect_to action: :index
   end
 
   def destroy
@@ -30,9 +29,9 @@ class UsersController < ApplicationController
   def profile
   end
 
-  # def intro
-  #   #プロフィール表示画面
-  # end
+  def intro
+    #プロフィール表示画面
+  end
 
   def listing
     #出品中

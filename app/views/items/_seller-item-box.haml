@@ -2,12 +2,10 @@
   .seller-item-box
     %a.seller-item-box{href:"/items/#{item.id}"}
       .seller-item-box__photo
-        = image_tag item.images[0].image_url, width:"220px", height:"220px"
+        = image_tag item.images[0].image_url
         .seller-item-box__info
           .seller-item-box__info__name
             = item.name
           .seller-item-box__info__num
             .seller-item-box__info__name__price
-              = "¥#{item.price}"
-            .seller-item-box__info__name__like
-              %i.fa.fa-heart 1
+              = "¥#{item.price.to_s(:delimited)}"

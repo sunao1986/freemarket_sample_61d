@@ -25,8 +25,7 @@
           .identification-container__birthday__label
             %p 生年月日
           .identification-container__birthday__box
-            ★★★修正必須★★★
-            = @user.birthday
+            = @user.birthday.delete("[]").gsub(/[""]/){''}
         .identification-container__postnum
           .identification-container__postnum__label
             .identification-container__postnum__label__info

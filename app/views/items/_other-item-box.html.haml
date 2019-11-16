@@ -2,12 +2,10 @@
   .other-item-box
     %a.other-item-box{href:"/items/#{item.id}"}
       .other-item-box__photo
-        = image_tag item.images, width:"220px", height:"220px"
+        = image_tag item.images[0].image_url
         .other-item-box__info
           .other-item-box__info__name
             = item.name
           .other-item-box__info__num
             .other-item-box__info__name__price
-              = "¥#{item.price}"
-            .other-item-box__info__name__like
-              %i.fa.fa-heart 1
+              = "¥#{item.price.to_s(:delimited)}"

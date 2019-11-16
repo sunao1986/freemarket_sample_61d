@@ -19,7 +19,7 @@
       .confirmation-price-field 
         .confirmation-price-area
           .confirmation-price-area__value
-            = "¥#{@item.price}"
+            = "¥#{@item.price.to_s(:delimited)}"
             %span.postage-included 送料込み
 
       .confirmation-payment-field
@@ -27,7 +27,7 @@
           .confirmation-payment-area__label
             支払い金額
           .confirmation-payment-area__value
-            = "¥#{@item.price}"
+            = "¥#{@item.price.to_s(:delimited)}"
       .confirmation-message-field
         - if @item.user.shipping.present? && @card.present?
         - else

@@ -70,6 +70,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @brand  = @item.brand_id
     @seller_items = @item.user.items.limit(6).where.not(id: @item.id)
+    @other_items = @item.category.items.limit(6).where.not(id: @item.id)
   end
 
   def buy
