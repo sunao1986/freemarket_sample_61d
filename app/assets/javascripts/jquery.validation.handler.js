@@ -181,3 +181,122 @@ $(function(){
   }   
  });
 }) 
+
+$(function(){
+  $.validator.addMethod("firstKana", function(value, element, regexpr) {          
+    return regexpr.test(value);
+  }, "姓カナ はカナ文字を入力してください"); 
+  $.validator.addMethod("lastKana", function(value, element, regexpr) {          
+    return regexpr.test(value);
+  }, "名カナ はカナ文字を入力してください");
+  $.validator.addMethod("firstName", function(value, element, regexpr) {          
+    return regexpr.test(value);
+  }, "姓 に数字は使用できません");
+  $.validator.addMethod("lastName", function(value, element, regexpr) {          
+    return regexpr.test(value);
+  }, "名 に数字は使用できません");
+  $.validator.addMethod("postalCode", function(value, element, regexpr) {          
+    return regexpr.test(value);
+  }, "フォーマットが不適切です");
+  $.validator.addMethod("city", function(value, element, regexpr) {          
+    return regexpr.test(value);
+  }, "市区町村 に数字は使用できません");
+  $(".edit_shipping").validate({
+    rules : {
+      "shipping[first_name]": {
+        required: true,
+        firstName: /\D/
+      },
+      "shipping[last_name]": {
+        required: true,
+        lastName: /\D/
+      },
+      "shipping[first_kana]": {
+        required: true,
+        firstKana: /^([ァ-ン]|ー)+$/
+      },
+      "shipping[last_kana]": {
+        required: true,
+        lastKana: /^([ァ-ン]|ー)+$/
+      },
+      "shipping[postal_code]": {
+        required: true,
+        postalCode: /^\d{3}[-]\d{4}$|^\d{3}[-]\d{2}$|^\d{3}$|^\d{5}$|^\d{7}$/
+      },
+      "shipping[prefectures]": {
+        required: true
+      },
+      "shipping[city]": {
+        required: true,
+        city: /\D/
+      },
+      "shipping[address]": {
+        required: true
+      }
+    },
+    messages: {
+      "shipping[first_name]": {
+        required: "姓 を入力してください"
+      },
+      "shipping[last_name]": {
+        required: "名 を入力してください"
+      },
+      "shipping[first_kana]": {
+        required: "姓カナ を入力してください"
+      },
+      "shipping[last_kana]": {
+        required: "名カナ を入力してください"
+      },
+      "shipping[postal_code]": {
+        required: "郵便番号 を入力してください"
+      },
+      "shipping[prefectures]": {
+        required: "都道府県 を入力してください"
+      },
+      "shipping[city]": {
+        required: "市区町村 を入力してください"
+      },
+      "shipping[address]": {
+        required: "番地 を入力してください"
+      }
+    },
+    errorPlacement: function(error, element) {
+        error.insertAfter(element);
+    }
+ });
+})  
+
+$(function(){
+  $.validator.addMethod("password", function(value, element, regexpr) {          
+    return regexpr.test(value);
+  }, "英字と数字両方を含むパスワードを設定してください");
+  $("#edit_user").validate({
+    rules : {
+      "user[email]": {
+        required: true
+      },
+      "user[password]": {
+        required: true,
+        maxlength : 128,
+        minlength : 7,
+        password : /([0-9].*[a-zA-Z]|[a-zA-Z].*[0-9])/s
+      },
+      "user[password_confirmation]": {
+        equalTo: "#user_password"
+      }
+    },
+    messages: {
+      "user[email]": {
+        required: 'メールアドレス を入力してください',
+        email: "フォーマットが不適切です"
+      },
+      "user[password]": {
+        required: 'パスワード を入力してください',
+        minlength : "パスワードは7文字以上128文字以下で入力してください"
+      }
+    },
+    errorPlacement: function(error, element) {
+        error.insertAfter(element);	
+  }   
+ });
+}) 

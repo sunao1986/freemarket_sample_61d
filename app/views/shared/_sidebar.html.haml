@@ -34,7 +34,7 @@
         %p プロフィール
         %i.fa.fa-chevron-right
     %li.shipping
-      = link_to "/", class:"side-list" do
+      = link_to edit_shipping_path(current_user.id), class:"side-list" do
         %p 発送元・お届け先住所変更
         %i.fa.fa-chevron-right
     %li.card
@@ -42,7 +42,7 @@
         %p 支払い方法
         %i.fa.fa-chevron-right
     %li.mail
-      = link_to "/", class:"side-list" do
+      = link_to edit_user_registration_path, class:"side-list" do
         %p メール/パスワード
         %i.fa.fa-chevron-right
     %li.identification
