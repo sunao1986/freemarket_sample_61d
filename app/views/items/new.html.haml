@@ -14,15 +14,15 @@
         .exhibit-image-field--required
           必須
         .exhibit-image-field__notice
-          最大5枚までアップロードできます      
+          最大5枚までアップロードできます
         .exhibit-image-container
           .increase-images-box
           .exhibit-image-box
             #add-file-field-point
-              #custom-data-for{'data-image-name': "hoge"}             
+              #custom-data-for{'data-image-id': "0"}
                 = f.label :image_url ,class:"box-click-label", for: "upload_file" do
                   = f.fields_for :images  do |image|
-                    = image.file_field :image_url, id:"upload_file", class: "image_upload_file", name: "item[images_attributes][1][image_url]", style: "display: none;"
+                    = image.file_field :image_url, id:"upload_file", class: "image_upload_file", name: "item[images_attributes][0][image_url]" 
                   %p.exhibit-drug ドラッグアンドドロップ 
                   %p.exhibit-click  またはクリックしてファイルをアップロード
 
