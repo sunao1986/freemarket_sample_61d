@@ -13,30 +13,25 @@ crumb :profile do
   parent :mypage
 end
 
-# crumb : do
-#   link "発送・お届け先住所変更", edit_shipping_path
-#   parent :mypage
-# end
+crumb :shippingedit do
+  link "発送・お届け先住所変更", edit_shipping_path
+  parent :mypage
+end
 
-# crumb : do
-#   link "支払い方法", edit_card_path
-#   parent :mypage
-# end
+crumb :cards do
+  link "支払い方法", cards_path
+  parent :mypage
+end
 
-# crumb :meilpass do
-#   link "メール/パスワード", edit_user_path
-#   parent :mypage
-# end
+crumb :meilpass do
+  link "メール/パスワード", edit_user_registration_path
+  parent :mypage
+end
 
 crumb :personinfo do
   link "本人情報", edit_user_path
   parent :mypage
 end
-
-# crumb : do
-#   link "電話番号の確認", phone_users_path
-#   parent :mypage
-# end
 
 crumb :logout do
   link "ログアウト", logout_users_path
