@@ -22,9 +22,14 @@
           %tr
             %th カテゴリー
             %td
-              %br= @item.category.parent.parent.name
-              %br= "＞#{@item.category.parent.name}"
-              %br= "＞#{@item.category.name}"
+              = link_to "/categories/#{@item.category.parent.parent.id}", class: "first" do
+                = @item.category.parent.parent.name
+              %br
+              = link_to "/categories/#{@item.category.parent.id}", class: "second" do
+                = "＞#{@item.category.parent.name}"
+              %br
+              = link_to "/categories/#{@item.category.id}", class: "third" do
+                = "＞#{@item.category.name}"
           - if @brand.present?
             %tr
               %th ブランド
@@ -82,20 +87,22 @@
     .messages__text
       %textarea{cols:"34", name:"text", rows:"4"}
     .messages__commentbtn
-      = link_to item_path, class:"commentbtn"do
+      = link_to item_path, class:"commentbtn" do
         %p コメントする
   .recommended
     - if @seller_items.present?
       .recommended__seller-item
         .recommended__seller-item__head
           .seller-item
-            出品者のその他の出品
+            = link_to users_path, class:"seller-item-link" do
+              %p 出品者のその他の出品
         .recommended__seller-item__body
           = render partial:"seller-item-box", locals: {seller_items: @seller_items}
     - if @other_items.present?
       .recommended__other-item
         .recommended__other-item__head
           .other-item
-            = "#{@item.category.parent.parent.name}のその他の出品"
+            = link_to "/categories/#{@item.category.parent.parent.id}", class: "other-item-link" do
+              = "#{@item.category.parent.parent.name}のその他の出品"
         .recommended__other-item__body
           = render partial:"other-item-box", locals: {other_items: @other_items}
