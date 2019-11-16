@@ -61,7 +61,7 @@
       = link_to "購入画面へ進む", "/items/#{@item.id}/buy", class:"buybtn"
     .item-container__item-description
       .item-container__item-description__inner
-        = @item.discription
+        = simple_format(@item.discription)
     .item-container__fixbox
   -if @item.user_id == current_user.id
     .seller-box
