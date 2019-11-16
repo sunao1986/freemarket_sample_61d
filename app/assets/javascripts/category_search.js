@@ -14,15 +14,21 @@ $(function(){
 
   $(".category-brand").on("mouseover",function(){
     $(".category-list").css("display","block")
+    $(".children-list").css("display","none")
+    $(".gchildren-list").css("display","none")
   });
   $(".category-list").on("mouseleave",function(){
-    $(this).css("display","none")
+    $(".category-list").css("display","none")
+  });
+  $(".children_list").on("mouseleave",function(){
+    $(".gchildren-list").css("display","none")
   });
 
   $(".patents-link").on("mouseover",function(){
     var id = $(this).attr("id")
     $(".child_category").remove();
     $(".gchild_category").remove();
+    $(".gchildren-list").css("display","none")
 
     $.ajax({
       type: 'GET',
@@ -31,7 +37,7 @@ $(function(){
       dataType: 'json'
 
     }).done(function(children) {
-      
+      $(".children-list").css("display","block")
       children.forEach(function (child) {
         var html = buildChildrenList(child);
         $(".children-list").append(html);
@@ -51,10 +57,13 @@ $(function(){
       dataType: 'json'
 
     }).done(function(children) {
+      $(".gchildren-list").css("display","block")
+    if (children !== null){
       children.forEach(function (child) {
         var html = buildGChirdrenList(child);
         $(".gchildren-list").append(html);
       })
+    }
     }); 
   });  
 });
