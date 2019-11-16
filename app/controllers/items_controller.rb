@@ -63,6 +63,7 @@ class ItemsController < ApplicationController
   def destroy
     @item = Item.find(params[:id])
     @item.destroy
+    redirect_to action: :index
   end
 
   def edit
