@@ -46,17 +46,17 @@
       .confirmation-addres
         .confirmation-addres__label
           配送先
-        - if @item.user.shipping.present?
+        - if @user.shipping.present?
           .confirmation-addres__post
-            = "〒#{@item.user.shipping.postal_code}"
+            = "〒#{@user.shipping.postal_code}"
           .confirmation-addres__city
-            = @item.user.shipping.prefectures
-            = @item.user.shipping.city
-            = @item.user.shipping.address
-            = @item.user.shipping.building
+            = @user.shipping.prefectures
+            = @user.shipping.city
+            = @user.shipping.address
+            = @user.shipping.building
           .confirmation-addres__name
-            = @item.user.shipping.first_name
-            = @item.user.shipping.last_name
+            = @user.shipping.first_name
+            = @user.shipping.last_name
         - else
           登録なし
         .confirmation-addres__edit

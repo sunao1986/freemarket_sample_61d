@@ -76,6 +76,7 @@ class ItemsController < ApplicationController
   end
 
   def buy
+    @user = User.find(current_user.id)
     @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
     if @card.present?
       Payjp.api_key = "sk_test_0e21a1a16d0a0e377209db69"
