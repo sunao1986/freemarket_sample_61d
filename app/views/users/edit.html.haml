@@ -33,7 +33,7 @@
             .identification-container__postnum__label__optional
               %p 任意
           .identification-container__postnum__box
-            = f.text_area :postal_code, placeholder:"例）1234567" , class:"input-default"
+            = f.text_area :postal_code, placeholder:"例）1234567" , class:"input-edit"
         .identification-container__prefecture
           .identification-container__prefecture__label
             .identification-container__prefecture__label__info
@@ -41,7 +41,8 @@
             .identification-container__prefecture__label__optional
               %p 任意
           .identification-container__prefecture__box
-            = f.text_area :prefectures, placeholder:"神奈川県" , class:"input-default"
+            = f.collection_select :prefectures, Prefecture.all, :id, :name, {}, {class:"input-edit"}
+            = fa_icon 'angle-down', alt: 'angle-down', class: "fas fa-angle-dowx fa-2x", id:"prefectures-angle"
         .identification-container__city
           .identification-container__city__label
             .identification-container__city__label__info
@@ -49,7 +50,7 @@
             .identification-container__city__label__optional
               %p 任意
           .identification-container__city__box
-            = f.text_area :city, placeholder:"例）横浜市緑区" , class:"input-default"
+            = f.text_area :city, placeholder:"例）横浜市緑区" , class:"input-edit"
         .identification-container__address
           .identification-container__address__label
             .identification-container__address__label__info
@@ -57,7 +58,7 @@
             .identification-container__address__label__optional
               %p 任意
           .identification-container__address__box
-            = f.text_area :address, placeholder:"例）青山1-1-1" ,class:"input-default"
+            = f.text_area :address, placeholder:"例）青山1-1-1" ,class:"input-edit"
         .identification-container__building
           .identification-container__building__label
             .identification-container__building__label__info
@@ -65,7 +66,7 @@
             .identification-container__building__label__optional
               %p 任意
           .identification-container__building__box
-            = f.text_area :building, placeholder:"例）柳ビル103" , class:"input-default"
+            = f.text_area :building, placeholder:"例）柳ビル103" , class:"input-edit"
         .identification-container__submitbtn
           = f.submit "登録する", class:"submitbtn"
   = render "shared/sidebar"
