@@ -326,10 +326,12 @@
           margin: 24px 0px 8px;
         }
         .seller-item {
-          font-size: 22px;
-          font-weight: 700;
-          color: #0099e8;
-          text-decoration: none;
+          .seller-item-link {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0099e8;
+            text-decoration: none;
+          }
         }
 
         &__body {
@@ -379,10 +381,12 @@
           margin: 24px 0px 8px;
         }
         .other-item {
-          font-size: 22px;
-          font-weight: 700;
-          color: #0099e8;
-          text-decoration: none;
+          .other-item-link {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0099e8;
+            text-decoration: none;
+          }
         }
 
         &__body {
@@ -759,10 +763,12 @@
           margin: 24px 0px 8px;
         }
         .seller-item {
-          font-size: 22px;
-          font-weight: 700;
-          color: #0099e8;
-          text-decoration: none;
+          .seller-item-link {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0099e8;
+            text-decoration: none;
+          }
         }
 
         &__body {
@@ -803,10 +809,12 @@
           margin: 24px 0px 8px;
         }
         .other-item {
-          font-size: 22px;
-          font-weight: 700;
-          color: #0099e8;
-          text-decoration: none;
+          .other-item-link {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0099e8;
+            text-decoration: none;
+          }
         }
 
         &__body {
