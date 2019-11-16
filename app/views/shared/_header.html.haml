@@ -18,30 +18,9 @@
             %h2.category-brand__btn
               = link_to "#", class: "category-brand__btn__link" do
                 = fa_icon 'list', class: 'category-brand__btn__link__icon'
-                %span カテゴリーから探す
-          %li.category-brand
-            %h2.category-brand__btn
-              = link_to "#", class: "category-brand__btn__link" do
-                = fa_icon 'tag', class: 'category-brand__btn__link__icon'
-                %span ブランドから探す
+                %span カテゴリーから探す   
       - if user_signed_in?
         %ul.user-box
-          %li.users-details
-            = link_to "#", class: "users-details__link" do
-              = fa_icon "heart", class: "detail-icon"
-              %span.detail-text
-                いいね一覧
-          %li.users-details
-            = link_to "#", class: "users-details__link" do
-              = fa_icon "bell", class: "detail-icon"
-              %span.detail-text
-                お知らせ
-              -# .notification 2
-          %li.users-details
-            = link_to "#", class: "users-details__link" do
-              = fa_icon "check", class: "detail-icon"
-              %span.detail-text
-                やることリスト
           %li.users-mypage
             = link_to users_path, class: "users-mypage__link" do
               = image_tag 'user-image.png', alt: 'user-image', width: '32', class: 'user-image'
