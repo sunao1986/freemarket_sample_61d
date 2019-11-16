@@ -8,11 +8,7 @@ class User < ApplicationRecord
     has_one :shipping
     has_many :items, dependent: :destroy
     has_many :sns_credentials, dependent: :destroy
-
-
-    # has_many :likes
-    # has_many :comments
-    # has_many :reviews
+    has_many :comments
 
     def self.from_omniauth(auth)
       user = User.where(email: auth.info.email).first
