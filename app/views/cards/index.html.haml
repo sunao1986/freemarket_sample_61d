@@ -1,4 +1,6 @@
 = render partial: 'shared/header'
+- breadcrumb :cards
+= render partial: 'shared/gretel'
 .mypage-container-cards
   .cre-container
     .cards-head
@@ -20,3 +22,5 @@
           = link_to new_card_path, class: "regibtn" do
             %p カード登録する
   = render 'shared/sidebar'
+= render 'shared/sell'
+= render 'shared/aside_and_footer'

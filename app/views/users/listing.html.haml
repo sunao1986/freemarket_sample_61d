@@ -17,6 +17,25 @@
           = link_to completed_users_path, class: "completed-link" do
             売却済み
       .status-detail
+        %ul.listing-box
+          %li.listing-list
+            = link_to "#", class: "listing-item-link" do
+              %figure
+                = image_tag 'vuitton1.jpg', class: 'listing-item-image'
+              .listing-item-detail
+                .listing-item-name
+                  aaaaaaaaaaaa
+                .listing-item-check
+                  %span.like-count
+                    = fa_icon "heart"
+                    %span 0
+                  %span.comment-count
+                    = fa_icon "comment"
+                    %span 0
+                  .release
+                    公開中
+              .item-show
+                = fa_icon "chevron-right"
     %ul.sell-status-pager
       %li.sell-status-pager-left
         = link_to completed_users_path, class: "to-listing" do
