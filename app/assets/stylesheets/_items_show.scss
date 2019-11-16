@@ -5,7 +5,7 @@
     margin: 40px auto;
 
     .item-container {
-      width: 620px;
+      width: 700px;
       height: 100%;
       margin-bottom: 8px;
       padding: 24px 40px 40px 40px;
@@ -94,7 +94,7 @@
               vertical-align: middle;
               background: #fff;
               border: 1px solid #f5f5f5;
-              .seller {
+              .seller,.first,.second,.third, {
                 color: #0099e8;
                 text-decoration: none;
               }
@@ -326,10 +326,12 @@
           margin: 24px 0px 8px;
         }
         .seller-item {
-          font-size: 22px;
-          font-weight: 700;
-          color: #0099e8;
-          text-decoration: none;
+          .seller-item-link {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0099e8;
+            text-decoration: none;
+          }
         }
 
         &__body {
@@ -379,10 +381,12 @@
           margin: 24px 0px 8px;
         }
         .other-item {
-          font-size: 22px;
-          font-weight: 700;
-          color: #0099e8;
-          text-decoration: none;
+          .other-item-link {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0099e8;
+            text-decoration: none;
+          }
         }
 
         &__body {
@@ -527,7 +531,7 @@
               vertical-align: middle;
               background: #fff;
               border: 1px solid #f5f5f5;
-              .seller {
+              .seller,.first,.second,.third, {
                 color: #0099e8;
                 text-decoration: none;
               }
@@ -662,7 +666,7 @@
             position: relative;
             &__close {
               height: 60px;
-              width: 300px;
+              width: 50%;
               float: left;
               border: 1px solid #f5f5f5;
               box-sizing: border-box;
@@ -677,7 +681,7 @@
             }
             &__done {
               height: 60px;
-              width: 300px;
+              width: 50%;
               float: right;
               border: 1px solid #f5f5f5;
               box-sizing: border-box;
@@ -759,10 +763,12 @@
           margin: 24px 0px 8px;
         }
         .seller-item {
-          font-size: 22px;
-          font-weight: 700;
-          color: #0099e8;
-          text-decoration: none;
+          .seller-item-link {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0099e8;
+            text-decoration: none;
+          }
         }
 
         &__body {
@@ -803,10 +809,12 @@
           margin: 24px 0px 8px;
         }
         .other-item {
-          font-size: 22px;
-          font-weight: 700;
-          color: #0099e8;
-          text-decoration: none;
+          .other-item-link {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0099e8;
+            text-decoration: none;
+          }
         }
 
         &__body {

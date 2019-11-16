@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded',function(){ 
   var modal = $('.destroybtn-page'),
         modalContent = $('.destroybtn-box'),
-        btnOpen = $(".destroybtn"),
+        btnOpen = $(".destroyitembtn"),
         btnClose = $(".btn-close");
  
   $(btnOpen).on('click', function() {
