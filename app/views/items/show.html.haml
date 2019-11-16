@@ -52,7 +52,8 @@
         = "¥#{@item.price.to_s(:delimited)}"
       .item-container__item-price__tax (税込)
       .item-container__item-price__shipping-fee 送料込み
-    = link_to "購入画面へ進む", "/items/#{@item.id}/buy", class:"buybtn"
+    -if @item.user_id != current_user.id
+      = link_to "購入画面へ進む", "/items/#{@item.id}/buy", class:"buybtn"
     .item-container__item-description
       .item-container__item-description__inner
         = @item.discription
