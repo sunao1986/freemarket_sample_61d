@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 
   def update
     @user.update(update_user_params)
-    redirect_to action: :index
+    redirect_to request.referer
   end
 
   def destroy
