@@ -22,9 +22,14 @@
           %tr
             %th カテゴリー
             %td
-              %br= @item.category.parent.parent.name
-              %br= "＞#{@item.category.parent.name}"
-              %br= "＞#{@item.category.name}"
+              %a.first{href:"https://www.mercari.com/jp/"}
+                = @item.category.parent.parent.name
+              %br
+              %a.second{href:"https://www.mercari.com/jp/"}
+                = "＞#{@item.category.parent.name}"
+              %br
+              %a.third{href:"https://www.mercari.com/jp/"}
+                = "＞#{@item.category.name}"
           - if @brand.present?
             %tr
               %th ブランド
