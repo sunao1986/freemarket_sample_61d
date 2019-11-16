@@ -265,3 +265,38 @@ $(function(){
     }
  });
 })  
+
+$(function(){
+  $.validator.addMethod("password", function(value, element, regexpr) {          
+    return regexpr.test(value);
+  }, "英字と数字両方を含むパスワードを設定してください");
+  $("#edit_user").validate({
+    rules : {
+      "user[email]": {
+        required: true
+      },
+      "user[password]": {
+        required: true,
+        maxlength : 128,
+        minlength : 7,
+        password : /([0-9].*[a-zA-Z]|[a-zA-Z].*[0-9])/s
+      },
+      "user[password_confirmation]": {
+        equalTo: "#user_password"
+      }
+    },
+    messages: {
+      "user[email]": {
+        required: 'メールアドレス を入力してください',
+        email: "フォーマットが不適切です"
+      },
+      "user[password]": {
+        required: 'パスワード を入力してください',
+        minlength : "パスワードは7文字以上128文字以下で入力してください"
+      }
+    },
+    errorPlacement: function(error, element) {
+        error.insertAfter(element);	
+  }   
+ });
+}) 
