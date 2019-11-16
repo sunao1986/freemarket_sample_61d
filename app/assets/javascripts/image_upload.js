@@ -1,26 +1,28 @@
 window.addEventListener('DOMContentLoaded',function(){ 
   $(function(){
 
-    function previewHTML(src,fname){
+    function previewHTML(src,imageId){
       var html = `<div id="hidden-adjustment">
                     <div id="hidden-upload-style">
                       <img src="${src}" alt="image_file" id="add-images")
                     </div>
-                    <div id="hidden-delete-btn" data-image-name="${fname}">削除
+                    <div id="hidden-delete-btn" data-image-id="${imageId}">削除
                     </div>
                   </div>`
       return html;
     }
     
-    function inputHTML(){
-      var input = `<div id=custom-data-for data-image-name="hoge">
+    function inputHTML(imageId){
+      var input = `<div id=custom-data-for data-image-id="${imageId +1 }">
                      <label for="upload_file" class="box-click-label" >
-                       <input type="file" id="upload_file" class="image_upload_file" name="item[images_attributes][][image_url]" style="display: none;">
+                       <input type="file" id="upload_file" class="image_upload_file" name="item[images_attributes][${imageId +1 }][image_url]">
                      </label>
                    </div>`
       return input;
     }
     $(document).on('change','#upload_file',function(e){
+      var imageId = $(this).parent(".box-click-label").parent("#custom-data-for").data("image-id")
+      console.log(imageId)
       var file = e.target.files[0];
       var reader = new FileReader();
       reader.onload = (function(){
@@ -28,10 +30,8 @@ window.addEventListener('DOMContentLoaded',function(){
         var width = $(".exhibit-image-box").width();
         var new_width = width - 124
         var src = e.target.result
-        var fname = file.name
-        $('#custom-data-for').attr('data-image-name',fname);
-        var input = inputHTML
-        var preview = previewHTML(src,fname)
+        var input = inputHTML(imageId)
+        var preview = previewHTML(src,imageId)
         $(".exhibit-image-box").css('width',new_width);
         $("#add-file-field-point").prepend(input);
         $(".increase-images-box").prepend(preview);
@@ -64,8 +64,8 @@ window.addEventListener('DOMContentLoaded',function(){
     });
 
     $(document).on("click","#hidden-delete-btn",function() {
-      var image_name = $(this).data("image-name");
-      $('#upload_file',`[data-image-name="${image_name}"]`).remove();
+      var image_id = $(this).data("image-id");
+      $('#upload_file',`[data-image-id="${image_id}"]`).remove();
       $(this).parent("#hidden-upload-style").parent("#hidden-adjustment").remove();
       var width = $(".exhibit-image-box").width();
       var new_width = width + 124

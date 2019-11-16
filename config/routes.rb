@@ -43,4 +43,5 @@ Rails.application.routes.draw do
   #itemsとネストするかもしれない
   resources :brands, only: :index
   resources :categories, only: [:show, :new]
+  resources :images, only: :destroy, defaults: { format: 'json' }
 end
