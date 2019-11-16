@@ -22,13 +22,13 @@
           %tr
             %th カテゴリー
             %td
-              %a.first{href:"https://www.mercari.com/jp/"}
+              = link_to "/categories/#{@item.category.parent.parent.id}", class: "first" do
                 = @item.category.parent.parent.name
               %br
-              %a.second{href:"https://www.mercari.com/jp/"}
+              = link_to "/categories/#{@item.category.parent.id}", class: "second" do
                 = "＞#{@item.category.parent.name}"
               %br
-              %a.third{href:"https://www.mercari.com/jp/"}
+              = link_to "/categories/#{@item.category.id}", class: "third" do
                 = "＞#{@item.category.name}"
           - if @brand.present?
             %tr
