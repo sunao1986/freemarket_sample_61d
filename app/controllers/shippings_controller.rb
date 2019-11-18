@@ -1,5 +1,4 @@
 class ShippingsController < ApplicationController
-  
   before_action :set_shipping, only: [:edit, :update]
 
   def new
@@ -38,4 +37,5 @@ class ShippingsController < ApplicationController
   def set_shipping
     @shipping = Shipping.find_by(user_id: current_user.id)
   end
+  
 end
