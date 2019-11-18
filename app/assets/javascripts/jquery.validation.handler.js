@@ -299,4 +299,4 @@ $(function(){
         error.insertAfter(element);	
   }   
  });
-}) 
+});
