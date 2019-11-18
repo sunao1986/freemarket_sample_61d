@@ -1,6 +1,5 @@
 class ShippingsController < ApplicationController
-  
-  before_action :set_shipping, only: [:edit, :update]
+  before_action :set_shipping, only: [:edit, :editbuy, :update]
 
   def new
     @shipping = Shipping.new
@@ -19,11 +18,18 @@ class ShippingsController < ApplicationController
     @shipping = Shipping.find_by(user_id: current_user.id)
   end
 
+  def editbuy
+    @shipping = Shipping.find_by(user_id: current_user.id)
+  end
+
   def update
-    if @shipping.update(shipping_params)
-      redirect_to edit_shipping_path(current_user.id), notice: '変更しました'
-    else
-      render :edit
+    @shipping.update(shipping_params)
+    @item = Item.new
+    @item = Item.find_by(params[:id])
+    if request.referer.include?("/editbuy")
+      redirect_to "/items/#{@item.id}/buy"
+    else request.referer.include?("/edit/")
+      redirect_to edit_shipping_path(current_user.id)
     end  
   end
 

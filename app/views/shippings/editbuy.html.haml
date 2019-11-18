@@ -1,0 +1,50 @@
+= render partial: 'shared/header'
+- breadcrumb :personinfo
+= render partial: 'shared/gretel'
+.mypage-container-edit.shipping-editbuy
+  .ide-container
+    .identification-head
+      %h1 発送元・お届け先住所変更
+    .identification-container
+      = form_for @shipping, class: 'l-single-inner registration-form', id: "registration-field" do |f|
+        .l-single-container__content
+          .form-group
+            %div
+              = f.label "お名前"    
+              %span.form-require 必須
+              = f.text_field :first_name, class: "input-default", placeholder: "例) 山田"
+              = f.text_field :last_name, class: "input-default", placeholder: "例) 彩"
+          .form-group    
+            %div
+              = f.label "お名前カナ"    
+              %span.form-require 必須
+              = f.text_field :first_kana, class: "input-default", placeholder: "例) ヤマダ"
+              = f.text_field :last_kana, class: "input-default", placeholder: "例) アヤ"
+          .form-group
+            = f.label "郵便番号" 
+            %span.form-require 必須
+            = f.text_field :postal_code, class: "input-default", placeholder: "例) 123-4567"
+          .form-group.prefecture
+            = f.label "都道府県" 
+            %span.form-require 必須
+            %i.fa.fa-angle-down
+            = f.collection_select :prefectures, Prefecture.all, :name, :name, {include_blank: "--"}, {class:"input-edit"}
+          .form-group
+            = f.label "市区町村" 
+            %span.form-require 必須
+            = f.text_field :city, class: "input-default", placeholder: "例) 横浜市緑区"
+          .form-group
+            = f.label "番地" 
+            %span.form-require 必須
+            = f.text_field :address, class: "input-default", placeholder: "例) 青山1-1-1"  
+          .form-group
+            = f.label "建物名" 
+            %span.form-require.option 任意
+            = f.text_field :building, class: "input-default", placeholder: "例) 柳ビル103"   
+          .form-group
+            = f.label "電話" 
+            %span.form-require.option 任意
+            = f.text_field :phone_number, class: "input-default", placeholder: "例) 09012345678"        
+          .form-group
+            = f.submit "変更する", class: "btn-default btn-red btn-shipping"
+  = render "shared/sidebar"
