@@ -15,14 +15,13 @@ window.addEventListener('DOMContentLoaded',function(){
     function inputHTML(imageId){
       var input = `<div id=custom-data-for data-image-id="${imageId +1 }">
                      <label for="upload_file" class="box-click-label" >
-                       <input type="file" id="upload_file" class="image_upload_file" name="item[images_attributes][${imageId +1 }][image_url]">
+                       <input type="file" id="upload_file" class="image_upload_file" name="item[images_attributes][${imageId +1 }][image_url]" style="display:none;">
                      </label>
                    </div>`
       return input;
     }
     $(document).on('change','#upload_file',function(e){
       var imageId = $(this).parent(".box-click-label").parent("#custom-data-for").data("image-id")
-      console.log(imageId)
       var file = e.target.files[0];
       var reader = new FileReader();
       reader.onload = (function(){
