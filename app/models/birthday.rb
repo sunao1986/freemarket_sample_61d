@@ -1,4 +1,5 @@
 class Birthday < ActiveHash::Base
+
   self.data = [
     {id: 1,   name: '1'}, {id: 2,   name: '2'}, {id: 3,   name: '3'},
     {id: 4,   name: '4'}, {id: 5,   name: '5'}, {id: 6,   name: '6'},
@@ -12,4 +13,5 @@ class Birthday < ActiveHash::Base
     {id: 28, name: '28'}, {id: 29, name: '29'}, {id: 30, name: '30'},
     {id: 31, name: '31'}
   ]
+  
 end
