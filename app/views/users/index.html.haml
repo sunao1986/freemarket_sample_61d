@@ -6,14 +6,12 @@
     .right-contents-block__top
       .mypage-user-icon
       %h2.mypage-user-name
-        あああ
-        -# カレントユーザ名にする
+        #{current_user.nickname}
       .eva-and-sell-score
         %span.eva
           評価 0
         %span.sell-score
-          出品数 0
-        -# 実際の値に反映させる
+          出品数 #{current_user.items.count}
     .right-contents-block__intro
       .eva-detail
         .good-eva
@@ -33,7 +31,7 @@
               0
       .intro-detail
         %p.intro-text
-          こんにちは
+          #{current_user.introduction}
     .right-contents-block__bottom
       %ul.sns-box
         %li.face-book-block

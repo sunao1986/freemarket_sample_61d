@@ -2,47 +2,42 @@
 - breadcrumb :listing
 = render partial: 'shared/gretel'
 .mypage-container-status
-  .sell-status-box
-    .sell-status-list
-      %h2.sell-status-list__head
-        出品した商品
-      %ul.sell-status-select
+  .status-box1
+    .status-list1
+      %h2.status-list1__head
+        商品ステータス
+      %ul.status-select
         %li.listing
           = link_to listing_users_path, class: "listing-link" do
-            出品中
-        %li.progress
-          = link_to progress_users_path, class: "progress-link" do
-            取引中
+            出品中の商品
         %li.completed
           = link_to completed_users_path, class: "completed-link" do
-            売却済み
+            売却済みの商品
+        %li.purchased
+          = link_to purchased_users_path, class: "purchased-link" do
+            購入商品履歴
       .status-detail
-        %ul.listing-box
-          %li.listing-list
-            = link_to "#", class: "listing-item-link" do
-              %figure
-                = image_tag 'vuitton1.jpg', class: 'listing-item-image'
-              .listing-item-detail
-                .listing-item-name
-                  aaaaaaaaaaaa
-                .listing-item-check
-                  %span.like-count
-                    = fa_icon "heart"
-                    %span 0
-                  %span.comment-count
-                    = fa_icon "comment"
-                    %span 0
-                  .release
-                    公開中
-              .item-show
-                = fa_icon "chevron-right"
-    %ul.sell-status-pager
-      %li.sell-status-pager-left
-        = link_to completed_users_path, class: "to-listing" do
-          = fa_icon 'chevron-left', class: "chevron-left"
-      %li.sell-status-pager-right
-        = link_to progress_users_path, class: "to-progress" do
-          = fa_icon 'chevron-right', class: "chevron-right"
+        - @listing_items.each do |item|
+          %ul.listing-box
+            %li.listing-list
+              = link_to "/items/#{item.id}", class: "listing-item-link" do
+                %figure
+                  = image_tag item.images[0].image_url.url, class: 'listing-item-image'
+                .listing-item-detail
+                  .listing-item-name
+                    #{item.name}
+                  .listing-item-check
+                    %span.like-count
+                      = fa_icon "heart"
+                      %span 0
+                    %span.comment-count
+                      = fa_icon "comment"
+                      %span 0
+                    .release
+                      公開中
+                .item-show
+                  = fa_icon "chevron-right"
+    = paginate @listing_items
   = render "shared/sidebar"
 = render 'shared/sell'
 = render 'shared/aside_and_footer'

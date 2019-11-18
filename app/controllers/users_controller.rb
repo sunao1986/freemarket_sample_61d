@@ -29,28 +29,31 @@ class UsersController < ApplicationController
   def profile
   end
 
-  def intro
-    #プロフィール表示画面
-  end
+  # def intro
+  #   #プロフィール表示画面
+  # end
 
   def listing
     #出品中
+    @listing_items = current_user.items.where(condition: 0).page(params[:page]).per(7).order("created_at DESC")
   end
 
-  def progress
-    #出品取引中
-  end
+  # def progress
+  #   #出品取引中
+  # end
 
   def completed
     #出品売却済
+    @completed_items = current_user.items.where(condition: 1).page(params[:page]).per(7).order("created_at DESC")
   end
 
-  def purchase
-    #購入取引中
-  end
+  # def purchase
+  #   #購入取引中
+  # end
 
   def purchased
     #購入した商品
+    @purchased_items = Item.where(condition: 1).where(buyer_id: current_user.id).page(params[:page]).per(7).order("created_at DESC")
   end
 
   def logout

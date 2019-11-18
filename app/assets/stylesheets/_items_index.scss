@@ -5,14 +5,9 @@
     max-width: 1020ox;
     &__contents {
       position: relative;
-      .slide-contents {
-        height: 290px;
-        text-align: center;
-        .slide-image {
-          height: 290px;
-          width: auto;
-          max-width: 680px;
-        }
+      .slide-image {
+        height: 390px;
+        width: 100%;
       }
     }
     .popular-category-brand {
