@@ -15,6 +15,11 @@ class CardsController < ApplicationController
     redirect_to action: "index" if card.exists?
   end
 
+  def newbuy
+    card = Card.where(user_id: current_user.id)
+    redirect_to action: "index" if card.exists?
+  end
+
   def create
     card = Card.where(user_id: current_user.id)
     Payjp.api_key = 'sk_test_0e21a1a16d0a0e377209db69'
@@ -26,12 +31,15 @@ class CardsController < ApplicationController
       metadata: {user_id: current_user.id}
       )
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
-      if @card.save
-        redirect_to action: "index"
-      else
-        redirect_to action: "create"
-      end
+      @card.save
     end
+    @item = Item.new
+    @item = Item.find_by(params[:id])
+    if request.referer.include?("/newbuy")
+      redirect_to "/items/#{@item.id}/buy"
+    else request.referer.include?("/new/")
+      redirect_to action: "index"
+    end  
   end
 
   def destroy #PayjpとCardのデータベースを削除

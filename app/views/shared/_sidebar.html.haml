@@ -30,7 +30,7 @@
         %i.fa.fa-chevron-right
     %li.setting 設定
     %li.profile
-      = link_to profile_user_path(id: current_user.id), class:"side-list" do
+      = link_to profile_user_path(current_user.id), class:"side-list" do
         %p プロフィール
         %i.fa.fa-chevron-right
     %li.shipping

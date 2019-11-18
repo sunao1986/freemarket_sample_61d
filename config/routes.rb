@@ -35,8 +35,15 @@ Rails.application.routes.draw do
     end
   end
   resources :cards, only: [:index, :new, :create, :destroy] do
+    member do
+      get 'newbuy'
+    end
   end
-  resources :shippings, only: [:new, :create, :edit, :update, :destroy]
+  resources :shippings, only: [:new, :create, :edit, :update, :destroy] do
+    member do
+      get 'editbuy'
+    end
+  end
   resources :brands, only: :index
   resources :categories, only: [:show, :new]
   resources :images, only: :destroy, defaults: { format: 'json' }
