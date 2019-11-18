@@ -37,4 +37,5 @@ class ShippingsController < ApplicationController
   def set_shipping
     @shipping = Shipping.find_by(user_id: current_user.id)
   end
+  
 end
