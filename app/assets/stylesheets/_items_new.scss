@@ -100,6 +100,7 @@
                 p.exhibit-click{
                   font-family: "Yu Gothic";
                   font-size: 14px;
+                  height:80px;
                 }
               }
             }
@@ -145,11 +146,6 @@
         float: left;
         margin-left: 10px;
         margin-top: 23px;
-      }
-      #size-error{
-        float: left;
-        margin-top: 34px;
-        margin-left: 10px;
       }
       &__name{
         clear: both;
@@ -246,7 +242,7 @@
         margin-top: 32px;
         margin-left: 10px;
       }
-      #item_status-error{
+      #item_size_id-error{
         float: left;
         margin-top: 32px;
         margin-left: 10px;
@@ -318,6 +314,11 @@
           margin-top: 37px;
           margin-left: 10px;
           background-color: red;
+        }
+        #item_size-error{
+          float: left;
+          margin-top: 34px;
+          margin-left: 10px;
         }
         &__box{
           clear: both;

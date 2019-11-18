@@ -74,7 +74,7 @@ $(function(){
       } else if(element.attr("name")=="item[category_id]") {
         error.insertAfter("#item-error-category")
       } else if(element.attr("name")=="item[size_id]") {
-        error.insertAfter("#item-error-size");
+        error.insertAfter("#item-error-size")
       } else if(element.attr("name")=="item[status]") {
         error.insertAfter("#item-error-status")
       } else if(element.attr("name")=="item[delivery_cost]") {

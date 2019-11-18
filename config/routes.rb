@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     end
   end
   resources :items do
+    resources :comments, only: [:create, :destroy]
     member do
       get 'buy'
       post 'pay'
@@ -34,13 +35,16 @@ Rails.application.routes.draw do
     end
   end
   resources :cards, only: [:index, :new, :create, :destroy] do
+    member do
+      get 'newbuy'
+    end
   end
-  #usersとネストするかもしれない
-  resources :shippings, only: [:new, :create, :edit, :update, :destroy]
-  resources :comments, only: [:index, :create, :destroy]
-  resources :reviews, only: [:index, :create, :destroy]
-  resources :likes, only: [:create, :destroy]
-  #itemsとネストするかもしれない
+  resources :shippings, only: [:new, :create, :edit, :update, :destroy] do
+    member do
+      get 'editbuy'
+    end
+  end
   resources :brands, only: :index
   resources :categories, only: [:show, :new]
+  resources :images, only: :destroy, defaults: { format: 'json' }
 end

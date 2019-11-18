@@ -1,7 +1,7 @@
 = render partial: 'shared/header'
 - breadcrumb :personinfo
 = render partial: 'shared/gretel'
-.mypage-container-edit.shipping-edit
+.mypage-container-edit.shipping-editbuy
   .ide-container
     .identification-head
       %h1 発送元・お届け先住所変更
@@ -47,7 +47,4 @@
             = f.text_field :phone_number, class: "input-default", placeholder: "例) 09012345678"        
           .form-group
             = f.submit "変更する", class: "btn-default btn-red btn-shipping"
-= render "shared/sidebar"
-= render 'shared/sell'
-= render 'shared/aside_and_footer'
-
+  = render "shared/sidebar"

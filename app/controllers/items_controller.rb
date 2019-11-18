@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:edit, :update, :buy, :show, :pay]
   before_action :authenticate_user!, except: :index
   def index
+
     # @q = User.ransack(params[:q])
     # @items = @q.result(distinct: true)
 
@@ -23,6 +24,7 @@ class ItemsController < ApplicationController
     @vuitton_items = Item.recent.where(brand:3).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
     @sup_items = Item.recent.where(brand:4).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
     @nike_items = Item.recent.where(brand:5).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
+
 
   end
 
@@ -63,6 +65,7 @@ class ItemsController < ApplicationController
   def destroy
     @item = Item.find(params[:id])
     @item.destroy
+    redirect_to action: :index
   end
 
   def edit
@@ -74,7 +77,7 @@ class ItemsController < ApplicationController
     @brand = Brand.all
     @images = Image.where(item_id: params[:item_id])
     respond_to do |format|
-      format.html { @images }
+      format.html
       format.json { @images }
     end
   end
@@ -82,11 +85,13 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @brand  = @item.brand_id
+    @comments = @item.comments.includes(:user)
     @seller_items = @item.user.items.limit(6).where.not(id: @item.id)
     @other_items = @item.category.items.limit(6).where.not(id: @item.id)
   end
 
   def buy
+    @user = User.find(current_user.id)
     @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
     if @card.present?
       Payjp.api_key = "sk_test_0e21a1a16d0a0e377209db69"

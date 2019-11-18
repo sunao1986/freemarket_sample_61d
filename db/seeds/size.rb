@@ -2,46 +2,42 @@ Size.create(
   [
     {
       id: 1,
-      name: "---",
-    },
-    {
-      id: 2,
       name: "XXS以下",
     },
     {
-      id: 3,
+      id: 2,
       name: "XS(SS)",
     },
     {
-      id: 4,
+      id: 3,
       name: "S",
     },
     {
-      id: 5,
+      id: 4,
       name: "M",
     },
     {
-      id: 6,
+      id: 5,
       name: "L",
     },
     {
-      id: 7,
+      id: 6,
       name: "XL(LL)",
     },
     {
-      id: 8,
+      id: 7,
       name: "2XL(3L)",
     },
     {
-      id: 9,
+      id: 8,
       name: "3XL(4L)",
     },
     {
-      id: 10,
+      id: 9,
       name: "4XL(5L)以上",
     },
     {
-      id: 11,
+      id: 10,
       name: "FREE SIZE",
     },
   ]

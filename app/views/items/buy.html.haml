@@ -46,21 +46,21 @@
       .confirmation-addres
         .confirmation-addres__label
           配送先
-        - if @item.user.shipping.present?
+        - if @user.shipping.present?
           .confirmation-addres__post
-            = "〒#{@item.user.shipping.postal_code}"
+            = "〒#{@user.shipping.postal_code}"
           .confirmation-addres__city
-            = @item.user.shipping.prefectures
-            = @item.user.shipping.city
-            = @item.user.shipping.address
-            = @item.user.shipping.building
+            = @user.shipping.prefectures
+            = @user.shipping.city
+            = @user.shipping.address
+            = @user.shipping.building
           .confirmation-addres__name
-            = @item.user.shipping.first_name
-            = @item.user.shipping.last_name
+            = @user.shipping.first_name
+            = @user.shipping.last_name
         - else
           登録なし
         .confirmation-addres__edit
-          = link_to "変更する >","/", class: "confirmation-addres-btn"
+          = link_to "変更する >",editbuy_shipping_path(@item.id), class: "confirmation-addres-btn"
     .confirmation-payment-method
       .confirmation-method
         .confirmation-method__label
@@ -77,7 +77,7 @@
           登録なし
         .fix-box
         .confirmation-method__edit
-          = link_to "変更する >", new_card_path, class: "confirmation-edit-btn"
+          = link_to "変更する >", newbuy_card_path(@item.id), class: "confirmation-edit-btn"
 
     .confirmation-foot-field
       .footer-menu

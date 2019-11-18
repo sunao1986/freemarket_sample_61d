@@ -8,25 +8,24 @@ window.addEventListener('DOMContentLoaded',function(){
                       <div id="hidden-upload-style">
                         <img src="${src}" alt="image_file" id="add-images")
                       </div>
-                      <div id="hidden-delete-btn-edit" data-image-name="${id}">削除
+                      <div id="hidden-delete-btn-edit" data-image-id="${id}">削除
                       </div>
                     </div>`
         return html;
       }
 
-    function inputHTML(src){
-      var input = `<div id=custom-data-for data-image-name="hoge">
-                     <label for="upload_file" class="box-click-label" >
-                       <input type="file" id="upload_file" class="image_upload_file" name="item[images_attributes][][image_url]" style="display: none;">
-                     </label>
-                   </div>`
-      return input;
-    }
+      function inputEditHTML(filenum){
+        var input = `<div id=custom-data-for data-image-id="${filenum}">
+                       <label for="upload_file" class="box-click-label" >
+                         <input type="file" id="upload_file" class="image_upload_file" name="item[images_attributes][${filenum}][image_url]" style="display:none;">
+                       </label>
+                     </div>`
+        return input;
+      }
 
-    function inputHIDDEN(src,index){
-      var input = `<input type="hidden" value="${src}" id="item_images_attributes_${index}_image_url" name="item[images_attributes][${index}][image_url]">`
-      return input;
-    }
+      var filenum = document.getElementsByClassName("image_upload_file").length;
+      var input = inputEditHTML(filenum)
+      $("#add-file-field-point").prepend(input);
 
       var item_id = $(".exhibit-image-field").data('item-id')
       var href = window.location.href + '/'
@@ -45,12 +44,10 @@ window.addEventListener('DOMContentLoaded',function(){
           var id = image.id
           var width = $(".exhibit-image-box").width();
           var new_width = width - 124
-          $('#custom-data-for').attr('data-image-name',id);
+          $('#custom-data-for').attr('data-image-id',id);
           var preview = previewHTML(src,id)
-          var input = inputHIDDEN(src,index)
           $(".exhibit-image-box").css('width',new_width);         
           $(".increase-images-box").prepend(preview);
-          // $(".box-click-label").prepend(input);
           $("#hidden-adjustment").css('float',"right");
           $("#hidden-adjustment").css('width',"114px");
           $("#hidden-adjustment").css('height',"162px");
@@ -80,17 +77,29 @@ window.addEventListener('DOMContentLoaded',function(){
 
     }
     $(document).on("click","#hidden-delete-btn-edit",function() {
-      var image_name = $(this).data("image-name");
-      // $('input[type="hidden"]',`[value="${image_name}"]`).remove();
-      $(`input[value="${image_name}"]`).prev(".image_upload_file").remove();
-      $(`input[value="${image_name}"]`).remove();
+      var image_id = $(this).data("image-id");
+      $(`input[value="${image_id}"]`).prev(".image_upload_file").remove();
+      $(`input[value="${image_id}"]`).remove();
       $(this).parent("#hidden-upload-style").parent("#hidden-adjustment").remove();
-      var width = $(".exhibit-image-box").width();
-      var new_width = width + 124
-      $(".exhibit-image-box").css('width',new_width);
-      if (new_width > 1)
-      $(".exhibit-image-box").css('display',"block");
 
+      $.ajax({
+        type: 'DELETE',
+        url: "/images/" + image_id,
+        data: { id: image_id},
+        dataType: 'json',
+      })
+
+      .done(function(images) {  
+        var width = $(".exhibit-image-box").width();
+        var new_width = width + 124
+        $(".exhibit-image-box").css('width',new_width);
+        if (new_width > 1)
+        $(".exhibit-image-box").css('display',"block");
+
+      })
+      .fail(function() {
+        alert('送信に失敗しました');
+      }) 
     })
   };
 });
