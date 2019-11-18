@@ -14,10 +14,18 @@ window.addEventListener('DOMContentLoaded',function(){
         return html;
       }
 
-    function inputHIDDEN(src,index){
-      var input = `<input type="hidden" value="${src}" id="item_images_attributes_${index}_image_url" name="item[images_attributes][${index}][image_url]">`
-      return input;
-    }
+      function inputEditHTML(filenum){
+        var input = `<div id=custom-data-for data-image-id="${filenum}">
+                       <label for="upload_file" class="box-click-label" >
+                         <input type="file" id="upload_file" class="image_upload_file" name="item[images_attributes][${filenum}][image_url]" style="display:none;">
+                       </label>
+                     </div>`
+        return input;
+      }
+
+      var filenum = document.getElementsByClassName("image_upload_file").length;
+      var input = inputEditHTML(filenum)
+      $("#add-file-field-point").prepend(input);
 
       var item_id = $(".exhibit-image-field").data('item-id')
       var href = window.location.href + '/'
@@ -38,10 +46,8 @@ window.addEventListener('DOMContentLoaded',function(){
           var new_width = width - 124
           $('#custom-data-for').attr('data-image-id',id);
           var preview = previewHTML(src,id)
-          var input = inputHIDDEN(src,index)
           $(".exhibit-image-box").css('width',new_width);         
           $(".increase-images-box").prepend(preview);
-          // $(".box-click-label").prepend(input);
           $("#hidden-adjustment").css('float',"right");
           $("#hidden-adjustment").css('width',"114px");
           $("#hidden-adjustment").css('height',"162px");
@@ -72,8 +78,6 @@ window.addEventListener('DOMContentLoaded',function(){
     }
     $(document).on("click","#hidden-delete-btn-edit",function() {
       var image_id = $(this).data("image-id");
-      console.log(image_id );
-      // $('input[type="hidden"]',`[value="${image_name}"]`).remove();
       $(`input[value="${image_id}"]`).prev(".image_upload_file").remove();
       $(`input[value="${image_id}"]`).remove();
       $(this).parent("#hidden-upload-style").parent("#hidden-adjustment").remove();
