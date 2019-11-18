@@ -7,5 +7,7 @@ class Item < ApplicationRecord
   belongs_to :size, optional: true
   belongs_to :brand, optional: true
 
+  validates :name, presence: true, length: { maximum: 40 }
+
   scope :recent, -> { order('created_at DESC').limit(10)}
 end
