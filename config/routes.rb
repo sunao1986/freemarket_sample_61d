@@ -34,7 +34,11 @@ Rails.application.routes.draw do
       get 'category_gchild', defaults: { format: 'json' }
     end
   end
-  resources :cards, only: [:index, :new, :create, :destroy]
+  resources :cards, only: [:index, :new, :create, :destroy] do
+    member do
+      get 'newbuy'
+    end
+  end
   resources :shippings, only: [:new, :create, :edit, :update, :destroy] do
     member do
       get 'editbuy'
