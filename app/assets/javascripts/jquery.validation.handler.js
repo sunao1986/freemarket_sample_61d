@@ -80,7 +80,7 @@ $(function(){
         error.insertAfter(element);
     }
  });
-})  
+});
 
 $(function(){
   $.validator.addMethod("firstKana", function(value, element, regexpr) {          
@@ -180,7 +180,7 @@ $(function(){
       }
   }   
  });
-}) 
+});
 
 $(function(){
   $.validator.addMethod("firstKana", function(value, element, regexpr) {          
@@ -264,7 +264,7 @@ $(function(){
         error.insertAfter(element);
     }
  });
-})  
+});
 
 $(function(){
   $.validator.addMethod("password", function(value, element, regexpr) {          
