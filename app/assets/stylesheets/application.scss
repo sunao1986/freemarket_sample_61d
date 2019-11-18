@@ -4,9 +4,7 @@
 @import "registrations";
 @import "users/users_index";
 @import "users/users_listing";
-@import "users/users_progress";
 @import "users/users_completed";
-@import "users/users_purchase";
 @import "users/users_purchased";
 @import "users";
 @import "users_edit";
@@ -27,3 +25,10 @@
 @import "sidebar";
 @import "slick-theme";
 @import "slick";
+@import "kaminari/paginator";
+@import "kaminari/first_page";
+@import "kaminari/last_page";
+@import "kaminari/prev_page";
+@import "kaminari/next_page";
+@import "kaminari/gap";
+@import "kaminari/page";

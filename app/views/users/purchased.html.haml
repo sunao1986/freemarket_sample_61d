@@ -2,22 +2,42 @@
 - breadcrumb :purchased
 = render partial: 'shared/gretel'
 .mypage-container-status
-  .buy-status-box
-    .buy-status-list
-      %h2.buy-status-list__head
-        購入した商品
-      %ul.buy-status-select
-        %li.purchase2
-          = link_to purchase_users_path, class: "purchase2-link" do
-            取引中
-        %li.purchased2
-          = link_to purchased_users_path, class: "purchased2-link" do
-            過去の取引
-      .status-detail5
-    %ul.buy-status-pager2
-      %li.buy-status-pager2-left
-        = link_to purchase_users_path, class: "to-purchase" do
-          = fa_icon 'chevron-left', class: "chevron-left4"
+  .status-box
+    .status-list
+      %h2.status-list__head
+        商品ステータス
+      %ul.status-select
+        %li.listing3
+          = link_to listing_users_path, class: "listing3-link" do
+            出品中の商品
+        %li.completed3
+          = link_to completed_users_path, class: "completed3-link" do
+            売却済みの商品
+        %li.purchased3
+          = link_to purchased_users_path, class: "purchased3-link" do
+            購入商品履歴
+      .status-detail
+        - @purchased_items.each do |item|
+          %ul.listing-box
+            %li.listing-list
+              = link_to "/items/#{item.id}", class: "listing-item-link" do
+                %figure
+                  = image_tag item.images[0].image_url.url, class: 'listing-item-image'
+                .listing-item-detail
+                  .listing-item-name
+                    #{item.name}
+                  .listing-item-check
+                    %span.like-count
+                      = fa_icon "heart"
+                      %span 0
+                    %span.comment-count
+                      = fa_icon "comment"
+                      %span 0
+                    .release
+                      取引完了
+                .item-show
+                  = fa_icon "chevron-right"
+    = paginate @purchased_items
   = render "shared/sidebar"
 = render 'shared/sell'
 = render 'shared/aside_and_footer'

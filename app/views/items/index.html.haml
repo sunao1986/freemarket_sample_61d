@@ -3,10 +3,7 @@
   .body
     .body__contents
       %ul.slide-contents
-        %li
-          = image_tag 'camp.png', class: "slide-image"
-        %li
-          = image_tag 'slide-back.jpg', class: "slide-image"
+        = image_tag 'mercari-slide.png', class: "slide-image"
 
 
       .popular-category-brand
@@ -27,7 +24,7 @@
           .new-products-type__top
             %h3.theme
               レディース新着アイテム
-            = link_to "もっと見る ＞＞", root_path, class: "look-more"
+            = link_to "もっと見る ＞＞", "/categories/1", class: "look-more"
           .items-block
             - @ladies_items.each do |item|
               .items-list
@@ -44,7 +41,7 @@
           .new-products-type__top
             %h3.theme
               メンズ新着アイテム
-            = link_to "もっと見る ＞＞",root_path,  class: "look-more"
+            = link_to "もっと見る ＞＞", "/categories/2",  class: "look-more"
           .items-block
             - @mens_items.each do |item|
               .items-list
@@ -60,7 +57,7 @@
           .new-products-type__top
             %h3.theme
               家電・スマホ・カメラ新着アイテム
-            = link_to "もっと見る ＞＞",root_path, class: "look-more"
+            = link_to "もっと見る ＞＞","/categories/3" , class: "look-more"
           .items-block
             - @appliance_items.each do |item|
               .items-list
@@ -76,7 +73,7 @@
           .new-products-type__top
             %h3.theme
               おもちゃ・ホビー・グッズ新着アイテム
-            = link_to "もっと見る ＞＞",root_path, class: "look-more"
+            = link_to "もっと見る ＞＞", "/categories/4", class: "look-more"
           .items-block
             - @toy_items.each do |item|
               .items-list
@@ -174,3 +171,6 @@
 
   = render 'shared/sell'
   = render 'shared/aside_and_footer'
+
+-# :javascript
+
