@@ -22,7 +22,7 @@
               #custom-data-for{'data-image-id': "0"}
                 = f.label :image_url ,class:"box-click-label", for: "upload_file" do
                   = f.fields_for :images  do |image|
-                    = image.file_field :image_url, id:"upload_file", class: "image_upload_file", name: "item[images_attributes][0][image_url]"
+                    = image.file_field :image_url, id:"upload_file", class: "image_upload_file", name: "item[images_attributes][0][image_url]", style: "display:none;"
                   %p.exhibit-drug ドラッグアンドドロップ 
                   %p.exhibit-click  またはクリックしてファイルをアップロード
 
