@@ -1,5 +1,4 @@
 class ShippingsController < ApplicationController
-  
   before_action :set_shipping, only: [:edit, :update]
 
   def new

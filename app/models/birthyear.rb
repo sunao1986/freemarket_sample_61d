@@ -1,4 +1,5 @@
 class Birthyear < ActiveHash::Base
+
   self.data = [
     {id: 1,  name: '1930'}, {id: 2,  name: '1931'}, {id: 3,  name: '1932'},
     {id: 4,  name: '1933'}, {id: 5,  name: '1934'}, {id: 6,  name: '1935'},
@@ -30,4 +31,5 @@ class Birthyear < ActiveHash::Base
     {id: 82, name: '2011'}, {id: 83, name: '2012'}, {id: 84, name: '2013'}, 
     {id: 85, name: '2014'}, {id: 86, name: '2015'}, {id: 87, name: '2016'}
   ]
+  
 end
