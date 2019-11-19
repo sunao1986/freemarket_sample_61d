@@ -2,13 +2,13 @@
   = render 'shared/header'
   .ranking-body
     .ranking-body__contents
-
       .ranking-products
         .ranking-products-type
-          = fa_icon 'crown', alt: 'crown', class: "fas fa-crown fa-2x", id:"ranking-crown"
           .ranking-products-type__top
             %h3.ranking-theme
               PV数ランキング
+            .crown-set
+              .g-crown
           .ranking-items-block
             - @items.each.with_index(1) do |item,i|                             
               .ranking-items-list

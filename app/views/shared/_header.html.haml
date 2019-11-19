@@ -22,8 +22,8 @@
           %li.category-brand
             %h2.category-brand__btn
               = link_to "/items/pv_ranking", class: "category-brand__btn__link" do
-                = fa_icon 'crown', class: 'category-brand__btn__link__icon'
-                %span 商品PV数ランキング！
+                = fa_icon 'chevron-circle-up', class: 'category-brand__btn__link__icon'
+                %span PV数ランキング
       - if user_signed_in?
         %ul.user-box
           %li.users-mypage

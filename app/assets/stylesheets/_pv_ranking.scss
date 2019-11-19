@@ -6,6 +6,60 @@
     width: 1040px;
     &-type {
       margin-top: 60px;
+      .crown-set{
+        margin-left:95px;
+        .g-crown {
+          width: 0;
+          height: 0;
+          border-bottom: 35px solid #bfa930;
+          border-left: 20px solid transparent;
+          border-right: 20px solid transparent;
+          position: relative
+        }      
+        .g-crown:after {
+          width: 0;
+          height: 0;
+          border-top: 15px solid transparent;
+          border-bottom: 20px solid #ffe973;
+          border-left: 20px solid #ffe973;
+          border-right: 20px solid #ffd700;
+          content: "";
+          position: absolute;
+          top: 0;
+          left: -20px
+        }
+        
+        .g-crown-circle {
+          background-color: #a68c00;
+          border-radius: 50%;
+          width: 5px;
+          height: 5px;
+          position: absolute;
+          top: -5px;
+          left: -21px
+        }
+        
+        .g-crown-circle:before {
+          background-color: #a68c00;
+          border-radius: 50%;
+          width: 5px;
+          height: 5px;
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 19px
+        }     
+        .g-crown-circle:after {
+          background-color: #a68c00;
+          border-radius: 50%;
+          width: 5px;
+          height: 5px;
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 38px
+        }
+      }
       &__top {
         display: block;
         box-sizing: border-box;
