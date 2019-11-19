@@ -7,4 +7,18 @@ class Item < ApplicationRecord
   belongs_to :size, optional: true
   belongs_to :brand, optional: true
 
+
+  validates :name, presence: true, length: { maximum: 40 }
+  validates :discription, presence: true, length: { maximum: 1000 }
+  validates :status, presence: true
+  validates :delivery_cost, presence: true
+  validates :delivery_method, presence: true
+  validates :delivery_area, presence: true
+  validates :delivery_days, presence: true
+  validates :price, presence: true
+  validates :category_id, presence: true
+  validates :size_id, presence: true
+  validates :user_id, presence: true
+
+  is_impressionable counter_cache: true
 end

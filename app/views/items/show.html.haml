@@ -22,13 +22,13 @@
           %tr
             %th カテゴリー
             %td
-              = link_to "/categories/#{@item.category.parent.parent.id}", class: "first" do
+              = link_to "/categories/#{@item.category.parent.parent.id}", class: "firstcate" do
                 = @item.category.parent.parent.name
               %br
-              = link_to "/categories/#{@item.category.parent.id}", class: "second" do
+              = link_to "/categories/#{@item.category.parent.id}", class: "secondcate" do
                 = "＞#{@item.category.parent.name}"
               %br
-              = link_to "/categories/#{@item.category.id}", class: "third" do
+              = link_to "/categories/#{@item.category.id}", class: "thirdcate" do
                 = "＞#{@item.category.name}"
           - if @brand.present?
             %tr
@@ -52,6 +52,9 @@
           %tr
             %th 配送日の目安
             %td= @item.delivery_days
+          %tr
+            %th 閲覧人数
+            %td= @item.impressions_count
     .item-container__item-price
       .item-container__item-price__money
         = "¥#{@item.price.to_s(:delimited)}"
