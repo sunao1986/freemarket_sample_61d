@@ -9,11 +9,11 @@ class CategoriesController < ApplicationController
       categories_ids << category.id
     end
     if @category.ancestry == nil
-      @items = Item.where(category_id: [categories_ids]).page(params[:page]).per(20).order("created_at DESC")   
+      @items = Item.where(category_id: [categories_ids]).page(params[:page]).per(20).order("created_at DESC").where.not(condition: 1)
     elsif @category.ancestry =~ /^[0-1000]+$/
-      @items = Item.where(category_id: [categories_ids]).page(params[:page]).per(20).order("created_at DESC")   
+      @items = Item.where(category_id: [categories_ids]).page(params[:page]).per(20).order("created_at DESC").where.not(condition: 1)
     else
-      @items = Item.where(category_id: params[:id]).page(params[:page]).per(20).order("created_at DESC")
+      @items = Item.where(category_id: params[:id]).page(params[:page]).per(20).order("created_at DESC").where.not(condition: 1)
     end
   end
 
