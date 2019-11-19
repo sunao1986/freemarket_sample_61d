@@ -3,6 +3,9 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, except: :new
 
   def index
+    @listing_items = current_user.items.where(condition: 0)
+    @completed_items = current_user.items.where(condition: 1)
+    @purchased_items = Item.where(condition: 1).where(buyer_id: current_user.id)
   end
 
   def new
@@ -15,6 +18,14 @@ class UsersController < ApplicationController
   end
 
   def update
+
+    # @user = Iser.find_by(id: params[:id])
+    # if params[:image]
+    #   @user.image_name = "#{@user.id}.jpg"
+    #   image = params[:image]
+    #   File.binwrite("public/user_image/#{@user.imaage_name}",image.read)
+    # end
+
     @user.update(update_user_params)
     redirect_to request.referer
   end
@@ -27,6 +38,7 @@ class UsersController < ApplicationController
   end
 
   def profile
+    @user = User.find(params[:id])
   end
 
   # def intro
