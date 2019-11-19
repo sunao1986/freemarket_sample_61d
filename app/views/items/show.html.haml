@@ -52,6 +52,9 @@
           %tr
             %th 配送日の目安
             %td= @item.delivery_days
+          %tr
+            %th 閲覧人数
+            %td= @item.impressions_count
     .item-container__item-price
       .item-container__item-price__money
         = "¥#{@item.price.to_s(:delimited)}"

@@ -88,6 +88,7 @@ class ItemsController < ApplicationController
     @comments = @item.comments.includes(:user)
     @seller_items = @item.user.items.limit(6).where.not(id: @item.id)
     @other_items = @item.category.items.limit(6).where.not(id: @item.id)
+    impressionist(@item, nil, unique: [:session_hash])
   end
 
   def buy
