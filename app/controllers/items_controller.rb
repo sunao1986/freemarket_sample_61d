@@ -117,6 +117,10 @@ class ItemsController < ApplicationController
     @search_name = params[:name]
   end
 
+  def pv_ranking
+    @items = Item.all
+  end
+
   private
 
   def item_params

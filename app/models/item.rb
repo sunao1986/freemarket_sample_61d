@@ -18,7 +18,6 @@ class Item < ApplicationRecord
   validates :category_id, presence: true
   validates :size_id, presence: true
   validates :user_id, presence: true
-
-
+  
   scope :recent, -> { order('created_at DESC').limit(10)}
 end
