@@ -22,13 +22,13 @@
           %tr
             %th カテゴリー
             %td
-              = link_to "/categories/#{@item.category.parent.parent.id}", class: "first" do
+              = link_to "/categories/#{@item.category.parent.parent.id}", class: "firstcate" do
                 = @item.category.parent.parent.name
               %br
-              = link_to "/categories/#{@item.category.parent.id}", class: "second" do
+              = link_to "/categories/#{@item.category.parent.id}", class: "secondcate" do
                 = "＞#{@item.category.parent.name}"
               %br
-              = link_to "/categories/#{@item.category.id}", class: "third" do
+              = link_to "/categories/#{@item.category.id}", class: "thirdcate" do
                 = "＞#{@item.category.name}"
           - if @brand.present?
             %tr
