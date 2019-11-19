@@ -7,28 +7,28 @@
       .mypage-user-icon
       %h2.mypage-user-name
         #{current_user.nickname}
-      .eva-and-sell-score
+      .level-and-sell-score
         %span.eva
           評価 0
         %span.sell-score
           出品数 #{current_user.items.count}
     .right-contents-block__intro
-      .eva-detail
-        .good-eva
-          .good-eva-cover
-            = image_tag "good.png", height: '24px', width: '24px', class: "good"
-            .good-count
-              0
-        .normal-eva
-          .normal-eva-cover
-            = image_tag "normal.png", height: '24px', width: '24px', class: "normal"
-            .normal-count
-              0
-        .bad-eva
-          .bad-eva-cover
-            = image_tag "bad.png", height: '24px', width: '24px', class: "bad"
-            .bad-count
-              0
+      .level-detail
+        .listing-level
+          .listing-level-cover
+            = fa_icon "camera", height: '24px', width: '24px', class: "listing-icon"
+            .listing-count
+              #{@listing_items.count}
+        .completed-level
+          .completed-level-cover
+            = fa_icon "check-circle", height: '24px', width: '24px', class: "completed-icon"
+            .completed-count
+              #{@completed_items.count}
+        .purchased-level
+          .purchased-level-cover
+            = fa_icon "get-pocket", height: '24px', width: '24px', class: "purchased-icon"
+            .purchased-count
+              #{@purchased_items.count}
       .intro-detail
         %p.intro-text
           #{current_user.introduction}
