@@ -24,7 +24,6 @@ class ItemsController < ApplicationController
     @sup_items = Item.where(brand:4).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
     @nike_items = Item.where(brand:5).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
 
-
   end
 
   def new
@@ -115,6 +114,10 @@ class ItemsController < ApplicationController
   def item_search
     @items = Item.where('name LIKE(?)', "%#{params[:name]}%").page(params[:page]).per(20).order("created_at DESC")
     @search_name = params[:name]
+  end
+
+  def pv_ranking
+    @items = Item.all.order("impressions_count DESC").limit(100)
   end
 
   private
