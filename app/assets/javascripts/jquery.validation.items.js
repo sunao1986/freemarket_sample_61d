@@ -1,6 +1,9 @@
 $(function(){  
   $("#new_item").validate({
     rules : {
+      "upload_file": {
+        required: true,
+      },
       "item[name]": {
         required: true,
       },
@@ -34,6 +37,9 @@ $(function(){
     },
 
     messages: {
+      "upload_file": {
+        required: "商品名 を入力してください",
+      },
       "item[name]": {
         required: "商品名 を入力してください",
       },

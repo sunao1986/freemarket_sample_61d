@@ -99,6 +99,13 @@ GEM
     erubis (2.7.0)
     excon (0.68.0)
     execjs (2.7.0)
+    factory_bot (5.1.0)
+      activesupport (>= 4.2.0)
+    factory_bot_rails (5.1.0)
+      factory_bot (~> 5.1.0)
+      railties (>= 4.2.0)
+    faker (2.7.0)
+      i18n (>= 1.6, < 1.8)
     faraday (0.17.0)
       multipart-post (>= 1.2, < 3)
     ffi (1.11.1)
@@ -368,6 +375,8 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   dotenv-rails
+  factory_bot_rails
+  faker
   fog-aws
   font-awesome-rails
   gretel
