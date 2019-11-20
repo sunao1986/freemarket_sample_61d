@@ -91,6 +91,16 @@
         }
       }
       .status-detail {
+        .nothing-purchased {
+          display: block;
+          height: 236px;
+          position: relative;
+          .no-purchased {
+            position: absolute;
+            right: 250px;
+            bottom: 50px;
+          }
+        }
         .listing-box {
           display: block;
           list-style: none;

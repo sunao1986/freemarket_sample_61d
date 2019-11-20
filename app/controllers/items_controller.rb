@@ -2,29 +2,20 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:edit, :update, :buy, :show, :pay]
   before_action :authenticate_user!, except: :index
   def index
-
-    # @q = User.ransack(params[:q])
-    # @items = @q.result(distinct: true)
-
     #人気のカテゴリー
-
-    #レディース
-    # @ladies_items = Item.recent.where(category_params[:ancestry])。。。もしかしたらancestryで持ってくる方法を使うかもなので残しました
-    #カテゴリテーブルが完成形になった時に指定idの範囲変えるかも。なので、データさえあれば、ひとまずレディースのみだが後でコピーすればすぐできる
-    @ladies_items = Item.where(category_id: 1..199).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
+    #インテリア・住まい・小物
+    @interior_items = Item.where(category_id: 481..624).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
     #メンズ
     @mens_items = Item.where(category: 201..345).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
     #家電
     @appliance_items = Item.where(category: 899..983).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
-    #おもちゃ
-    @toy_items = Item.where(category: 686..797).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
-    #人気のブランド
+    #本・音楽・ゲーム
+    @books_items = Item.where(category: 625..684).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
+    #ブランド
     @chanel_items = Item.where(brand:2).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
     @vuitton_items = Item.where(brand:3).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
     @sup_items = Item.where(brand:4).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
     @nike_items = Item.where(brand:5).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
-
-
   end
 
   def new

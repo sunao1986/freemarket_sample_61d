@@ -17,27 +17,32 @@
           = link_to purchased_users_path, class: "purchased2-link" do
             購入商品履歴
       .status-detail
-        - @completed_items.each do |item|
-          %ul.listing-box
-            %li.listing-list
-              = link_to "/items/#{item.id}", class: "listing-item-link" do
-                %figure
-                  = image_tag item.images[0].image_url.url, class: 'listing-item-image'
-                .listing-item-detail
-                  .listing-item-name
-                    #{item.name}
-                  .listing-item-check
-                    %span.like-count
-                      = fa_icon "heart"
-                      %span 0
-                    %span.comment-count
-                      = fa_icon "comment"
-                      %span
-                        #{item.comments.count}
-                    .release
-                      売却済
-                .item-show
-                  = fa_icon "chevron-right"
+        - if @completed_items.present?
+          - @completed_items.each do |item|
+            %ul.listing-box
+              %li.listing-list
+                = link_to "/items/#{item.id}", class: "listing-item-link" do
+                  %figure
+                    = image_tag item.images[0].image_url.url, class: 'listing-item-image'
+                  .listing-item-detail
+                    .listing-item-name
+                      #{item.name}
+                    .listing-item-check
+                      %span.like-count
+                        = fa_icon "heart"
+                        %span 0
+                      %span.comment-count
+                        = fa_icon "comment"
+                        %span
+                          #{item.comments.count}
+                      .release
+                        売却済
+                  .item-show
+                    = fa_icon "chevron-right"
+        - else
+          .nothing-completed
+            = image_tag 'no-completed.png', height: 'auto', width: '200px', class: 'no-completed'
+
     = paginate @completed_items
   = render "shared/sidebar"
 = render 'shared/sell'

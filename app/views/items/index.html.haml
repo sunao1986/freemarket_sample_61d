@@ -1,3 +1,15 @@
+:javascript
+  $(function(){
+    $('a[href^="#"]').click(function(){
+      var speed = 250;
+      var href= $(this).attr("href");
+      var target = $(href == "#" || href == "" ? 'html' : href);
+      var position = target.offset().top;
+      $("html, body").animate({scrollTop:position}, speed, "swing");
+      return false;
+    });
+  });
+
 .wrapper
   = render 'shared/header'
   .body
@@ -10,80 +22,97 @@
         .popular-category-brand__index
           %ul.popular-category-brand__index__box
             %li.category-brand-list
-              = link_to "レディース", root_path, class: "category-brand-list__link"
+              = link_to "インテリア・住まい・小物", "#5", class: "category-brand-list__link"
             %li.category-brand-list
-              = link_to "メンズ", root_path, class: "category-brand-list__link"
+              = link_to "メンズ", "#2", class: "category-brand-list__link"
             %li.category-brand-list
-              = link_to "家電・スマホ・カメラ", root_path, class: "category-brand-list__link"
+              = link_to "家電・スマホ・カメラ", "#3", class: "category-brand-list__link"
             %li.category-brand-list
-              = link_to "おもちゃ・ホビー・グッズ", root_path, class: "category-brand-list__link"
+              = link_to "本・音楽・ゲーム", "#4", class: "category-brand-list__link"
       .new-products
         .new-products-type
           .new-products-type__top
-            %h3.theme
-              レディース新着アイテム
-            = link_to "もっと見る ＞＞", "/categories/1", class: "look-more"
+            %h3.theme{id: "5"}
+              インテリア・住まい・小物新着アイテム
+            = link_to "もっと見る ＞＞", "/categories/4", class: "look-more"
           .items-block
-            - @ladies_items.each do |item|
-              .items-list
-                = link_to "/items/#{item.id}", class: "items-list-link" do
-                  = image_tag item.images[0].image_url.url, alt: 'items-image', height: '188px', width: '188px', class: 'items-image'
-                  .items-detail
-                    .items-price
-                      %span.price-yen
-                        #{converting_to_jpy(item.price)}
-                    %h3.items-name
-                      #{item.name}
+            - if @interior_items.present?
+              - @interior_items.each do |item|
+                .items-list
+                  = link_to "/items/#{item.id}", class: "items-list-link" do
+                    = image_tag item.images[0].image_url.url, alt: 'items-image', height: '188px', width: '188px', class: 'items-image'
+                    .items-detail
+                      .items-price
+                        %span.price-yen
+                          #{converting_to_jpy(item.price)}
+                      %h3.items-name
+                        #{item.name}
+            - else
+              .nothing-block
+                = fa_icon "ban", class: "nothing-block-icon"
 
         .new-products-type
           .new-products-type__top
-            %h3.theme
+            %h3.theme{id: "2"}
               メンズ新着アイテム
             = link_to "もっと見る ＞＞", "/categories/2",  class: "look-more"
           .items-block
-            - @mens_items.each do |item|
-              .items-list
-                = link_to "/items/#{item.id}", class: "items-list-link" do
-                  = image_tag item.images[0].image_url, alt: 'items-image', height: '188px', width: '188px', class: 'items-image'
-                  .items-detail
-                    .items-price
-                      %span.price-yen
-                        #{converting_to_jpy(item.price)}
-                    %h3.items-name
-                      #{item.name}
+            - if @mens_items.present?
+              - @mens_items.each do |item|
+                .items-list
+                  = link_to "/items/#{item.id}", class: "items-list-link" do
+                    = image_tag item.images[0].image_url, alt: 'items-image', height: '188px', width: '188px', class: 'items-image'
+                    .items-detail
+                      .items-price
+                        %span.price-yen
+                          #{converting_to_jpy(item.price)}
+                      %h3.items-name
+                        #{item.name}
+            - else
+              .nothing-block
+                = fa_icon "ban", class: "nothing-block-icon"
+
         .new-products-type
           .new-products-type__top
-            %h3.theme
+            %h3.theme{id: "3"}
               家電・スマホ・カメラ新着アイテム
             = link_to "もっと見る ＞＞","/categories/3" , class: "look-more"
           .items-block
-            - @appliance_items.each do |item|
-              .items-list
-                = link_to "/items/#{item.id}", class: "items-list-link" do
-                  = image_tag item.images[0].image_url, alt: 'items-image', height: '188px', width: '188px', class: 'items-image'
-                  .items-detail
-                    .items-price
-                      %span.price-yen
-                        #{converting_to_jpy(item.price)}
-                    %h3.items-name
-                      #{item.name}
+            - if @appliance_items.present?
+              - @appliance_items.each do |item|
+                .items-list
+                  = link_to "/items/#{item.id}", class: "items-list-link" do
+                    = image_tag item.images[0].image_url, alt: 'items-image', height: '188px', width: '188px', class: 'items-image'
+                    .items-detail
+                      .items-price
+                        %span.price-yen
+                          #{converting_to_jpy(item.price)}
+                      %h3.items-name
+                        #{item.name}
+            - else
+              .nothing-block
+                = fa_icon "ban", class: "nothing-block-icon"
+
         .new-products-type
           .new-products-type__top
-            %h3.theme
-              おもちゃ・ホビー・グッズ新着アイテム
-            = link_to "もっと見る ＞＞", "/categories/4", class: "look-more"
+            %h3.theme{id: "4"}
+              本・音楽・ゲーム新着アイテム
+            = link_to "もっと見る ＞＞", "/categories/5", class: "look-more"
           .items-block
-            - @toy_items.each do |item|
-              .items-list
-                = link_to "/items/#{item.id}", class: "items-list-link" do
-                  = image_tag item.images[0].image_url, alt: 'items-image', height: '188px', width: '188px', class: 'items-image'
-                  .items-detail
-                    .items-price
-                      %span.price-yen
-                        #{converting_to_jpy(item.price)}
-                    %h3.items-name
-                      #{item.name}
-
+            - if @books_items.present?
+              - @books_items.each do |item|
+                .items-list
+                  = link_to "/items/#{item.id}", class: "items-list-link" do
+                    = image_tag item.images[0].image_url, alt: 'items-image', height: '188px', width: '188px', class: 'items-image'
+                    .items-detail
+                      .items-price
+                        %span.price-yen
+                          #{converting_to_jpy(item.price)}
+                      %h3.items-name
+                        #{item.name}
+            - else
+              .nothing-block
+                = fa_icon "ban", class: "nothing-block-icon"
 
 
       .popular-category-brand
@@ -169,4 +198,6 @@
 
   = render 'shared/sell'
   = render 'shared/aside_and_footer'
+
+
 

@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20191119052507) do
-
 
   create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
@@ -79,23 +77,23 @@ ActiveRecord::Schema.define(version: 20191119052507) do
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",                                      null: false
-    t.text     "discription",     limit: 65535,             null: false
-    t.string   "status",                                    null: false
-    t.string   "delivery_cost",                             null: false
-    t.string   "delivery_method",                           null: false
-    t.string   "delivery_area",                             null: false
-    t.string   "delivery_days",                             null: false
-    t.integer  "price",                                     null: false
+    t.string   "name",                                        null: false
+    t.text     "discription",       limit: 65535,             null: false
+    t.string   "status",                                      null: false
+    t.string   "delivery_cost",                               null: false
+    t.string   "delivery_method",                             null: false
+    t.string   "delivery_area",                               null: false
+    t.string   "delivery_days",                               null: false
+    t.integer  "price",                                       null: false
     t.integer  "likes_count"
     t.integer  "buyer_id"
-    t.integer  "condition",                     default: 0
-    t.datetime "created_at",                                null: false
-    t.datetime "updated_at",                                null: false
-    t.integer  "category_id",                               null: false
-    t.integer  "size_id",                                   null: false
+    t.integer  "condition",                       default: 0
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
+    t.integer  "category_id",                                 null: false
+    t.integer  "size_id",                                     null: false
     t.integer  "brand_id"
-    t.integer  "user_id",                                   null: false
+    t.integer  "user_id",                                     null: false
     t.integer  "impressions_count",               default: 0
     t.index ["brand_id"], name: "index_items_on_brand_id", using: :btree
     t.index ["category_id"], name: "index_items_on_category_id", using: :btree

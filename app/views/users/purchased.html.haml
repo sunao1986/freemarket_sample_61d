@@ -17,27 +17,32 @@
           = link_to purchased_users_path, class: "purchased3-link" do
             購入商品履歴
       .status-detail
-        - @purchased_items.each do |item|
-          %ul.listing-box
-            %li.listing-list
-              = link_to "/items/#{item.id}", class: "listing-item-link" do
-                %figure
-                  = image_tag item.images[0].image_url.url, class: 'listing-item-image'
-                .listing-item-detail
-                  .listing-item-name
-                    #{item.name}
-                  .listing-item-check
-                    %span.like-count
-                      = fa_icon "heart"
-                      %span 0
-                    %span.comment-count
-                      = fa_icon "comment"
-                      %span
-                        #{item.comments.count}
-                    .release
-                      取引完了
-                .item-show
-                  = fa_icon "chevron-right"
+        - if @purchased_items.present?
+          - @purchased_items.each do |item|
+            %ul.listing-box
+              %li.listing-list
+                = link_to "/items/#{item.id}", class: "listing-item-link" do
+                  %figure
+                    = image_tag item.images[0].image_url.url, class: 'listing-item-image'
+                  .listing-item-detail
+                    .listing-item-name
+                      #{item.name}
+                    .listing-item-check
+                      %span.like-count
+                        = fa_icon "heart"
+                        %span 0
+                      %span.comment-count
+                        = fa_icon "comment"
+                        %span
+                          #{item.comments.count}
+                      .release
+                        取引完了
+                  .item-show
+                    = fa_icon "chevron-right"
+        - else
+          .nothing-purchased
+            = image_tag 'no-purchased.png', height: 'auto', width: '200px', class: 'no-purchased'
+
     = paginate @purchased_items
   = render "shared/sidebar"
 = render 'shared/sell'

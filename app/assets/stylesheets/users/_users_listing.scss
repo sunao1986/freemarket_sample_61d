@@ -91,6 +91,16 @@
         }
       }
       .status-detail {
+        .nothing-listing {
+          display: block;
+          height: 236px;
+          position: relative;
+          .no-listing {
+            position: absolute;
+            right: 250px;
+            bottom: 50px;
+          }
+        }
         .listing-box {
           display: block;
           list-style: none;

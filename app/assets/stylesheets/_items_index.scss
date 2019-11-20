@@ -95,6 +95,17 @@
           flex-direction: row;
           flex-wrap: wrap;
           width: 1044px;
+          .nothing-block {
+            background-color:#fff;
+            height: 272px;
+            width: 1044px;
+            &-icon {
+              margin: 0 auto;
+              display: block;
+              width: 250px;
+              font-size: 250px;
+            }
+          }
           .items-list {
             position: relative;
             background-color: #fff;

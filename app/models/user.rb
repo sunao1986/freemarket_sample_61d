@@ -7,7 +7,7 @@ class User < ApplicationRecord
     has_many :items, dependent: :destroy
     has_many :sns_credentials, dependent: :destroy
     has_many :comments
-
+    mount_uploader :image, ImageUploader
     def self.from_omniauth(auth)
       user = User.where(email: auth.info.email).first
       if user
