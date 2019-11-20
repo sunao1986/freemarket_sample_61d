@@ -76,8 +76,8 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @brand  = @item.brand_id
     @comments = @item.comments.includes(:user)
-    @seller_items = @item.user.items.limit(6).where.not(id: @item.id)
-    @other_items = @item.category.items.limit(6).where.not(id: @item.id)
+    @seller_items = @item.user.items.limit(6).where.not(id: @item.id, condition: 1)
+    @other_items = @item.category.items.limit(6).where.not(id: @item.id, condition: 1)
     impressionist(@item, nil, unique: [:session_hash])
   end
 
@@ -106,6 +106,10 @@ class ItemsController < ApplicationController
   def item_search
     @items = Item.where('name LIKE(?)', "%#{params[:name]}%").page(params[:page]).per(20).order("created_at DESC")
     @search_name = params[:name]
+  end
+
+  def pv_ranking
+    @items = Item.all.order("impressions_count DESC").limit(100)
   end
 
   private
