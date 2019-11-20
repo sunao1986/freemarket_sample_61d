@@ -6,9 +6,9 @@ class ItemsController < ApplicationController
     #インテリア・住まい・小物
     @interior_items = Item.where(category_id: 481..624).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
     #メンズ
-    @mens_items = Item.where(category: 201..345).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
+    @mens_items = Item.where(category: 200..345).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
     #家電
-    @appliance_items = Item.where(category: 899..983).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
+    @appliance_items = Item.where(category: 898..983).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
     #本・音楽・ゲーム
     @books_items = Item.where(category: 625..684).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
     #ブランド
