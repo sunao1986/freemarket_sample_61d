@@ -19,6 +19,6 @@ class Item < ApplicationRecord
   validates :size_id, presence: true
   validates :user_id, presence: true
 
-  is_impressionable counter_cache: true
+  # is_impressionable counter_cache: true
   scope :recent, -> { order('created_at DESC').limit(10)}
 end
