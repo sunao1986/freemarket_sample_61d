@@ -92,6 +92,16 @@
           }
         }
         .status-detail {
+          .nothing-completed {
+            display: block;
+            height: 236px;
+            position: relative;
+            .no-completed {
+              position: absolute;
+              right: 250px;
+              bottom: 50px;
+            }
+          }
           .listing-box {
             display: block;
             list-style: none;
@@ -296,6 +306,16 @@
           }
         }
         .status-detail {
+          .nothing-completed {
+            display: block;
+            height: 236px;
+            position: relative;
+            .no-completed {
+              position: absolute;
+              right: 250px;
+              bottom: 50px;
+            }
+          }          
           .listing-box {
             display: block;
             list-style: none;

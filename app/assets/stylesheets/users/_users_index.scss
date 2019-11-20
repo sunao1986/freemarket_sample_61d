@@ -16,7 +16,7 @@
         background-image: url(user_bg.jpg);
         background-size: cover;
         .mypage-user-icon {
-          background-image: url(user-image.png);
+          display: block;
           margin: 0 auto;
           width: 180px;
           height: 180px;
@@ -45,133 +45,100 @@
           }
         }
       }
-      &__intro {
-        height: 166px;
-        .level-detail {
-          margin: 0 auto;
-          height: 50px;
-          padding-top: 14px;
-          width: 360px;
-          .listing-level {
-            padding-right: 30px;
-            float: left;
-            width: 130px;
-            height: 28px;
-            &-cover {
-              width: 100px;
-              line-height: 26px;
-              .listing-icon {
-                color: #ef5185;
-              }
-              .listing-count {
-                width: 60px;
-                margin: 0 0 0 14px;
-                float: right;
-                text-align: center;
-              }
-            }
-          }
-          .completed-level {
-            padding-right: 30px;
-            float: left;
-            width: 130px;
-            height: 28px;
-            &-cover {
-              width: 100px;
-              line-height: 26px;
-              .completed-icon {
-                color: #fba933;
-              }
-              .completed-count {
-                width: 60px;
-                margin: 0 0 0 14px;
-                float: right;
-                text-align: center;
-              }
-            }
-          }
-          .purchased-level {
-            float: left;
-            width: 100px;
-            height: 28px;
-            &-cover {
-              width: 100px;
-              line-height: 26px;
-              .purchased-icon {
-                color: #6ab5d8;
-              }
-              .purchased-count {
-                width: 60px;
-                margin: 0 0 0 14px;
-                float: right;
-                text-align: center;
-              }
-            }
-          }
-        }
-        .intro-detail {
-          padding: 30px 50px 60px 50px;
-          border-top: 2px solid #f5f5f5;
-          .intro-text {
-            font-size: 16px;
-            font-weight: 400;
+    }
+    &__intro {
+      height: 166px;
+      .level-detail {
+        margin: 0 auto;
+        height: 50px;
+        padding-top: 14px;
+        width: 360px;
+        .listing-level {
+          padding-right: 30px;
+          float: left;
+          width: 130px;
+          height: 28px;
+          &-cover {
             color: #333;
+            width: 100px;
+            line-height: 26px;
+            .listing-icon {
+              color: #ef5185;
+            }
+            .listing-count {
+              width: 60px;
+              margin: 0 0 0 14px;
+              float: right;
+              text-align: center;
+              &:hover {
+                color: #ef5185;
+                transform: scale(1.3, 1.3);
+              }
+            }
+          }
+          &-cover:hover {
+            transform: scale(1.3, 1.3);
+            .listing-icon {
+              transform: scale(1.3, 1.3);
+            }
           }
         }
-      }
-      &__bottom {
-        margin: 24px auto;
-        padding: 32px 0 24px;
-        width: 700px;
-        .sns-box {
-          margin: 16px 0 0;
-          text-align: center;
-          .face-book-block {
-            display: inline-block;
-            margin: 0 8px 8px 0;
-            vertical-align: middle;
-            text-align: center;
-            .face-book-link {
-              display: block;
-              .face-book-icon {
-                border-radius: 4px;
-                line-height: 44px;
-                &:hover {
-                  opacity: 0.6;
-                }
+        .completed-level {
+          padding-right: 30px;
+          float: left;
+          width: 130px;
+          height: 28px;
+          &-cover {
+            color: #333;
+            width: 100px;
+            line-height: 26px;
+            .completed-icon {
+              color: #fba933;
+            }
+            .completed-count {
+              width: 60px;
+              margin: 0 0 0 14px;
+              float: right;
+              text-align: center;
+              &:hover {
+                color: #fba933;
+                transform: scale(1.3, 1.3);
               }
             }
           }
-          .twitter-block {
-            display: inline-block;
-            margin: 0 8px 8px 0;
-            vertical-align: middle;
-            text-align: center;
-            .twitter-link {
-              display: block;
-              .twitter-icon {
-                border-radius: 4px;
-                line-height: 44px;
-                &:hover {
-                  opacity: 0.6;
-                }
+          &-cover:hover {
+            transform: scale(1.3, 1.3);
+            .completed-icon {
+              transform: scale(1.3, 1.3);
+            }
+          }
+        }
+        .purchased-level {
+          float: left;
+          width: 100px;
+          height: 28px;
+          &-cover {
+            color: #333;
+            width: 100px;
+            line-height: 26px;
+            .purchased-icon {
+              color: #6ab5d8;
+            }
+            .purchased-count {
+              width: 60px;
+              margin: 0 0 0 14px;
+              float: right;
+              text-align: center;
+              &:hover {
+                color: #6ab5d8;
+                transform: scale(1.3, 1.3);
               }
             }
           }
-          .line-block {
-            display: inline-block;
-            margin: 0 0 8px ;
-            vertical-align: middle;
-            text-align: center;
-            .line-link {
-              display: block;
-              .line-icon {
-                border-radius: 4px;
-                line-height: 44px;
-                &:hover {
-                  opacity: 0.6;
-                }
-              }
+          &-cover:hover {
+            transform: scale(1.3, 1.3);
+            .purchased-icon {
+              transform: scale(1.3, 1.3);
             }
           }
         }
@@ -197,7 +164,7 @@
         background-image: url(user_bg.jpg);
         background-size: cover;
         .mypage-user-icon {
-          background-image: url(user-image.png);
+          display: block;
           margin: 0 auto;
           width: 180px;
           height: 180px;
@@ -378,7 +345,7 @@
         background-image: url(user_bg.jpg);
         background-size: cover;
         .mypage-user-icon {
-          background-image: url(user-image.png);
+          display: block;
           margin: 0 auto;
           width: 180px;
           height: 180px;

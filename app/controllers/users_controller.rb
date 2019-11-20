@@ -18,14 +18,6 @@ class UsersController < ApplicationController
   end
 
   def update
-
-    # @user = Iser.find_by(id: params[:id])
-    # if params[:image]
-    #   @user.image_name = "#{@user.id}.jpg"
-    #   image = params[:image]
-    #   File.binwrite("public/user_image/#{@user.imaage_name}",image.read)
-    # end
-
     @user.update(update_user_params)
     redirect_to request.referer
   end
@@ -78,7 +70,7 @@ class UsersController < ApplicationController
   private
 
   def update_user_params
-    params.require(:user).permit(:email, :introduction, :postal_code, :prefectures, :city, :address, :building, :nickname)
+    params.require(:user).permit(:email, :introduction, :postal_code, :prefectures, :city, :address, :building, :nickname, :image)
   end
 
   def set_user
