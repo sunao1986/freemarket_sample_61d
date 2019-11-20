@@ -2,30 +2,20 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:edit, :update, :buy, :show, :pay]
   before_action :authenticate_user!, except: :index
   def index
-
-    # @q = User.ransack(params[:q])
-    # @items = @q.result(distinct: true)
-
     #人気のカテゴリー
-
-    #レディース
-    # @ladies_items = Item.recent.where(category_params[:ancestry])。。。もしかしたらancestryで持ってくる方法を使うかもなので残しました
-    #カテゴリテーブルが完成形になった時に指定idの範囲変えるかも。なので、データさえあれば、ひとまずレディースのみだが後でコピーすればすぐできる
-    @ladies_items = Item.recent.where(category_id: 1..199).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
+    #インテリア・住まい・小物
+    @interior_items = Item.where(category_id: 481..624).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
     #メンズ
-    @mens_items = Item.recent.where(category: 201..345).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
+    @mens_items = Item.where(category: 200..345).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
     #家電
-    @appliance_items = Item.recent.where(category: 899..983).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
-    #おもちゃ
-    @toy_items = Item.recent.where(category: 686..797).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
-
-    #人気のブランド
-    @chanel_items = Item.recent.where(brand:2).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
-    @vuitton_items = Item.recent.where(brand:3).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
-    @sup_items = Item.recent.where(brand:4).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
-    @nike_items = Item.recent.where(brand:5).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
-
-
+    @appliance_items = Item.where(category: 898..983).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
+    #本・音楽・ゲーム
+    @books_items = Item.where(category: 625..684).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
+    #ブランド
+    @chanel_items = Item.where(brand:2).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
+    @vuitton_items = Item.where(brand:3).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
+    @sup_items = Item.where(brand:4).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
+    @nike_items = Item.where(brand:5).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
   end
 
   def new
@@ -86,8 +76,8 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @brand  = @item.brand_id
     @comments = @item.comments.includes(:user)
-    @seller_items = @item.user.items.limit(6).where.not(id: @item.id)
-    @other_items = @item.category.items.limit(6).where.not(id: @item.id)
+    @seller_items = @item.user.items.limit(6).where.not(id: @item.id, condition: 1)
+    @other_items = @item.category.items.limit(6).where.not(id: @item.id, condition: 1)
     impressionist(@item, nil, unique: [:session_hash])
   end
 
@@ -116,6 +106,10 @@ class ItemsController < ApplicationController
   def item_search
     @items = Item.where('name LIKE(?)', "%#{params[:name]}%").page(params[:page]).per(20).order("created_at DESC")
     @search_name = params[:name]
+  end
+
+  def pv_ranking
+    @items = Item.all.order("impressions_count DESC").limit(100)
   end
 
   private

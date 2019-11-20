@@ -1,0 +1,30 @@
+.ranking-wrapper
+  = render 'shared/header'
+  .ranking-body
+    .ranking-body__contents
+      .ranking-products
+        .ranking-products-type
+          .ranking-products-type__top
+            %h3.ranking-theme
+              PV数ランキング
+            .crown-set
+              .g-crown
+          .ranking-items-block
+            - @items.each.with_index(1) do |item,i|                             
+              .ranking-items-list
+                .rank-number
+                  = "第"
+                  = i
+                  = "位"
+                .rank-number-after
+                  = link_to "/items/#{item.id}", class: "ranking-items-list-link" do
+                    = image_tag item.images[0].image_url.url, alt: 'ranking-items-image', height: '188px', width: '188px', class: 'items-image'
+                    .ranking-items-detail
+                      .ranking-items-price
+                        %span.ranking-price-yen
+                          = converting_to_jpy(item.price)
+                      %h3.ranking-items-name
+                        = item.name
+
+  = render 'shared/sell'
+  = render 'shared/aside_and_footer'

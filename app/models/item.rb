@@ -7,6 +7,7 @@ class Item < ApplicationRecord
   belongs_to :size, optional: true
   belongs_to :brand, optional: true
 
+
   validates :name, presence: true, length: { maximum: 40 }
   validates :discription, presence: true, length: { maximum: 1000 }
   validates :status, presence: true
@@ -19,6 +20,5 @@ class Item < ApplicationRecord
   validates :size_id, presence: true
   validates :user_id, presence: true
 
-  # is_impressionable counter_cache: true
-  scope :recent, -> { order('created_at DESC').limit(10)}
+  is_impressionable counter_cache: true
 end

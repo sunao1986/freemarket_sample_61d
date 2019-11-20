@@ -1,0 +1,150 @@
+.ranking-wrapper {
+  width: 100%;
+  .ranking-products {
+    padding: 42px 0px 100px;
+    margin: 0px auto 0;
+    width: 1040px;
+    &-type {
+      margin-top: 60px;
+      .crown-set{
+        margin-left:95px;
+        .g-crown {
+          width: 0;
+          height: 0;
+          border-bottom: 35px solid #bfa930;
+          border-left: 20px solid transparent;
+          border-right: 20px solid transparent;
+          position: relative
+        }      
+        .g-crown:after {
+          width: 0;
+          height: 0;
+          border-top: 15px solid transparent;
+          border-bottom: 20px solid #ffe973;
+          border-left: 20px solid #ffe973;
+          border-right: 20px solid #ffd700;
+          content: "";
+          position: absolute;
+          top: 0;
+          left: -20px
+        }
+        
+        .g-crown-circle {
+          background-color: #a68c00;
+          border-radius: 50%;
+          width: 5px;
+          height: 5px;
+          position: absolute;
+          top: -5px;
+          left: -21px
+        }
+        
+        .g-crown-circle:before {
+          background-color: #a68c00;
+          border-radius: 50%;
+          width: 5px;
+          height: 5px;
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 19px
+        }     
+        .g-crown-circle:after {
+          background-color: #a68c00;
+          border-radius: 50%;
+          width: 5px;
+          height: 5px;
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 38px
+        }
+      }
+      &__top {
+        display: block;
+        box-sizing: border-box;
+        justify-content: space-between;
+        position: relative;
+        .ranking-theme {
+          flex: 1 1 0%;
+          font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+          font-size: 24px;
+          font-weight: 600;
+          line-height: 1.4em;
+          margin: 10px;
+          width: 929px;
+        }
+      }
+      .ranking-items-block {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 1044px;
+        .ranking-items-list {
+          position: relative;
+          background-color: #fff;
+          margin: 20px;
+          width: 188px;
+          height: 252px;
+          &:hover {
+            opacity: 0.5;
+          }
+          .rank-number{
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            height: 20px;
+            line-height: 20px;
+          }
+          .rank-number-after{
+            .ranking-items-list-link {
+              width: 100%;
+              .ranking-items-image {
+                width: 100%;
+              }
+              .ranking-items-detail {
+                box-sizing: border-box;
+                color: #222;
+                font-size: 14px;
+                height: 64px;
+                line-height: 1.4em;
+                padding: 0 12px;
+                white-space: normal;
+                word-break: break-word;
+              }
+              .ranking-items-price {
+                z-index: 2;
+                position: absolute;
+                height: 0;
+                overflow: hidden;
+                padding: 0 0 90px;
+                left: 0px;
+                bottom: 10px;
+                .ranking-price-yen {
+                  margin: 0;
+                  padding: 0 12px;
+                  height: 28px;
+                  letter-spacing: .02em;
+                  display: inline-flex;
+                  font-size: 17px;
+                  align-items: center;
+                  background: rgba(0,0,0,.4);
+                  border-radius: 0 14px 14px 0;
+                  bottom: 8px;
+                  color: #fff;
+                }
+              }
+              .ranking-items-name {
+                display: inline-block;
+                height: 2.8em;
+                overflow: hidden;
+                object-fit: cover;
+                position: relative;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

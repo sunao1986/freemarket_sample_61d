@@ -29,6 +29,11 @@
             vertical-align: middle;
             .profile-icon {
               border-radius: 50%;
+              position: relative;
+              cursor: pointer;
+            }
+            .input-image {
+              display: contents;
             }
           }
           &__user {

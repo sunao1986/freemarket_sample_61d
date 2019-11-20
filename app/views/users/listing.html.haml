@@ -17,26 +17,31 @@
           = link_to purchased_users_path, class: "purchased-link" do
             購入商品履歴
       .status-detail
-        - @listing_items.each do |item|
-          %ul.listing-box
-            %li.listing-list
-              = link_to "/items/#{item.id}", class: "listing-item-link" do
-                %figure
-                  = image_tag item.images[0].image_url.url, class: 'listing-item-image'
-                .listing-item-detail
-                  .listing-item-name
-                    #{item.name}
-                  .listing-item-check
-                    %span.like-count
-                      = fa_icon "heart"
-                      %span 0
-                    %span.comment-count
-                      = fa_icon "comment"
-                      %span 0
-                    .release
-                      公開中
-                .item-show
-                  = fa_icon "chevron-right"
+        - if @listing_items.present?
+          - @listing_items.each do |item|
+            %ul.listing-box
+              %li.listing-list
+                = link_to "/items/#{item.id}", class: "listing-item-link" do
+                  %figure
+                    = image_tag item.images[0].image_url.url, class: 'listing-item-image'
+                  .listing-item-detail
+                    .listing-item-name
+                      #{item.name}
+                    .listing-item-check
+                      %span.like-count
+                        = fa_icon "heart"
+                        %span 0
+                      %span.comment-count
+                        = fa_icon "comment"
+                        %span
+                          #{item.comments.count}
+                      .release
+                        公開中
+                  .item-show
+                    = fa_icon "chevron-right"
+        - else
+          .nothing-listing
+            = image_tag 'no-listing.png', height: 'auto', width: '200px', class: 'no-listing'
     = paginate @listing_items
   = render "shared/sidebar"
 = render 'shared/sell'

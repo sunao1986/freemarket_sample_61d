@@ -22,7 +22,8 @@
 @import "shared/category_list";
 @import "cards_new";
 @import "cards_index";
-@import "sidebar";
+@import "shippings_edit";
+@import "mail_edit";
 @import "slick-theme";
 @import "slick";
 @import "kaminari/paginator";
@@ -32,3 +33,4 @@
 @import "kaminari/next_page";
 @import "kaminari/gap";
 @import "kaminari/page";
+@import "pv_ranking";

@@ -9,7 +9,14 @@
       .profile-user
         .profile-user__box
           .profile-user__box__icon
-            = image_tag("/assets/profile-user-icon.jpg", width:"60px", height:"60px", class: "profile-icon")
+            - if @user.image?
+              = f.label :image do
+                = image_tag @user.image.url, width:"60px", height:"60px", class: "profile-icon"
+                = f.file_field :image ,class:"input-image"
+            - else
+              = f.label :image do
+                = image_tag("/assets/profile-user-icon.jpg", width:"60px", height:"60px", class: "profile-icon")
+                = f.file_field :image ,class:"input-image"
           .profile-user__box__user
             = f.text_area :nickname, type:"text", placeholder:"例）AYA☆セール中" ,class:"input-nickname"
       .profile-container

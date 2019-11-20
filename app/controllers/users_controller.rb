@@ -3,6 +3,9 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, except: :new
 
   def index
+    @listing_items = current_user.items.where(condition: 0)
+    @completed_items = current_user.items.where(condition: 1)
+    @purchased_items = Item.where(condition: 1).where(buyer_id: current_user.id)
   end
 
   def new
@@ -27,6 +30,7 @@ class UsersController < ApplicationController
   end
 
   def profile
+    @user = User.find(params[:id])
   end
 
   # def intro
@@ -66,7 +70,7 @@ class UsersController < ApplicationController
   private
 
   def update_user_params
-    params.require(:user).permit(:email, :introduction, :postal_code, :prefectures, :city, :address, :building, :nickname)
+    params.require(:user).permit(:email, :introduction, :postal_code, :prefectures, :city, :address, :building, :nickname, :image)
   end
 
   def set_user

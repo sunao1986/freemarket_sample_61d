@@ -1,7 +1,7 @@
 = render partial: 'shared/header'
 -# - breadcrumb :personinfo
 = render partial: 'shared/gretel'
-.mypage-container-edit.shipping-edit
+.mypage-container-mail-edit
   .ide-container
     .identification-head
       %h1 メール/パスワード
@@ -28,6 +28,6 @@
               パスワードを設定したい場合は上記をすべて入力してください。（設定しない場合は空欄）
           .form-group
             = f.submit "変更する", class: "btn-default btn-red btn-shipping"
-= render "shared/sidebar"
+  = render "shared/sidebar"
 = render 'shared/sell'
 = render 'shared/aside_and_footer'
