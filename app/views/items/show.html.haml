@@ -61,38 +61,44 @@
       .item-container__item-price__tax (税込)
       .item-container__item-price__shipping-fee 送料込み
     -if @item.user_id != current_user.id
-      = link_to "購入画面へ進む", "/items/#{@item.id}/buy", class:"buybtn"
+      -if @item.condition == 0
+        = link_to "購入画面へ進む", "/items/#{@item.id}/buy", class:"buybtn"
+      -else
     .item-container__item-description
       .item-container__item-description__inner
         = simple_format(@item.discription)
     .item-container__fixbox
   -if @item.user_id == current_user.id
-    .seller-box
-      = link_to "商品の編集", edit_item_path, class:"edititembtn"
-      .seller-box__word or
-      %a.btn{href: "～", onclick: "return false", class:"destroyitembtn"}この商品を削除する
-      .destroybtn-page
-        .destroybtn-box
-          .destroybtn-box__note
-            %h1 確認
-            %p 削除すると二度と復活できません。
-            %p 本当に削除しますか？
-          .destroybtn-box__btn
-            .destroybtn-box__btn__close
-              = link_to item_path, class:"btn-close", onclick: "return false" do
-                %p キャンセル
-            .destroybtn-box__btn__done
-              = link_to item_path, class:"btn-done", method: :delete do
-                %p 削除する
-  .messages
-    = form_tag("/items/#{@item.id}/comments", method: :post) do
-      = render partial:"comments", locals: {comments: @comments}
-      .messages__content
-        %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      .messages__text
-        %textarea{cols: "34", name: "text", rows:"4", id:"comarea"}
-      .messages__commentbtn
-        %input{type: "submit", value: "コメントする", class:"commentbtn"}
+    -if @item.condition == 0
+      .seller-box
+        = link_to "商品の編集", edit_item_path, class:"edititembtn"
+        .seller-box__word or
+        %a.btn{href: "～", onclick: "return false", class:"destroyitembtn"}この商品を削除する
+        .destroybtn-page
+          .destroybtn-box
+            .destroybtn-box__note
+              %h1 確認
+              %p 削除すると二度と復活できません。
+              %p 本当に削除しますか？
+            .destroybtn-box__btn
+              .destroybtn-box__btn__close
+                = link_to item_path, class:"btn-close", onclick: "return false" do
+                  %p キャンセル
+              .destroybtn-box__btn__done
+                = link_to item_path, class:"btn-done", method: :delete do
+                  %p 削除する
+    - else
+  -if @item.condition == 0
+    .messages
+      = form_tag("/items/#{@item.id}/comments", method: :post) do
+        = render partial:"comments", locals: {comments: @comments}
+        .messages__content
+          %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        .messages__text
+          %textarea{cols: "34", name: "text", rows:"4", id:"comarea"}
+        .messages__commentbtn
+          %input{type: "submit", value: "コメントする", class:"commentbtn"}
+  -else
   .recommended
     - if @seller_items.present?
       .recommended__seller-item
