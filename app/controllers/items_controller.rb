@@ -11,11 +11,6 @@ class ItemsController < ApplicationController
     @appliance_items = Item.where(category: 898..983).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
     #本・音楽・ゲーム
     @books_items = Item.where(category: 625..684).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
-    #ブランド
-    @chanel_items = Item.where(brand:2).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
-    @vuitton_items = Item.where(brand:3).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
-    @sup_items = Item.where(brand:4).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
-    @nike_items = Item.where(brand:5).where(condition: 0).order('created_at DESC').limit(10).where.not(condition: 1)
   end
 
   def new
@@ -109,7 +104,7 @@ class ItemsController < ApplicationController
   end
 
   def pv_ranking
-    @items = Item.all.order("impressions_count DESC").limit(100)
+    @items = Item.all.order("impressions_count DESC").limit(100).where.not(condition: 1)
   end
 
   private

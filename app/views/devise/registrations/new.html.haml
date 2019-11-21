@@ -29,6 +29,7 @@
             = f.label "ニックネーム"
             %span.form-require 必須
             = f.text_field :nickname, class: "input-default", placeholder: "例) メルカリ太郎"
+            = f.hidden_field :name, value: "fake"
           .form-group
             = f.label "メールアドレス"
             %span.form-require 必須

@@ -112,7 +112,9 @@
         #item-error-delivery-area
         .exhibit-delivery-field__delivery
           = fa_icon 'angle-down', alt: 'angle-down', class: "fas fa-angle-dowx fa-2x", id:"delivery-angle"
-          = f.select :delivery_area, [["---", ""], ["関東"], ["関西"], ["その他"]], class: "input_item_delivery"
+          -# = f.select :delivery_area, [["---", ""], ["関東"], ["関西"], ["その他"]], class: "input_item_delivery"
+          = f.collection_select :delivery_area, Prefecture.all, :name, :name, {include_blank: "--"}, {class:"input_item_delivery"}
+
         .exhibit-delivery-field__gray-label
         .exhibit-delivery-field__label
           発送までの日数
