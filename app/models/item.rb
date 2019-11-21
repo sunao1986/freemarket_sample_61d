@@ -19,6 +19,5 @@ class Item < ApplicationRecord
   validates :category_id, presence: true
   validates :size_id, presence: true
   validates :user_id, presence: true
-
-  # is_impressionable counter_cache: true
+  is_impressionable counter_cache: true
 end
