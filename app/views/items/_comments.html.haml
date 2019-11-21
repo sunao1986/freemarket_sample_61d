@@ -5,7 +5,7 @@
         -if comment.user.image.present?
           = image_tag(comment.user.image, width:"40px", height:"40px", class: "comment-icon")
         -else
-          = image_tag("/assets/user-image.png", width:"40px", height:"40px", class: "comment-icon")
+          = image_tag("user-image.png", width:"40px", height:"40px", class: "comment-icon")
       .messages__box__text
         .messages__box__text__user
           = comment.user.nickname
