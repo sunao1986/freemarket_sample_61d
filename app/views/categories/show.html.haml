@@ -11,7 +11,7 @@
             - @items.each do |item|
               .search-items-list
                 = link_to "/items/#{item.id}", class: "search-items-list-link" do
-                  = image_tag item.images[0].image_url.url, alt: 'search-items-image', height: '188px', width: '188px', class: 'items-image'
+                  = image_tag item.images[0].image_url.url, alt: 'search-items-image', height: '188px', width: '188px', class: 'search-items-image'
                   .search-items-detail
                     .search-items-price
                       %span.search-price-yen
