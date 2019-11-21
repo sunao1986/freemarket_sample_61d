@@ -303,7 +303,172 @@ body {
     text-decoration: inherit;
     box-sizing: inherit;
   }
-} 
+}
+
+.l-single-inner.registration-form {
+  padding: 24px 16px 40px;
+}
+
+.l-single-container {
+  &__content {
+    max-width: 343px;
+    margin: 0 auto;
+    .form-group {
+      .text-center {
+        margin-top: 40px;
+      }
+    }
+    p {
+      margin: 8px 0 0;
+      line-height: 1.5;
+    }
+    p:first-child {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+.form-group {
+  label {
+    padding-top:5px; 
+    font-weight: 300;
+    display: inline-block;
+  }
+  .form-require {
+    background-color: #ea352d;
+    margin: 0 0 0 8px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 12px;
+    vertical-align: top;
+  }
+  .form-require.option {
+    background-color: rgb(209, 209, 209);
+  }
+  .input-default {
+    width: 100%;
+    margin: 8px 0 0;
+    height: 48px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    line-height: 1.5;
+    font-size: 16px;
+
+  }
+  .input-default.error {
+    border-color: #ea352d;
+    color: black;
+  }
+  select {
+    width: 100%;
+    margin: 8px 0 0;
+    height: 48px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    line-height: 1.5;
+    font-size: 16px;
+  }
+  .l-chapter-sub-head {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .l-single-text {
+    margin: 8px 0 0;
+    padding: 0;
+    line-height: 1.5;
+
+  }
+  .text-center {
+    text-align: center;
+    margin-top: 40px;
+  }
+  .birthday-select-wrap {
+
+    .select-wrap {
+
+      // &__day {
+      //   .help-block {
+      //     float: left;
+      //     display: block;
+      //   }
+      // }
+      // &__year {
+      //   .help-block {
+      //     display: none;
+      //   }
+      // }
+      // &__month {
+      //   .help-block {
+      //     display: none;
+      //   }
+      #user_birthday {
+        margin: 8px 0 0;
+        height: 48px;
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        line-height: 1.5;
+        font-size: 16px;
+      }
+      #user_birthday.error {
+        border-color: #ea352d;
+      }
+      }
+      .fa {
+        position: absolute;
+        right: 10px;
+        top: 20px;
+        z-index: 2;
+        color: #888;
+        font-size: 25px;
+        transform: translate(0 -50%);
+        font-weight: bold;
+      }
+      select {
+        width: 76px;
+        height: 48px;
+        // -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        margin: 8px 0 0;
+        background-color: #fff;
+        display: inline-block;
+        position: relative;
+        // pointer-events: none;
+      }
+    }
+  }
+.form-group.prefecture {
+  position: relative;
+  #shipping_prefectures {
+    margin: 8px 0 0;
+    height: 48px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    line-height: 1.5;
+    font-size: 16px;
+  }
+  #shipping_prefectures.error {
+    border-color: #ea352d;
+  }
+  .fa-angle-down {
+    position: absolute;
+    top: 45px;
+    font-weight: bold;
+    right: 10px;
+    font-size: 20px;
+    color: gray;
+  }
+}
+
 .form-group:first-child {
   margin: 0;
 }
