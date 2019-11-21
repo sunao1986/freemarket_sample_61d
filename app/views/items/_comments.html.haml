@@ -2,8 +2,10 @@
   - comments.each do |comment|
     .messages__box
       .messages__box__icon
-        = link_to users_path do
-          = image_tag("/assets/profile-user-icon.jpg", width:"40px", height:"40px", class: "comment-icon")
+        -if comment.user.image.present?
+          = image_tag(comment.user.image, width:"40px", height:"40px", class: "comment-icon")
+        -else
+          = image_tag("/assets/user-image.png", width:"40px", height:"40px", class: "comment-icon")
       .messages__box__text
         .messages__box__text__user
           = comment.user.nickname

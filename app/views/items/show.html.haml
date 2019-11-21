@@ -16,9 +16,7 @@
         %table
           %tr
             %th 出品者
-            %td
-              = link_to users_path, class: "seller" do
-                = @item.user.nickname
+            %td= @item.user.nickname
           %tr
             %th カテゴリー
             %td
@@ -104,8 +102,7 @@
       .recommended__seller-item
         .recommended__seller-item__head
           .seller-item
-            = link_to users_path, class:"seller-item-link" do
-              %p 出品者のその他の出品
+            %p.seller-item-link 出品者のその他の出品
         .recommended__seller-item__body
           = render partial:"seller-item-box", locals: {seller_items: @seller_items}
     - if @other_items.present?
