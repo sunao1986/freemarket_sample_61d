@@ -15,11 +15,6 @@ class CardsController < ApplicationController
     redirect_to action: "index" if card.exists?
   end
 
-  def newbuy
-    card = Card.where(user_id: current_user.id)
-    redirect_to action: "index" if card.exists?
-  end
-
   def create
     card = Card.where(user_id: current_user.id)
     Payjp.api_key = 'sk_test_0e21a1a16d0a0e377209db69'

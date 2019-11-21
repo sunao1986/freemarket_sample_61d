@@ -1,6 +1,6 @@
 class ShippingsController < ApplicationController
 
-  before_action :set_shipping, only: [:edit, :editbuy, :update]
+  before_action :set_shipping, only: [:edit, :update]
 
   def new
     @shipping = Shipping.new
@@ -16,10 +16,6 @@ class ShippingsController < ApplicationController
   end
 
   def edit
-    @shipping = Shipping.find_by(user_id: current_user.id)
-  end
-
-  def editbuy
     @shipping = Shipping.find_by(user_id: current_user.id)
   end
 
