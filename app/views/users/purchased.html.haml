@@ -41,8 +41,8 @@
                     = fa_icon "chevron-right"
         - else
           .nothing-purchased
-            = image_tag 'no-purchased.png', height: 'auto', width: '200px', class: 'no-purchased'
-
+            = image_tag 'nothings.png', height: 'auto', width: '100px', class: 'no-purchased'
+            %h2 購入商品履歴がありません
     = paginate @purchased_items
   = render "shared/sidebar"
 = render 'shared/sell'

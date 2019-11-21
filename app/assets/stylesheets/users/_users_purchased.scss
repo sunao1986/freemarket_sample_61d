@@ -98,10 +98,17 @@
             position: relative;
             .no-purchased {
               position: absolute;
-              right: 250px;
+              right: 300px;
               bottom: 50px;
             }
-          }          
+            h2 {
+              padding-top: 50px;
+              text-align: center;
+              font-size: 16px;
+              font-weight: 600;
+              color: #ccc;
+            }
+          }
           .listing-box {
             display: block;
             list-style: none;
@@ -312,8 +319,15 @@
             position: relative;
             .no-purchased {
               position: absolute;
-              right: 250px;
+              right: 300px;
               bottom: 50px;
+            }
+            h2 {
+              padding-top: 50px;
+              text-align: center;
+              font-size: 16px;
+              font-weight: 600;
+              color: #ccc;
             }
           }
           .listing-box {

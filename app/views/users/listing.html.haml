@@ -41,7 +41,8 @@
                     = fa_icon "chevron-right"
         - else
           .nothing-listing
-            = image_tag 'no-listing.png', height: 'auto', width: '200px', class: 'no-listing'
+            = image_tag 'nothings.png', height: 'auto', width: '100px', class: 'no-listing'
+            %h2 出品中の商品がありません
     = paginate @listing_items
   = render "shared/sidebar"
 = render 'shared/sell'
