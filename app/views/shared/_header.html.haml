@@ -18,7 +18,7 @@
             %h2.category-brand__btn
               = link_to "#", class: "category-brand__btn__link" do
                 = fa_icon 'list', class: 'category-brand__btn__link__icon'
-                %span カテゴリーから探す   
+                %span カテゴリーから探す
           %li.category-brand
             %h2.category-brand__btn
               = link_to "/items/pv_ranking", class: "category-brand__btn__link" do
@@ -29,12 +29,12 @@
           %li.users-mypage
             - if current_user.image?
               = link_to users_path, class: "users-mypage__link" do
-                = image_tag current_user.image.url, alt: 'user-image', width: '32', class: 'user-image'
+                = image_tag current_user.image.url, alt: 'user-image', width: '32px', height: '32px;', class: 'user-image'
                 %span.mypage-text
                   マイページ
             - else
               = link_to users_path, class: "users-mypage__link" do
-                = image_tag 'user-image.png', alt: 'user-image', width: '32', class: 'user-image'
+                = image_tag 'user-image.png', alt: 'user-image', width: '32px', height: '32px;', class: 'user-image'
                 %span.mypage-text
                   マイページ
       - else
