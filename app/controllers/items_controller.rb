@@ -109,7 +109,7 @@ class ItemsController < ApplicationController
   end
 
   def pv_ranking
-    @items = Item.all.order("impressions_count DESC").limit(100)
+    @items = Item.all.order("impressions_count DESC").limit(100).where.not(condition: 1)
   end
 
   private
