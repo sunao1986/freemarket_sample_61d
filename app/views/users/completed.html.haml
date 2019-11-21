@@ -41,8 +41,8 @@
                     = fa_icon "chevron-right"
         - else
           .nothing-completed
-            = image_tag 'no-completed.png', height: 'auto', width: '200px', class: 'no-completed'
-
+            = image_tag 'nothings.png', height: 'auto', width: '100px', class: 'no-completed'
+            %h2 売却済みの商品がありません
     = paginate @completed_items
   = render "shared/sidebar"
 = render 'shared/sell'
